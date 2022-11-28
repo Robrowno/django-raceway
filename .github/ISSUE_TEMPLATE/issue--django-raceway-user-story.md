@@ -1,7 +1,7 @@
 ---
-name: 'DJANGO-RACEWAY USER STORY:'
+name: 'Issue: DJANGO-RACEWAY USER STORY'
 about: Custom Template for Django-Raceway User Stories
-title: DJANGO-RACEWAY USER STORY
+title: 'DJANGO-RACEWAY USER STORY: <TITLE>'
 labels: ''
 assignees: Robrowno
 
