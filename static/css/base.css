@@ -4,7 +4,22 @@
     margin: 0px;
 }
 
+#nav-icon-box {
+    display: flex;
+    gap: 25px;
+}
+
 #hero-image {
     padding: 0px;
+    height: 80%;
 
 }
+
+
+footer {
+    flex-shrink: 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+} 
+

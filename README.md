@@ -65,6 +65,13 @@ Link to live site: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## Credits
 
+### Code Help:
+
+### Media/Images:
+- Checkered Flags from Clipartmax: [Flag1](https://www.clipartmax.com/middle/m2H7d3N4d3i8d3i8_checkered-flag-icon-clipart-auto-racing-racing-flags-finish-flag-icon-png/), [Flag2](https://www.clipartmax.com/middle/m2i8G6Z5H7d3A0G6_finish-flag-race-racing-win-winner-finish-checkered-flag-icon-png/)
+-
+
+
 ---
 ## Final Thoughts
 
