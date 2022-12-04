@@ -67,6 +67,23 @@ Link to live site: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ### Code Help:
 
+The preliminary set up and an assisting walkthrough came in the form of following Code Institute's Boutique Ado walkthrough e-commerce project. Repository can be found here: [Boutique Ado - Code Institute](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
+
+I used the Bootstrap v5.0.2 framework to handle a lot of the heavy lifting of site styling and layout. 
+The following from the documentation helped me:
+- Navigation:
+    - [Bootstrap 5 Navbar docs](https://getbootstrap.com/docs/5.0/components/navbar/)
+    - [MD Bootstrap Navbar docs](https://mdbootstrap.com/docs/standard/navigation/navbar/#subsection-icons)
+- Carousel:
+    - [Bootstrap Carousel docs](https://getbootstrap.com/docs/5.0/components/carousel/)
+
+
+
+I made use of Icons from [Font Awesome](https://fontawesome.com/) using their free student plan. 
+All icons used in this project have come from here.
+
+
+
 ### Media/Images:
 - Checkered Flags from Clipartmax: [Flag1](https://www.clipartmax.com/middle/m2H7d3N4d3i8d3i8_checkered-flag-icon-clipart-auto-racing-racing-flags-finish-flag-icon-png/), [Flag2](https://www.clipartmax.com/middle/m2i8G6Z5H7d3A0G6_finish-flag-race-racing-win-winner-finish-checkered-flag-icon-png/)
 -
