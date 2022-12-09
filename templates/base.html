@@ -68,9 +68,18 @@
                         <i class="fas fa-user"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                        {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <li><a href="" class="dropdown-item">Management</a></li>
+                            <li><hr class="dropdown-divider"></li>
+
+                            {% endif %}
                       <li><a class="dropdown-item" href="#">Profile</a></li>
-                      <li><a class="dropdown-item" href="#"> Account Info</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                      {% else %}
+                      <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>
+                      <li><a class="dropdown-item" href="{% url 'account_login' %}">Log In</a></li>
+                      {% endif %}
                     </ul>
                   </li>
                   <li class="nav-item me-3 me-lg-0">
