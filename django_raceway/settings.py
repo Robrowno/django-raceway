@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # my apps
     'home',
     'trackdays',
+    'cars',
     # other
     'storages',
 ]

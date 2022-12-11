@@ -1,30 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 
 * {
-    padding: 0px;
-    margin: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    padding-bottom: 80px;
+    font-family: 'Secular One', sans-serif;
+}
+
+.circles {
+    visibility: hidden;
+    height: 0;
+}
+
+.red-circle {
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+.yellow-circle {
+    height: 30px;
+    width: 30px;
+    background-color: yellow;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+.booking-btn {
+    border: 2px solid black;
+    background-color: green;
+    color: #fff;
+    height: 25px;
+    padding: 0 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.booking-btn:hover {
+    color: #fff;
+}
+
+.booking-btn:active {
+    transform: scale(0.98);
+}
+
+.track-zar {
+    max-width: 98%;
+}
+
+.middle-nav {
+    border: 2px solid #000;
+    border-right: none;
+    border-left: none;
+}
+
+.middle-nav div {
+    padding: 5px;
 
 }
 
-#nav-icon-box {
-    display: flex;
-    gap: 25px;
+.middle-nav div a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
 }
 
-#hero-image {
-    padding: 0px;
-    height: 80%;
-
+.middle-nav ul li a:hover,
+.middle-nav ul li a:visited {
+    color: #000;
 }
 
 
-footer {
-    flex-shrink: 0;
+/* Gallery Styling */
+.img-styling {
+    cursor: pointer;
+    height: 100%;
     width: 100%;
-    position: fixed;
-    bottom: 0;
-} 
+    border: #000 solid 5px;
+    padding: 10px;
+}
+
+.gallery h1 {
+    display: flex;
+    justify-content: center;
+}
+
+/* Gallery Styling End */
+
+
+/* Footer Styling */
+footer {
+    border-top: 2px solid #000;
+    color: #000;
+    margin: 10px;
+}
+
+footer a {
+    
+    color: #000;
+    text-decoration: none;
+}
+
+footer a:visited,
+footer a:hover {
+    color: #000;
+}
+
+footer .footer-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signUpDiv{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.signUpBtn {
+    background-color: orange;
+    border: 2px solid #000;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 1);
+}
+
+.toTopBtn {
+    height: 25px;
+    width: 25px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.toTopBtn:hover, .toTopBtn:active , .toTopBtn:visited{
+    color: #fff;
+}
+
+/*Footer Styling End*/
+
+
+/*Styling for the Tablet Screens */
+@media (min-width: 700px) and (max-width: 950px){
+
+    .middle-nav {
+        max-width: 100%;
+    }
+
+    .middle-nav ul {
+        display: flex;
+        margin: auto;
+    }
+
+    .middle-nav ul li {
+        margin: auto;
+    }
+
+    .circles {
+        visibility: visible;
+        height: auto;
+    }
+
+    footer .footer-links {
+        flex-direction: row;
+    }
+
+    footer .footer-links a{
+        margin: auto;
+    }
+
+    .signUpDiv{
+        justify-content: end;
+    }
+
+    .signUpDiv span{
+        font-size: 18px;
+        margin: auto;
+    }
+}
+
+/*Styling for the laptop Screens */
+@media (min-width: 950px) {
+    .circles {
+        visibility: visible;
+        height: auto;
+    }
+
+    .middle-nav{
+        width: 100%;
+    }
+
+    .middle-nav ul {
+        display: flex;
+        margin: auto;
+    }
+
+    .middle-nav ul li {
+        margin: auto;
+    }
+
+    .img-height-zar {
+        height: 645px;
+    }
+
+    .gallery h1 {
+        justify-content: start;
+    }
+
+    footer{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    footer .footer-links {
+        flex-direction: row;
+        margin-right: auto;
+        margin-left: 50px;
+    }
+
+    footer .footer-links a{
+        margin: 0 10px;
+    }
+
+    .signUpDiv{
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .signUpDiv span{
+        margin: auto;
+        margin-top: 5px ;
+    }
+
+}
 
