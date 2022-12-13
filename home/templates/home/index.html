@@ -4,57 +4,25 @@
 {% block content %}
 
 <!-- Carousel -->
-<div
-  id="carouselExampleControls"
-  class="carousel slide h-100"
-  data-bs-ride="carousel"
->
+<div id="carouselExampleControls" class="carousel slide h-100" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img
-        src="/media/circuit-national-layout.png"
-        class="d-block w-100 img-height-zar"
-        alt="Full track layout"
-      />
+      <img src="/media/circuit-national-layout.png" class="d-block w-100 img-height-zar" alt="Full track layout" />
     </div>
     <div class="carousel-item">
-      <img
-        src="/media/circuit-gp-layout.png"
-        class="d-block w-100 img-height-zar"
-        alt="Medium track layout"
-      />
+      <img src="/media/circuit-gp-layout.png" class="d-block w-100 img-height-zar" alt="Medium track layout" />
     </div>
     <div class="carousel-item">
-      <img
-        src="/media/circuit-indy-layout.png"
-        class="d-block w-100 img-height-zar"
-        alt="Small track layout"
-      />
+      <img src="/media/circuit-indy-layout.png" class="d-block w-100 img-height-zar" alt="Small track layout" />
     </div>
   </div>
 
-  <button
-    class="carousel-control-prev"
-    type="button"
-    data-bs-target="#carouselExampleControls"
-    data-bs-slide="prev"
-  >
-    <span
-      class="carousel-control-prev-icon btn btn-outline-dark btn-dark"
-      aria-hidden="true"
-    ></span>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon btn btn-outline-dark btn-dark" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button
-    class="carousel-control-next"
-    type="button"
-    data-bs-target="#carouselExampleControls"
-    data-bs-slide="next"
-  >
-    <span
-      class="carousel-control-next-icon btn btn-outline-dark btn-dark"
-      aria-hidden="true"
-    ></span>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon btn btn-outline-dark btn-dark" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
 </div>
@@ -64,18 +32,12 @@
     <div class="col-sm-12 col-md-12 col-lg-6 fs-3 text-center fw-bold">
       <span class="textSmallMob">The Home of Motorsport Excellence!</span>
     </div>
-    <div
-      class="col-sm-12 col-md-6 col-lg-3 d-flex justify-content-center justify-content-md-end mb-2 circles"
-    >
+    <div class="col-sm-12 col-md-6 col-lg-3 d-flex justify-content-center justify-content-md-end mb-2 gap-3 circles">
       <div class="red-circle me-2 me-md-4"></div>
       <div class="yellow-circle"></div>
     </div>
-    <div
-      class="col-sm-12 col-md-6 col-lg-3 text-center text-md-start text-lg-center pt-md-1"
-    >
-      <a href="{% url 'trackdays' %}" class="booking-btn" id="booking"
-        >Book a Track day!</a
-      >
+    <div class="col-sm-12 col-md-6 col-lg-3 text-center text-md-start text-lg-center pt-md-1">
+      <a href="{% url 'trackdays' %}" class="booking-btn" id="booking">Book a Track day!</a>
     </div>
   </div>
 </div>
