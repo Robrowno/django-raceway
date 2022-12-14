@@ -78,6 +78,7 @@ The following from the documentation helped me:
     - [Bootstrap Carousel docs](https://getbootstrap.com/docs/5.0/components/carousel/)
 
 
+Favicons were generated on [Favicon.io](https://favicon.io/favicon-converter/) - I converted one of the checkered flag images I have (see images below) into a favicon using their site.
 
 I made use of Icons from [Font Awesome](https://fontawesome.com/) using their free student plan. 
 All icons used in this project have come from here.
