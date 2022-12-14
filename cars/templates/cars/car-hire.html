@@ -1,9 +1,38 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'cars/css/cars.css' %}">
+{% endblock %}
+
 {% block content %}
 
-<h2 class="text-center">Our Cars to Hire:</h2>
+<h2 class="m-3 text-center">Cars to hire:</h2>
+
+<p class="m-3 para">Django Raceway has a truly epic array of cars available to hire on track day events. This page will show you a small handful of examples of cars that you can hire
+    and/or drive through our different experience packages. We have collected cars that will let you explore the dynamic handling capabilities of different car configurations and can 
+    be selected to suit your preferred driving style and driving characteristics as a result:
+</p>
+
+<div class="car">
+    <img src="/media/996-gt3.jpeg" alt="Picture of a Blue Porsche Sports car">
+    <p> Porsche 996 GT3 </p>
+</div>
+
+<div class="car">
+    <img src="/media/ariel-atom-car.jpeg" alt="Ariel Atom Driving on a track">
+    <p>Ariel Atom 3</p>
+</div>
+
+<div class="car">
+    <img src="/media/radical-rapture.jpeg" alt="A Red and Silver Track car">
+    <p>Radical Rapture</p>
+</div>
+
+<div class="car">
+    <img src="/media/renault-megane-rs.jpg" alt="A White Renault driving on track">
+    <p>Renault Megane RS</p>
+</div>
 
 
 {% endblock %}
