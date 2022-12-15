@@ -1,0 +1,23 @@
+.para {
+    text-align: justify;
+    width: 80%;
+    margin: auto;
+}
+
+.experiences{
+    width: 85%;
+    margin: 20px auto;
+}
+
+.experiences span{
+    font-weight: bold;
+}
+
+.image{
+    width: 100%;
+}
+
+.image img{
+    width: 100%;
+    height: 100%;
+}
