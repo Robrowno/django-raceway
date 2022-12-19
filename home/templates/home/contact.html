@@ -13,12 +13,16 @@
 {% block form %}
 <!-- Success message when form is successfully sent to the database -->
 {% if submitted %}
-<div class="container d-flex justify-content-center mx-auto">
+<div class="container-fluid d-flex justify-content-center mx-auto min-vh-100">
   <div class="row">
-    <div class="col alert alert-success"> Your message was successfully sent. Thanks again for getting in touch!
+    <div class="col d-flex align-items-center">
+      <div class="alert alert-success">Your message was successfully sent. Thanks again for getting in touch!
+      </div>
+      <span class="btn btn-dark text-light text-decoration-none"><a href="{% url 'home' %}">Return to Home</a></span>
     </div>
   </div>
 </div>
+
 
 
 {% else %}
@@ -28,12 +32,8 @@
 <form class="requestForm" method="post">
   {% csrf_token %}
   <div class="formRow">
-    <label for="fname">First Name</label>
+    <label for="fname">Full Name</label>
     <input type="text" id="fname" name="fname" required>
-  </div>
-  <div class="formRow">
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lname" required>
   </div>
   <div class="formRow">
     <label for="email">Email</label>
@@ -51,14 +51,8 @@
   </div>
 
   <div class="formRow mb-2">
-    <textarea required
-    class="border-2 border-dark p-2 contactTextarea"
-      name="textarea"
-      id="textarea"
-      cols="30"
-      rows="10"
-      style="resize: none"
-    ></textarea>
+    <textarea required class="border-2 border-dark p-2 contactTextarea" name="textarea" id="textarea" cols="30"
+      rows="10" style="resize: none"></textarea>
   </div>
 
   <div class="w-100 d-flex justify-content-end sendDiv">
