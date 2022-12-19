@@ -13,7 +13,6 @@ QUERY_TYPE = (
 
 class Contact(models.Model):
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=80)
     email = models.EmailField()
     query_type = models.CharField(max_length=11, choices=QUERY_TYPE, default=0)

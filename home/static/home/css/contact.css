@@ -28,7 +28,7 @@
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 1);
 }
 
-.Querry{
+.Query{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -55,7 +55,7 @@
         width: 60%;
     }
 
-    .Querry{
+    .Query{
         width: 80%;
         display: flex;
         justify-content: space-between;
@@ -91,7 +91,7 @@
         width: 70%;
     }
 
-    .Querry{
+    .Query{
         width: 80%;
         display: flex;
         justify-content: space-between;
