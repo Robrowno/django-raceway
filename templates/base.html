@@ -78,12 +78,12 @@
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                <li><a href="" class="dropdown-item">Management</a></li>
+                                <li><a href="#" class="dropdown-item">Management</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
                                 {% endif %}
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
                                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
                                 {% else %}
                                 <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>
@@ -98,8 +98,8 @@
                                 <i class="fas fa-shopping-basket"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Basket</a></li>
-                                <li><a class="dropdown-item" href="#">Checkout</a></li>
+                                <li><a class="dropdown-item" href="{% url 'basket' %}">Basket</a></li>
+                                <li><a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a></li>
                             </ul>
                         </li>
                         
@@ -109,26 +109,30 @@
         </nav>
         <!-- End of Top Navigation -->
     </header>
-
+     
     {% if messages %}
-     <!-- Messages code snippet from Code Institute's Boutique Ado Walkthrough Project-->
+    <!-- Messages code snippet from Code Institute's Boutique Ado Walkthrough Project-->
     <div class="message-container">
-        {% for message in messages %}
-        {% with message.level as level %}
-        {% if level == 40 %}
-        {% include 'includes/toasts/toast_error.html' %}
-        {% elif level == 30 %}
-        {% include 'includes/toasts/toast_warning.html' %}
-        {% elif level == 25 %}
-        {% include 'includes/toasts/toast_success.html' %}
-        {% else %}
-        {% include 'includes/toasts/toast_info.html' %}
-        {% endif %}
-        {% endwith %}
-        {% endfor %}
+      {% for message in messages %}
+          {% with message.level as level %}
+              {% if level == 40 %}
+                  {% include 'includes/toasts/toast_error.html' %}
+              {% elif level == 30 %}
+                  {% include 'includes/toasts/toast_warning.html' %}
+              {% elif level == 25 %}
+                  {% include 'includes/toasts/toast_success.html' %}
+              {% else %}
+                  {% include 'includes/toasts/toast_info.html' %}
+              {% endif %}
+          {% endwith %}
+      {% endfor %}
+      <!-- End of Messages -->
     </div>
-    <!-- End of Messages -->
-    {% endif %}
+  {% endif %}
+
+
+
+
 
     {% block page_header %}
     {% endblock %}
@@ -137,8 +141,18 @@
     {% endblock %}
 
     {% block postloadjs %}
+    <!-- This JS was included thanks to Alan from CI Tutor support (Needed extra code above bootstrap 4 Toasts)-->
     <script type="text/javascript">
-        $('.toast').toast('show');
+    let toastElList = [].slice.call(document.querySelectorAll('.toast'))
+    let toastList = toastElList.map(function (toastEl) {
+    let option = {
+    animation: true,
+    autohide: true,
+    delay: 5000,
+    }
+    let bsToast = new bootstrap.Toast(toastEl, option)
+    bsToast.show();
+    })
     </script>
     {% endblock %}
 

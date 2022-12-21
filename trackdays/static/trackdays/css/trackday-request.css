@@ -20,6 +20,11 @@
     border: 2px solid #000;
 }
 
+.formRow select {
+    width: 50%;
+    margin: 10px 0;
+    border: 2px solid #000;
+}
 
 .submitBtn{
     background-color: rgb(62, 137, 190);

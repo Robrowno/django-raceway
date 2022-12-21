@@ -13,52 +13,64 @@
 <form class="requestForm">
   <div class="formRow">
     <label for="">Organiser</label>
-    <input type="text" />
+    <input type="text" required>
   </div>
 
   <div class="formRow">
     <label for="">Email</label>
-    <input type="text" />
+    <input type="email" required>
   </div>
 
   <div class="formRow">
     <label for="">Phone (Optional)</label>
-    <input type="text" />
+    <input type="tel">
   </div>
 
   <div class="formRow">
     <label for="">Date Request</label>
-    <input type="text" />
+    <input type="date" required>
   </div>
 
   <div class="formRow">
     <label for="">Number of spaces</label>
-    <input type="text" />
+    <input type="number" value="0" min="5" max="50" required>
   </div>
 
   <div class="formRow">
     <label for="">Hospitality packs required?</label>
-    <input type="text" />
+    <select id="" name="">
+      <option value="Option">No</option>
+      <option value="Option">Yes</option>
+    </select>
   </div>
 
   <div class="formRow">
     <label for="">Pitlanes required?</label>
-    <input type="text" />
+    <select id="" name="">
+      <option value="Option">No</option>
+      <option value="Option">Yes</option>
+    </select>
   </div>
 
   <div class="formRow">
     <label for="">Db limit</label>
-    <input type="text" />
+    <input type="text" required>
   </div>
 
   <div class="formRow">
     <label for="">Full or half day?</label>
-    <input type="text" />
+    <select id="" name="">
+      <option value="Option">Half-Day</option>
+      <option value="Option">Full-Day</option>
+    </select>
   </div>
 
   <div class="formRow">
     <label for="">Car hire required?</label>
-    <input type="text" />
+    <select id="" name="">
+      <option value="Option">No</option>
+      <option value="Option">Yes</option>
+    </select>
   </div>
 
   <button type="submit" class="submitBtn mt-3">Submit request</button>

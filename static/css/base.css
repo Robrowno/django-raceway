@@ -96,6 +96,16 @@ body {
 
 /* Gallery Styling End */
 
+/* Toast Styling */
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 50px;
+    z-index: 999999999999;
+}
+
+/* Toast Styling End */
+
 
 /* Footer Styling */
 footer {
