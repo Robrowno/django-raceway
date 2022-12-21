@@ -1,6 +1,7 @@
 from django.db import models
 from cars.models import Cars
-
+import datetime
+from django.core.validators import MinValueValidator
 
 NO = 0
 YES = 1
@@ -29,13 +30,21 @@ class Trackday(models.Model):
     """
 
     layout = models.IntegerField(choices=LAYOUT, default=GP)
-    date = models.DateField(null=False, blank=False)
+    date = models.DateField(null=False, blank=False, default=None, validators=[MinValueValidator(datetime.date.today)])
     db_limit = models.BooleanField(choices=DECIBEL_LIMIT, default=0)
-    car_hire = models.OneToOneField(Cars, on_delete=models.CASCADE, primary_key=True)
+    car_hire = models.OneToOneField(Cars, on_delete=models.CASCADE, primary_key=True, null=False, blank=True)
     base_trackday_price = models.DecimalField(max_digits=7, decimal_places=2)
 
     def __str__(self):
         return str(self.title)
+
+    class Meta:
+        """ Only one combo of Trackday and date permitted"""
+        constraints = [
+            models.UniqueConstraint(
+                fields=['layout', 'date'],
+                name='unique_trackday'),
+        ]
 
 
 class TrackdayBooking(models.Model):
