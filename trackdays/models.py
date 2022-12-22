@@ -39,7 +39,7 @@ class Trackday(models.Model):
         return str(self.title)
 
     class Meta:
-        """ Only one combo of Trackday and date permitted"""
+        """ Only one combo of Trackday and date permitted """
         constraints = [
             models.UniqueConstraint(
                 fields=['layout', 'date'],

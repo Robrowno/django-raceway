@@ -14,25 +14,14 @@
     be selected to suit your preferred driving style and driving characteristics as a result:
 </p>
 
-<div class="car">
-    <img src="/media/996-gt3.jpeg" alt="Picture of a Blue Porsche Sports car">
-    <p> Porsche 996 GT3 </p>
-</div>
+{% for car in cars %}
 
 <div class="car">
-    <img src="/media/ariel-atom-car.jpeg" alt="Ariel Atom Driving on a track">
-    <p>Ariel Atom 3</p>
+    <img src="{{ car.image.url }}" alt="">
+    <p> {{ car.make }} {{ car.model }} {{ car.variant}} </p>
+    <p> {{ car.power }}bhp - {{ car.torque }}nm - {{ car.transmission}} </p>
 </div>
-
-<div class="car">
-    <img src="/media/radical-rapture.jpeg" alt="A Red and Silver Track car">
-    <p>Radical Rapture</p>
-</div>
-
-<div class="car">
-    <img src="/media/renault-megane-rs.jpg" alt="A White Renault driving on track">
-    <p>Renault Megane RS</p>
-</div>
+{% endfor %}
 
 
 {% endblock %}
