@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Trackday, TrackdayBooking, Experiences, Tuition, TrackdayRequest
+from .models import (
+    Trackday, TrackdayBooking, Experiences, Tuition, TrackdayRequest
+    )
 
 # Register your models here.
 

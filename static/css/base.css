@@ -13,6 +13,7 @@ body {
     font-family: 'Secular One', sans-serif;
 }
 
+
 .circles {
     visibility: hidden;
     height: 0;
@@ -45,7 +46,8 @@ body {
 }
 
 .booking-btn:hover {
-    color: #fff;
+    background-color: #fff;
+    color: green;
 }
 
 .booking-btn:active {
@@ -56,15 +58,20 @@ body {
     max-width: 98%;
 }
 
+
+/* Middle Nav Styling */
 .middle-nav {
     border: 2px solid #000;
     border-right: none;
     border-left: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .middle-nav div {
     padding: 5px;
-
 }
 
 .middle-nav div a {
@@ -74,27 +81,143 @@ body {
     font-size: 18px;
 }
 
-.middle-nav ul li a:hover,
 .middle-nav ul li a:visited {
     color: #000;
 }
 
+.middle-nav a:hover {
+    text-decoration: underline;
+}
 
-/* Gallery Styling */
-.img-styling {
+
+
+/**********Gallery Styling***********/
+.gallery h1 {
+    text-align: center;
+}
+
+.gallery-images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-img {
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
     cursor: pointer;
+    transition: 0.6s;
+    margin: 10px;
+    max-width: 100%;
+    width: 300px;
+    max-height: 170px;
+}
+
+.gallery-img:hover {
+    opacity: 0.7;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 100px;
+    background-color: rgba(0, 0, 0, 0.8);
     height: 100%;
     width: 100%;
-    border: #000 solid 5px;
+    overflow: auto;
+    z-index: 1;
+}
+
+#caption {
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    padding: 10px 0;
+}
+
+
+
+.modal-container {
+    position: relative;
+    display: flex;
+    height: 100%;
+    max-height: 500px;
+}
+
+.modalImg {
+    max-width: 100%;
+    width: 700px;
+    margin: auto;
+    display: block;
+    max-height: 500px;
+    border-radius: 10px;
+}
+
+
+.btn {
+    position: absolute;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
     padding: 10px;
 }
 
-.gallery h1 {
-    display: flex;
-    justify-content: center;
+.btn:hover,
+.btn:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+
 }
 
-/* Gallery Styling End */
+.btn.prev {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+}
+
+.btn.next {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10%;
+}
+
+.btn.close {
+    top: 15px;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+
+/* Add Animation */
+.modalImg,
+#caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0.1)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+
+
+
 
 /* Toast Styling */
 .message-container {
