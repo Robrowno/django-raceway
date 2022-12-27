@@ -13,16 +13,16 @@
 {% block form %}
 <!-- Success message when form is successfully sent to the database -->
 {% if submitted %}
-<div class="container-fluid d-flex justify-content-center mx-auto min-vh-100">
+<div class="container min-vh-100">
+
+<div class="container d-flex justify-content-center mx-auto">
   <div class="row">
-    <div class="col d-flex align-items-center">
-      <div class="alert alert-success">Your message was successfully sent. Thanks again for getting in touch!
-      </div>
-      <span class="btn btn-dark text-light text-decoration-none"><a href="{% url 'home' %}">Return to Home</a></span>
-    </div>
+    <div class="col-md-8 col-sm-4 contact-message">Your message was successfully sent. Thanks again for getting in touch!</div>
+    <div class="col-md-4 col-sm-4 go-back-btn"><a id="text-deco-rmv" href="{% url 'home' %}">Return Home</a></div>
   </div>
 </div>
 
+</div>
 
 
 {% else %}
