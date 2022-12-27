@@ -283,10 +283,10 @@ footer .footer-links{
     color: #fff;
 }
 
-/*Footer Styling End*/
+/* Footer Styling End */
 
 
-/*Styling for the Tablet Screens */
+/* Styling for Tablet Screens */
 @media (min-width: 700px) and (max-width: 950px){
 
     .middle-nav {
@@ -325,7 +325,7 @@ footer .footer-links{
     }
 }
 
-/*Styling for the laptop Screens */
+/* Styling for laptop Screens */
 @media (min-width: 950px) {
     .circles {
         visibility: visible;

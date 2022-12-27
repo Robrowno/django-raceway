@@ -21,3 +21,32 @@
     width: 100%;
     height: 100%;
 }
+
+.imgbutton {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+.explore-btn {
+    background-color: orange;
+    color: black;
+}
+
+.explore-btn:hover,
+.explore-btn:focus {
+    color: orange;
+    background-color: black;
+    cursor: pointer;
+}
+
+
+@media all and (max-width:780px) {
+
+    .explore-btn {
+        max-width: 80px;
+        max-height: 40px;
+        font-size: x-small;
+    }
+
+}
