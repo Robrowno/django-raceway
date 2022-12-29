@@ -97,7 +97,9 @@
                                 <span class="badge badge-pill bg-danger">1</span>
                                 <i class="fas fa-shopping-basket"></i>
                             </a>
+                            
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                                <li></li>
                                 <li><a class="dropdown-item" href="{% url 'basket' %}">Basket</a></li>
                                 <li><a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a></li>
                             </ul>
@@ -141,6 +143,7 @@
     {% endblock %}
 
     {% block postloadjs %}
+    
     <!-- This JS was included thanks to Alan from CI Tutor support (Needed extra code above bootstrap 4 Toasts)-->
     <script type="text/javascript">
     let toastElList = [].slice.call(document.querySelectorAll('.toast'))
@@ -167,7 +170,9 @@
             <span>Sign up to our newsletter
                 <a href="#" class="signUpBtn ms-1"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign Up</a></span>
             <!-- Button to return to page top -->
-            <a href="#" class="toTopBtn"><i class="fas fa-arrow-up"></i></a>
+            <a href="#" class="toTopBtn" id="toTopBtn">
+                <i class="fas fa-arrow-up"></i>
+              </a>
         </div>
     </footer>
     <!-- End of Footer -->

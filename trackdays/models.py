@@ -42,7 +42,6 @@ class Trackday(models.Model):
     layout = models.IntegerField(choices=LAYOUT, default=GP)
     date = models.DateField(null=False, blank=False, default=None, validators=[MinValueValidator(datetime.date.today)])
     db_limit = models.BooleanField(choices=DECIBEL_LIMIT, default=0)
-    car_hire = models.OneToOneField(Cars, on_delete=models.CASCADE, primary_key=True, null=False, blank=True)
     base_trackday_price = models.DecimalField(max_digits=7, decimal_places=2)
 
     def __str__(self):
@@ -63,6 +62,7 @@ class TrackdayBooking(models.Model):
     For handling specific track day orders and their optional extras
     """
     trackday = models.ForeignKey(Trackday, on_delete=models.CASCADE)
+    car_hire = models.OneToOneField(Cars, on_delete=models.CASCADE, primary_key=True, null=False, blank=True)
     full_or_half_day = models.BooleanField(choices=HALF_OR_FULL_DAY, default=0)
     additional_drivers = models.BooleanField(choices=CHOICES, default=NO)
     helmet_hire = models.BooleanField(choices=CHOICES, default=NO)
