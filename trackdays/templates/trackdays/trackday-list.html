@@ -43,11 +43,11 @@
             {% for trackday in trackdays%}
             <tr>
                 <td>{{ trackday.date }}</td>
-                <td>{{ trackday.layout }}</td>
-                <td>{{ trackday.db_limit }}</td>
+                <td>{{ trackday.get_layout_display }}</td>
+                <td>{{ trackday.get_db_limit_display }}</td>
                 <td>{{ trackday.availability }}</td>
                 <td class="remain"><span>£{{ trackday.base_trackday_price }}</span></td>
-                <td><button class="book-btn">Book</button></td>
+                <td><a href="#"><button class="book-btn">Book</button></a></td>
             </tr>
             {% endfor %}
         </tr>
