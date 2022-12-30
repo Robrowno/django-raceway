@@ -40,6 +40,7 @@ class Trackday(models.Model):
     """
 
     layout = models.IntegerField(choices=LAYOUT, default=GP)
+    layout_image = models.ImageField(blank=True, null=True)
     date = models.DateField(null=False, blank=False, default=None, validators=[MinValueValidator(datetime.date.today)])
     db_limit = models.BooleanField(choices=DECIBEL_LIMIT, default=0)
     availability = models.IntegerField(default=30)
@@ -48,7 +49,6 @@ class Trackday(models.Model):
     def __str__(self):
         return str(f'{self.layout} trackday on {self.date}')
 
-    class Meta:
         """ Only one combo of Trackday and date permitted """
         constraints = [
             models.UniqueConstraint(
