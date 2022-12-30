@@ -8,13 +8,14 @@
 {% block content %}
 
 <h2 class="m-3 text-center">Experiences:</h2>
-
+<!-- Experience Intro -->
 <p class="para">
   We have 4 bespoke packages to offer to customers who would like to have a closed circuit experience with a specific driving theme. The packages feature a unique set of cars
   tailored to your interests. Many cars here cannot be hired for track days outside of these packages, so it is a unique opportunity to feel the thrill of these amazing machines!
 </p>
 
 {% for experience in experiences %}
+<!-- Iterates through a list of experience packages -->
 <div class="container">
     <div class="experiences row">
         <span>{{ experience.title }}</span>
@@ -24,7 +25,8 @@
         </div>
         {% endif %}
         <div class="imgbutton">
-            <a class="btn explore-btn col" href="{% url 'exp_detail' experience.pk %}" role="button">Explore</a>
+            <!-- Link to Experience Details Page-->
+            <a class="btn explore-btn col" href="{% url 'exp_detail' experience.id %}" role="button">Explore</a>
         </div>
     </div>
 </div>

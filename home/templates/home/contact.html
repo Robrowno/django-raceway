@@ -28,7 +28,7 @@
 {% else %}
 
 <p class="m-3 text-center">Get a question? Get in touch!</p>
-
+<!-- Contact Form -->
 <form class="requestForm" method="post">
   {% csrf_token %}
   <div class="formRow">
@@ -54,7 +54,7 @@
     <textarea required class="border-2 border-dark p-2 contactTextarea" name="textarea" id="textarea" cols="30"
       rows="10" style="resize: none"></textarea>
   </div>
-
+<!-- Submit Button -->
   <div class="w-100 d-flex justify-content-end sendDiv">
     <button type="submit" class="sendBtn">Send</button>
   </div>

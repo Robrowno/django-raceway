@@ -60,14 +60,14 @@ def experiences(request):
     return render(request, 'trackdays/experiences.html', context)
 
 
-def experiences_detail(request, pk):
+def experiences_detail(request, experience_id):
     """
     View to render the experiences detail page.
     """
-    experiences = Experiences.objects.get(id=pk)
+    experience = get_object_or_404(Experiences, pk=experience_id)
 
     context = {
-        "experiences": experiences,
+        "experience": experience,
     }
 
     return render(request, 'trackdays/experience-detail.html', context)
