@@ -42,6 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+     # other
+    'storages',
+    "crispy_forms",
+    "crispy_bootstrap5",
+    'django_summernote',
     # allauth
     'allauth',
     'allauth.account',
@@ -52,9 +57,15 @@ INSTALLED_APPS = [
     'cars',
     'profiles',
     'checkout',
-    # other
-    'storages',
+   
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+SUMMERNOTE_THEME = 'bs5'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -86,6 +97,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 

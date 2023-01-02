@@ -1,10 +1,16 @@
 {% extends "account/base.html" %}
 
 {% load i18n %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
 
 {% block head_title %}{% trans "E-mail Addresses" %}{% endblock %}
 
 {% block content %}
+<div class="container min-vh-100">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 text-center mt-5">
+
     <h1>{% trans "E-mail Addresses" %}</h1>
 {% if user.emailaddress_set.all %}
 <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
@@ -49,10 +55,15 @@
 
     <form method="post" action="{% url 'account_email' %}" class="add_email">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         <button name="action_add" type="submit">{% trans "Add E-mail" %}</button>
     </form>
   {% endif %}
+
+  </div>
+  </div>
+  </div>
+  
 
 {% endblock %}
 
