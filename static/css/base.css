@@ -13,6 +13,7 @@ body {
     font-family: 'Secular One', sans-serif;
 }
 
+
 /* Traffic Light circles and Book A Trackday button */
 .circles {
     visibility: hidden;
@@ -163,7 +164,7 @@ body {
 }
 
 
-.btn {
+.buttons {
     position: absolute;
     color: #f1f1f1;
     font-size: 40px;
@@ -172,27 +173,27 @@ body {
     padding: 10px;
 }
 
-.btn:hover,
-.btn:focus {
+.buttons:hover,
+.buttons:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
 
 }
 
-.btn.prev {
+.buttons.prev {
     top: 50%;
     transform: translateY(-50%);
     left: 10%;
 }
 
-.btn.next {
+.buttons.next {
     top: 50%;
     transform: translateY(-50%);
     right: 10%;
 }
 
-.btn.close {
+.buttons.close {
     top: 15px;
     right: 50%;
     transform: translateX(50%);
@@ -225,6 +226,11 @@ body {
     right: 50px;
     z-index: 999999999999;
 }
+
+.toast:not(.showing):not(.show) {
+    opacity: unset;
+}
+
 
 /* Toast Styling End */
 

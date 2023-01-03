@@ -1,14 +1,13 @@
-<div aria-live="polite" aria-atomic="true" class="position-relative">
-    
-    <div class="toast-container position-absolute top-0 end-0 p-3">
-  
-      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header bg-danger text-dark">
-            <i class="fas fa-times"></i>
-          <strong class="me-auto">Error!</strong>
-          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-            {{ message }}
-        </div>
-      </div>
+<!-- Error Message Toast -->
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+  <!-- Toast Header -->
+  <div class="toast-header bg-danger text-dark">
+    <i class="fas fa-times"></i>
+  <strong class="me-auto">Error!</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    <!-- Toast message -->
+   {{ message }}
+  </div>
+</div>

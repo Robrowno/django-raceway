@@ -7,13 +7,14 @@
 
 
 {% block content %}
+{% include 'includes/main-nav.html' %}
 
 <h2 class="m-3 text-center">Contact</h2>
 
 {% block form %}
 <!-- Success message when form is successfully sent to the database -->
 {% if submitted %}
-<div class="container min-vh-100">
+<div class="container min-vh-100 ">
 
 <div class="container d-flex justify-content-center mx-auto">
   <div class="row">
