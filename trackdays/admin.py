@@ -45,10 +45,11 @@ class ExperiencesAdmin(SummernoteModelAdmin):
 
 
 @admin.register(Tuition)
-class TuitionAdmin(admin.ModelAdmin):
+class TuitionAdmin(SummernoteModelAdmin):
 
     """
     Admin Page for the Tuition model
     """
 
     list_display = ('title', 'level')
+    summernote_fields = ('itinerary', 'description')

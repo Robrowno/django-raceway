@@ -1,30 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'trackdays/css/exp_detail.css' %}">
-{% endblock %}
 
 {% block content %}
 {% include 'includes/main-nav.html' %}
-<h2 class="text-center mt-4">Experience Detail:</h2>
+<h2 class="text-center mt-4">Tuition Detail:</h2>
 
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 col-lg-8 offset-lg-2">
             <div class="card mb-3">
-                <img class="card-img-top" src="{{ experience.image.url }}" alt="" accept="image/*">
+                <img class="card-img-top" src="{{ tuition.large_image.url }}" alt="" accept="image/*">
                 <div class="card-body mx-auto">
-                    <p>{{ experience.title }}</p>
-                    <p>{{ experience.description }}</p>
-                    <p>{{ experience.itinerary | safe }}</p>
+                    <p>{{ tuition.title}}</p>
+                    <p>{{ tuition.description | safe }}</p>
+                    <p>{{ tuition.itinerary | safe}}</p>
                 </div>
                 <div class="card-footer border-success d-flex">
-                    <div class="p-2 flex-grow-1 bd-highlight d-flex align-items-center">Price: £{{ experience.price }}</div>
+                    <div class="p-2 flex-grow-1 bd-highlight d-flex align-items-center">Price: £{{ tuition.price }}</div>
                     <div class="p-2 bd-highlight">
                         <a id="book" class="btn btn-success btn-sm" href="#">
-                            Book the {{ experience.title }}
+                            Book the {{ tuition.title }}
                         </a>
                     </div>
                     
