@@ -290,9 +290,40 @@ footer .footer-links{
 
 /* Footer Styling End */
 
+/* Styling just for nav icons on smaller screens */
+@media (min-width: 250px) and (max-width: 991px){
+
+    #profile-icon {
+        max-width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #basket-icon {
+        max-width: 90%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-item {
+        padding-left: 20%;
+    }
+
+    .dropdown-menu {
+        max-width: 90%;
+    }
+
+}
+
 
 /* Styling for Tablet Screens */
 @media (min-width: 500px) and (max-width: 850px){
+
+    .nav-item {
+        padding-left: 15%;
+    }
+    
 
     #banner {
         font-size: 24px;

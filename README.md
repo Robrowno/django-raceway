@@ -86,7 +86,11 @@ The following from the documentation helped me:
     - [MD Bootstrap Navbar docs](https://mdbootstrap.com/docs/standard/navigation/navbar/#subsection-icons)
 - Carousel:
     - [Bootstrap Carousel docs](https://getbootstrap.com/docs/5.0/components/carousel/)
+- Cards: 
+    - [Bootstrap Cards](https://getbootstrap.com/docs/5.0/components/card/)
 
+
+For general Bootstrap tips and information, I frequently referred to the [GetBootstrap](https://getbootstrap.com/) documentation, the [mdbootstrap](https://mdbootstrap.com/docs/) documentation and the [W3Schools](https://www.w3schools.com/bootstrap5/index.php) bootstrap documentation.
 
 Favicons were generated on [Favicon.io](https://favicon.io/favicon-converter/) - I converted one of the checkered flag images I have (see images below) into a favicon using their site.
 
@@ -96,6 +100,8 @@ All icons used in this project have come from here.
 Validator code for preventing previous dates from being set for creating trackdays found on stackoverflow: [Prevent past dates being set](https://stackoverflow.com/questions/4941974/django-how-to-set-datefield-to-only-accept-today-future-dates)
 
 I found the code for storing phone numbers in my models from stackoverflow as well: [Phone Number Validator](https://stackoverflow.com/questions/19130942/whats-the-best-way-to-store-a-phone-number-in-django-models)
+
+I made a mock up of my checkout page using the template provided by [mdboostrap](https://mdbootstrap.com/docs/standard/extended/credit-card/) - With this I was better able to visualise what I needed in my checkout page and how I wanted it to look.
 
 
 ## Personal Credits
@@ -131,6 +137,8 @@ I found the code for storing phone numbers in my models from stackoverflow as we
     - [Porsche 996 GT3](https://www.elferspot.com/en/magazin/five-good-reasons-for-a-porsche-996-gt3/)
     - [Renault Megane RS](https://www.topgear.com/car-news/hot-hatch/these-are-12-best-hot-hatches-all-time)
     - [Radical Rapture](https://www.topgear.com/car-news/motorsport/new-radical-sr10-425bhp-turbocharged-track-toy)
+    - [Lotus Image](https://www.evo.co.uk/lotus/exige/6226/lotus-exige-s2-buying-guide)
+    - [Nissan GTR Image](https://www.carmagazine.co.uk/car-reviews/nissan/nissan-gt-r-track-edition-engineered-by-nismo-2016-review/)
 - Experiences page images:
     - [Junior Experience image](https://www.roadandtrack.com/news/a35090134/toyota-gr-yaris-vs-civic-type-r-gti-fiesta-st/)
     - [Single Seater picture](https://driftlimits.co.uk/experience/f1000-thrill-experience/)
