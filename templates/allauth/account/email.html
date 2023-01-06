@@ -9,9 +9,9 @@
 {% block content %}
 <div class="container min-vh-100">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3 text-center mt-5">
+    <div class="col-sm-6 col-sm-offset-3 text-center mt-5 card">
 
-    <h1>{% trans "E-mail Addresses" %}</h1>
+    <h1 class="mt-1">{% trans "E-mail Addresses" %}</h1>
 {% if user.emailaddress_set.all %}
 <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
 
