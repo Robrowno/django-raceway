@@ -16,7 +16,7 @@ def basket_contents(request):
 
     for trackday, quantity in basket.items():
         trackday = get_object_or_404(Trackday, pk=trackday_id)
-        total += quantity * product.price
+        total += quantity * trackday.price
         product_count += quantity
         basket_contents.append({
             'trackday_id': trackday_id,
@@ -26,7 +26,7 @@ def basket_contents(request):
 
     for experience, quantity in basket.items():
         experience = get_object_or_404(experience, pk=experience_id)
-        total += quantity * product.price
+        total += quantity * experience.price
         product_count += quantity
         basket_contents.append({
             'experience_id': experience_id,
@@ -36,7 +36,7 @@ def basket_contents(request):
 
     for tuition, quantity in basket.items():
         tuition = get_object_or_404(Tuition, pk=tuition_id)
-        total += quantity * product.price
+        total += quantity * tuition.price
         product_count += quantity
         basket_contents.append({
             'tuition_id': tuition_id,
