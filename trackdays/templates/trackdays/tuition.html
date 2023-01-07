@@ -29,9 +29,9 @@
       <!-- Tuition Level-->
       <h4>{{ item.get_level_display }}</h4>
       <!-- Both Tuition Images-->
-        <img class="image img-small" src="{{ item.small_image.url }}" alt="{{ item.get_level_display }} Trophy">
-        <img class="image img-large" src="{{ item.large_image.url }}" alt="A racing driver about to get in to his car">
-        <div class="imgbutton">
+      <img class="image img-small" src="{{ item.small_image.url }}" alt="{{ item.get_level_display }} Trophy">
+      <div class="imgbutton">
+        <img class="w-100 h-100" src="{{ item.large_image.url }}" alt="A racing driver about to get in to his car">
           <!-- Button link to details page -->
           <a class="btn explore-btn col" href="{% url 'tuition_detail' item.id %}" role="button">Explore</a>
         </div>
