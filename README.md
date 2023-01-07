@@ -117,6 +117,8 @@ I made a mock up of my checkout page using the template provided by [mdboostrap]
 - Ed from Tutor Support - Also a member of the London C.I group, he helped me when I wasn't able to extract string values from my model choices. He introducted me to the get_FOO_display() method from the Django Docs, which did exactly what I was looking for. Thanks Ed!
 
 - Scott from Tutor Support - Helped me with a bug with my add to basket functionality and explained why it was going wrong when he found it out himself. He is incredibly patient and kind and taught me a lot about dictionaries! Thanks Scott!
+
+
 ### Media/Images:
 - Checkered Flags from Clipartmax: [Flag1](https://www.clipartmax.com/middle/m2H7d3N4d3i8d3i8_checkered-flag-icon-clipart-auto-racing-racing-flags-finish-flag-icon-png/), [Flag2](https://www.clipartmax.com/middle/m2i8G6Z5H7d3A0G6_finish-flag-race-racing-win-winner-finish-checkered-flag-icon-png/)
 
