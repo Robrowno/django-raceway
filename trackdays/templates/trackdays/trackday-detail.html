@@ -1,40 +1,130 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'trackdays/css/booking-detail.css' %}">
+{% endblock %}
+
 {% block content %}
 {% include 'includes/main-nav.html' %}
-<h2 class="text-center mt-4">Track Day Detail:</h2>
+<div class="heading">
+    <a class="backBtn mt-4" href="{% url 'trackdays' %}" >Back to Track Days</a>
+    <h2 class="text-center mt-4">Track Day Detail:</h2>
+
+  </div>
+
 
 <!-- Track day Information Card-->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 col-lg-8 offset-lg-2">
             <div class="card mb-3">
-                <img src="{{ trackday.layout_image.url }}" class="card-img-top" alt="{{ trackday.get_layout_display}} Circuit Map">
+                <img src="{{ trackday.layout_image.url }}" class="card-img-top"
+                    alt="{{ trackday.get_layout_display}} Circuit Map">
                 <div class="card-body mx-auto">
-                  <h5 class="card-title">{{ trackday.get_layout_display }} Circuit - {{ trackday.date }}</h5>
-                  <p class="card-text">{{ trackday.get_db_limit_display }} noise limit</p>
-                  <p class="card-text">Base Price: £{{ trackday.base_trackday_price }}</p>
-                  <p class="card-text">Currently there are {{ trackday.availability }} spaces left</p>
+                    <h5 class="card-title">{{ trackday.get_layout_display }} Circuit - {{ trackday.date }}</h5>
+                    <p class="card-text">{{ trackday.get_db_limit_display }} noise limit</p>
+                    <p class="card-text">Base Price: £{{ trackday.base_trackday_price }}</p>
+                    <p class="card-text">Currently there are {{ trackday.availability }} spaces left</p>
                 </div>
-              </div>
+            </div>
         </div>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-8 mx-auto card min-vh-100">
-            <h6 class="text-center"> Select any additional items you wish to add on to your track day below:</h6>
+        <div class="container-fluid mb-2">
+            <div class="row">
+                <div class="col-lg-8 mx-auto card">
+                    <h6 class="text-center"> Select any additional items you wish to add on to your track day below:
+                    </h6>
 
-            <!-- Track Day Booking Form will go here-->
+                    <!-- Track Day Booking Form will go here-->
+
+                    <form class="requestForm">
+                        {% csrf_token %}
+                        <div class="formRow">
+                            <label for="" class="label">Full or Half Day:</label>
+
+                            <div class="choice">
+                                <label for="halfDay" class="me-3 text-center">
+                                    <input type="radio" name="fullHalfDay" id="halfDay" />
+                                    Half Day - £{% widthratio trackday.base_trackday_price 2 1 %}
+                                </label>
+
+                                <label for="fullDay" class="text-center">
+                                    <input type="radio" name="fullHalfDay" id="fullDay" />
+                                    Full Day - £{{ trackday.base_trackday_price }}
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="formRow">
+                            <label for="" class="label">Paddock Hire:</label>
+
+                            <div class="choice">
+                                <label for="pitlane" class="me-3 text-center">
+                                    <input type="radio" name="paddockHire" id="pitlane" />
+                                    Pitlane Paddock - $£50
+                                </label>
+
+                                <label for="standard" class="text-center">
+                                    <input type="radio" name="paddockHire" id="standard" />
+                                    Standard Paddock - £0
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="formRow">
+                            <label for="" class="label">Car Hire:</label>
+
+                            <div class="choice">
+                                <select name="" id="" class="border-2 border-dark me-5">
+                                    <option value="car1">Car 1</option>
+                                    <option value="car2">Car 2</option>
+                                    <option value="car3">Car 3</option>
+                                </select>
+                                <label for="" class="text-center">- Or bring your own car!</label>
+                            </div>
+                        </div>
+
+                        <div class="formRow">
+                            <label for="" class="label">Additional Drivers:</label>
+
+                            <div class="choice">
+                                <input class="border-2 border-dark me-3" type="number" name="" id="" min="0" max="4" />
+                                <label for="" class="text-center">- £10 per person</label>
+                            </div>
+                        </div>
+
+                        <div class="formRow">
+                            <label for="" class="label">Helmet Hire:</label>
+
+                            <div class="choice">
+                                <input class="border-2 border-dark me-3" type="number" name="" id="" min="0" max="4" />
+                                <label for="" class="text-center">- £10 per person</label>
+                            </div>
+                        </div>
+
+                        <div class="formRow">
+                            <label for="" class="label">Tuition:</label>
+
+                            <div class="choice">
+                                <input class="border-2 border-dark me-3" type="number" name="" id="" min="0" max="4" />
+                                <label for="">- £25 per person</label>
+                            </div>
+                        </div>
+
+                        <div class="btns">
+                            <button class="addToBasketBtn">Add to Basket</button>
+                            <button class="checkoutBtn">Checkout</button>
+                        </div>
+                    </form>
 
 
 
-
-            <!-- On submit, the order is stored in the users basket until they are ready to checkout-->
+                    <!-- On submit, the order is stored in the users basket until they are ready to checkout-->
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
 
 
-{% endblock %}
+        {% endblock %}

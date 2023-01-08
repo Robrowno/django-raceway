@@ -2,6 +2,7 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from trackdays.models import Trackday, Tuition, Experiences
+import datetime
 
 
 def basket_contents(request):
@@ -14,10 +15,10 @@ def basket_contents(request):
     basket_contents = []
     total = 0
     product_count = 0
+    current_datetime = datetime.datetime.now()
     basket = request.session.get(
         'basket', {'experience': {}, 'tuition': {}, 'trackday': {}}
         )
-    print(f"Basket: {basket}")
 
     if 'trackday' in basket:
         for trackday, quantity in basket['trackday'].items():
@@ -27,7 +28,6 @@ def basket_contents(request):
             basket_contents.append({
                 'trackday': trackday,
                 'quantity': quantity,
-
             })
 
     if 'experience' in basket:
@@ -38,6 +38,7 @@ def basket_contents(request):
             basket_contents.append({
                 'quantity': quantity,
                 'experience': experience,
+                'date': current_datetime,
             })
 
     if 'tuition' in basket:
@@ -48,6 +49,7 @@ def basket_contents(request):
             basket_contents.append({
                 'tuition': tuition,
                 'quantity': quantity,
+                'date': current_datetime,
             })
 
     context = {

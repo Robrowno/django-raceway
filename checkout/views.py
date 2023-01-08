@@ -16,7 +16,6 @@ def add_exp_to_basket(request, experience_id):
     """
     For adding an experience package to the basket.
     """
-    # experience = Experiences.objects.get(pk=experience_id)
     experience = get_object_or_404(Experiences, pk=experience_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -29,7 +28,6 @@ def add_exp_to_basket(request, experience_id):
         basket['experience'][experience_id] = quantity
 
     request.session['basket'] = basket
-    print(request.session['basket'])
     return redirect(redirect_url)
 
 
@@ -49,7 +47,6 @@ def add_tuition_to_basket(request, tuition_id):
         basket['tuition'][tuition_id] = quantity
 
     request.session['basket'] = basket
-    print(request.session['basket'])
     return redirect(redirect_url)
 
 

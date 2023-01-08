@@ -25,42 +25,45 @@
 
             <div class="row">
               <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                <!-- Image -->
-                <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                  <img src="/media/circuit-indy-layout.png" class="w-100" alt=""/>
-                </div>
               </div>
               <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
 
-                {{ basket_contents }}
 
               </div>
-              <!-- <div style="overflow-x:auto;" class="trackDayTable">
+              <div style="overflow-x:auto;" class="trackDayTable">
                   <table class="table table-hover">
                       <tr>
+                          <th></th>
                           <th>Order</th>
                           <th>Order Number</th>
                           <th>Date</th>
+                          <th>Quantity</th>
                           <th>Price</th>
-                          <tr>
-                              <td>Trackday</td>
-                              <td>Order Number</td>
-                              <td>Date</td>
-                              <td>Price</td>
-                             
+                          <th></th>
+                          {% for item in basket_contents %}
+                          <tr> 
+                            <td> <img src="{{ item.experience.image.url }}" class="w-50" alt=""/></td>
+                              <td>{{ item.experience.title }}</td>
+                              <td></td>
+                              <td>{{ item.experience.date }}</td>
+                              <td>{{ item.quantity}}</td>
+                              <td>{{ item.experience.price }}</td>
+                              <td><a class="btn btn-warning">Edit</a>
+                                <div class="btn btn-danger">Delete</div></td>
                           </tr>
+                          {% endfor %}
                       </tr>
                   </table>
-              </div> -->
+              </div>
               <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 text-end">
                 <div class="d-flex mb-1" style="max-width: 300px">
+                  
                 </div>
 
                 <div>
                   <!-- If Trackday booking, both Edit & Delete
                   Otherwise, just delete button -->
-                  <a class="btn btn-warning">Edit</a>
-                  <div class="btn btn-danger">Delete</div>
+                  
                 </div>
 
               </div>
