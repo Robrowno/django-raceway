@@ -10,73 +10,78 @@
 
 <h2 class="mt-3 text-center">Request a Trackday</h2>
 <!-- Track day request form -->
+{% block form %}
 
-<form class="requestForm">
+
+<form class="requestForm" method="post" action="{% url 'request' %}">
+  {% csrf_token %}
   <div class="formRow">
-    <label for="">Organiser</label>
-    <input type="text" required>
+    <label for="organiser">Organiser</label>
+    <input type="text" id="organiser" name="organiser" required>
   </div>
 
   <div class="formRow">
-    <label for="">Email</label>
-    <input type="email" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
   </div>
 
   <div class="formRow">
-    <label for="">Phone (Optional)</label>
-    <input type="tel">
+    <label for="tel">Phone (Optional)</label>
+    <input type="tel" id="tel" name="tel">
   </div>
 
   <div class="formRow">
-    <label for="">Date Request</label>
-    <input type="date" required>
+    <label for="date">Date Request</label>
+    <input type="date" id="date" name="date" required>
   </div>
 
   <div class="formRow">
-    <label for="">Number of spaces</label>
-    <input type="number" value="0" min="5" max="50" required>
+    <label for="num_spaces">Number of spaces</label>
+    <input type="number" value="0" min="5" max="50" id="num_spaces" name="num_spaces" required>
   </div>
 
   <div class="formRow">
-    <label for="">Hospitality packs required?</label>
-    <select id="" name="">
-      <option value="Option">No</option>
-      <option value="Option">Yes</option>
+    <label for="hosp_req">Hospitality packs required?</label>
+    <select id="hosp_req" name="hosp_req">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
     </select>
   </div>
 
   <div class="formRow">
-    <label for="">Pitlanes required?</label>
-    <select id="" name="">
-      <option value="Option">No</option>
-      <option value="Option">Yes</option>
+    <label for="pitlanes">Pitlanes required?</label>
+    <select id="pitlanes" name="pitlanes">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
     </select>
   </div>
 
   <div class="formRow">
-    <label for="">Db limit</label>
-    <input type="text" required>
-  </div>
-
-  <div class="formRow">
-    <label for="">Full or half day?</label>
-    <select id="" name="">
-      <option value="Option">Half-Day</option>
-      <option value="Option">Full-Day</option>
+    <label for="db_limit">Db limit</label>
+    <select id="db_limit" name="db_limit">
+      <option value="0">98db</option>
+      <option value="1">105bd</option>
     </select>
   </div>
 
   <div class="formRow">
-    <label for="">Car hire required?</label>
-    <select id="" name="">
-      <option value="Option">No</option>
-      <option value="Option">Yes</option>
+    <label for="fullorhalf">Full or half day?</label>
+    <select id="fullorhalf" name="fullorhalf">
+      <option value="0">Half-Day</option>
+      <option value="1">Full-Day</option>
+    </select>
+  </div>
+
+  <div class="formRow">
+    <label for="carhire">Car hire required?</label>
+    <select id="carhire" name="carhire">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
     </select>
   </div>
 
   <button type="submit" class="submitBtn mt-3">Submit request</button>
 </form>
 
-
-
+{% endblock form %}
 {% endblock %}

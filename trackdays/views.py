@@ -1,5 +1,8 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Experiences, Trackday, TrackdayBooking, Tuition
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import (
+    Experiences, Trackday, TrackdayRequest, TrackdayBooking, Tuition
+    )
+from django.contrib import messages
 
 # Create your views here.
 
@@ -35,7 +38,30 @@ def track_day_request(request):
     View to render the track day request page.
     """
 
-    return render(request, 'trackdays/trackday-request.html')
+    if request.method == 'POST':
+        trackday_req = TrackdayRequest()
+        trackday_req.organiser = request.POST.get('organiser')
+        trackday_req.email = request.POST.get('email')
+        trackday_req.phone_number = request.POST.get('tel')
+        trackday_req.date_request = request.POST.get('date')
+        trackday_req.full_or_half_day = request.POST.get('fullorhalf')
+        trackday_req.number_of_spaces = request.POST.get('num_spaces')
+        trackday_req.hospitality = request.POST.get('hosp_req')
+        trackday_req.pitlanes = request.POST.get('pitlanes')
+        trackday_req.db_limit = request.POST.get('db_limit')
+        trackday_req.car_hire_required = request.POST.get('carhire')
+        trackday_req.save()
+        messages.success(request, 'Your Track Day request was succesfully sent!')
+        return redirect('home')
+
+    else:
+        trackday_req = TrackdayRequest()
+
+    context = {
+        'trackday_req': trackday_req,
+    }
+
+    return render(request, 'trackdays/trackday-request.html', context)
 
 
 def tuition(request):

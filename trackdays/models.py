@@ -64,12 +64,12 @@ class TrackdayBooking(models.Model):
     """
     trackday = models.ForeignKey(Trackday, on_delete=models.CASCADE)
     car_hire = models.OneToOneField(Cars, on_delete=models.CASCADE, primary_key=True, null=False, blank=True)
-    full_or_half_day = models.BooleanField(choices=HALF_OR_FULL_DAY, default=0)
+    full_or_half_day = models.IntegerField(choices=HALF_OR_FULL_DAY, default=0)
     additional_drivers = models.PositiveIntegerField(default=0)
     helmet_hire = models.PositiveIntegerField(default=0)
     tuition = models.PositiveIntegerField(default=0)
-    hospitality_packs = models.BooleanField(choices=CHOICES, default=NO)
-    paddock_hire = models.BooleanField(choices=CHOICES, default=NO)
+    hospitality_packs = models.IntegerField(choices=CHOICES, default=NO)
+    paddock_hire = models.IntegerField(choices=CHOICES, default=NO)
 
     def __str__(self):
         return str(f'{self.trackday} booking has been made')
@@ -93,12 +93,12 @@ class TrackdayRequest(models.Model):
         validators=[phone_regex], max_length=17, blank=True
         )
     date_request = models.DateField(null=True, blank=True)
-    full_or_half_day = models.BooleanField(choices=HALF_OR_FULL_DAY, default=0)
+    full_or_half_day = models.IntegerField(choices=HALF_OR_FULL_DAY, default=0)
     number_of_spaces = models.IntegerField(null=True, blank=True)
-    hospitality = models.BooleanField(choices=CHOICES, default=NO)
-    pitlanes = models.BooleanField(choices=CHOICES, default=NO)
-    db_limit = models.BooleanField(choices=DECIBEL_LIMIT, default=0)
-    car_hire_required = models.BooleanField(choices=CHOICES, default=NO)
+    hospitality = models.IntegerField(choices=CHOICES, default=NO)
+    pitlanes = models.IntegerField(choices=CHOICES, default=NO)
+    db_limit = models.IntegerField(choices=DECIBEL_LIMIT, default=0)
+    car_hire_required = models.IntegerField(choices=CHOICES, default=NO)
 
 
 class Experiences(models.Model):
