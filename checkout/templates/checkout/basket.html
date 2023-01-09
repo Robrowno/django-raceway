@@ -17,6 +17,7 @@
       <div class="col-md-8">
         <div class="card mb-4">
           <div class="card-header py-3">
+            <!-- Cart Counter -->
             <h5 class="mb-0">Cart - {% if product_count == 1 %} {{ product_count }} item {% else %} {{ product_count }} items {% endif %}</h5>
           </div>
           <div class="card-body">
@@ -32,25 +33,89 @@
               </div>
               <div style="overflow-x:auto;" class="trackDayTable">
                   <table class="table table-hover">
+                    <!-- Order Table -->
                       <tr>
                           <th></th>
                           <th>Order</th>
-                          <th>Order Number</th>
-                          <th>Date</th>
                           <th>Quantity</th>
                           <th>Price</th>
                           <th></th>
                           {% for item in basket_contents %}
+                          <!-- Table data for experiences -->
+                            {% if item.experience %}
                           <tr> 
-                            <td> <img src="{{ item.experience.image.url }}" class="w-50" alt=""/></td>
+                            <td class="basket-img"> <img src="{{ item.experience.image.url }}" class="w-50" alt=""/></td>
                               <td>{{ item.experience.title }}</td>
-                              <td></td>
-                              <td>{{ item.experience.date }}</td>
-                              <td>{{ item.quantity}}</td>
+                              <td>
+                                <!-- Quantity Update form -->
+                                <form class="form form-update" method="post" action="{% url 'adjust' item.experience.id %}">
+                                  {%csrf_token %}
+                                  <div class="input-group d-flex justify-content-between">
+                                    <button class="increment-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.item_id  }}"
+                                        id="increment-qty_{{ item.item_id  }}">
+                                        <span>
+                                            <i class="fas fa-plus fa-sm quantity-icon"></i>
+                                        </span>
+                                    </button>
+    
+                                    <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="10"
+                                        data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id  }}">
+                                        
+                                    <button class="decrement-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.item_id  }}"
+                                        id="decrement-qty_{{ item.item_id  }}">
+                                        <span>
+                                            <i class="fas fa-minus fa-sm quantity-icon"></i>
+                                        </span>
+                                    </button>
+    
+                                </div>
+                            </div>
+                                </form>
+                                <a class="btn btn-warning update-link">Update</a>
+                              </td>
                               <td>{{ item.experience.price }}</td>
-                              <td><a class="btn btn-warning">Edit</a>
-                                <div class="btn btn-danger">Delete</div></td>
+                              <td>
+                                <a class="btn btn-danger remove-link" id="remove_{{ item.item_id }}">Delete</a>
+                              </td>
                           </tr>
+                          {% endif %}
+
+                          {% if item.tuition %}
+                          <!-- Table data for tuition packages -->
+                          <tr> 
+                            <td class="basket-img"> <img src="{{ item.tuition.large_image.url }}" class="w-50" alt=""/></td>
+                              <td>{{ item.tuition.title }}</td>
+                              <td>
+                                <!-- Quantity Update form -->
+                                <form class="form form-update" method="post" action="">
+                                  {%csrf_token %}
+                                  <div class="input-group d-flex justify-content-between form-update">
+                                    <button class="increment-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.item_id  }}"
+                                        id="increment-qty_{{ item.item_id  }}">
+                                        <span>
+                                            <i class="fas fa-plus fa-sm quantity-icon"></i>
+                                        </span>
+                                    </button>
+    
+                                    <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="10"
+                                        data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id  }}">
+                                        
+                                    <button class="decrement-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.item_id  }}"
+                                        id="decrement-qty_{{ item.item_id  }}">
+                                        <span>
+                                            <i class="fas fa-minus fa-sm quantity-icon"></i>
+                                        </span>
+                                    </button>
+    
+                                </div>
+                            </div>
+                                </form>
+                              <a class="btn btn-warning update-link">Update</a>
+                              <td>{{ item.tuition.price }}</td>
+                              <td>
+                                <a class="btn btn-danger remove-link" id="remove_{{ item.item_id }}">Delete</a></td>
+                          </tr>
+                          {% endif %}
                           {% endfor %}
                       </tr>
                   </table>
@@ -60,11 +125,6 @@
                   
                 </div>
 
-                <div>
-                  <!-- If Trackday booking, both Edit & Delete
-                  Otherwise, just delete button -->
-                  
-                </div>
 
               </div>
             </div>
@@ -72,28 +132,14 @@
             <!-- Horizontal Rule-->
             <hr class="my-4"/>
 
-
-
             {% else %}
 
             <i class="fas fa-shopping-basket mt-4 ms-3"></i><span><p class="mt-4 ms-2 d-inline-block"> Your Basket is currently empty.</p></span>
             {% endif %}
           </div>
         </div>
-        <!-- <div class="card mb-4 mb-lg-0">
-            <div class="card-body">
-              <p><strong>We accept</strong></p>
-              <img class="me-2" width="45px"
-                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
-                alt="Visa" />
-              <img class="me-2" width="45px"
-                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
-                alt="American Express" />
-              <img class="me-2" width="45px"
-                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
-                alt="Mastercard" />
-            </div>
-          </div> -->
+
+        <!-- Other pages card -->
         <div class="card mb-4">
           <div class="card-body">
             Continue Browsing:
@@ -104,6 +150,7 @@
         </div>
       </div>
 
+      <!-- Summary side tab with total price information -->
       <div class="col-md-4">
         <div class="card mb-4">
           <div class="card-header py-3">
@@ -128,7 +175,7 @@
             <div class="card-footer border-success d-flex">
               <div class="p-2 flex-grow-1 bd-highlight d-flex align-items-center">Price: £ X00</div>
               <div class="p-2 bd-highlight d-flex align-items-center">
-                <a href="{% url 'home' %}">
+                <a href="#">
                   <button class="btn btn-success">Go to Checkout</button>
                 </a>
               </div>
@@ -139,6 +186,38 @@
     </div>
   </div>
 </section>
+
+
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+{% include 'trackdays/includes/increment_decrement_script.html' %}
+
+<script type="text/javascript">
+  // Update quantity on click
+  $('.update-link').click(function(e) {
+        var form = $(this).prev('.form-update');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-link').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/basket/adjust/${itemId}`;
+        var dataset = {'csrfmiddlewaretoken': csrfToken,};
+
+        $.post(url, dataset)
+         .done(function() {
+             location.reload();
+         });
+    })
+
+
+
+
+
+</script>
 
 
 {% endblock %}
