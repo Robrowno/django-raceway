@@ -21,20 +21,40 @@
                     <p>{{ experience.itinerary | safe }}</p>
                 </div>
                 <div class="card-footer border-success d-flex bd-highlight">
-                    <div class="p-2 flex-grow-1 bd-highlight d-flex align-items-center">Price: £{{ experience.price }}</div>
+                    <div class="p-2 flex-grow-1 bd-highlight d-flex align-items-center">Price: £{{ experience.price }}
+                    </div>
                     <form method="POST" action="{% url 'add_exp_to_basket' experience.id %}">
-                    {% csrf_token %}
-                    <div class="p-2 bd-highlight d-flex align-items-center">
+                        {% csrf_token %}
+                        <div class="p-2 bd-highlight d-flex align-items-center form-group">
                             <p class="form-label mt-1 pe-1"><span>Quantity:</span></p>
-                            <input class="form-control" type="number" name="quantity" value="1" min="1" max="10" data-item_id="{{ experience.id }}" id="id_qty_{{ experience.id }}">
-                    </div>
-                    <div class="p-2 bd-highlight d-flex align-items-center">
-                            <input type="submit" class="btn btn-success rounded-0" value="Book the {{ experience.title }}">
-                    </div>
-                    <div><input type="hidden" name="redirect_url" value="{{ request.path }}"></div>
-                </form>
+                            <div class="input-group">
+                                <button class="increment-qty btn btn-outline-dark rounded-0" data-item_id="{{ experience.id }}"
+                                    id="increment-qty_{{ experience.id }}">
+                                    <span>
+                                        <i class="fas fa-plus quantity-icon"></i>
+                                    </span>
+                                </button>
+
+                                <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="10"
+                                    data-item_id="{{ experience.id }}" id="id_qty_{{ experience.id }}">
+                                    
+                                <button class="decrement-qty btn btn-outline-dark rounded-0" data-item_id="{{ experience.id }}"
+                                    id="decrement-qty_{{ experience.id }}">
+                                    <span>
+                                        <i class="fas fa-minus quantity-icon"></i>
+                                    </span>
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class="p-2 bd-highlight d-flex align-items-center">
+                            <input type="submit" class="btn btn-success rounded-0"
+                                value="Book the {{ experience.title }}">
+                        </div>
+                        <div><input type="hidden" name="redirect_url" value="{{ request.path }}"></div>
+                    </form>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -43,3 +63,8 @@
 
 
 {% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+{% include 'trackdays/includes/increment_decrement_script.html' %}
+{% endblock %}
+
