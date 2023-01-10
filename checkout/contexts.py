@@ -54,5 +54,6 @@ def basket_contents(request):
         'total': total,
         'product_count': product_count
     }
+    print(request.session['basket'])
 
     return context
