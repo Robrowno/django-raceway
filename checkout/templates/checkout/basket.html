@@ -48,7 +48,7 @@
                               <td>{{ item.experience.title }}</td>
                               <td>
                                 <!-- Quantity Update form -->
-                                <form class="form form-update" method="post" action="{% url 'adjust' item.experience.id %}">
+                                <form class="form form-update" method="post" action="{% url 'edit_exp' item.experience.id %}">
                                   {%csrf_token %}
                                   <div class="input-group d-flex justify-content-between">
                                     <button class="increment-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.item_id  }}"
@@ -87,9 +87,9 @@
                               <td>{{ item.tuition.title }}</td>
                               <td>
                                 <!-- Quantity Update form -->
-                                <form class="form form-update" method="post" action="">
+                                <form class="form form-update" method="post" action="{% url 'edit_tuition' item.tuition.id %}">
                                   {%csrf_token %}
-                                  <div class="input-group d-flex justify-content-between form-update">
+                                  <div class="input-group d-flex justify-content-between">
                                     <button class="increment-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.item_id  }}"
                                         id="increment-qty_{{ item.item_id  }}">
                                         <span>
@@ -110,10 +110,12 @@
                                 </div>
                             </div>
                                 </form>
-                              <a class="btn btn-warning update-link">Update</a>
-                              <td>{{ item.tuition.price }}</td>
+                                <a class="btn btn-warning update-link">Update</a>
+                              </td>
+                              <td>{{ item.experience.price }}</td>
                               <td>
-                                <a class="btn btn-danger remove-link" id="remove_{{ item.item_id }}">Delete</a></td>
+                                <a class="btn btn-danger remove-link" id="remove_{{ item.item_id }}">Delete</a>
+                              </td>
                           </tr>
                           {% endif %}
                           {% endfor %}
