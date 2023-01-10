@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.shortcuts import render, redirect, get_object_or_404, reverse, HttpResponse
 from trackdays.models import Tuition, Experiences
 from django.contrib import messages
 
@@ -64,6 +64,44 @@ def edit_exp_quantity(request, item_id):
     request.session['basket'] = basket
     messages.success(request, "Basket successfully updated.")
     return redirect(reverse('my_basket'))
+
+
+def remove_exp(request, item_id):
+    """
+    For removing an Experience item from the basket
+    """
+
+    try:
+        basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
+        item = basket['experience'][item_id]
+        basket['experience'].pop(item_id)
+
+        request.session['basket'] = basket
+        messages.warning(request, "Removed from the basket.")
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        print(e)
+        return HttpResponse(status=500)
+
+
+def remove_tuition(request, item_id):
+    """
+    For removing a Tuition item from the basket
+    """
+
+    try:
+        basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
+        item = basket['tuition'][item_id]
+        basket['tuition'].pop(item_id)
+
+        request.session['basket'] = basket
+        messages.warning(request, "Removed from the basket.")
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        print(e)
+        return HttpResponse(status=500)
 
 
 def edit_tuition_quantity(request, item_id):
