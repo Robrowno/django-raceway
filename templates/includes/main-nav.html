@@ -1,17 +1,20 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link mx-5" href="{% url 'trackdays' %}">Booking</a>
-          <a class="nav-link mx-5" href="#">Cars for Hire</a>
-          <a class="nav-link mx-5" href="{% url 'tuition' %}">Tuition</a>
-          <a class="nav-link mx-5" href="{% url 'experiences' %}">Experiences</a>
-          <a class="nav-link mx-5" href="{% url 'contact' %}">Contact</a>
-          <a class="nav-link mx-5" href="{% url 'about' %}">About</a>
-        </div>
-      </div>
-    </div>
-  </nav>
+<div class="row middle-nav">
+  <div class="text-center col-sm-6 col-md-4 col-lg-2">
+    <a href="{% url 'trackdays' %}">Booking</a>
+  </div>
+  <div class="text-center col-sm-6 col-md-4 col-lg-2">
+    <a href="#">Cars for Hire</a>
+  </div>
+  <div class="text-center col-sm-6 col-md-4 col-lg-2">
+    <a href="{% url 'tuition' %}">Tuition</a>
+  </div>
+  <div class="text-center col-sm-6 col-md-4 col-lg-2">
+    <a href="{% url 'experiences' %}">Experiences</a>
+  </div>
+  <div class="text-center col-sm-6 col-md-4 col-lg-2">
+    <a href="{% url 'contact' %}">Contact</a>
+  </div>
+  <div class="text-center col-sm-6 col-md-4 col-lg-2">
+    <a href="{% url 'about' %}">About</a>
+  </div>
+</div>

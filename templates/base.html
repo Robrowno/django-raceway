@@ -52,67 +52,75 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
+    <!-- Top Nav Bar -->
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Django Raceway
-                <span><img src="/media/checkered-flag-angled.png" alt="checkered flag" width="30" height="24" class="d-inline-block align-text-top"></span>
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul id="nav-icon-box" class="navbar-nav ms-auto mx-5 border">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-user"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                        {% if request.user.is_authenticated %}
-                            {% if request.user.is_superuser %}
-                            <li><a href="" class="dropdown-item">Management</a></li>
-                            <li><hr class="dropdown-divider"></li>
+                <a class="navbar-brand" href="{% url 'home' %}">Django Raceway
+                    <span><img src="/media/checkered-flag-angled.png" alt="checkered flag" width="30" height="24"
+                            class="d-inline-block align-text-top"></span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul id="nav-icon-box" class="navbar-nav ms-auto mx-5 border">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                                {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                <li><a href="" class="dropdown-item">Management</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
 
-                            {% endif %}
-                      <li><a class="dropdown-item" href="#">Profile</a></li>
-                      <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
-                      {% else %}
-                      <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>
-                      <li><a class="dropdown-item" href="{% url 'account_login' %}">Log In</a></li>
-                      {% endif %}
+                                {% endif %}
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                                {% else %}
+                                <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>
+                                <li><a class="dropdown-item" href="{% url 'account_login' %}">Log In</a></li>
+                                {% endif %}
+                            </ul>
+                        </li>
+                        <li class="nav-item me-3 me-lg-0">
+                            <a class="nav-link" href="#">
+                                <span class="badge badge-pill bg-danger">1</span>
+                                <i class="fas fa-shopping-basket"></i>
+                            </a>
+                        </li>
                     </ul>
-                  </li>
-                  <li class="nav-item me-3 me-lg-0">
-                    <a class="nav-link" href="#">
-                        <span class="badge badge-pill bg-danger">1</span>
-                        <i class="fas fa-shopping-basket"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+                </div>
             </div>
-          </nav>
-          {% include 'includes/main-nav.html' %}
-
+        </nav>
+        <!-- End of Top Navigation -->
     </header>
 
-    <!-- {% if messages %}
+    {% if messages %}
+     <!-- Messages code snippet from Code Institute's Boutique Ado Walkthrough Project-->
     <div class="message-container">
         {% for message in messages %}
-            {% with message.level as level %}
-                {% if level == 40 %}
-                    {% include 'snippets/toasts/toast_error.html' %}
-                {% elif level == 30 %}
-                    {% include 'snippets/toasts/toast_warning.html' %}
-                {% elif level == 25 %}
-                    {% include 'snippets/toasts/toast_success.html' %}
-                {% else %}
-                    {% include 'snippets/toasts/toast_info.html' %}
-                {% endif %}
-            {% endwith %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'snippets/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'snippets/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'snippets/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'snippets/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
         {% endfor %}
     </div>
-    {% endif %} -->
+    <!-- End of Messages -->
+    {% endif %}
 
     {% block page_header %}
     {% endblock %}
@@ -123,55 +131,22 @@
     {% block postloadjs %}
     {% endblock %}
 
-<footer class="container-fluid border-top bg-light">
-    <div class="row">
-        <div class="col">
-            <ul class="list-group list-group-horizontal">
-                <li class="list-group-item">
-                    <a href="#">FAQs</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="#">Policies</a>
-                </li>
-            </ul>
+    <!-- Footer -->
+    <footer class="border-top border-2 border-dark">
+        <div class="footer-links">
+            <a href="#">FAQs</a>
+            <a href="#">Policies</a>
         </div>
-        <div class="col-md-6 col-lg-7 border">
-            Sign up to our Newsletter <span><button class="mx-auto"><i class="fas fa-sign-in-alt">Sign Up!</i></button></span>
+        <!-- MailChimp newsletter subscription will go here -->
+        <div class="signUpDiv">
+            <span>Sign up to our newsletter
+                <a href="#" class="signUpBtn ms-1"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign Up</a></span>
+            <!-- Button to return to page top -->
+            <a href="#" class="toTopBtn"><i class="fas fa-arrow-up"></i></a>
         </div>
-        <div class="col col-lg-2  border">
-            <i class="fas fa-arrow-circle-up"></i>
-            <span>Back to Top</span>
-        </div>
-    </div>
-</footer>
+    </footer>
+    <!-- End of Footer -->
 
 </body>
 
 </html>
-
-
-
-
-
-
-<!-- 
-      <li class="nav-item me-3 me-lg-0 dropdown mx-5">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-user"></i>
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li>
-                <a class="dropdown-item" href="#">Action</a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="#">Another action</a>
-            </li>
-            <li>
-                <hr class="dropdown-divider"/>
-            </li>
-            <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-            </li>
-        </ul>
-    </li>  -->

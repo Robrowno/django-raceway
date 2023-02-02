@@ -3,39 +3,120 @@
 
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row">
-            <img id="hero-image" src="/media/track-design-image.png"> 
+<!-- Carousel -->
+<div
+  id="carouselExampleControls"
+  class="carousel slide h-100"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+        src="/media/circuit-national-layout.png"
+        class="d-block w-100 img-height-zar"
+        alt="Full track layout"
+      />
     </div>
+    <div class="carousel-item">
+      <img
+        src="/media/circuit-gp-layout.png"
+        class="d-block w-100 img-height-zar"
+        alt="Medium track layout"
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="/media/circuit-indy-layout.png"
+        class="d-block w-100 img-height-zar"
+        alt="Small track layout"
+      />
+    </div>
+  </div>
+
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleControls"
+    data-bs-slide="prev"
+  >
+    <span
+      class="carousel-control-prev-icon btn btn-outline-dark btn-dark"
+      aria-hidden="true"
+    ></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleControls"
+    data-bs-slide="next"
+  >
+    <span
+      class="carousel-control-next-icon btn btn-outline-dark btn-dark"
+      aria-hidden="true"
+    ></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
-<h2 class="text-center">Gallery:</h2>
+<div class="mt-2 mb-2 track-zar">
+  <div class="row justify-content-md-center">
+    <div class="col-sm-12 col-md-12 col-lg-6 fs-3 text-center fw-bold">
+      <span class="textSmallMob">The Home of Motorsport Excellence!</span>
+    </div>
+    <div
+      class="col-sm-12 col-md-6 col-lg-3 d-flex justify-content-center justify-content-md-end mb-2 circles"
+    >
+      <div class="red-circle me-2 me-md-4"></div>
+      <div class="yellow-circle"></div>
+    </div>
+    <div
+      class="col-sm-12 col-md-6 col-lg-3 text-center text-md-start text-lg-center pt-md-1"
+    >
+      <a href="{% url 'trackdays' %}" class="booking-btn" id="booking"
+        >Book a Track day!</a
+      >
+    </div>
+  </div>
+</div>
 
-<!-- <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+{% include 'includes/main-nav.html' %}
+
+<div class="p-4 justify-content-center gallery">
+  <h1 class="row">Gallery:</h1>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
+      <img src="/media/caterham.JPG" class="img-styling" alt="" />
     </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="/media/circuit-gp-layout.png" class="d-block w-100" alt="">
-      </div>
-      <div class="carousel-item">
-        <img src="/media/circuit-national-layout.png" class="d-block w-100" alt="">
-      </div>
-      <div class="carousel-item">
-        <img src="/media/circuit-indy-layout.png" class="d-block w-100" alt="">
-      </div>
+    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
+      <img src="/media/austin-mini.JPG" class="img-styling" alt="" />
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div> -->
+    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
+      <img src="/media/rover-mini.JPG" class="img-styling" alt="" />
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
+      <img src="/media/minis.JPG" class="img-styling" alt="" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
+      <img src="/media/austin-mini-2.JPG" class="img-styling" alt="" />
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
+      <img src="/media/caterham.JPG" class="img-styling" alt="" />
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
+      <img src="/media/rover-mini.JPG" class="img-styling" alt="" />
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
+      <img src="/media/austin-mini.JPG" class="img-styling" alt="" />
+    </div>
+  </div>
+</div>
+
+
+
 
 {% endblock %}
