@@ -1,1 +1,1 @@
-web: gunicorn django-raceway.wsgi:application
+web: gunicorn django_raceway.wsgi:application
