@@ -51,49 +51,38 @@
     <title>Django Raceway {% block extra_title %}{% endblock %}</title>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header class="sticky-top">
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    Django Raceway
-                    <img src="https://www.clipartmax.com/png/small/78-785773_finish-flag-race-racing-win-winner-finish-checkered-flag-icon-png.png" alt="" width="30" height="24"
-                        class="d-inline-block align-text-top">
-                </a>
-                <ul class="navbar-nav d-flex flex-row">
-                    <!-- User Profile dropdown -->
-                    <li class="nav-item me-3 me-lg-0 dropdown mx-5">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-mdb-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user"></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li>
-                                <a class="dropdown-item" href="#">Action</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Another action</a>
-                            </li>
-                            <li>
-                                <hr class="dropdown-divider"/>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Basket Icon -->
-                    <li class="nav-item me-3 me-lg-0 mx-5">
-                        <a class="nav-link" href="#">
-                            <span class="badge badge-pill bg-danger">1</span>
-                            <i class="fas fa-shopping-basket"></i>
-                        </a>
-                    </li>
-
+              <a class="navbar-brand" href="#">Django Raceway
+                <span><img src="/media/checkered-flag-angled.png" alt="checkered flag" width="30" height="24" class="d-inline-block align-text-top"></span>
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul id="nav-icon-box" class="navbar-nav ms-auto mx-5 border">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                      <li><a class="dropdown-item" href="#"> Account Info</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item me-3 me-lg-0">
+                    <a class="nav-link" href="#">
+                        <span class="badge badge-pill bg-danger">1</span>
+                        <i class="fas fa-shopping-basket"></i>
+                    </a>
+                  </li>
                 </ul>
+              </div>
             </div>
-
-        </nav>
+          </nav>
 
     </header>
 
@@ -124,7 +113,55 @@
     {% block postloadjs %}
     {% endblock %}
 
+<footer class="container-fluid border-top bg-light">
+    <div class="row">
+        <div class="col">
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">
+                    <a href="#">FAQs</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">Policies</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-6 col-lg-7 border">
+            Sign up to our Newsletter <span><button class="mx-auto"><i class="fas fa-sign-in-alt">Sign Up!</i></button></span>
+        </div>
+        <div class="col col-lg-2  border">
+            <i class="fas fa-arrow-circle-up"></i>
+            <span>Back to Top</span>
+        </div>
+    </div>
+</footer>
 
 </body>
 
 </html>
+
+
+
+
+
+
+<!-- 
+      <li class="nav-item me-3 me-lg-0 dropdown mx-5">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user"></i>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+                <a class="dropdown-item" href="#">Action</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">Another action</a>
+            </li>
+            <li>
+                <hr class="dropdown-divider"/>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </li>
+        </ul>
+    </li>  -->
