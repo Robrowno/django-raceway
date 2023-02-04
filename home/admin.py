@@ -9,4 +9,4 @@ class ContactAdmin(admin.ModelAdmin):
     Admin Page for the Contact model.
     """
     list_display = ('full_name', 'email', 'query_type', 'contacted_on')
-    readonly_fields = ('contacted_on',)
+    readonly_fields = ('message', 'contacted_on',)

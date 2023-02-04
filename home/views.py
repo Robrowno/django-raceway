@@ -21,11 +21,10 @@ def contact_page(request):
     submitted = False
     if request.method == 'POST':
         contact = Contact()
-        contact.first_name = request.POST.get('fname')
-        contact.last_name = request.POST.get('lname')
-        contact.email_address = request.POST.get('email')
+        contact.full_name = request.POST.get('fname')
+        contact.email = request.POST.get('email')
         contact.query_type = request.POST.get('query')
-        contact.textbox = request.POST.get('textarea')
+        contact.message = request.POST.get('textarea')
         contact.save()
         messages.success(request, 'Your Message was sent!')
         return HttpResponseRedirect('/contact?submitted=True')
