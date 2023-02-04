@@ -17,7 +17,6 @@ class Cars(models.Model):
         (AWD, 'AllWheelDrive'),
         (RR, 'RearEngine-RearWheelDrive'),
     ]
-
     make = models.CharField(max_length=40, null=True, blank=True)
     model = models.CharField(max_length=40, null=True, blank=True)
     variant = models.CharField(max_length=40, null=False, blank=True)
