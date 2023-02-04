@@ -20,7 +20,7 @@ class Cars(models.Model):
 
     make = models.CharField(max_length=40, null=True, blank=True)
     model = models.CharField(max_length=40, null=True, blank=True)
-    variant = models.CharField(max_length=40)
+    variant = models.CharField(max_length=40, null=False, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     power = models.PositiveIntegerField()
@@ -30,7 +30,7 @@ class Cars(models.Model):
     cost_to_hire = models.DecimalField(max_digits=7, decimal_places=2)
 
     def __str__(self):
-        return str(self.title)
+        return str(f'{self.make} {self.model} {self.variant}')
 
     class Meta:
         verbose_name_plural = "Cars"
