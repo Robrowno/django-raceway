@@ -1,9 +1,53 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'home/css/contact.css' %}">
+{% endblock %}
+
+
 {% block content %}
 
-<h2 class="text-center">Contact:</h2>
+<h2 class="m-3 text-center">Contact</h2>
+
+<p class="m-3 text-center">Get a question? Get in touch!</p>
+
+<form class="requestForm">
+  <div class="formRow">
+    <label for="">Full Name</label>
+    <input type="text" />
+  </div>
+
+  <div class="formRow">
+    <label for="">Email</label>
+    <input type="email" />
+  </div>
+
+  <div class="Querry mb-2">
+    <label for="">Query Type</label>
+    <select name="" id="" class="border-2 border-dark">
+      <option value="type1">General</option>
+      <option value="type2">Trackday</option>
+      <option value="type3">Packages</option>
+    </select>
+  </div>
+
+  <div class="formRow mb-2">
+    <textarea
+    class="border-2 border-dark p-2 contactTextarea"
+      name="textarea"
+      id="textarea"
+      cols="30"
+      rows="10"
+      style="resize: none"
+    ></textarea>
+  </div>
+
+  <div class="w-100 d-flex justify-content-end sendDiv">
+    <button type="submit" class="sendBtn">Send</button>
+  </div>
+</form>
+
 
 
 {% endblock %}
