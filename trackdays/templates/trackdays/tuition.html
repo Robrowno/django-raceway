@@ -1,9 +1,48 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'trackdays/css/tuition.css' %}">
+{% endblock %}
+
 {% block content %}
 
-<h2 class="text-center">Tuition:</h2>
+<h2 class="m-3 text-center">Tuition:</h2>
+
+<p class="m-3 para">
+    Django Raceway now offers 3 different tuition packages to enhance your driving abilites, which you can take to the track to improve your car control and laptimes.
+</p>
+
+
+
+<p class="m-3 para">
+  The Bronze Level Tuition is our base level package.
+  This is a half-day only package where you will have the option to choose from one of four cars to take to the track on the day.
+</p>
+
+<div class="images">
+  <img class="image img-small" src="/media/bronze.jpeg" alt="A bronze trophy"/>
+
+</div>
+
+<p class="m-3 para">
+The Silver Level Tuition is a full day package.
+You will have a selection of more powerful cars to choose from than the Bronze level, and will focus on an specific driving techniques throughout the day.
+</p>
+
+<div class="images">
+  <img class="image img-small" src="/media/silver.jpeg" alt="A silver trophy"/>
+</div>
+
+<p class="m-3 para">
+The Gold Level Tuition is our most comprehensive package.
+You will have a full day packed with track driving, onboard telemetry analysis and a classroom session. 
+You will also have an expanded set of driving skills to learn above those covered in the Silver Package.
+</p>
+
+<div class="images">
+  <img class="image img-small" src="/media/gold.jpeg" alt="A gold trophy"/>
+</div>
 
 
 {% endblock %}

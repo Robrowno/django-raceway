@@ -110,6 +110,10 @@ All icons used in this project have come from here.
     - [Single Seater picture](https://driftlimits.co.uk/experience/f1000-thrill-experience/)
     - [Sportscar Experience image](https://thruxtonracing.co.uk/experiences/supercar-trio)
     - [Full Experience image](https://thruxtonracing.co.uk/experiences/supercar-trio)
+- Tuition page:
+    - [Bronze Image](http://clipart-library.com/clipart/1937119.htm)
+    - [Silver Image](https://gallery.yopriceville.com/Free-Clipart-Pictures/Trophy-and-Medals-PNG/Silver_Trophy_Cup_Award_Transparent_PNG_Clip_Art_Image)
+    - [Gold Image](https://gallery.yopriceville.com/Free-Clipart-Pictures/Trophy-and-Medals-PNG/Gold_Trophy_Cup_Award_Transparent_PNG_Clip_Art_Image#.Y5tTBuzP3Uo)
 
 
 ---
