@@ -1,0 +1,29 @@
+.contentContainer{
+    max-width: 100%;
+    width: 100%;
+    padding: 20px 30px;
+}
+
+.content{
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+#ff-image {
+    max-width: calc(100vw - 20px);
+    padding-bottom: 20px;
+}
+
+
+#trophy-image {
+    max-width: 80%;
+}
+
+/*Styling for the laptop Screens */
+@media (min-width: 800px) {
+    .contentContainer{
+        max-width: 100%;
+        width: 100%;
+        padding: 20px 40px;
+    }
+}
