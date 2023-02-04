@@ -1,3 +1,11 @@
 from django.contrib import admin
+from .models import Cars
 
-# Register your models here.
+
+@admin.register(Cars)
+class CarAdmin(admin.ModelAdmin):
+
+    """
+    Admin Page for the Cars model.
+    """
+    list_display = ('make', 'model', 'variant',)

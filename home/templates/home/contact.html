@@ -10,30 +10,48 @@
 
 <h2 class="m-3 text-center">Contact</h2>
 
+{% block form %}
+<!-- Success message when form is successfully sent to the database -->
+{% if submitted %}
+<div class="container d-flex justify-content-center mx-auto">
+  <div class="row">
+    <div class="col alert alert-success"> Your message was successfully sent. Thanks again for getting in touch!
+    </div>
+  </div>
+</div>
+
+
+{% else %}
+
 <p class="m-3 text-center">Get a question? Get in touch!</p>
 
-<form class="requestForm">
+<form class="requestForm" method="post">
+  {% csrf_token %}
   <div class="formRow">
-    <label for="">Full Name</label>
-    <input type="text" />
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="fname" required>
+  </div>
+  <div class="formRow">
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lname" required>
+  </div>
+  <div class="formRow">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
   </div>
 
-  <div class="formRow">
-    <label for="">Email</label>
-    <input type="email" />
-  </div>
-
-  <div class="Querry mb-2">
-    <label for="">Query Type</label>
-    <select name="" id="" class="border-2 border-dark">
-      <option value="type1">General</option>
-      <option value="type2">Trackday</option>
-      <option value="type3">Packages</option>
+  <div class="Query mb-2">
+    <label for="query">Query Type</label>
+    <select name="query" id="query" class="border-2 border-dark" required>
+      <option value="0">General</option>
+      <option value="1">Trackdays/Experiences</option>
+      <option value="2">Packages</option>
+      <option value="3">Other</option>
     </select>
   </div>
 
   <div class="formRow mb-2">
-    <textarea
+    <textarea required
     class="border-2 border-dark p-2 contactTextarea"
       name="textarea"
       id="textarea"
@@ -49,5 +67,7 @@
 </form>
 
 
+{% endif %}
 
+{% endblock form %}
 {% endblock %}
