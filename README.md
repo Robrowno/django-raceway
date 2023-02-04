@@ -53,6 +53,16 @@ Link to live site: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## Bugs and Issues
 
+- AWS Config: I was unable to deploy on Heroku thanks to a missing Variable in my User Groups that was spotted by Alan from Tutor Support. 
+
+- I tried to use a for loop for my admin.py file to automate and speed up model registration. Whilst it sounded like a good idea in principal, it prevented me from adding list_display field options once they had been registered. I unregistered and re-registered the models to be able to do this.
+
+- I had some early trouble getting my contact model to work correctly - I realised I had put incorrect 'name' attributes in my contact view. I also made changes in my contact model that required me to flush the database and remove previous migrations and to migrate again after.
+
+- Bootstrap 5 toasts: I attempted to modify the bootstrap 4 toasts from the Boutique Ado walkthrough, whilst I was using Bootstrap 5.0.2 - This didn't work, and thanks to a snippet of code from Alan from Tutor support I was able to get it working again.
+
+
+
 ---
 
 ## Deployment
@@ -83,6 +93,18 @@ Favicons were generated on [Favicon.io](https://favicon.io/favicon-converter/) -
 I made use of Icons from [Font Awesome](https://fontawesome.com/) using their free student plan. 
 All icons used in this project have come from here.
 
+Validator code for preventing previous dates from being set for creating trackdays found on stackoverflow: [Prevent past dates being set](https://stackoverflow.com/questions/4941974/django-how-to-set-datefield-to-only-accept-today-future-dates)
+
+
+## Personal Credits
+
+- Many Thanks to my C.I Mentor Daisy McGirr, who has been guiding me and advising me through this project as well as all projects since PP2 - Her input in our mentor sessions has been instrumental in getting me this far and so I have to say I massive thank you to her for that!
+
+- Thanks to Monika Hrda, for support with allauth templates, helping with the idea for a constraint on my trackday model and reminding me about the debug var in my settings.py file. A massive thanks to her for her support and chats on my project. I'm looking forward to working on some projects with Monika in future!
+
+- Ben Dawson, for taking calls with me to discuss our P5 ideas at the project inception stage, and hosting check-in calls with me to see how we were getting on at different stages in our projects.
+
+- Alan from C.I tutor support - helped me work out an issue with my AWS configuration where I was stuck and sat in front of my screen for over 3 hours! He is so patient, understanding and methodical and has also helped me to debug an issue I was having with my bootstrap 5 toasts. Thanks Alan! 
 
 
 ### Media/Images:
