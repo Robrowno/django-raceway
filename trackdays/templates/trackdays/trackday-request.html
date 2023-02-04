@@ -1,9 +1,69 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'trackdays/css/trackday-request.css' %}">
+{% endblock %}
+
 {% block content %}
 
-<h2 class="text-center">Track Day Request:</h2>
+
+<h2 class="mt-3 text-center">Request a Trackday</h2>
+
+<form class="requestForm">
+  <div class="formRow">
+    <label for="">Organiser</label>
+    <input type="text" />
+  </div>
+
+  <div class="formRow">
+    <label for="">Email</label>
+    <input type="text" />
+  </div>
+
+  <div class="formRow">
+    <label for="">Phone (Optional)</label>
+    <input type="text" />
+  </div>
+
+  <div class="formRow">
+    <label for="">Date Request</label>
+    <input type="text" />
+  </div>
+
+  <div class="formRow">
+    <label for="">Number of spaces</label>
+    <input type="text" />
+  </div>
+
+  <div class="formRow">
+    <label for="">Hospitality packs required?</label>
+    <input type="text" />
+  </div>
+
+  <div class="formRow">
+    <label for="">Pitlanes required?</label>
+    <input type="text" />
+  </div>
+
+  <div class="formRow">
+    <label for="">Db limit</label>
+    <input type="text" />
+  </div>
+
+  <div class="formRow">
+    <label for="">Full or half day?</label>
+    <input type="text" />
+  </div>
+
+  <div class="formRow">
+    <label for="">Car hire required?</label>
+    <input type="text" />
+  </div>
+
+  <button type="submit" class="submitBtn mt-3">Submit request</button>
+</form>
+
 
 
 {% endblock %}
