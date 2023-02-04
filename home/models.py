@@ -13,10 +13,14 @@ QUERY_TYPE = (
 
 class Contact(models.Model):
 
+    """
+    A model for users to contact the company.
+    """
+
     full_name = models.CharField(max_length=80, null=False, blank=False)
     email = models.EmailField(null=False, blank=False)
     query_type = models.CharField(max_length=11, choices=QUERY_TYPE, default=0)
-    message = models.TextField(null=False, blank=False)
+    message = models.TextField(max_length=400, null=False, blank=False)
     contacted_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
