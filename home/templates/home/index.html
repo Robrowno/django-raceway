@@ -44,40 +44,49 @@
 
 {% include 'includes/main-nav.html' %}
 
-<div class="p-4 justify-content-center gallery">
-  <h1 class="row">Gallery:</h1>
+<div class="p-4">
+  <div><h1 class="row gallery justify-content-center">Gallery:</h1></div>
 
-  <div class="row">
+  <div class="row gallery-images">
     <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
-      <img src="/media/porsche-trackday-pic.jpeg" class="img-styling" alt="" />
+      <img src="/media/porsche-trackday-pic.jpeg" class="gallery-img" alt="">
     </div>
     <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
-      <img src="/media/austin-mini.JPG" class="img-styling" alt="" />
+      <img src="/media/austin-mini.JPG" class="gallery-img" alt="">
     </div>
     <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
-      <img src="/media/trackcar-pic.jpeg" class="img-styling" alt="" />
+      <img src="/media/trackcar-pic.jpeg" class="gallery-img" alt="">
     </div>
     <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
-      <img src="/media/mclaren-620r.jpeg" class="img-styling" alt="" />
+      <img src="/media/mclaren-620r.jpeg" class="gallery-img" alt="">
     </div>
   </div>
 
-  <div class="row">
+  <div class="row gallery-images">
     <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
-      <img src="/media/ariel-atom.jpeg" class="img-styling" alt="" />
+      <img src="/media/ariel-atom.jpeg" class="gallery-img" alt="">
     </div>
     <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
-      <img src="/media/caterhams-racing.jpeg" class="img-styling" alt="" />
+      <img src="/media/caterhams-racing.jpeg" class="gallery-img" alt="">
     </div>
     <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
-      <img src="/media/rover-mini.JPG" class="img-styling" alt="" />
+      <img src="/media/rover-mini.JPG" class="gallery-img" alt="">
     </div>
     <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
-      <img src="/media/ferrari-488.jpeg" class="img-styling" alt="" />
+      <img src="/media/ferrari-488.jpeg" class="gallery-img" alt="">
     </div>
   </div>
 </div>
+<div id="modal" class="modal">
+  <span class="btn close" id="close"> &times; </span>
+  <div class="modal-container">
+    <span class="btn prev" id="prev">&#8249;</span>
+    <img class="modalImg" id="modalImg" src="" alt="" />
+    <span class="btn next" id="next">&#8250;</span>
+  </div>
 
+  <h3 id="caption"></h3>
+</div>
 
 
 
