@@ -1,9 +1,54 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'trackdays/css/experiences.css' %}">
+{% endblock %}
+
 {% block content %}
 
-<h2 class="text-center">Experiences:</h2>
+<h2 class="m-3 text-center">Experiences:</h2>
+
+<p class="para">
+  We have 4 bespoke packages to offer to customers who would like to have a closed circuit experience with a specific driving theme. The packages feature a unique set of cars
+  tailored to your interests. Many cars here cannot be hired for track days outside of these packages, so it is a unique opportunity to feel the thrill of these amazing machines!
+</p>
+<div class="container">
+    <div class="experiences row">
+        <span>Super-Mini Experience</span>
+        <div class="image col">
+            <img src="/media/hot-hatches.jpeg" alt="4 cars parked in a semi circle facing the camera">
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="experiences row">
+        <span>Supercar Experience</span>
+        <div class="image col">
+            <img src="/media/supercar-trio.jpeg" alt="3 Supercars driving towards the camera">
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="experiences row">
+        <span>Single-Seater Experience</span>
+        <div class="image col">
+            <img src="/media/single-seater.jpeg" alt="Single seater racing car on a track">
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="experiences row">
+        <span>Full Experience</span>
+        <div class="image col">
+            <img src="/media/full-experience.jpeg" alt="mix of different cars all parked on track">
+        </div>
+    </div>
+</div>
+
+
+
+
 
 
 {% endblock %}
