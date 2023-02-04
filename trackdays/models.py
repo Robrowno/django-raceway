@@ -1,7 +1,8 @@
 from django.db import models
 from cars.models import Cars
 import datetime
-from django.core.validators import MinValueValidator
+from django.core.validators import MinValueValidator, RegexValidator
+
 
 NO = 0
 YES = 1
@@ -17,6 +18,15 @@ LAYOUT = {
     (GP, "GP"),
     (NATIONAL, "National"),
     (INDY, "Indy"),
+}
+
+BRONZE = 0
+SILVER = 1
+GOLD = 2
+LEVELS = {
+    (BRONZE, "Bronze"),
+    (SILVER, "Silver"),
+    (GOLD, "Gold"),
 }
 
 DECIBEL_LIMIT = ((0, '98db'), (1, '105db'))
@@ -36,7 +46,7 @@ class Trackday(models.Model):
     base_trackday_price = models.DecimalField(max_digits=7, decimal_places=2)
 
     def __str__(self):
-        return str(self.title)
+        return str(f'{self.layout} trackday on {self.date}')
 
     class Meta:
         """ Only one combo of Trackday and date permitted """
@@ -61,17 +71,71 @@ class TrackdayBooking(models.Model):
     paddock_hire = models.BooleanField(choices=CHOICES, default=NO)
 
     def __str__(self):
+        return str(f'{self.trackday} booking has been made')
+
+
+class TrackdayRequest(models.Model):
+
+    """
+    Model for taking trackday requests
+    """
+
+    organiser = models.CharField(max_length=40)
+    email = models.EmailField(null=True, blank=True)
+    phone_regex = RegexValidator(
+        regex=r'^\+?1?\d{9,15}$', message=(
+            "Phone number must be entered in the format: '+999999999'."
+            + "Up to 15 digits allowed."
+            )
+        )
+    phone_number = models.CharField(
+        validators=[phone_regex], max_length=17, blank=True
+        )
+    date_request = models.DateField(null=True, blank=True)
+    full_or_half_day = models.BooleanField(choices=HALF_OR_FULL_DAY, default=0)
+    number_of_spaces = models.IntegerField(null=True, blank=True)
+    hospitality = models.BooleanField(choices=CHOICES, default=NO)
+    pitlanes = models.BooleanField(choices=CHOICES, default=NO)
+    db_limit = models.BooleanField(choices=DECIBEL_LIMIT, default=0)
+    car_hire_required = models.BooleanField(choices=CHOICES, default=NO)
+
+
+class Experiences(models.Model):
+
+    """
+    Model for the Experience Packages
+    """
+
+    title = models.CharField(max_length=150)
+    description = models.CharField(max_length=300)
+    itinerary = models.CharField(max_length=500)
+    image_url = models.URLField(max_length=1024, null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
+    price = models.DecimalField(max_digits=7, decimal_places=2)
+
+    class Meta:
+        verbose_name_plural = "Experiences"
+
+    def __str__(self):
         return str(self.title)
 
 
+class Tuition(models.Model):
 
-# Trackday Request Model Here:
+    """
+    Model for the Tuition Packages
+    """
 
+    title = models.CharField(max_length=50)
+    level = models.IntegerField(choices=LEVELS, default=None)
+    description = models.CharField(max_length=300)
+    itinerary = models.CharField(max_length=500)
+    image_url = models.URLField(max_length=1024, null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
+    price = models.DecimalField(max_digits=7, decimal_places=2)
 
+    class Meta:
+        verbose_name_plural = "Tuition"
 
-# Experiences Model:
-
-
-
-# Tuition Model:
-
+    def __str__(self):
+        return str(self.title)
