@@ -1,9 +1,154 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'trackdays/css/trackdays.css' %}">
+{% endblock %}
+
+
 {% block content %}
 
-<h2 class="text-center">Track Days:</h2>
+<h2 class="m-3 text-center">Track Days</h2>
+
+<p class="m-3 text-center">Book by Configurations:</p>
+
+<div class="configuration">
+    <div class="content">
+        <img src="/media/circuit-gp-layout.png" alt="GP International Circuit Layout map">
+        <span class="contentCaption">GP International</span>
+    </div>
+
+    <div class="content">
+        <img src="/media/circuit-national-layout.png" alt="National Circuit Layout map">
+        <span class="contentCaption">National</span>
+    </div>
+
+    <div class="content">
+        <img src="/media/circuit-indy-layout.png" alt="Indy Circuit Layout map">
+        <span class="contentCaption">Indy</span>
+    </div>
+</div>
+
+<h3 class="text-center mt-5 fs-2 mb-4">Upcoming Trackdays</h3>
+
+
+<div style="overflow-x:auto;" class="trackDayTable">
+    <table class="table table-hover">
+        <tr>
+            <th>Date</th>
+            <th>Layout</th>
+            <th>Db limit</th>
+            <th>Availability</th>
+            <th>Price*</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>23/01/23</td>
+            <td>GP</td>
+            <td>105db</td>
+            <td>0/30</td>
+            <td class="full"><span>Full</span></td>
+            <td><button class="book-btn">Book</button></td>
+        </tr>
+        <tr>
+            <td>27/01/23</td>
+            <td>Indy</td>
+            <td>98db</td>
+            <td>10/15</td>
+            <td class="remain"><span>$300</span></td>
+            <td><button class="book-btn">Book</button></td>
+        </tr>
+        <tr>
+            <td>01/02/23</td>
+            <td>National</td>
+            <td>105db</td>
+            <td>09/15</td>
+            <td class="remain"><span>$300</span></td>
+            <td><button class="book-btn">Book</button></td>
+        </tr>
+        <tr>
+            <td>07/02/23</td>
+            <td>Indy</td>
+            <td>98db</td>
+            <td>11/15</td>
+            <td class="remain"><span>$300</span></td>
+            <td><button class="book-btn">Book</button></td>
+        </tr>
+        <tr>
+            <td>11/02/23</td>
+            <td>National</td>
+            <td>105db</td>
+            <td>10/15</td>
+            <td class="remain"><span>$300</span></td>
+            <td><button class="book-btn">Book</button></td>
+        </tr>
+        <tr>
+            <td>16/02/23</td>
+            <td>Indy</td>
+            <td>98db</td>
+            <td>07/15</td>
+            <td class="remain"><span>$300</span></td>
+            <td><button class="book-btn">Book</button></td>
+        </tr>
+        <tr>
+            <td>24/02/23</td>
+            <td>GP</td>
+            <td>105 db</td>
+            <td>10/30</td>
+            <td class="remain"><span>$300</span></td>
+            <td><button class="book-btn">Book</button></td>
+        </tr>
+        <tr>
+            <td>02/04/23</td>
+            <td>Indy</td>
+            <td>98db</td>
+            <td>05/15</td>
+            <td class="remain"><span>$300</span></td>
+            <td><button class="book-btn">Book</button></td>
+        </tr>
+        <tr>
+            <td>10/04/23</td>
+            <td>National</td>
+            <td>98db</td>
+            <td>04/15</td>
+            <td class="remain"><span>$300</span></td>
+            <td><button class="book-btn">Book</button></td>
+        </tr>
+        <tr>
+            <td>17/04/23</td>
+            <td>GP</td>
+            <td>98db</td>
+            <td>09/30</td>
+            <td class="remain"><span>$300</span></td>
+            <td><button class="book-btn">Book</button></td>
+        </tr>
+        <tr>
+            <td>25/04/23</td>
+            <td>GP</td>
+            <td>105db</td>
+            <td>20/30</td>
+            <td class="remain"><span>$300</span></td>
+            <td><button class="book-btn">Book</button></td>
+        </tr>
+    </table>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p class="text-end">*prices before any options added to booking</p>
+        </div>
+    </div>
+</div>
+
+<div class="requestTrack mt-4">
+    <span>Want to organise your own Trackday? Click Here</span>
+    <a href="#">Request a Track day</a>
+</div>
+
+
+</body>
+
+</html>
 
 
 {% endblock %}

@@ -1,0 +1,127 @@
+.configuration {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.content {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content img {
+    width: 80%;
+    height: 50%;
+    margin-bottom: 2px;
+}
+
+.content span {
+    font-family: inherit;
+    margin-bottom: 15px;
+}
+
+
+.requestTrack {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.requestTrack a {
+    margin-top: 5px;
+    text-decoration: none;
+    border: 2px solid black;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 1);
+    background-color: lightgreen;
+    color: #000;
+    padding: 2px 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+/*Table Styling*/
+.trackDayTable table tr span {
+    text-decoration: none;
+    border: 2px solid black;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 1);
+    background-color: lightgreen;
+    color: #000;
+    padding: 1px 12px;
+    cursor: pointer;
+}
+
+.trackDayTable table tr .full span {
+    background-color: red;
+    color: #fff;
+}
+
+.book-btn {
+    border: 2px solid black;
+    padding: 0px 10px;
+    background-color: rgb(27, 175, 225);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 1);
+}
+
+/*Styling for the Mobile to Tablet Screens */
+@media (min-width: 480px) and (max-width: 790px) {
+
+    .configuration {
+        flex-direction: row;
+        width: 90%;
+        margin: 50px auto;
+
+    }
+
+    .requestTrack span {
+        font-size: 20px;
+    }
+
+
+}
+
+
+@media (min-width: 800px) {
+
+    .configuration {
+        flex-direction: row;
+        width: 90%;
+        margin: 50px auto;
+    }
+
+    .content span {
+        font-size: 24px;
+    }
+
+    .requestTrack {
+        flex-direction: row;
+    }
+
+    .requestTrack a {
+        margin-left: 15px;
+    }
+
+    .requestTrack span {
+        font-size: 25px;
+    }
+
+    .book-btn{
+        padding: 0px 50px;
+    }
+
+    .trackDayTable table tr th {
+        text-align: center;
+     }
+     
+    .trackDayTable table tr td {
+       text-align: center;
+    }
+
+}
