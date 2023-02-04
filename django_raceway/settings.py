@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'home',
     'trackdays',
     'cars',
+    'profiles',
+    'checkout',
     # other
     'storages',
 ]
