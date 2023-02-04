@@ -49,3 +49,4 @@ def experiences_detail(request):
     """
 
     return render(request, 'trackdays/experience-detail.html')
+

@@ -25,3 +25,19 @@ def about_page(request):
     """
 
     return render(request, 'home/about.html')
+
+
+def faqs_page(request):
+    """
+    View to render the FAQs page.
+    """
+
+    return render(request, 'home/faqs.html')
+
+
+def policies_page(request):
+    """
+    View to render the policies page.
+    """
+
+    return render(request, 'home/policies.html')
