@@ -95,6 +95,8 @@ All icons used in this project have come from here.
 
 Validator code for preventing previous dates from being set for creating trackdays found on stackoverflow: [Prevent past dates being set](https://stackoverflow.com/questions/4941974/django-how-to-set-datefield-to-only-accept-today-future-dates)
 
+I found the code for storing phone numbers in my models from stackoverflow as well: [Phone Number Validator](https://stackoverflow.com/questions/19130942/whats-the-best-way-to-store-a-phone-number-in-django-models)
+
 
 ## Personal Credits
 
@@ -136,6 +138,7 @@ Validator code for preventing previous dates from being set for creating trackda
     - [Bronze Image](http://clipart-library.com/clipart/1937119.htm)
     - [Silver Image](https://gallery.yopriceville.com/Free-Clipart-Pictures/Trophy-and-Medals-PNG/Silver_Trophy_Cup_Award_Transparent_PNG_Clip_Art_Image)
     - [Gold Image](https://gallery.yopriceville.com/Free-Clipart-Pictures/Trophy-and-Medals-PNG/Gold_Trophy_Cup_Award_Transparent_PNG_Clip_Art_Image#.Y5tTBuzP3Uo)
+    - [Racing Driver Image](https://blog.demon-tweeks.com/motorsport/how-to-choose-a-race-suit/)
 
 
 ---
