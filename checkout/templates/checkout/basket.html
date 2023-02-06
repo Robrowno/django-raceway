@@ -7,8 +7,9 @@
 
 
 {% block content %}
+{% include 'includes/main-nav.html' %}
 
-<h2 class="text-center">Your Basket:</h2>
+<h2 class="text-center mt-4">Your Basket:</h2>
 
 <section class="h-100 gradient-custom">
     <div class="container py-5">
@@ -26,20 +27,37 @@
                   <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
                     <img src="/media/circuit-indy-layout.png"
                       class="w-100" alt="" />
+                      
                   </div>
                 </div>
-  
+                
                 <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-
+                  
                 </div>
-  
+                <!-- <div style="overflow-x:auto;" class="trackDayTable">
+                  <table class="table table-hover">
+                      <tr>
+                          <th>Order</th>
+                          <th>Order Number</th>
+                          <th>Date</th>
+                          <th>Price</th>
+                          <tr>
+                              <td>Trackday</td>
+                              <td>Order Number</td>
+                              <td>Date</td>
+                              <td>Price</td>
+                             
+                          </tr>
+                      </tr>
+                  </table>
+              </div> -->
                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                   <div class="d-flex mb-4" style="max-width: 300px">
-
+                    
                   </div>
-  
+                  
                   <p class="text-start text-md-center">
-                    £190
+                    
                   </p>
 
                 </div>
@@ -60,30 +78,41 @@
                 </div>
   
                 <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                 
+                  
                 </div>
-  
+                <!-- <div style="overflow-x:auto;" class="trackDayTable">
+                  <table class="table table-hover">
+                      <tr>
+                          <th>Order</th>
+                          <th>Order Number</th>
+                          <th>Date</th>
+                          <th>Price</th>
+                          <tr>
+                              <td>Trackday</td>
+                              <td>Order Number</td>
+                              <td>Date</td>
+                              <td>Price</td>
+                             
+                          </tr>
+                      </tr>
+                  </table>
+              </div> -->
+              
                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                   <div class="d-flex mb-4" style="max-width: 300px">
                     
                   </div>
-
+                
                   <p class="text-start text-md-center">
-                    £350
+
                   </p>
 
                 </div>
               </div>
             </div>
           </div>
-          <div class="card mb-4">
-              <div class="card-body">
-                  Continue Browsing:
-                  <a class="" href="{% url 'home' %}">
-                      <button class="checkout-button">Home</button>
-                  </a>
-              </div>
-          </div>
+
+          
           <!-- <div class="card mb-4 mb-lg-0">
             <div class="card-body">
               <p><strong>We accept</strong></p>
@@ -98,7 +127,16 @@
                 alt="Mastercard" />
             </div>
           </div> -->
+          <div class="card mb-4">
+            <div class="card-body">
+                Continue Browsing:
+                <a class="" href="{% url 'home' %}">
+                    <button class="btn btn-primary">Home</button>
+                </a>
+            </div>
         </div>
+        </div>
+        
         <div class="col-md-4">
           <div class="card mb-4">
             <div class="card-header py-3">
@@ -126,7 +164,7 @@
                 <div class="p-2 flex-grow-1 bd-highlight d-flex align-items-center">Price: £ X00</div>
                 <div class="p-2 bd-highlight d-flex align-items-center">
                     <a href="{% url 'home' %}">
-                        <button class="checkout-button">Go to Checkout</button>
+                        <button class="btn btn-success">Go to Checkout</button>
                       </a>
                 </div>
         </div>
