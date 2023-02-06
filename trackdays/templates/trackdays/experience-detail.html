@@ -18,7 +18,7 @@
                 <div class="card-body mx-auto">
                     <p>{{ experience.title }}</p>
                     <p>{{ experience.description }}</p>
-                    <p>{{ experience.itinerary }}</p>
+                    <p>{{ experience.itinerary | safe }}</p>
                 </div>
                 <div class="card-footer border-success d-flex">
                     <div class="p-2 flex-grow-1 bd-highlight d-flex align-items-center">Price: £{{ experience.price }}</div>
