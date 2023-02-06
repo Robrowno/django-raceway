@@ -42,6 +42,7 @@ class Trackday(models.Model):
     layout = models.IntegerField(choices=LAYOUT, default=GP)
     date = models.DateField(null=False, blank=False, default=None, validators=[MinValueValidator(datetime.date.today)])
     db_limit = models.BooleanField(choices=DECIBEL_LIMIT, default=0)
+    availability = models.IntegerField(default=30)
     base_trackday_price = models.DecimalField(max_digits=7, decimal_places=2)
 
     def __str__(self):
