@@ -7,18 +7,18 @@
 {% block content %}
 <div class="container min-vh-100">
   <div class="row d-flex justify-content-center">
-    <div class="col-sm-6 col-sm-offset-3 text-center mt-5">
+    <div class="col-sm-6 col-sm-offset-3 text-center mt-5 card">
 
-<h1>{% trans "Sign Out" %}</h1>
+<h1 class="mt-1">{% trans "Sign Out" %}</h1>
 
 <p>{% trans 'Are you sure you want to sign out?' %}</p>
 
-<form method="post" action="{% url 'account_logout' %}">
+<form class="card-body" method="post" action="{% url 'account_logout' %}">
   {% csrf_token %}
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
   {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
+  <button class="btn btn-warning" type="submit">{% trans 'Sign Out' %}</button>
 </form>
 </div>
   </div>
