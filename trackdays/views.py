@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Experiences, Trackday
+from .models import Experiences, Trackday, TrackdayBooking
 
 # Create your views here.
 
@@ -17,12 +17,17 @@ def track_day_list(request):
     return render(request, 'trackdays/trackday-list.html', context)
 
 
-def track_day_detail(request):
+def track_day_detail(request, trackday_id):
     """
     View to render the Track day detail booking page.
     """
+    trackday = get_object_or_404(Trackday, pk=trackday_id)
 
-    return render(request, 'trackdays/trackday-detail.html')
+    context = {
+        "trackday": trackday,
+    }
+
+    return render(request, 'trackdays/trackday-detail.html', context)
 
 
 def track_day_request(request):

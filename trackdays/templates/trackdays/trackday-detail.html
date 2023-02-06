@@ -6,4 +6,30 @@
 <h2 class="text-center">Track Day Detail:</h2>
 
 
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-lg-8 offset-lg-2">
+            <div class="card mb-3">
+                <img src="{{ trackday.layout_image.url }}" class="card-img-top" alt="{{ trackday.get_layout_display}} Circuit Map">
+                <div class="card-body mx-auto">
+                  <h5 class="card-title">{{ trackday.get_layout_display }} Circuit - {{ trackday.date }}</h5>
+                  <p class="card-text">{{ trackday.get_db_limit_display }} noise limit</p>
+                  <p class="card-text">Base Price: £{{ trackday.base_trackday_price }}</p>
+                  <p class="card-text">Currently there are {{ trackday.availability }} spaces left</p>
+                </div>
+              </div>
+        </div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 mx-auto card min-vh-100">
+            <h6 class="text-center"> Select any additional items you wish to add on to your track day below:</h6>
+        </div>
+    </div>
+</div>
+
+
+
 {% endblock %}
