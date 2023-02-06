@@ -8,14 +8,14 @@
 {% block content %}
 
 <h2 class="m-3 text-center">Cars to hire:</h2>
-
+<!-- Car Hire Summary-->
 <p class="m-3 para">Django Raceway has a truly epic array of cars available to hire on track day events. This page will show you a small handful of examples of cars that you can hire
     and/or drive through our different experience packages. We have collected cars that will let you explore the dynamic handling capabilities of different car configurations and can 
     be selected to suit your preferred driving style and driving characteristics as a result:
 </p>
 
 {% for car in cars %}
-
+<!-- Iterates through list of cars and their specifications -->
 <div class="car">
     <img src="{{ car.image.url }}" alt="">
     <p> {{ car.make }} {{ car.model }} {{ car.variant}} </p>
