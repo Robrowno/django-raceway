@@ -7,6 +7,7 @@ urlpatterns = [
     path('trackday-booking/', views.track_day_detail, name='booking'),
     path('trackday-request/', views.track_day_request, name='request'),
     path('experiences/', views.experiences, name='experiences'),
+    path('experiences/<str:pk>/', views.experiences_detail, name='exp_detail'),
     path('tuition/', views.tuition, name='tuition'),
 
 
