@@ -20,14 +20,19 @@
                     <p>{{ experience.description }}</p>
                     <p>{{ experience.itinerary | safe }}</p>
                 </div>
-                <div class="card-footer border-success d-flex">
+                <div class="card-footer border-success d-flex bd-highlight">
                     <div class="p-2 flex-grow-1 bd-highlight d-flex align-items-center">Price: £{{ experience.price }}</div>
-                    <div class="p-2 bd-highlight">
-                        <a id="book" class="btn btn-success btn-sm" href="#">
-                            Book the {{ experience.title }}
-                        </a>
+                    <form method="POST" action="{% url 'add_exp_to_basket' experience.id %}"></form>
+                    {% csrf_token%}
+                    <div class="p-2 bd-highlight d-flex align-items-center">
+                            <p class="form-label mt-1 pe-1"><span>Quantity:</span></p>
+                            <input class="form-control" type="number" name="quantity" value="1" min="1" max="10" data-item_id="{{ experience.id }}" id="id_qty_{{ experience.id }}">
                     </div>
-                    
+                    <div class="p-2 bd-highlight d-flex align-items-center">
+                            <input type="submit" class="btn btn-success rounded-0" value="Book the {{ experience.title }}">
+                    </div>
+                    <div><input type="hidden" name="redirect_url" value="{{ request.path }}"></div>
+                </form>
                 </div>
                 
             </div>
