@@ -34,6 +34,7 @@
 <div style="overflow-x:auto;" class="trackDayTable">
     <table class="table table-hover">
         <tr>
+            <!-- Table Headers -->
             <th>Date</th>
             <th>Layout</th>
             <th>Db limit</th>
@@ -47,6 +48,7 @@
                 <td>{{ trackday.get_db_limit_display }}</td>
                 <td>{{ trackday.availability }}</td>
                 <td class="remain"><span>£{{ trackday.base_trackday_price }}</span></td>
+                <!-- Link to booking page -->
                 <td><a href="{% url 'booking' trackday.id %}"><button class="book-btn">Book</button></a></td>
             </tr>
             {% endfor %}

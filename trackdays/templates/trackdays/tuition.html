@@ -11,7 +11,7 @@
 <h2 class="m-3 text-center">Tuition:</h2>
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-lg-8 offset-lg-2">
       <p class="m-3 para mt-4">
         Django Raceway now offers 3 different tuition packages to enhance your driving abilites, which you can take to
         the
@@ -21,70 +21,23 @@
   </div>
 </div>
 
-
+{% for item in tuition %}
+<!-- Tuition items list -->
 <div class="container">
   <div class="row">
-    <div class="col">
-      <p class="m-3 para">
-        The Bronze Level Tuition is our base level package.
-        This is a half-day only package where you will have the option to choose from one of four cars to take to the
-        track on the day.
-      </p>
-
-      <div class="images">
-        <img class="image img-small" src="/media/bronze.jpeg" alt="A bronze trophy">
-        <img class="image img-large" src="/media/racing-driver.jpeg" alt="A racing driver about to get in to his car">
+    <div class="col-lg-8 images">
+      <!-- Tuition Level-->
+      <h4>{{ item.get_level_display }}</h4>
+      <!-- Both Tuition Images-->
+        <img class="image img-small" src="{{ item.small_image.url }}" alt="{{ item.get_level_display }} Trophy">
+        <img class="image img-large" src="{{ item.large_image.url }}" alt="A racing driver about to get in to his car">
         <div class="imgbutton">
-          <a class="btn explore-btn col" href="#" role="button">Explore</a>
+          <!-- Button link to details page -->
+          <a class="btn explore-btn col" href="{% url 'tuition_detail' item.id %}" role="button">Explore</a>
         </div>
-      </div>
     </div>
   </div>
 </div>
-
-
-<div class="container">
-  <div class="row">
-    <div class="col">
-
-      <p class="m-3 para">
-        The Silver Level Tuition is a full day package.
-        You will have a selection of more powerful cars to choose from than the Bronze level, and will focus on an
-        specific driving techniques throughout the day.
-      </p>
-
-      <div class="images">
-        <img class="image img-small" src="/media/silver.jpeg" alt="A silver trophy">
-        <img class="image img-large" src="/media/racing-driver.jpeg" alt="A racing driver about to get in to his car">
-        <div class="imgbutton">
-          <a class="btn explore-btn col" href="#" role="button">Explore</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col">
-
-      <p class="m-3 para">
-        The Gold Level Tuition is our most comprehensive package.
-        You will have a full day packed with track driving, onboard telemetry analysis and a classroom session.
-        You will also have an expanded set of driving skills to learn above those covered in the Silver Package.
-      </p>
-
-      <div class="images">
-        <img class="image img-small" src="/media/gold.jpeg" alt="A gold trophy">
-        <img class="image img-large" src="/media/racing-driver.jpeg" alt="A racing driver about to get in to his car">
-        <div class="imgbutton">
-          <a class="btn explore-btn col" href="#" role="button">Explore</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
+{% endfor %}
 
 {% endblock %}

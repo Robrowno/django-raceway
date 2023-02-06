@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Experiences, Trackday, TrackdayBooking
+from .models import Experiences, Trackday, TrackdayBooking, Tuition
 
 # Create your views here.
 
@@ -42,8 +42,26 @@ def tuition(request):
     """
     View to render the tuition information.
     """
+    tuition = Tuition.objects.all()
 
-    return render(request, 'trackdays/tuition.html')
+    context = {
+        "tuition": tuition
+    }
+
+    return render(request, 'trackdays/tuition.html', context)
+
+
+def tuition_detail(request, tuition_id):
+    """
+    View to render the tuition details information.
+    """
+    tuition = get_object_or_404(Tuition, pk=tuition_id)
+
+    context = {
+        "tuition": tuition
+    }
+
+    return render(request, 'trackdays/tuition-detail.html', context)
 
 
 def experiences(request):
