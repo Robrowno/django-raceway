@@ -11,7 +11,7 @@ def basket(request):
     return render(request, 'checkout/basket.html')
 
 
-def add_exp_to_basket(request):
+def add_exp_to_basket(request, experience_id):
     """
     For adding an experience package to the basket.
     """
@@ -30,7 +30,7 @@ def add_exp_to_basket(request):
     return redirect(redirect_url)
 
 
-def add_tuition_to_basket(request):
+def add_tuition_to_basket(request, tuition_id):
     """
     For adding a tuition course to the basket.
     """
