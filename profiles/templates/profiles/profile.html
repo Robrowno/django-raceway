@@ -1,9 +1,53 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
+{% endblock %}
+
 {% block content %}
+{% include 'includes/main-nav.html' %}
+{% if user.is_authenticated %}
+<h2 class="text-center mt-4">Profile:</h2>
+<div class="container mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-8 mb-4">
+            <div class="card text-center mb-4">
+                <div class="card-header py-3 mb-3">
 
-<h2 class="text-center">Profile:</h2>
+                    <h3><!--User--> Account Details:</h3>
+                </div>
+                <!-- Main Account Details -->
+                <p class="profile-info">First Name</p>
+                <p class="profile-info">Last Name</p>
+                <p class="profile-info">Email Address</p>
+                <p class="profile-info">Phone Number</p>
+                <p class="profile-info">Address 1</p>
+                <p class="profile-info">Address 2 (Optional)</p>
+                <p class="profile-info">Town or City</p>
+                <p class="profile-info">County</p>
+                <p class="profile-info">Postcode</p>
+                <p class="profile-info">Nationality (Optional)</p>
 
+                <!-- Horizontal Divider -->
+                <hr class="my-4">
+
+                <div>
+                    <!-- Option to save default Card Details -->
+                    <h4> Default Card Details:</h4>
+                    <p class="profile-info">Name on Card</p>
+                    <p class="profile-info">Card Number</p>
+                    <p class="profile-info">Expiry date</p>
+                    <p class="profile-info">CVV</p>
+                </div>
+            </div>
+            
+        </div>
+
+        </div>
+</div>
+</div>
+</div>
+{% endif %}
 
 {% endblock %}
