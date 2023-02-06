@@ -65,9 +65,9 @@ class TrackdayBooking(models.Model):
     trackday = models.ForeignKey(Trackday, on_delete=models.CASCADE)
     car_hire = models.OneToOneField(Cars, on_delete=models.CASCADE, primary_key=True, null=False, blank=True)
     full_or_half_day = models.BooleanField(choices=HALF_OR_FULL_DAY, default=0)
-    additional_drivers = models.BooleanField(choices=CHOICES, default=NO)
-    helmet_hire = models.BooleanField(choices=CHOICES, default=NO)
-    tuition = models.BooleanField(choices=CHOICES, default=NO)
+    additional_drivers = models.PositiveIntegerField(default=0)
+    helmet_hire = models.PositiveIntegerField(default=0)
+    tuition = models.PositiveIntegerField(default=0)
     hospitality_packs = models.BooleanField(choices=CHOICES, default=NO)
     paddock_hire = models.BooleanField(choices=CHOICES, default=NO)
 
