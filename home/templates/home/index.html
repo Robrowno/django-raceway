@@ -2,7 +2,9 @@
 {% load static %}
 
 {% block content %}
-
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'home/css/index.css' %}">
+{% endblock %}
 <!-- Carousel -->
 <div id="carouselExampleControls" class="carousel slide h-100" data-bs-ride="carousel">
   <div class="carousel-inner">
@@ -44,8 +46,8 @@
 
 {% include 'includes/main-nav.html' %}
 <!-- Gallery Section-->
-<div class="p-4">
-  <div><h1 class="row gallery justify-content-center">Gallery:</h1></div>
+<div class="p-4 d-flex justify-content-center align-item-center flex-column">
+  <div><h1 class="row gallery">Gallery:</h1></div>
 
   <div class="row gallery-images">
     <div class="image-div col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
