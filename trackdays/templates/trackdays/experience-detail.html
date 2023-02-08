@@ -22,8 +22,8 @@
                 </div>
                 <div class="card-footer border-success d-flex bd-highlight">
                     <div class="p-2 flex-grow-1 bd-highlight d-flex align-items-center">Price: £{{ experience.price }}</div>
-                    <form method="POST" action="{% url 'add_exp_to_basket' experience.id %}"></form>
-                    {% csrf_token%}
+                    <form method="POST" action="{% url 'add_exp_to_basket' experience.id %}">
+                    {% csrf_token %}
                     <div class="p-2 bd-highlight d-flex align-items-center">
                             <p class="form-label mt-1 pe-1"><span>Quantity:</span></p>
                             <input class="form-control" type="number" name="quantity" value="1" min="1" max="10" data-item_id="{{ experience.id }}" id="id_qty_{{ experience.id }}">

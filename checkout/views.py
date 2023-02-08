@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from trackdays.models import Tuition, Experiences
 
 # Create your views here.
 
@@ -15,15 +16,17 @@ def add_exp_to_basket(request, experience_id):
     """
     For adding an experience package to the basket.
     """
+    # experience = Experiences.objects.get(pk=experience_id)
+    experience = get_object_or_404(Experiences, pk=experience_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    basket = request.session.get('basket', {})
+    basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
 
     if experience_id in list(basket.keys()):
-        if experience_id in list(bag.keys()):
-            basket[experience_id] += quantity
+        if experience_id in list(basket.keys()):
+            basket['experience'][experience_id] += quantity
     else:
-        basket[experience_id] = quantity
+        basket['experience'][experience_id] = quantity
 
     request.session['basket'] = basket
     print(request.session['basket'])
@@ -34,18 +37,19 @@ def add_tuition_to_basket(request, tuition_id):
     """
     For adding a tuition course to the basket.
     """
+    tuition = Tuition.objects.get(pk=tuition_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    basket = request.session.get('basket', {})
+    basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
 
     if tuition_id in list(basket.keys()):
-        if tuition_id in list(bag.keys()):
-            basket[tuition_id] += quantity
+        if tuition_id in list(basket.keys()):
+            basket['tuition'][tuition_id] += quantity
     else:
-        basket[tuition_id] = quantity
+        basket['tuition'][tuition_id] = quantity
 
     request.session['basket'] = basket
-
+    print(request.session['basket'])
     return redirect(redirect_url)
 
 

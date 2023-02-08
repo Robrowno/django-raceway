@@ -1,5 +1,7 @@
 from decimal import Decimal
 from django.conf import settings
+from django.shortcuts import get_object_or_404
+from trackdays.models import Trackday, Tuition, Experiences
 
 
 def basket_contents(request):
@@ -12,37 +14,41 @@ def basket_contents(request):
     basket_contents = []
     total = 0
     product_count = 0
-    basket = request.session.get('basket', {})
+    basket = request.session.get(
+        'basket', {'experience': {}, 'tuition': {}, 'trackday': {}}
+        )
+    print(f"Basket: {basket}")
 
-    for trackday, quantity in basket.items():
-        trackday = get_object_or_404(Trackday, pk=trackday_id)
-        total += quantity * trackday.price
-        product_count += quantity
-        basket_contents.append({
-            'trackday_id': trackday_id,
-            'quantity': quantity,
-            'trackday': trackday,
-        })
+    if 'trackday' in basket:
+        for trackday, quantity in basket['trackday'].items():
+            trackday = get_object_or_404(Trackday, pk=trackday)
+            total += quantity * trackday.price
+            product_count += quantity
+            basket_contents.append({
+                'trackday': trackday,
+                'quantity': quantity,
 
-    for experience, quantity in basket.items():
-        experience = get_object_or_404(experience, pk=experience_id)
-        total += quantity * experience.price
-        product_count += quantity
-        basket_contents.append({
-            'experience_id': experience_id,
-            'quantity': quantity,
-            'experience': experience,
-        })
+            })
 
-    for tuition, quantity in basket.items():
-        tuition = get_object_or_404(Tuition, pk=tuition_id)
-        total += quantity * tuition.price
-        product_count += quantity
-        basket_contents.append({
-            'tuition_id': tuition_id,
-            'quantity': quantity,
-            'tuition': tuition,
-        })
+    if 'experience' in basket:
+        for experience, quantity in basket['experience'].items():
+            experience = get_object_or_404(Experiences, pk=experience)
+            total += quantity * experience.price
+            product_count += quantity
+            basket_contents.append({
+                'quantity': quantity,
+                'experience': experience,
+            })
+
+    if 'tuition' in basket:
+        for tuition, quantity in basket['tuition'].items():
+            tuition = get_object_or_404(Tuition, pk=tuition)
+            total += quantity * tuition.price
+            product_count += quantity
+            basket_contents.append({
+                'tuition': tuition,
+                'quantity': quantity,
+            })
 
     context = {
         'basket_contents': basket_contents,
