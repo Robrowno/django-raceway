@@ -4,7 +4,6 @@ from django.shortcuts import get_object_or_404
 from trackdays.models import Trackday, Tuition, Experiences
 
 
-
 def basket_contents(request):
 
     """

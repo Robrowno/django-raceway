@@ -4,6 +4,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 from django_countries.fields import CountryField
+from creditcards.models import CardNumberField, CardExpiryField, SecurityCodeField
 
 
 # Create your models here.
@@ -44,3 +45,18 @@ class UserProfile(models.Model):
         if created:
             UserProfile.objects.create(user=instance)
         instance.userprofile.save()
+
+
+class CardStorage(models.Model):
+    """
+    Storing Default Credit Card for User
+    """
+
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    name_on_card = models.CharField(max_length=50)
+    cc_number = CardNumberField('card number')
+    cc_expiry = CardExpiryField('expiration date')
+    cc_code = SecurityCodeField('security code')
+
+    def __str__(self):
+        return str(f"{self.user}'s card has been stored")

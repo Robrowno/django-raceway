@@ -35,7 +35,7 @@
                   <table class="table table-hover">
                     <!-- Order Table -->
                       <tr>
-                          <th></th>
+                          <th class="w-25"></th>
                           <th>Order</th>
                           <th>Quantity</th>
                           <th>Price</th>
@@ -44,7 +44,7 @@
                           <!-- Table data for experiences -->
                             {% if item.experience %}
                           <tr> 
-                            <td class="basket-img"> <img src="{{ item.experience.image.url }}" class="w-50" alt=""/></td>
+                            <td class="basket-img"> <img src="{{ item.experience.image.url }}" style="width: 60%;" alt=""/></td>
                               <td>{{ item.experience.title }}</td>
                               <td>
                                 <!-- Quantity Update form -->
@@ -83,7 +83,7 @@
                           {% if item.tuition %}
                           <!-- Table data for tuition packages -->
                           <tr> 
-                            <td class="basket-img"> <img src="{{ item.tuition.large_image.url }}" class="w-50" alt=""/></td>
+                            <td class="basket-img"> <img src="{{ item.tuition.large_image.url }}" style="width: 60%;" alt=""/></td>
                               <td>{{ item.tuition.title }}</td>
                               <td>
                                 <!-- Quantity Update form -->
