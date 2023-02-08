@@ -75,7 +75,7 @@
                               </td>
                               <td>{{ item.experience.price }}</td>
                               <td>
-                                <a class="btn btn-danger remove-link" id="remove_{{ item.item_id }}">Delete</a>
+                                <a class="btn btn-danger remove-link" id="remove_experience_{{ item.experience.id }}">Delete</a>
                               </td>
                           </tr>
                           {% endif %}
@@ -112,9 +112,9 @@
                                 </form>
                                 <a class="btn btn-warning update-link">Update</a>
                               </td>
-                              <td>{{ item.experience.price }}</td>
+                              <td>{{ item.tuition.price }}</td>
                               <td>
-                                <a class="btn btn-danger remove-link" id="remove_{{ item.item_id }}">Delete</a>
+                                <a class="btn btn-danger remove-link" id="remove_tuition_{{ item.tuition.id }}">Delete</a>
                               </td>
                           </tr>
                           {% endif %}
@@ -205,10 +205,12 @@
     // Remove item and reload on click
     $('.remove-link').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/basket/adjust/${itemId}`;
+        var itemType = $(this).attr('id').split('_')[1];
+        var itemId = $(this).attr('id').split('_')[2];
+        var url = `/checkout/basket/remove/${itemType}/${itemId}/`;
         var dataset = {'csrfmiddlewaretoken': csrfToken,};
-
+        console.log("delete clicked")
+        console.log(url)
         $.post(url, dataset)
          .done(function() {
              location.reload();
