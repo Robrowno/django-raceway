@@ -4,7 +4,7 @@
 .image-div{
     max-width:90%;
 }
-@media screen and (max-width:752px) {
+@media screen and (max-width:766px) {
     .image-div{
         max-width:60% !important;
     }   

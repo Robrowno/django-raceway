@@ -55,7 +55,8 @@ footer {
     background-color: orange;
     color: black;
     position: absolute;
-    top: 55px;
+    bottom: 0;
+    right: 0;
 }
 
 .explore-btn:hover,
@@ -65,7 +66,10 @@ footer {
     cursor: pointer;
 }
 
-
+.img-button {
+    position: relative;
+}
+ 
 
 
 /*Styling for the Tablet Screens */
