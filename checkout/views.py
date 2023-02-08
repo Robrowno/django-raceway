@@ -49,17 +49,34 @@ def add_tuition_to_basket(request, tuition_id):
     return redirect(redirect_url)
 
 
-def edit_basket(request, item_id):
+def edit_exp_quantity(request, item_id):
     """
-    For editing items in the basket.
+    For editing experience quantities in the basket.
     """
     quantity = int(request.POST.get('quantity'))
     basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
 
     if quantity > 0:
-        basket[item_id] = quantity
+        basket['experience'][item_id] = quantity
     else:
-        basket.pop[item_id]
+        basket.pop['experience'][item_id]
+
+    request.session['basket'] = basket
+    messages.success(request, "Basket successfully updated.")
+    return redirect(reverse('my_basket'))
+
+
+def edit_tuition_quantity(request, item_id):
+    """
+    For editing tuition quantities in the basket.
+    """
+    quantity = int(request.POST.get('quantity'))
+    basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
+
+    if quantity > 0:
+        basket['tuition'][item_id] = quantity
+    else:
+        basket.pop['tuition'][item_id]
 
     request.session['basket'] = basket
     messages.success(request, "Basket successfully updated.")
