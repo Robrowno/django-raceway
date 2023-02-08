@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from trackdays.models import Tuition, Experiences
+from django.contrib import messages
 
 # Create your views here.
 
@@ -22,8 +23,7 @@ def add_exp_to_basket(request, experience_id):
     basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
 
     if experience_id in list(basket.keys()):
-        if experience_id in list(basket.keys()):
-            basket['experience'][experience_id] += quantity
+        basket['experience'][experience_id] += quantity
     else:
         basket['experience'][experience_id] = quantity
 
@@ -35,19 +35,35 @@ def add_tuition_to_basket(request, tuition_id):
     """
     For adding a tuition course to the basket.
     """
-    tuition = Tuition.objects.get(pk=tuition_id)
+    tuition = get_object_or_404(Tuition, pk=tuition_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
 
     if tuition_id in list(basket.keys()):
-        if tuition_id in list(basket.keys()):
-            basket['tuition'][tuition_id] += quantity
+        basket['tuition'][tuition_id] += quantity
     else:
         basket['tuition'][tuition_id] = quantity
 
     request.session['basket'] = basket
     return redirect(redirect_url)
+
+
+def edit_basket(request, item_id):
+    """
+    For editing items in the basket.
+    """
+    quantity = int(request.POST.get('quantity'))
+    basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
+
+    if quantity > 0:
+        basket[item_id] = quantity
+    else:
+        basket.pop[item_id]
+
+    request.session['basket'] = basket
+    messages.success(request, "Basket successfully updated.")
+    return redirect(reverse('my_basket'))
 
 
 def checkout(request):
