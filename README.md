@@ -306,6 +306,7 @@ I found the code for storing phone numbers in my models from stackoverflow as we
 
 I made a mock up of my checkout page using the template provided by [mdboostrap](https://mdbootstrap.com/docs/standard/extended/credit-card/) - With this I was better able to visualise what I needed in my checkout page and how I wanted it to look.
 
+Some of the logic for my increment/decrement buttons on the track day detail page were inspired by answers from this stackoverflow thread: [Stackoverflow js +/-](https://stackoverflow.com/questions/9186346/javascript-onclick-increment-number)
 
 ## Personal Credits
 

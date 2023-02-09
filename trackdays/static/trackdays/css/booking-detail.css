@@ -14,7 +14,7 @@
     color: #fff;
 }
 
-
+/* Form input styling section */
 .requestForm {
     width: 80%;
     max-width: 800px;
@@ -79,7 +79,15 @@
     border: 2px solid #000;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 1);
 }
+/* Increment and Buttons */
+.add {
+    background-color: lightgreen;
+}
 
+.minus {
+    background-color: indianred;
+}
+/* Add to Basket and Checkout Buttons */
 .addToBasketBtn {
     background-color: green;
 }
@@ -88,7 +96,7 @@
     background-color: rgb(62, 137, 190);
 
 }
-
+/* Total Price section */
 #total-price {
     margin-left: 5%;
 }

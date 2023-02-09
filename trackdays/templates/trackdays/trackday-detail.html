@@ -45,12 +45,12 @@
 
                             <div class="choice">
                                 <label for="halfDay" class="me-3 text-center">
-                                    <input type="radio" name="fullHalfDay" id="halfDay" />
+                                    <input value="{% widthratio trackday.base_trackday_price 2 1 %}" type="radio" name="fullHalfDay" id="halfDay" />
                                     Half Day - £{% widthratio trackday.base_trackday_price 2 1 %}
                                 </label>
 
                                 <label for="fullDay" class="text-center">
-                                    <input type="radio" name="fullHalfDay" id="fullDay" />
+                                    <input value="{{ trackday.base_trackday_price }}" type="radio" name="fullHalfDay" id="fullDay" />
                                     Full Day - £{{ trackday.base_trackday_price }}
                                 </label>
                             </div>
@@ -61,12 +61,12 @@
 
                             <div class="choice">
                                 <label for="pitlane" class="me-3 text-center">
-                                    <input type="radio" name="paddockHire" id="pitlane" />
+                                    <input value="50" type="radio" name="paddockHire" id="pitlane" />
                                     Pitlane Paddock - £50
                                 </label>
 
                                 <label for="standard" class="text-center">
-                                    <input type="radio" name="paddockHire" id="standard" />
+                                    <input value="0" type="radio" name="paddockHire" id="standard" />
                                     Standard Paddock - £0
                                 </label>
                             </div>
@@ -77,9 +77,9 @@
 
                             <div class="choice">
                                 <select name="" id="" class="border-2 border-dark me-5">
-                                    <option value="">None</option>
+                                    <option value="0">None</option>
                                     {% for car in cars %}
-                                    <option value="">{{ car.make }} {{ car.model }}
+                                    <option value="{{ car.cost_to_hire }}">{{ car.make }} {{ car.model }}
                                         {% if car.variant %}{{ car.variant }} {% endif %} - £{{ car.cost_to_hire }}
                                     </option>
                                     {% endfor %}
@@ -92,8 +92,10 @@
                             <label for="" class="label">Additional Drivers:</label>
 
                             <div class="choice">
-                                <input class="border-2 border-dark me-3" type="number" name="" id="" min="0" max="4" />
-                                <label for="" class="text-center">- £10 per person</label>
+                                <input class="px-2 add" type="button" onclick="incrementDriverValue()" value="+">
+                                <input class="border-2 border-dark" type="number" name="driver-number" id="driver-number" min="0" max="4"/>
+                                <input class="px-2 minus" type="button" onclick="decrementDriverValue()" value="-">
+                                <label for="driver-number" class="text-center ms-3">- £10 per person (Up to 4 max)</label>
                             </div>
                         </div>
 
@@ -101,8 +103,10 @@
                             <label for="" class="label">Helmet Hire:</label>
 
                             <div class="choice">
-                                <input class="border-2 border-dark me-3" type="number" name="" id="" min="0" max="4" />
-                                <label for="" class="text-center">- £10 per person</label>
+                                <input class="px-2 add" type="button" onclick="incrementHelmetValue()" value="+">
+                                <input class="border-2 border-dark" type="number" name="helmet-number" id="helmet-number" min="0" max="4"/>
+                                <input class="px-2 minus"type="button" onclick="decrementHelmetValue()" value="-">
+                                <label for="helmet-number" class="text-center ms-3">- £10 per person (Up to 4 max)</label>
                             </div>
                         </div>
 
@@ -110,14 +114,16 @@
                             <label for="" class="label">Tuition:</label>
 
                             <div class="choice">
-                                <input class="border-2 border-dark me-3" type="number" name="" id="" min="0" max="4" />
-                                <label for="">- £25 per person</label>
+                                <input class="px-2 add" type="button" onclick="incrementTuitionValue()" value="+">
+                                <input class="border-2 border-dark" type="number" name="tuition-number" id="tuition-number" min="0" max="4"/>
+                                <input class="px-2 minus" type="button" onclick="decrementTuitionValue()" value="-">
+                                <label class="ms-3" for="tuition-number">- £25 per person (Up to 4 max)</label>
                             </div>
                         </div>
 
                         <div class="btns">
                             <button class="addToBasketBtn">Add to Basket</button>
-                            <button class="checkoutBtn">Checkout</button>
+                            <!-- <button class="checkoutBtn">Checkout</button> -->
                         </div>
                     </form>
 
@@ -138,5 +144,70 @@
         </div>
 
 
+    {% endblock %}
 
-        {% endblock %}
+{% block postloadjs %}
+
+<script type="text/javascript">
+function incrementDriverValue()
+{
+    // Incrementing the Driver Number input
+    let i = parseInt(document.getElementById('driver-number').value, 4);
+    i = isNaN(i) ? 0 : i;
+    i++;
+    document.getElementById('driver-number').value = i;
+
+}
+function incrementHelmetValue()
+{
+    // Incrementing the Helmet Number input
+    let j = parseInt(document.getElementById('helmet-number').value, 4);
+    j = isNaN(j) ? 0 : j;
+    j++;
+    document.getElementById('helmet-number').value = j;
+}
+
+function incrementTuitionValue()
+{
+    // Incrementing the Tuition Number input
+    let j = parseInt(document.getElementById('tuition-number').value, 4);
+    j = isNaN(j) ? 0 : j;
+    j++;
+    document.getElementById('tuition-number').value = j;
+}
+
+function decrementDriverValue()
+{
+    // Decrementing the Driver Number input
+    let i = parseInt(document.getElementById('driver-number').value, 4);
+    i = isNaN(i) ? 4 : i;
+    if (i > 0) {
+    i--;
+    }
+    document.getElementById('driver-number').value = i;
+
+}
+
+function decrementHelmetValue()
+{
+    //Decrementing the Helmet Number input
+    let j = parseInt(document.getElementById('helmet-number').value, 4);
+    j = isNaN(j) ? 4 : j;
+    if (j > 0) {
+    j--;
+    }
+    document.getElementById('helmet-number').value = j;
+}
+function decrementTuitionValue()
+{
+    //Decrementing the Tuition Number input
+    let j = parseInt(document.getElementById('tuition-number').value, 4);
+    j = isNaN(j) ? 4 : j;
+    if (j > 0) {
+    j--;
+    }
+    document.getElementById('tuition-number').value = j;
+}
+</script>
+
+{% endblock %}
