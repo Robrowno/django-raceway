@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import (
     Experiences, Trackday, TrackdayRequest, TrackdayBooking, Tuition
     )
+from cars.models import Cars
 from django.contrib import messages
 
 # Create your views here.
@@ -25,9 +26,11 @@ def track_day_detail(request, trackday_id):
     View to render the Track day detail booking page.
     """
     trackday = get_object_or_404(Trackday, pk=trackday_id)
+    cars = Cars.objects.all()
 
     context = {
         "trackday": trackday,
+        "cars": cars,
     }
 
     return render(request, 'trackdays/trackday-detail.html', context)

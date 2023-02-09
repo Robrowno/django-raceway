@@ -209,8 +209,6 @@
         var itemId = $(this).attr('id').split('_')[2];
         var url = `/checkout/basket/remove/${itemType}/${itemId}/`;
         var dataset = {'csrfmiddlewaretoken': csrfToken,};
-        console.log("delete clicked")
-        console.log(url)
         $.post(url, dataset)
          .done(function() {
              location.reload();

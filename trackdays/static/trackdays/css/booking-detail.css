@@ -14,6 +14,7 @@
     color: #fff;
 }
 
+
 .requestForm {
     width: 80%;
     max-width: 800px;
@@ -45,11 +46,25 @@
     align-items: center;
 }
 
+.choice #byoc {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
 .formRow .label {
     width: 100%;
     margin: 5px 0;
     font-weight: bold;
     font-size: 18px;
+}
+
+.formRow #byoc {
+    width: 110%;
+    margin: 10px 0;
+    font-size: 15px;
 }
 
 .btns {
@@ -72,6 +87,10 @@
 .checkoutBtn {
     background-color: rgb(62, 137, 190);
 
+}
+
+#total-price {
+    margin-left: 5%;
 }
 
 

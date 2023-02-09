@@ -62,7 +62,7 @@
                             <div class="choice">
                                 <label for="pitlane" class="me-3 text-center">
                                     <input type="radio" name="paddockHire" id="pitlane" />
-                                    Pitlane Paddock - $£50
+                                    Pitlane Paddock - £50
                                 </label>
 
                                 <label for="standard" class="text-center">
@@ -77,11 +77,14 @@
 
                             <div class="choice">
                                 <select name="" id="" class="border-2 border-dark me-5">
-                                    <option value="car1">Car 1</option>
-                                    <option value="car2">Car 2</option>
-                                    <option value="car3">Car 3</option>
+                                    <option value="">None</option>
+                                    {% for car in cars %}
+                                    <option value="">{{ car.make }} {{ car.model }}
+                                        {% if car.variant %}{{ car.variant }} {% endif %} - £{{ car.cost_to_hire }}
+                                    </option>
+                                    {% endfor %}
                                 </select>
-                                <label for="" class="text-center">- Or bring your own car!</label>
+                                <label id="byoc" for="" class="text-center pt-3">- Or bring your own car!</label>
                             </div>
                         </div>
 
@@ -118,10 +121,19 @@
                         </div>
                     </form>
 
-
+                    <div class="container-fluid mb-2">
+                        <div class="row d-flex justify-content-end">
+                            <div class="col-4 col-lg-3 card border-success">
+                                <div class="card-body">
+                                  <h6>Total: <span id="total-price" class="fs-4">{{ trackday.base_trackday_price }}</span></h6>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- On submit, the order is stored in the users basket until they are ready to checkout-->
                 </div>
+
             </div>
         </div>
 

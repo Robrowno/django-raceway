@@ -101,7 +101,9 @@
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                                 <li></li>
                                 <li><a class="dropdown-item" href="{% url 'my_basket' %}">Basket</a></li>
+                                {% if basket_contents %}
                                 <li><a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a></li>
+                                {% endif %}
                             </ul>
                         </li>
                         
