@@ -56,13 +56,13 @@ I used Balsamiq Wireframes to make mockups for the website and design how I init
 ![Experiences Page](/static/images/readme-images/experiences-desktop.png)
 
 #### Experiences Detail
-![Experiences Detail]()
+![]()
 
 #### Tuition
 ![Tuition Page](/static/images/readme-images/tuition-desktop.png)
 
 #### Tuition Detail
-![Tuition Detail]()
+![]()
 
 #### Trackdays
 ![Trackday List](/static/images/readme-images/trackdays-list-desktop.png)
@@ -91,8 +91,13 @@ I used Balsamiq Wireframes to make mockups for the website and design how I init
 #### Management Page
 ![Management Page](/static/images/readme-images/management-page-desktop.png)
 
+#### FAQs Page
+![]()
+![]()
 
-
+#### Policies Page
+![]()
+![]()
 
 ### Mobile and Tablet
 
@@ -102,51 +107,72 @@ I used Balsamiq Wireframes to make mockups for the website and design how I init
 
 
 #### Cars to Hire 
-![Cars to hire]()
+![Car Hire Mobile](/static/images/readme-images/car-hire-mobile.png)
+![Car Hire Tablet](/static/images/readme-images/car-hire-tablet.png)
 
 #### About 
-![About Page]()
+![About Page Mobile](/static/images/readme-images/about-mobile.png)
+![About Page Tablet](/static/images/readme-images/about-tablet.png)
 
 #### Experiences
-![Experiences Page]()
+![Experiences Page Mobile](/static/images/readme-images/experiences-mobile.png)
+![Experiences Page Tablet](/static/images/readme-images/experiences-tablet.png)
 
 #### Experiences Detail
-![Experiences Detail]()
+![]()
+![]()
 
 #### Tuition
-![Tuition Page]()
+![Tuition Page Mobile](/static/images/readme-images/tuition-mobile.png)
+![Tuition Page Tablet](/static/images/readme-images/tuition-tablet.png)
 
 #### Tuition Detail
-![Tuition Detail]()
+![]()
+![]()
 
 #### Trackdays
-![Trackday List]()
+![Trackday List Mobile](/static/images/readme-images/trackdays-mobile.png)
+![Trackday List Tablet](/static/images/readme-images/trackdays-tablet.png)
 
 #### Trackday Detail
-![Trackday Detail]()
+![Trackday Detail Mobile](/static/images/readme-images/trackday-booking-mobile.png)
+![Trackday Detail Tablet](/static/images/readme-images/trackday-booking-tablet.png)
 
 #### Request a Trackday
-![Request Trackday Page]()
+![Request Trackday Mobile](/static/images/readme-images/trackday-request-mobile.png)
+![Request Trackday Tablet](/static/images/readme-images/trackday-request-tablet.png)
 
 #### Basket
-![Basket]()
+![Basket Mobile](/static/images/readme-images/basket-mobile.png)
+![Basket Tablet](/static/images/readme-images/basket-tablet.png)
 
 #### Checkout
-![Checkout Page]()
+![Checkout Mobile](/static/images/readme-images/checkout-mobile.png)
+![Checkout Tablet](/static/images/readme-images/checkout-tablet.png)
 
 #### Checkout Success Page
-![Checkout Success]()
+![Checkout Success Mobile](/static/images/readme-images/checkout-success-mobile.png)
+![Checkout Success Tablet](/static/images/readme-images/checkout-success-tablet.png)
 
 #### Profile
-![Profile Page]()
+![Profile Mobile](/static/images/readme-images/profile-mobile.png)
+![Profile Tablet](/static/images/readme-images/profile-tablet.png)
 
 #### Edit Profile
-![Edit Profile Page]()
+![Edit Profile Mobile](/static/images/readme-images/edit-profile-mobile.png)
+![Edit Profile Tablet](/static/images/readme-images/edit-profile-tablet.png)
 
 #### Management Page
-![Management Page]()
+![Management Page Mobile](/static/images/readme-images/management-mobile.png)
+![Management Page Tablet](/static/images/readme-images/managemement-tablet.png)
 
+#### FAQs Page
+![]()
+![]()
 
+#### Policies Page
+![]()
+![]()
 ---
 
 ### Early Development
@@ -161,6 +187,14 @@ Key differences here include a carousel (which I would end up keeping) and the m
 ---
 
 ## User Experience (UX)
+
+### B2C Strategy
+
+
+### Agile Methodologies
+
+
+### User Stories
 
 
 ---
@@ -203,6 +237,10 @@ Full list of technology implemented below:
 - Django Crispy Forms - for neatly styling form layouts
 - Pillow - A PIL (Python Imaging Library)
 
+#### Python Packages Installed
+
+- 
+
 ---
 
 ## Testing
@@ -220,6 +258,7 @@ Due to the size of the testing required, this can be found here: [Django Raceway
 - I had some early trouble getting my contact model to work correctly - I realised I had put incorrect 'name' attributes in my contact view. I also made changes in my contact model that required me to flush the database and remove previous migrations and to migrate again after.
 
 - Bootstrap 5 toasts: I attempted to modify the bootstrap 4 toasts from the Boutique Ado walkthrough, whilst I was using Bootstrap 5.0.2 - This didn't work, and thanks to a snippet of code from Alan from Tutor support I was able to get it working again.
+
 
 
 
