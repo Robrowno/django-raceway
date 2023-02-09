@@ -8,46 +8,93 @@
 {% block content %}
 {% include 'includes/main-nav.html' %}
 {% if user.is_authenticated %}
-<h2 class="text-center mt-4">Profile:</h2>
-<div class="container mx-auto">
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-8 mb-4">
-            <div class="card text-center mb-4">
-                <div class="card-header py-3 mb-3">
+<h2 class="text-center mt-4">Profile Details</h2>
 
-                    <h3><!--User--> Account Details:</h3>
-                </div>
-                <!-- Main Account Details -->
-                <p class="profile-info">First Name</p>
-                <p class="profile-info">Last Name</p>
-                <p class="profile-info">Email Address</p>
-                <p class="profile-info">Phone Number</p>
-                <p class="profile-info">Address 1</p>
-                <p class="profile-info">Address 2 (Optional)</p>
-                <p class="profile-info">Town or City</p>
-                <p class="profile-info">County</p>
-                <p class="profile-info">Postcode</p>
-                <p class="profile-info">Nationality (Optional)</p>
 
-                <!-- Horizontal Divider -->
-                <hr class="my-4">
+<form class="profileForm" id="profileForm">
+    {% csrf_token %}
+    <div class="functionality-btn">
+      <button  onclick="enableProfileForm()" id="editProfileBtn" class="submitBtn mt-3">Edit</button>
+      <button type="submit" onclick="disableProfileForm()" id="saveProfileBtn" class="submitBtn mt-3">Save</button>
 
-                <div>
-                    <!-- Option to save default Card Details -->
-                    <h4> Default Card Details:</h4>
-                    <p class="profile-info">Name on Card</p>
-                    <p class="profile-info">Card Number</p>
-                    <p class="profile-info">Expiry date</p>
-                    <p class="profile-info">CVV</p>
-                </div>
-            </div>
-            
-        </div>
+    </div>
+    <div class="formRow">
+      <label for="FirstName">First Name</label>
+      <input type="text" id="FirstName" value="{{context.user}}" name="FirstName" required disabled>
+    </div>
+    <div class="formRow">
+      <label for="LastName">Last Name</label>
+      <input type="text" id="LastName" name="LastName" required disabled>
+    </div>
+    <div class="formRow">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required disabled>
+    </div>
+  
+    <div class="formRow">
+      <label for="tel">Phone Number</label>
+      <input type="tel" id="tel" name="tel" disabled>
+    </div>
+  
+    <div class="formRow">
+      <label for="Address1">Address 1</label>
+      <input type="text" id="Address1" name="Address1" required disabled>
+    </div>
+  
+    <div class="formRow">
+      <label for="Address2">Address 2 (Optional)</label>
+      <input type="text" id="Address2" name="Address2" disabled>
+    </div>
+    <div class="formRow">
+      <label for="city">Town or City</label>
+      <input type="text" id="city" name="city" disabled>
+    </div>
+    <div class="formRow">
+      <label for="County">County</label>
+      <input type="text" id="County" name="County" disabled>
+    </div>
+    <div class="formRow">
+      <label for="Nationality">Nationality</label>
+      <input type="text" id="Nationality" name="Nationality" disabled>
+    </div>
+    <div class="formRow">
+      <label for="PostalCode">PostalCode</label>
+      <input type="text" id="PostalCode" name="PostalCode" disabled>
+    </div>
+    <div class="formRow">
+      <label for="County">County</label>
+      <input type="text" id="County" name="County" disabled>
+    </div>
+  
+  </form>
+<h2 class="text-center mt-4">Card Details</h2>
 
-        </div>
-</div>
-</div>
-</div>
+  <form class="CardForm" id="CardForm" method="post" action="">
+    {% csrf_token %}
+    <div class="functionality-btn">
+      <button onclick="enableCardForm()" id="editCardBtn"  class="submitBtn mt-3">Edit</button>
+      <button onclick="disableCardForm()" id="saveCardBtn"  class="submitBtn mt-3">Save</button>
+    </div>
+    <div class="formRow">
+      <label for="NameOnCard">Name on Card</label>
+      <input type="text" id="NameOnCard" name="NameOnCard" required disabled>
+    </div>
+    <div class="formRow">
+      <label for="CardNumber">Card Number</label>
+      <input type="number" id="CardNumber" name="CardNumber" required disabled>
+    </div>
+    <div class="formRow">
+      <label for="ExpiryDate">Expiry date</label>
+      <input type="date" id="ExpiryDate" name="ExpiryDate" required disabled>
+    </div>
+    <div class="formRow">
+      <label for="CVV">CVV</label>
+      <input type="number" id="CVV" name="CVV" oninput="validateLength(this)" required disabled>
+    </div>
+  </form>
+  {% block postloadjs %}
+  <script type="text/javascript" src="{% static 'profiles/js/profile.js' %}"></script>
+  {% endblock %}
 {% endif %}
 
 {% endblock %}
