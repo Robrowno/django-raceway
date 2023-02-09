@@ -79,3 +79,11 @@ margin-right: 5px;
         width: 50%;
     }
 }
+.fade {
+    animation: fade 2s;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

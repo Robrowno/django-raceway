@@ -18,8 +18,6 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     default_phone_number = models.CharField(max_length=20,
                                             null=True, blank=True, default='')
-    default_email_address = models.CharField(max_length=50,
-                                             null=True, blank=True, default='')
     default_street_address1 = models.CharField(max_length=80,
                                                null=True, blank=True, default='')
     default_street_address2 = models.CharField(max_length=80,
@@ -54,9 +52,9 @@ class CardStorage(models.Model):
 
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     name_on_card = models.CharField(max_length=50)
-    cc_number = CardNumberField('card number')
-    cc_expiry = CardExpiryField('expiration date')
-    cc_code = SecurityCodeField('security code')
+    cc_number = models.CharField(max_length=19,default=None)
+    cc_expiry = models.DateField(default=None)
+    cc_code = models.CharField(max_length=3,default=None)
 
     def __str__(self):
         return str(f"{self.user}'s card has been stored")

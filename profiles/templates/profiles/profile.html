@@ -8,66 +8,74 @@
 {% block content %}
 {% include 'includes/main-nav.html' %}
 {% if user.is_authenticated %}
+{% block extra_js %}
+<script type="text/javascript" src="{% static 'profiles/js/profile.js' %}"></script>
+{% endblock %}
+
+<div id="alert-container"></div>
 <h2 class="text-center mt-4">Profile Details</h2>
 
-
-<form class="profileForm" id="profileForm">
+<form class="profileForm" id="profileFormID">
     {% csrf_token %}
     <div class="functionality-btn">
-      <button  onclick="enableProfileForm()" id="editProfileBtn" class="submitBtn mt-3">Edit</button>
-      <button type="submit" onclick="disableProfileForm()" id="saveProfileBtn" class="submitBtn mt-3">Save</button>
+      <button type="button"  id="editProfileBtn" class="submitBtn mt-3">Edit</button>
+      <button type="button" id="saveProfileBtn" class="submitBtn mt-3">Save</button>
 
     </div>
     <div class="formRow">
-      <label for="FirstName">First Name</label>
-      <input type="text" id="FirstName" value="{{context.user}}" name="FirstName" required disabled>
+      <label for="name">Name</label>
+      <input type="text" id="name" value="{{user.username}}" name="name" required disabled>
     </div>
-    <div class="formRow">
-      <label for="LastName">Last Name</label>
-      <input type="text" id="LastName" name="LastName" required disabled>
-    </div>
+    
     <div class="formRow">
       <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required disabled>
+      <input type="email" id="email" value="{{user.email}}" name="email" required disabled>
     </div>
   
     <div class="formRow">
       <label for="tel">Phone Number</label>
-      <input type="tel" id="tel" name="tel" disabled>
+      <input type="tel" value="{{profile.default_phone_number}}" id="tel" name="tel" disabled>
     </div>
   
     <div class="formRow">
       <label for="Address1">Address 1</label>
-      <input type="text" id="Address1" name="Address1" required disabled>
+      <input type="text" id="Address1" value="{{profile.default_street_address1}}" name="Address1" required disabled>
     </div>
   
     <div class="formRow">
       <label for="Address2">Address 2 (Optional)</label>
-      <input type="text" id="Address2" name="Address2" disabled>
+      <input type="text" id="Address2" value="{{profile.default_street_address2}}" name="Address2" disabled>
     </div>
     <div class="formRow">
       <label for="city">Town or City</label>
-      <input type="text" id="city" name="city" disabled>
+      <input type="text" id="city" value="{{profile.default_town_or_city}}" name="city" disabled>
     </div>
     <div class="formRow">
       <label for="County">County</label>
-      <input type="text" id="County" name="County" disabled>
+      <input type="text" id="County" value="{{profile.default_county}}" name="County" disabled>
     </div>
     <div class="formRow">
       <label for="Nationality">Nationality</label>
-      <input type="text" id="Nationality" name="Nationality" disabled>
+      <input type="text" id="Nationality" value="{{profile.default_nationality}}" name="Nationality" disabled>
     </div>
     <div class="formRow">
       <label for="PostalCode">PostalCode</label>
-      <input type="text" id="PostalCode" name="PostalCode" disabled>
-    </div>
-    <div class="formRow">
-      <label for="County">County</label>
-      <input type="text" id="County" name="County" disabled>
+      <input type="text" id="PostalCode" value="{{profile.default_postcode}}" name="PostalCode" disabled>
     </div>
   
   </form>
-<h2 class="text-center mt-4">Card Details</h2>
+  <script>
+   
+    init();
+    $("#editProfileBtn").on('click', function(){
+        enableProfileForm();
+    });
+    $("#saveProfileBtn").on('click', function(){
+        disableProfileForm();
+      });
+  </script>
+
+<!-- <h2 class="text-center mt-4">Card Details</h2>
 
   <form class="CardForm" id="CardForm" method="post" action="">
     {% csrf_token %}
@@ -91,10 +99,8 @@
       <label for="CVV">CVV</label>
       <input type="number" id="CVV" name="CVV" oninput="validateLength(this)" required disabled>
     </div>
-  </form>
-  {% block postloadjs %}
-  <script type="text/javascript" src="{% static 'profiles/js/profile.js' %}"></script>
-  {% endblock %}
+  </form> -->
+
 {% endif %}
 
 {% endblock %}
