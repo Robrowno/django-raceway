@@ -260,6 +260,10 @@ Due to the size of the testing required, this can be found here: [Django Raceway
 - Bootstrap 5 toasts: I attempted to modify the bootstrap 4 toasts from the Boutique Ado walkthrough, whilst I was using Bootstrap 5.0.2 - This didn't work, and thanks to a snippet of code from Alan from Tutor support I was able to get it working again.
 
 
+### Current Unresolved Bugs
+
+- For some reason, the profile link in the nav bar (which appears to you once you log in) can appear to be unclickable. I have not yet found out why this is happening, but if you refresh the page, it resolves the issue every single time. 
+
 
 
 ---
@@ -355,4 +359,10 @@ I made a mock up of my checkout page using the template provided by [mdboostrap]
 ---
 ## Final Thoughts
 
+
+
+
+
 ---
+
+[Return to top of page](#django-raceway)

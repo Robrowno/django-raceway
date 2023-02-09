@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from .models import Cars
 
-# Create your views here.
-
 
 def car_hire(request):
     """
