@@ -172,11 +172,11 @@
                     <p class="mb-0">(including VAT)</p>
                   </strong>
                 </div>
-                <span><strong>£X00</strong></span>
+                <span><strong>£{{ grand_total|floatformat:2 }}</strong></span>
               </li>
             </ul>
             <div class="card-footer border-success d-flex">
-              <div class="p-2 flex-grow-1 bd-highlight d-flex align-items-center">Price: £ X00</div>
+              <div class="p-2 flex-grow-1 bd-highlight d-flex align-items-center">Price: £{{ grand_total|floatformat:2 }}</div>
               <div class="p-2 bd-highlight d-flex align-items-center">
                 <a href="#">
                   <button class="btn btn-success">Go to Checkout</button>

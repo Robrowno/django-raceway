@@ -4,6 +4,8 @@ from django.shortcuts import get_object_or_404
 from trackdays.models import Trackday, Tuition, Experiences
 
 
+grand_total = 0
+
 def basket_contents(request):
 
     """
@@ -48,10 +50,24 @@ def basket_contents(request):
                 'quantity': quantity,
             })
 
+    print(calc_vat(request, total))
     context = {
         'basket_contents': basket_contents,
         'total': total,
-        'product_count': product_count
+        'product_count': product_count,
+        'grand_total': calc_vat(request, total),
     }
 
     return context
+
+
+def calc_vat(request, total):
+
+    """
+    For calculating the total cost including VAT
+    """
+    vat_rate = Decimal('0.20')
+    vat_amount = total * vat_rate
+    grand_total = total + vat_amount
+
+    return grand_total
