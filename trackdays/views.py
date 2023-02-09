@@ -5,8 +5,6 @@ from .models import (
 from cars.models import Cars
 from django.contrib import messages
 
-# Create your views here.
-
 
 def track_day_list(request):
     """

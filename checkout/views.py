@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse, HttpResponse
-from trackdays.models import Tuition, Experiences
+from trackdays.models import Tuition, Experiences, Trackday, TrackdayBooking
+from cars.models import Cars
 from django.contrib import messages
 
 # Create your views here.
@@ -11,6 +12,33 @@ def basket(request):
     """
 
     return render(request, 'checkout/basket.html')
+
+def add_trackday_to_basket(request, trackday_id):
+    """
+    For adding a track day order to the basket
+    """
+    trackday = get_object_or_404(Trackday, pk=trackday_id)
+    quantity = 0
+    basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
+
+    if request.method == 'POST':
+        booking = TrackdayBooking(trackday=trackday)
+        booking.full_or_half_day = request.POST.get('fullHalfDay')
+        booking.paddock_hire = request.POST.get('paddockhire')
+        booking.additional_drivers = request.POST.get('driver-number')
+        booking.helmet_hire = request.POST.get('helmet-number')
+        booking.tuition = request.POST.get('tuition-number')
+        booking.car_hire = get_object_or_404(Cars, id=request.POST.get('carhire'))
+        booking.save()
+        quantity = 1
+
+        if trackday_id in list(basket.keys()):
+            basket['trackday'][trackday_id] += quantity
+        else:
+            basket['trackday'][trackday_id] = quantity
+        
+    request.session['basket'] = basket
+    return redirect('trackdays')
 
 
 def add_exp_to_basket(request, experience_id):

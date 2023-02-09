@@ -68,7 +68,6 @@ class TrackdayBooking(models.Model):
     additional_drivers = models.PositiveIntegerField(default=0)
     helmet_hire = models.PositiveIntegerField(default=0)
     tuition = models.PositiveIntegerField(default=0)
-    hospitality_packs = models.IntegerField(choices=CHOICES, default=NO)
     paddock_hire = models.IntegerField(choices=CHOICES, default=NO)
 
     def __str__(self):

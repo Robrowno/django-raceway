@@ -236,6 +236,7 @@ Full list of technology implemented below:
 - Django Summernote - for styling the text boxes in the admin page with a WYSIWYG (what you see is what you get) editor.
 - Django Crispy Forms - for neatly styling form layouts
 - Pillow - A PIL (Python Imaging Library)
+- GMail - for sending real email from gmail to users in production
 
 #### Python Packages Installed
 
