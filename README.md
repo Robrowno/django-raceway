@@ -20,11 +20,142 @@ Link to live site: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## Table of Contents:
 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+
 
 
 ---
 
 ## Wireframes and Planning
+
+### Balsamiq wireframes/mockups
+I used Balsamiq Wireframes to make mockups for the website and design how I initially imagined the site would look. 
+
+### Desktop
+
+#### Home Page
+![Home Page](/static/images/readme-images/home-desktop.png)
+
+#### Cars to Hire 
+![Cars to hire](/static/images/readme-images/cars-to-hire-desktop.png)
+
+#### About 
+![About Page](/static/images/readme-images/about-desktop.png)
+
+#### Experiences
+![Experiences Page](/static/images/readme-images/experiences-desktop.png)
+
+#### Experiences Detail
+![Experiences Detail]()
+
+#### Tuition
+![Tuition Page](/static/images/readme-images/tuition-desktop.png)
+
+#### Tuition Detail
+![Tuition Detail]()
+
+#### Trackdays
+![Trackday List](/static/images/readme-images/trackdays-list-desktop.png)
+
+#### Trackday Detail
+![Trackday Detail](/static/images/readme-images/trackday-detail-desktop.png)
+
+#### Request a Trackday
+![Request Trackday Page](/static/images/readme-images/request-trackday-desktop.png)
+
+#### Basket
+![Basket](/static/images/readme-images/basket-desktop.png)
+
+#### Checkout
+![Checkout Page](/static/images/readme-images/checkout-desktop.png)
+
+#### Checkout Success Page
+![Checkout Success](/static/images/readme-images/checkout-success-desktop.png)
+
+#### Profile
+![Profile Page](/static/images/readme-images/profile-desktop.png)
+
+#### Edit Profile
+![Edit Profile Page](/static/images/readme-images/edit-profile-desktop.png)
+
+#### Management Page
+![Management Page](/static/images/readme-images/management-page-desktop.png)
+
+
+
+
+### Mobile and Tablet
+
+#### Home Page
+![Home Page Mobile](/static/images/readme-images/home-mobile.png)
+![Home Page Tablet](/static/images/readme-images/home-tablet.png)
+
+
+#### Cars to Hire 
+![Cars to hire]()
+
+#### About 
+![About Page]()
+
+#### Experiences
+![Experiences Page]()
+
+#### Experiences Detail
+![Experiences Detail]()
+
+#### Tuition
+![Tuition Page]()
+
+#### Tuition Detail
+![Tuition Detail]()
+
+#### Trackdays
+![Trackday List]()
+
+#### Trackday Detail
+![Trackday Detail]()
+
+#### Request a Trackday
+![Request Trackday Page]()
+
+#### Basket
+![Basket]()
+
+#### Checkout
+![Checkout Page]()
+
+#### Checkout Success Page
+![Checkout Success]()
+
+#### Profile
+![Profile Page]()
+
+#### Edit Profile
+![Edit Profile Page]()
+
+#### Management Page
+![Management Page]()
+
+
+---
+
+### Early Development
+
+At the start of the project, even though I had the wireframes as versions of how I wanted the site to look, I more often than not made early mockup versions of the pages to quickly get the framework of the pages set up and to test whether I might like to do something another way or differently from the wireframes. 
+
+Here is an early example of my home page, mocked up at the very start of the project. 
+Key differences here include a carousel (which I would end up keeping) and the middle nav bar placed at the top of the page.
+![Early Development Homepage](/static/images/readme-images/early-dev-homepage.png)
 
 
 ---
@@ -41,13 +172,42 @@ Link to live site: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## Future Implementations
 
+- 
+- 
+- 
+
+
 ---
 
 ## Technologies Used
 
+Full list of technology implemented below:
+
+- HTML5 - Latest iteration of Hypertext Markup Language
+- CSS3 - Latest version of Cascading Style Sheets
+- Bootstrap 5.0.2 - A styling framework used to speed up layout and styles. 
+- Django Framework - Main, Python based framework on which this project is based.
+- Python 3.8 - Version of Python installed on Gitpod
+- Javascript (Vanilla)
+- JQuery (In conjunction with Boostrap)
+- Git - used for version control
+- Stripe - APIs that handles the payments on the project
+- AWS S3 - for storing static files such as media
+- HEROKU - used to host my website
+- Github - used to host the code from my repository
+- Gitpod IDE - used to write the code for the project
+- VSCode IDE (for local testing) - used to write and store code on a local machine (as opposed to cloud)
+- ElephantSQL (Hosted my PostgreSQL database)
+- PostgreSQL (RDBMS) - The Regional Database Management System used for the data/backend of the project
+- Django Summernote - for styling the text boxes in the admin page with a WYSIWYG (what you see is what you get) editor.
+- Django Crispy Forms - for neatly styling form layouts
+- Pillow - A PIL (Python Imaging Library)
+
 ---
 
 ## Testing
+
+Due to the size of the testing required, this can be found here: [Django Raceway Testing](TESTING.md)
 
 ---
 
