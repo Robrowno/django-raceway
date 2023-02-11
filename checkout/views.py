@@ -53,7 +53,9 @@ def remove_trackday_from_basket(request, trackday_id):
 
         request.session['basket'] = basket
         messages.warning(request, "Removed from the basket.")
+
         return HttpResponse(status=200)
+        
     except Exception as e:
         print(e)
         return HttpResponse(status=500)

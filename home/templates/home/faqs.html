@@ -3,11 +3,67 @@
 
 {% block content %}
 {% include 'includes/main-nav.html' %}
-<h2 class="text-center">FAQs:</h2>
+<h2 class="text-center mt-4">FAQs:</h2>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            
+    <div class="row d-flex justify-content-center">
+        <div class="col-10">
+            <h3>Q: What do I need to bring on the day?</h3>
+            <p>A: Generally speaking, the only thing you are required to bring with you on the day is your driving license.
+                Whilst safety equipment is required at all times on track, such as a helmet, these can be hired for trackday use or are provided in courses as a part of the cost.
+                If you are partaking in a trackday, we ask that your car is suitable for the event, safe to drive and meets the required db limit on the day.
+                Failing this, you may be told you cannot partake in the day's activities.
+            </p>
+
+            <h3>Q: Do I require a racing license?</h3>
+            <p>A: As these events are not under competitive conditions, you do not require a specialist racing license. You do need a valid Driver's license.
+                There are no experience thresholds and all drivers of all experience levels are welcome!
+            </p>
+
+            <h3>Q: What are the proceedures on a typical trackday?</h3>
+            <p>A: All trackdays begin with a sign on at reception and a driver's briefing, where all mandatory safety information will be explained to you.
+                For your reference below, the common safety flags that marshals may use on a trackday:
+            </p>
+            <ul>
+                <li><span class="text-warning">Yellow Flag:</span> Danger ahead, no overtaking, slow down.</li>
+                <li><span class="text-danger">Red Flag:</span> Incident on track, slow down, no overtaking and return to pits.</li>
+                <li><span class="text-success">Green Flag:</span>Incident cleared - Safe to resume at track speed.</li>
+                <li><span class="text-warning">Yellow</span>/<span class="text-danger">Red</span> <span class="text-warning">Striped:</span> Debris or poor grip on track surface, take care.</li>
+                <li><span class="text-primary">Blue Flag:</span> Faster car behind looking to overtake you. </li>
+                <li>Black <span style="color: orange;">(+ Orange Circle)</span> Flag: Mechanical damage to your car, pit on next lap.</li>
+                <li><span class="text-light bg-dark">Black/White</span>  Flag: Warning/Caution to driver</li>
+                <li><span>Black Flag:</span> For poor/dangerous driving behaviour. Pit on next lap</li>
+                <li><span id="chequered-flag">Chequered Flag:</span> Session end. Pit on next lap.</li>
+
+            </ul>
+
+            <h3>Q: Can I use slick tyres on track days?</h3>
+            <p>A: In short, yes. It is up to the disgression of the driver as to which tyres are suitable on the day. It is the driver's responsibility to ensure these are 
+                safe tyres to use.
+            </p>
+
+            <h3>Q: Can I hire a car?</h3>
+            <p>A: Yes! See our cars available to hire on our dedicated page: <a href="{% url 'carhire' %}">Car hire</a></p>
+
+            <h3>Q: Do I need instruction/tuition?</h3>
+            <p>A: We could all benefit from instruction at some point in our lives. However, this is totally up to you. Tuition can be booked for your trackday as a 1-2-1 option, or, alternatively, you can go for one of our 
+                tuition packages to really sharpen your driving skills: <a href="{% url 'tuition' %}">Tuition Packages</a>
+            </p>
+
+            <h3>Q: How do experience days differ from trackdays?</h3>
+            <p>A: Experience days have a set itinerary with a selection of cars to choose from, and those cars depend on which package is chosen. 
+                Experience days include more included in the price vs the trackdays as well, where there are paid extras.
+                On trackdays, you can hire a car from our garage or you have to choice to bring your own car.
+            </p>
+
+            <h3>Q: Am I allowed to bring additional drivers to trackdays?</h3>
+            <p>A: Yes! Additional drivers can be booked in via our booking page, at an extra cost. No more than 4 can come to a track day per car. 
+                You can also hire out helmets and tuition for the additional drivers as well.
+            </p>
+
+            <h3>Q: Will my insurance cover trackdays? And what if I have an incident on track?</h3>
+            <p> Most standard insurance companies will not cover trackdays, we would suggest you get additional specialist trackday cover for this reason.
+                Any incidents or damage caused on track as a result will be your responsibility, and damage to the venue may incur a charge depending on severity.
+            </p>
         </div>
     </div>
 </div>

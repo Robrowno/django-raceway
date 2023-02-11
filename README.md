@@ -309,6 +309,8 @@ I made a mock up of my checkout page using the template provided by [mdboostrap]
 
 Some of the logic for my increment/decrement buttons on the track day detail page were inspired by answers from this stackoverflow thread: [Stackoverflow js +/-](https://stackoverflow.com/questions/9186346/javascript-onclick-increment-number)
 
+CSS for a checkerboard pattern that I used in my FAQ's Page: [Checkerboard Pattern](https://www.30secondsofcode.org/css/s/checkerboard-pattern)
+
 ## Personal Credits
 
 - Many Thanks to my C.I Mentor Daisy McGirr, who has been guiding me and advising me through this project as well as all projects since PP2 - Her input in our mentor sessions has been instrumental in getting me this far and so I have to say I massive thank you to her for that!
