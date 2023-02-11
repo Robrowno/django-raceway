@@ -37,7 +37,8 @@ def basket_contents(request):
     if 'trackday' in basket:
         for trackday, quantity in basket['trackday'].items():
             trackday = get_object_or_404(Trackday, pk=trackday)
-            total += trackday.base_trackday_price
+            quantity = 1
+            total += trackday.base_trackday_price 
             product_count += quantity
             basket_contents.append({
                 'trackday': trackday,
