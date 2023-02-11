@@ -3,8 +3,6 @@ from trackdays.models import Tuition, Experiences, Trackday, TrackdayBooking
 from cars.models import Cars
 from django.contrib import messages
 
-# Create your views here.
-
 
 def basket(request):
     """
@@ -30,7 +28,6 @@ def add_trackday_to_basket(request, trackday_id):
         booking.tuition = request.POST.get('tuition-number')
         booking.car_hire = get_object_or_404(Cars, id=request.POST.get('carhire'))
         booking.save()
-        quantity = 1
 
         if trackday_id in list(basket.keys()):
             basket['trackday'][trackday_id] += quantity
