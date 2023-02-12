@@ -5,8 +5,6 @@ from trackdays.models import Trackday, TrackdayBooking, Tuition, Experiences
 
 
 grand_total = 0
-# trackday = get_object_or_404(Trackday, pk=trackday)
-# trackdaybooking = get_object_or_404(TrackdayBooking, trackday=trackday)
 
 # trackday_optional_extras = {
 #     'halfday': trackday.base_trackday_price // 2,
@@ -38,6 +36,9 @@ def basket_contents(request):
     if 'trackday' in basket:
         for trackday, quantity in basket['trackday'].items():
             trackday = get_object_or_404(Trackday, pk=trackday)
+            trackdaybooking = TrackdayBooking.objects.all()
+            for item in trackdaybooking:
+                print(item.tuition)
             quantity = 1
             total += trackday.base_trackday_price 
             product_count += quantity

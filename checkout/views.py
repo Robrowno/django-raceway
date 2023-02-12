@@ -43,13 +43,13 @@ def remove_trackday_from_basket(request, item_id):
     """
 
     trackday = get_object_or_404(Trackday, pk=item_id)
-    booking = TrackdayBooking(trackday=trackday)
+    booking = TrackdayBooking.objects.get(trackday=trackday)
 
     try:
         basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
         item = basket['trackday'][item_id]
         basket['trackday'].pop(item_id)
-        # booking.delete()
+        booking.delete()
 
         request.session['basket'] = basket
         messages.warning(request, "Removed from the basket.")
