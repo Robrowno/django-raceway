@@ -83,10 +83,6 @@ def basket_contents(request):
                 'quantity': quantity,
             })
     
-    print(basket)
-    print(basket_contents)
-    
-
     context = {
         'basket_contents': basket_contents,
         'total': total,

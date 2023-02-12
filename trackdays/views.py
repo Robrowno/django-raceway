@@ -5,8 +5,15 @@ from .models import (
     )
 from cars.models import Cars
 from django.contrib import messages
+from checkout.contexts import basket_contents
 
-
+trackDayID=0
+def is_availability(trackday_id):
+    trackday = Trackday.objects.get(id=trackday_id)
+    if trackday.availability >=0:
+        return True
+    else:
+        return False
 def track_day_list(request):
     """
     View to render the Track day list menu.
@@ -17,13 +24,21 @@ def track_day_list(request):
     basket_trackdays = [x for x in basket['trackday'].keys()]
     available_tracks = [x for x in trackday_list if str(x.id) not in basket_trackdays]
     isExist=False
+    isAvailable=[]
+    trackdays = Trackday.objects.all()
+    for trackday in trackdays:
+        trackday_data = {
+            "trackday_id": trackday.id,
+            "availability": is_availability(trackday.id)
+        }
+        isAvailable.append(trackday_data)
+    print(isAvailable)
     if len(basket_trackdays) >0:
         isExist=True
-
-    print("Track day exists? => ",isExist)
     context = {
         "trackdays": available_tracks,
-        "flag":isExist
+        "flag":isExist,
+        "available":isAvailable
     }
 
     return render(request, 'trackdays/trackday-list.html', context)

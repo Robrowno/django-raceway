@@ -55,7 +55,7 @@
       <input type="text" id="County" value="{{profile.default_county}}" name="County" disabled>
     </div>
     <div class="formRow">
-      <label for="Nationality">Nationality</label>
+      <label for="Nationality">Country</label>
       <input type="text" id="Nationality" value="{{profile.default_nationality}}" name="Nationality" disabled>
     </div>
     <div class="formRow">
@@ -74,32 +74,6 @@
         disableProfileForm();
       });
   </script>
-
-<!-- <h2 class="text-center mt-4">Card Details</h2>
-
-  <form class="CardForm" id="CardForm" method="post" action="">
-    {% csrf_token %}
-    <div class="functionality-btn">
-      <button onclick="enableCardForm()" id="editCardBtn"  class="submitBtn mt-3">Edit</button>
-      <button onclick="disableCardForm()" id="saveCardBtn"  class="submitBtn mt-3">Save</button>
-    </div>
-    <div class="formRow">
-      <label for="NameOnCard">Name on Card</label>
-      <input type="text" id="NameOnCard" name="NameOnCard" required disabled>
-    </div>
-    <div class="formRow">
-      <label for="CardNumber">Card Number</label>
-      <input type="number" id="CardNumber" name="CardNumber" required disabled>
-    </div>
-    <div class="formRow">
-      <label for="ExpiryDate">Expiry date</label>
-      <input type="date" id="ExpiryDate" name="ExpiryDate" required disabled>
-    </div>
-    <div class="formRow">
-      <label for="CVV">CVV</label>
-      <input type="number" id="CVV" name="CVV" oninput="validateLength(this)" required disabled>
-    </div>
-  </form> -->
 
 {% endif %}
 

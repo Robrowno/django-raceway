@@ -91,9 +91,9 @@
                             <label for="" class="label">Additional Drivers:</label>
 
                             <div class="choice">
-                                <input class="px-2 add" type="button" onclick="incrementDriverValue()" value="+">
+                                <input class="px-2 add" type="button" onclick="incrementDriver()" value="+">
                                 <input class="border-2 border-dark" type="number" name="driver-number" value=0 id="driver-number" min="0" max="4"/>
-                                <input class="px-2 minus" type="button" onclick="decrementDriverValue()" value="-">
+                                <input class="px-2 minus" type="button" onclick="decrementDriver()" value="-">
                                 <label for="driver-number" class="text-center ms-3">- £10 per person (Up to 4 max)</label>
                             </div>
                         </div>
@@ -102,9 +102,9 @@
                             <label for="" class="label">Helmet Hire:</label>
 
                             <div class="choice">
-                                <input class="px-2 add" type="button" onclick="incrementHelmetValue()" value="+">
+                                <input class="px-2 add" type="button" onclick="incrementHelValue()" value="+">
                                 <input class="border-2 border-dark" type="number" name="helmet-number" value=0 id="helmet-number" min="0" max="4"/>
-                                <input class="px-2 minus"type="button" onclick="decrementHelmetValue()" value="-">
+                                <input class="px-2 minus"type="button" onclick="decrementHelValue()" value="-">
                                 <label for="helmet-number" class="text-center ms-3">- £10 per person (Up to 4 max)</label>
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                         <div class="row d-flex justify-content-end">
                             <div class="col-4 col-lg-3 card border-success">
                                 <div class="card-body">
-                                  <h6>Total: <span id="total-price" class="fs-4">{{ trackday.base_trackday_price }}</span></h6>  
+                                  <h6>Total: <span id="total-price" class="fs-4"></span></h6>  
                                 </div>
                             </div>
                         </div>
@@ -148,65 +148,96 @@
 {% block postloadjs %}
 
 <script type="text/javascript">
-function incrementDriverValue()
-{
-    // Incrementing the Driver Number input
-    let i = parseInt(document.getElementById('driver-number').value, 4);
-    i = isNaN(i) ? 0 : i;
-    i++;
-    document.getElementById('driver-number').value = i;
-
+const driverTotalNumber = document.getElementById("driver-number");
+const helmetTotalNumber = document.getElementById("helmet-number");
+const tuitionTotalNumber = document.getElementById("tuition-number");
+const incrementDriver = () => {
+if (driverTotalNumber.value < 4) {
+driverTotalNumber.value = Number(driverTotalNumber.value) + 1;
 }
-function incrementHelmetValue()
-{
-    // Incrementing the Helmet Number input
-    let j = parseInt(document.getElementById('helmet-number').value, 4);
-    j = isNaN(j) ? 0 : j;
-    j++;
-    document.getElementById('helmet-number').value = j;
+updatePrice();
+};
+const decrementDriver = () => {
+if (driverTotalNumber.value > 0) {
+driverTotalNumber.value = Number(driverTotalNumber.value) - 1;
 }
-
-function incrementTuitionValue()
-{
-    // Incrementing the Tuition Number input
-    let j = parseInt(document.getElementById('tuition-number').value, 4);
-    j = isNaN(j) ? 0 : j;
-    j++;
-    document.getElementById('tuition-number').value = j;
+updatePrice();
+};
+const incrementHelValue = () => {
+if (helmetTotalNumber.value < 4) {
+helmetTotalNumber.value = Number(helmetTotalNumber.value) + 1;
 }
+updatePrice();
+};
+const decrementHelValue = () => {
+if (helmetTotalNumber.value > 0) {
+helmetTotalNumber.value = Number(helmetTotalNumber.value) - 1;
+}
+updatePrice();
+};
+const incrementTuitionValue = () => {
+if (tuitionTotalNumber.value < 4) {
+tuitionTotalNumber.value = Number(tuitionTotalNumber.value) + 1;
+}
+updatePrice();
+};
+const decrementTuitionValue = () => {
+if (tuitionTotalNumber.value > 0) {
+tuitionTotalNumber.value = Number(tuitionTotalNumber.value) - 1;
+}
+updatePrice();
+};
 
-function decrementDriverValue()
-{
-    // Decrementing the Driver Number input
-    let i = parseInt(document.getElementById('driver-number').value, 4);
-    i = isNaN(i) ? 4 : i;
-    if (i > 0) {
-    i--;
+const price = document.getElementById("total-price");
+const fullHalfDay = document.getElementsByName("fullHalfDay");
+const paddockhire = document.getElementsByName("paddockhire");
+const carhire = document.getElementById("carhire");
+const updatePrice = () => {
+  let total = 0;
+
+  for (let i = 0; i < fullHalfDay.length; i++) {
+    if (fullHalfDay[i].checked) {
+if(Number(fullHalfDay[i].value)==0){
+    let lbl=document.querySelector('label[for="halfDay"]');
+    let value = parseInt(lbl.textContent.split(" - £")[1]);
+    total+=value;
+}else if(Number(fullHalfDay[i].value)==1){
+    let lbl=document.querySelector('label[for="fullDay"]');
+    let value = parseInt(lbl.textContent.split(" - £")[1]);
+    total+=200
+}
     }
-    document.getElementById('driver-number').value = i;
+  }
 
-}
+  for (let i = 0; i < paddockhire.length; i++) {
+    if (paddockhire[i].checked) {
+      total += Number(paddockhire[i].value);
+    }
+  }
 
-function decrementHelmetValue()
-{
-    //Decrementing the Helmet Number input
-    let j = parseInt(document.getElementById('helmet-number').value, 4);
-    j = isNaN(j) ? 4 : j;
-    if (j > 0) {
-    j--;
-    }
-    document.getElementById('helmet-number').value = j;
+  // Add the price of the selected car hire
+  if (carhire.value !== "") {
+    let selectedOption = carhire.options[carhire.selectedIndex];
+    let optionText = selectedOption.text;
+    let carPrice = optionText.match(/\d+/g).map(Number)[0];
+    total += carPrice;
+  }
+total += Number(driverTotalNumber.value) * 10;
+total += Number(helmetTotalNumber.value) * 10;
+total += Number(tuitionTotalNumber.value) * 25;
+total=total-1;
+price.innerHTML = "Total Price: £" + total.toFixed(2);
+};
+
+for (let i = 0; i < fullHalfDay.length; i++) {
+  fullHalfDay[i].addEventListener("change", updatePrice);
 }
-function decrementTuitionValue()
-{
-    //Decrementing the Tuition Number input
-    let j = parseInt(document.getElementById('tuition-number').value, 4);
-    j = isNaN(j) ? 4 : j;
-    if (j > 0) {
-    j--;
-    }
-    document.getElementById('tuition-number').value = j;
+for (let i = 0; i < paddockhire.length; i++) {
+  paddockhire[i].addEventListener("change", updatePrice);
 }
+carhire.addEventListener("change", updatePrice);
+updatePrice();
+
 </script>
 
 {% endblock %}

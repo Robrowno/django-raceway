@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from cars.models import Cars
 import datetime
 from django.core.validators import MinValueValidator, RegexValidator
@@ -47,14 +48,14 @@ class Trackday(models.Model):
     base_trackday_price = models.DecimalField(max_digits=7, decimal_places=2)
 
     def __str__(self):
-        return str(f'{self.layout} trackday on {self.date}')
+        return str(f'{self.id}')
 
-        """ Only one combo of Trackday and date permitted """
-        constraints = [
-            models.UniqueConstraint(
-                fields=['layout', 'date'],
-                name='unique_trackday'),
-        ]
+    """ Only one combo of Trackday and date permitted """
+    constraints = [
+        models.UniqueConstraint(
+            fields=['layout', 'date'],
+            name='unique_trackday'),
+    ]
 
 
 class TrackdayBooking(models.Model):
@@ -62,8 +63,9 @@ class TrackdayBooking(models.Model):
     """
     For handling specific track day orders and their optional extras
     """
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     trackday = models.ForeignKey(Trackday, on_delete=models.CASCADE)
-    car_hire = models.OneToOneField(Cars, on_delete=models.CASCADE, primary_key=True, null=False, blank=True)
+    car_hire = models.OneToOneField(Cars, on_delete=models.CASCADE, primary_key=True, blank=True)
     full_or_half_day = models.IntegerField(choices=HALF_OR_FULL_DAY, default=0)
     additional_drivers = models.PositiveIntegerField(default=0)
     helmet_hire = models.PositiveIntegerField(default=0)
@@ -72,6 +74,7 @@ class TrackdayBooking(models.Model):
 
     def __str__(self):
         return str(f'{self.trackday} booking has been made')
+
 
 
 class TrackdayRequest(models.Model):
@@ -106,7 +109,7 @@ class Experiences(models.Model):
     Model for the Experience Packages
     """
 
-    title = models.CharField(max_length=150)
+    title = models.CharField(max_length=150,unique=True,null=False)
     description = models.TextField(max_length=1000)
     itinerary = models.TextField(max_length=1000)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
@@ -126,7 +129,7 @@ class Tuition(models.Model):
     Model for the Tuition Packages
     """
 
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=50,unique=True,null=False)
     level = models.IntegerField(choices=LEVELS, default=None)
     description = models.TextField(max_length=1500)
     itinerary = models.TextField(max_length=1500)

@@ -43,7 +43,7 @@
             <th>Availability</th>
             <th>Price*</th>
             <th></th>
-            {% for trackday in trackdays%}
+            {% for trackday in trackdays %}
             <tr>
                 <td>{{ trackday.date }}</td>
                 <td>{{ trackday.get_layout_display }}</td>
@@ -51,20 +51,27 @@
                 <td>{{ trackday.availability }}</td>
                 <td class="remain"><span>£{{ trackday.base_trackday_price }}</span></td>
                 <!-- Link to booking page -->
-                <!-- <h1>{{trackday}}</h1> -->
-                <!-- <h2>{{basket_contents}}</h2> -->
                 {% if user.is_authenticated %}
                     {% if flag %}
-                    <td><button class="book-btn">You can only book 1 at a time.</button></td>              
+                        <td><button class="book-btn">You can only book 1 at a time.</button></td>              
                     {% else %} 
-                    <td><a href="{% url 'booking' trackday.id %}"><button class="book-btn">Book</button></a></td> 
+                        {% for track in available %}
+                            {% if track.trackday_id == trackday.id %}
+                                {% if track.availability == True %}
+                                    <td><a href="{% url 'booking' trackday.id %}"><button class="book-btn">Book</button></a></td> 
+                                {% else %}
+                                    <td class="full"><span>Full</span></td>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
                     {% endif %}
-
-                    {% else %} 
-                <td><a href="{% url 'account_login' %}"><button class="book-btn">Log in to Book</button></a></td>
+                {% else %} 
+                    <td><a href="{% url 'account_login' %}"><button class="book-btn">Log in to Book</button></a></td>
                 {% endif %}
             </tr>
-            {% endfor %}
+        {% endfor %}
+        
+
         </tr>
 
         <!-- <tr>

@@ -78,3 +78,5 @@ def management_page(request):
     return render(request, 'home/management.html')
 
 
+def page_not_found(request,exception=None):
+    return render(request,'home/error404.html',status=404)

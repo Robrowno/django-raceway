@@ -204,18 +204,14 @@ You can see my project board [here](https://github.com/users/Robrowno/projects/4
 
 #### User Stories
 
-- [User Story:]([#2](https://github.com/Robrowno/django-raceway/issues/2))
-- [User Story:]([#3](https://github.com/Robrowno/django-raceway/issues/3))
-- [User Story:]([#4](https://github.com/Robrowno/django-raceway/issues/4))
-- [User Story:]([#5](https://github.com/Robrowno/django-raceway/issues/5))
-- [User Story:]([#6](https://github.com/Robrowno/django-raceway/issues/6))
-- [User Story:]([#7](https://github.com/Robrowno/django-raceway/issues/7))
-- [User Story:]([#8](https://github.com/Robrowno/django-raceway/issues/8))
-- [User Story:]([#9](https://github.com/Robrowno/django-raceway/issues/9))
+- [User Story:]([#10](https://github.com/Robrowno/django-raceway/issues/10))
+- [User Story:]([#11](https://github.com/Robrowno/django-raceway/issues/11))
+- [User Story:]([#12](https://github.com/Robrowno/django-raceway/issues/12))
 - [User Story:]([#13](https://github.com/Robrowno/django-raceway/issues/13))
 - [User Story:]([#14](https://github.com/Robrowno/django-raceway/issues/14))
 - [User Story:]([#15](https://github.com/Robrowno/django-raceway/issues/15))
 - [User Story:]([#16](https://github.com/Robrowno/django-raceway/issues/16))
+- [User Story:]([#17](https://github.com/Robrowno/django-raceway/issues/17))
 - [User Story:]([#18](https://github.com/Robrowno/django-raceway/issues/18))
 - [User Story:]([#19](https://github.com/Robrowno/django-raceway/issues/19))
 - [User Story:]([#20](https://github.com/Robrowno/django-raceway/issues/20))
@@ -223,29 +219,35 @@ You can see my project board [here](https://github.com/users/Robrowno/projects/4
 - [User Story:]([#22](https://github.com/Robrowno/django-raceway/issues/22))
 - [User Story:]([#23](https://github.com/Robrowno/django-raceway/issues/23))
 - [User Story:]([#24](https://github.com/Robrowno/django-raceway/issues/24))
+- [User Story:]([#25](https://github.com/Robrowno/django-raceway/issues/25))
 - [User Story:]([#26](https://github.com/Robrowno/django-raceway/issues/26))
 - [User Story:]([#27](https://github.com/Robrowno/django-raceway/issues/27))
-- [User Story:]([#31](https://github.com/Robrowno/django-raceway/issues/31))
-- [User Story:]([#32](https://github.com/Robrowno/django-raceway/issues/32))
-- [User Story:]([#33](https://github.com/Robrowno/django-raceway/issues/33))
-- [User Story:]([#34](https://github.com/Robrowno/django-raceway/issues/34))
-- 
-- 
-- 
+- [User Story:]([#28](https://github.com/Robrowno/django-raceway/issues/28))
+- [User Story:]([#29](https://github.com/Robrowno/django-raceway/issues/29))
+- [User Story:]([#30](https://github.com/Robrowno/django-raceway/issues/30))
+- [User Story:]()
+- [User Story:]()
+- [User Story:]()
+- [User Story:]()
+- [User Story:]()
+- [User Story:]()
 
 
 #### Epics
 
 - [Epic:]([#1](https://github.com/Robrowno/django-raceway/issues/1))
-- [Epic:]([#10](https://github.com/Robrowno/django-raceway/issues/10))
-- [Epic:]([#11](https://github.com/Robrowno/django-raceway/issues/11))
-- [Epic:]([#12](https://github.com/Robrowno/django-raceway/issues/12))
-- [Epic:]([#17](https://github.com/Robrowno/django-raceway/issues/17))
-- [Epic:]([#28](https://github.com/Robrowno/django-raceway/issues/28))
-- [Epic:]([#29](https://github.com/Robrowno/django-raceway/issues/29))
-- [Epic:]([#30](https://github.com/Robrowno/django-raceway/issues/30))
-- 
-- 
+- [Epic:]([#2](https://github.com/Robrowno/django-raceway/issues/2))
+- [Epic:]([#3](https://github.com/Robrowno/django-raceway/issues/3))
+- [Epic:]([#4](https://github.com/Robrowno/django-raceway/issues/4))
+- [Epic:]([#5](https://github.com/Robrowno/django-raceway/issues/5))
+- [Epic:]([#6](https://github.com/Robrowno/django-raceway/issues/6))
+- [Epic:]([#7](https://github.com/Robrowno/django-raceway/issues/7))
+- [Epic:]([#8](https://github.com/Robrowno/django-raceway/issues/8))
+- [Epic:]([#9](https://github.com/Robrowno/django-raceway/issues/9))
+- [Epic:]()
+- [Epic:]()
+
+
 
 
 ---

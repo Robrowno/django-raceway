@@ -13,6 +13,8 @@ urlpatterns = [
     path('basket/adjust/tuition/<item_id>/', views.edit_tuition_quantity, name='edit_tuition'),
     path('basket/remove/experience/<item_id>/', views.remove_exp, name='rmv_exp'),
     path('basket/remove/tuition/<item_id>/', views.remove_tuition, name='rmv_tuition'),
-    path('checkout-success/', views.checkout_success, name='success'),
+    path('success/', views.success, name='success'),
+    path('cancel/', views.cancel, name='cancel'),
+    path('error/', views.error, name='error'),
 
 ]

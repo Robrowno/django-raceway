@@ -3,6 +3,15 @@ from django.contrib.auth.models import User
 from trackdays.models import Tuition, Experiences, Trackday, TrackdayBooking
 from cars.models import Cars
 from django.contrib import messages
+import stripe
+from django.shortcuts import render, redirect
+from django.shortcuts import HttpResponseRedirect
+from checkout.contexts import basket_contents
+from django.conf import settings
+
+stripe.api_key=settings.API_KEY
+
+trackDayID=0
 
 
 def basket(request):
@@ -11,6 +20,60 @@ def basket(request):
     """
 
     return render(request, 'checkout/basket.html')
+
+
+def error(request):
+    """
+    A view for a checkout error.
+    """
+
+    return render(request, 'error.html')
+
+def decrement_availability(trackday_id):
+    trackday = Trackday.objects.get(id=trackday_id)
+    if trackday.availability > 0:
+        trackday.availability -= 1
+        trackday.save()
+        return True
+    else:
+        return False
+
+
+def success(request):
+    """
+    Checkout Success Page View
+    """
+    print(request.session)
+    if 'session_id' in request.session:
+        session_id = request.session.pop('session_id')
+        session = stripe.checkout.Session.retrieve(session_id)
+        sessions = stripe.checkout.Session.retrieve(session_id,expand=['line_items'],)
+        payment_intent = stripe.PaymentIntent.retrieve(session["payment_intent"])
+        print("sessions.status=>",session.status)
+        if session.status == 'complete':
+            if(decrement_availability(trackDayID)):
+                if 'basket' in request.session:
+                    del request.session['basket']
+                else:
+                    print("Not found!")
+            # payment was successful, render the success page
+                return render(request, "success.html")
+            else:
+                return render(request,"error.html")
+        else:
+            # payment was not successful, redirect to an error page
+            return redirect('/')
+    else:
+        # session ID does not exist in the user's session, redirect to an error page
+        return redirect('/')
+
+
+def cancel(request):
+    """
+    A view for preventing a checkout.
+    """
+
+    return render(request, 'cancel.html')
 
 
 def add_trackday_to_basket(request, trackday_id):
@@ -192,13 +255,61 @@ def checkout(request):
     """
     A view for the checkout page
     """
+    current_url=request.build_absolute_uri()
+    base_url=current_url.split("/")[0] + "//" + current_url.split("/")[2]
+    print(base_url)
+    products = {
+        'image':[],
+    }
+    data = basket_contents(request)
+    basket_content=data['basket_contents']
+    grand_total=data['grand_total']
+    grand_total=int(grand_total)
+    if len(basket_content)>0:
+        for item in basket_content:
+            if "trackday" in item:
+                global trackDayID
+                trackDayID=item['trackday'].id
+                trackday_obj = item['trackday']
+                image=trackday_obj.layout_image
+                products['image'].append(image.url)
+            if "tuition" in item:
+                print("tuition" in basket_content)
+                tuition_obj = item['tuition']
+                image=tuition_obj.small_image
+                products['image'].append(image.url)
+            if "experience" in item:
+                experience_obj = item['experience']
+                image=experience_obj.image
+                products['image'].append(image.url)  
+        full_urls = [base_url + image for image in products['image']]
+        print(full_urls)
 
-    return render(request, 'checkout/checkout.html')
-
-
-def checkout_success(request):
-    """
-    A view for the checkout success page
-    """
-
-    return render(request, 'checkout/checkout_success.html')
+        session=stripe.checkout.Session.create(
+        success_url=base_url+"/checkout/success",
+        cancel_url=base_url+"/checkout/cancel",
+        line_items=[
+            {
+            "price_data": {
+                "currency":"GBP",
+                "product_data":{
+                    "name":"All cart products",
+                    'images':full_urls,
+                },
+                "unit_amount":grand_total*100
+            },
+            "quantity": 1,
+            },
+        ],
+        mode="payment",
+        )
+        request.session['session_id'] = session['id']
+        print(session.url)
+        print(session['id']=='cs_test_a1a5Wf5glehWfK0M2sCBy0ONbIhG3ZokJ9WKWYNSnf5GpUaJU8lVh1MSP5')
+        sessions = stripe.checkout.Session.retrieve('cs_test_a1a5Wf5glehWfK0M2sCBy0ONbIhG3ZokJ9WKWYNSnf5GpUaJU8lVh1MSP5',expand=['line_items'],)
+        print(sessions)
+        print("AFTER")
+        return HttpResponseRedirect(session.url)
+    else:
+        messages.error(request, "Your basket is empty. Please add products to your basket.")
+        return redirect('/')
