@@ -430,7 +430,7 @@ The site home page: [Privacy Policy Generator](https://www.privacypolicygenerato
 
 - Many Thanks to my C.I Mentor Daisy McGirr, who has been guiding me and advising me through this project as well as all projects since PP2 - Her input in our mentor sessions has been instrumental in getting me this far and so I have to say I massive thank you to her for that!
 
-- Thanks to Monika Hrda, for support with helping with the idea for a constraint on my trackday model and reminding me about the debug var in my settings.py file. A massive thanks to her for her support and chats on my project. I'm looking forward to working on some projects with Monika in future!
+- Thanks to Monika Hrda, for support with helping with the idea for a constraint on my trackday model and reminding me about the debug var in my settings.py file.
 
 - Ben Dawson, for taking calls with me to discuss our P5 ideas at the project inception stage, and hosting check-in calls with me to see how we were getting on at different stages in our projects.
 
@@ -439,6 +439,7 @@ The site home page: [Privacy Policy Generator](https://www.privacypolicygenerato
 - Ed from Tutor Support - Also a member of the London C.I group, he helped me when I wasn't able to extract string values from my model choices. He introducted me to the get_FOO_display() method from the Django Docs, which did exactly what I was looking for. Thanks Ed!
 
 - Scott from Tutor Support - Helped me with a bug with my add to basket functionality and explained why it was going wrong when he found it out himself. He is incredibly patient and kind and taught me a lot about dictionaries! Thanks Scott!
+
 
 
 ### Media/Images:
