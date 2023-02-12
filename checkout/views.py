@@ -20,13 +20,16 @@ def add_trackday_to_basket(request, trackday_id):
     basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
 
     if request.method == 'POST':
+        # instance of the trackday booking model
         booking = TrackdayBooking(trackday=trackday)
         booking.full_or_half_day = request.POST.get('fullHalfDay')
         booking.paddock_hire = request.POST.get('paddockhire')
         booking.additional_drivers = request.POST.get('driver-number')
         booking.helmet_hire = request.POST.get('helmet-number')
         booking.tuition = request.POST.get('tuition-number')
+        # get the car object if selected in the options
         booking.car_hire = get_object_or_404(Cars, id=request.POST.get('carhire'))
+        # save the booking
         booking.save()
 
         if trackday_id in list(basket.keys()):
@@ -41,14 +44,17 @@ def remove_trackday_from_basket(request, item_id):
     """
     View to remove a trackday item from the basket
     """
-
+    # Access the specific trackday product
     trackday = get_object_or_404(Trackday, pk=item_id)
+    # Access the specific booking
     booking = TrackdayBooking.objects.get(trackday=trackday)
 
     try:
         basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
         item = basket['trackday'][item_id]
+        # remove the trackday from the basket
         basket['trackday'].pop(item_id)
+        # delete the booking from the database
         booking.delete()
 
         request.session['basket'] = basket

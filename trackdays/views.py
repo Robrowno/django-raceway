@@ -40,6 +40,7 @@ def track_day_request(request):
     """
 
     if request.method == 'POST':
+        # create instance of the trackday request model
         trackday_req = TrackdayRequest()
         trackday_req.organiser = request.POST.get('organiser')
         trackday_req.email = request.POST.get('email')
@@ -51,6 +52,7 @@ def track_day_request(request):
         trackday_req.pitlanes = request.POST.get('pitlanes')
         trackday_req.db_limit = request.POST.get('db_limit')
         trackday_req.car_hire_required = request.POST.get('carhire')
+        # save the information to the database
         trackday_req.save()
         messages.success(request, 'Your Track Day request was succesfully sent!')
         return redirect('home')
