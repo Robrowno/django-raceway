@@ -20,18 +20,16 @@ Link to live site: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## Table of Contents:
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
-
+- [Wireframes](#wireframes-and-planning)
+- [UX](#user-experience-ux)
+- [Features](#features)
+- [Future Implementations](#future-implementations)
+- [Technologies](#technologies-used)
+- [Testing Link](#testing)
+- [Bugs and Issues](#bugs-and-issues)
+- [Deployment](#deployment)
+- [Peer Reviews](#peer-reviews)
+- [Credits](#credits)
 
 
 ---
@@ -56,13 +54,13 @@ I used Balsamiq Wireframes to make mockups for the website and design how I init
 ![Experiences Page](/static/images/readme-images/experiences-desktop.png)
 
 #### Experiences Detail
-![]()
+![Experience-Detail Page](/static/images/readme-images/experience-detail-desktop.png)
 
 #### Tuition
 ![Tuition Page](/static/images/readme-images/tuition-desktop.png)
 
 #### Tuition Detail
-![]()
+![Tuition-Detail Page](/static/images/readme-images/tuition-detail-desktop.png)
 
 #### Trackdays
 ![Trackday List](/static/images/readme-images/trackdays-list-desktop.png)
@@ -92,12 +90,12 @@ I used Balsamiq Wireframes to make mockups for the website and design how I init
 ![Management Page](/static/images/readme-images/management-page-desktop.png)
 
 #### FAQs Page
-![]()
-![]()
+![FAQs](/static/images/readme-images/faqs-desktop.png)
+
 
 #### Policies Page
-![]()
-![]()
+![Policies](/static/images/readme-images/policies-desktop.png)
+
 
 ### Mobile and Tablet
 
@@ -119,16 +117,16 @@ I used Balsamiq Wireframes to make mockups for the website and design how I init
 ![Experiences Page Tablet](/static/images/readme-images/experiences-tablet.png)
 
 #### Experiences Detail
-![]()
-![]()
+![Experience-Detail Mobile]()
+![Experience-Detail Tablet]()
 
 #### Tuition
 ![Tuition Page Mobile](/static/images/readme-images/tuition-mobile.png)
 ![Tuition Page Tablet](/static/images/readme-images/tuition-tablet.png)
 
 #### Tuition Detail
-![]()
-![]()
+![Tuition-Detail Mobile](/static/images/readme-images/tuition-detail-mobile.png)
+![Tuition-Detail Tablet](/static/images/readme-images/tuition-detail-tablet.png)
 
 #### Trackdays
 ![Trackday List Mobile](/static/images/readme-images/trackdays-mobile.png)
@@ -167,12 +165,12 @@ I used Balsamiq Wireframes to make mockups for the website and design how I init
 ![Management Page Tablet](/static/images/readme-images/managemement-tablet.png)
 
 #### FAQs Page
-![]()
-![]()
+![FAQs Mobile](/static/images/readme-images/faqs-mobile.png)
+![FAQs Tablet](/static/images/readme-images/faqs-tablet.png)
 
 #### Policies Page
-![]()
-![]()
+![Policies Mobile](/static/images/readme-images/policies-mobile.png)
+![Policies Tablet](/static/images/readme-images/policies-tablet.png)
 ---
 
 ### Early Development
@@ -182,6 +180,8 @@ At the start of the project, even though I had the wireframes as versions of how
 Here is an early example of my home page, mocked up at the very start of the project. 
 Key differences here include a carousel (which I would end up keeping) and the middle nav bar placed at the top of the page.
 ![Early Development Homepage](/static/images/readme-images/early-dev-homepage.png)
+
+I started the project with the home page and nav bar, before installing django allauth and getting the base templates for that. From there, I began working one by one on each of the pages with purely static but fairly detailed to ensure I was happy with how things would look and could decide early-on if I wanted to make changes.
 
 
 ---
@@ -193,13 +193,65 @@ Key differences here include a carousel (which I would end up keeping) and the m
 
 ### Agile Methodologies
 
+To plan tasks to implement for my website, I used Github Projects, which is a Kanban style board to track your project progress. You can track user stories, epics, ideas, to-do items and you can all see what tasks have been completed.
+
+I would also assign labels to different tasks, including sprints, milestones, and priority rankings (Must-have, Should-have, Won't-have, etc.). This would allow me to prioritise tasks and functionality accordingly.
+
+You can see my project board [here](https://github.com/users/Robrowno/projects/4)
+
 
 ### User Stories
+
+#### User Stories
+
+- [User Story:]([#2](https://github.com/Robrowno/django-raceway/issues/2))
+- [User Story:]([#3](https://github.com/Robrowno/django-raceway/issues/3))
+- [User Story:]([#4](https://github.com/Robrowno/django-raceway/issues/4))
+- [User Story:]([#5](https://github.com/Robrowno/django-raceway/issues/5))
+- [User Story:]([#6](https://github.com/Robrowno/django-raceway/issues/6))
+- [User Story:]([#7](https://github.com/Robrowno/django-raceway/issues/7))
+- [User Story:]([#8](https://github.com/Robrowno/django-raceway/issues/8))
+- [User Story:]([#9](https://github.com/Robrowno/django-raceway/issues/9))
+- [User Story:]([#13](https://github.com/Robrowno/django-raceway/issues/13))
+- [User Story:]([#14](https://github.com/Robrowno/django-raceway/issues/14))
+- [User Story:]([#15](https://github.com/Robrowno/django-raceway/issues/15))
+- [User Story:]([#16](https://github.com/Robrowno/django-raceway/issues/16))
+- [User Story:]([#18](https://github.com/Robrowno/django-raceway/issues/18))
+- [User Story:]([#19](https://github.com/Robrowno/django-raceway/issues/19))
+- [User Story:]([#20](https://github.com/Robrowno/django-raceway/issues/20))
+- [User Story:]([#21](https://github.com/Robrowno/django-raceway/issues/21))
+- [User Story:]([#22](https://github.com/Robrowno/django-raceway/issues/22))
+- [User Story:]([#23](https://github.com/Robrowno/django-raceway/issues/23))
+- [User Story:]([#24](https://github.com/Robrowno/django-raceway/issues/24))
+- [User Story:]([#26](https://github.com/Robrowno/django-raceway/issues/26))
+- [User Story:]([#27](https://github.com/Robrowno/django-raceway/issues/27))
+- [User Story:]([#31](https://github.com/Robrowno/django-raceway/issues/31))
+- [User Story:]([#32](https://github.com/Robrowno/django-raceway/issues/32))
+- [User Story:]([#33](https://github.com/Robrowno/django-raceway/issues/33))
+- [User Story:]([#34](https://github.com/Robrowno/django-raceway/issues/34))
+- 
+- 
+- 
+
+
+#### Epics
+
+- [Epic:]([#1](https://github.com/Robrowno/django-raceway/issues/1))
+- [Epic:]([#10](https://github.com/Robrowno/django-raceway/issues/10))
+- [Epic:]([#11](https://github.com/Robrowno/django-raceway/issues/11))
+- [Epic:]([#12](https://github.com/Robrowno/django-raceway/issues/12))
+- [Epic:]([#17](https://github.com/Robrowno/django-raceway/issues/17))
+- [Epic:]([#28](https://github.com/Robrowno/django-raceway/issues/28))
+- [Epic:]([#29](https://github.com/Robrowno/django-raceway/issues/29))
+- [Epic:]([#30](https://github.com/Robrowno/django-raceway/issues/30))
+- 
+- 
 
 
 ---
 
 ## Features
+
 
 
 ---
@@ -264,12 +316,68 @@ Due to the size of the testing required, this can be found here: [Django Raceway
 ### Current Unresolved Bugs
 
 - For some reason, the profile link in the nav bar (which appears to you once you log in) can appear to be unclickable. I have not yet found out why this is happening, but if you refresh the page, it resolves the issue every single time. 
+I have also found out this can happen to the login link if you sign out. Again, refresh the page or click the Django Raceway logo and this will work as normal.
 
+- 
 
 
 ---
 
 ## Deployment
+
+### Version Control:
+
+- Version control was done through the Gitpod CLI, using the following key commands to push updated code to Github:
+    - `git add ,` - to add all new files or file changes in preparation to commit in next step.
+    - `git commit -m ""` - add your commit message inbetween the two quoatation marks, this explains the changes of your lastest version.
+    - `git push` - this is the command that pushed your code up to your github repository.
+
+
+### Forking a Github Repository:
+
+- Instructions for forking a respositoty:
+    - To fork a chosen repository, look towards the top right of the page, between the watch/unwatch tab and the star tab, and select the "Fork" tab.
+    - By default, forks are named the same as the parent repository, however, you can change this as you see fit. You are also able to add an optional description.
+    - Choose which branch you want to copy if you need to. Only the default branch is copied by default setting.
+    - Click the green "Create Fork" button, and you will now have a forked repository to use.
+
+### Locally Cloning a Github Repository:
+
+- Instructions for cloning a repository:
+    - To clone a repository, first you will need to select your chosen repository and look for the green "Code" button (located next to the "Go to file" and "Add file" buttons).
+    - Next, copy the URL for the repository. By default this is a HTTPS link, however, you can copy an SSH key or by using the Github CLI.
+    - After you have the URL, you are going to want to go to the terminal of your machine and cd (change directory) to the folder where you want to save your working directory to be.
+    - In the terminal, type `git clone` followed by the url link you copied earlier.
+    - Press enter and hopfully you will have successfully cloned the repository locally.
+    - You will also need to make sure you have installed all the required packaged of the project. To do this, paste this code in to the terminal once your workspace is set up: `pip install -r requirements.txt`
+    - You will also need to make an env.py file to run the project. Populate it with the required information, though make sure you include this file in the .gitignore file. The contents of the env.py file should NOT be made public.
+
+
+#### Github docs:
+- For further reading, I would highly suggest the Github Docs: [Github Docs Link](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
+
+### Deployment through Heroku:
+
+- Make sure you have a Heroku account before beginning with these steps.
+- You should also make sure you have an AWS account with S3, and a Stripe Account for payments.
+
+- Once logged in to Heroku, navigate to the personal dashboard and look for the 'New' dropdown button at top right hand corner of the page.
+- In the drop down, select "Create new app - you will be taken to a page where you will be able to name the app and select a region. Once you have filled this information in, click the "Create app" button. Your app is now created.
+- To pair an ElephantSQL (PostgreSQL) Database to your project, as I did to mine, see steps for this in the next section below. Alternatively, you can use a Heroku Postgres database.
+- Next, you should navigate to the Settings tab to set up the config vars. Scroll down slightly to the button that reads "Reveal Config Vars" and click it to open it. We are going to need to add/remove the following information: 
+    - DATABASE_URL: this should have been automatically generated by Heroku for you, but make sure it is populated already. Click add.
+    - USE_AWS: should be set to True. Click add.
+    - AWS_ACCESS_KEY_ID: should be set to your AWS access key, click add.
+    - AWS_SECRET_ACCESS_KEY: should be set to your AWS secret key, click add.
+    - EMAIL_HOST_PASS: In conjuntion with whichever email app provider you use. In my case, GMail and they provide you with a unique pass code to enter in to your config. Click add.
+    - EMAIL_HOST_USER: this will be your email address. Click add.
+    - SECRET_KEY: This should be a secret password, do not publish this anywhere. Click add.
+     - DISABLE_COLLECTSTATIC: Should have been set to 1 during development. You will REMOVE this for full deployment. Click the 'x' to remove it. However, if you set up a dynamic DEBUG variable in settings.py, like so: `DEBUG = 'DEVELOPMENT' in os.environ`, you can remove it earlier.
+
+- After this, head to the Deploy tab and scroll down to the Deployment Method section and select "Github"
+- Next, in the "App connected to GitHub" section, look up your account and repo to pair it to the heroku app (click connect).
+- Head to the bottom of the page where you will see a section called "Manual Deploy". Select the 'main' branch in the drop down and click the 'Deploy Branch' button.
+- Wait for the deployment to complete, and when prompted, click the "View/Open App" button to see the launched site.
 
 ---
 

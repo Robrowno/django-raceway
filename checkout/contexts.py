@@ -16,6 +16,7 @@ def basket_contents(request):
     basket_contents = []
     total = 0
     product_count = 0
+    trackday_price = 0
     basket = request.session.get(
         'basket', {'experience': {}, 'tuition': {}, 'trackday': {}}
     )
@@ -28,7 +29,6 @@ def basket_contents(request):
             booking = TrackdayBooking.objects.filter(
                 trackday=trackday, user=request.user)
 
-            trackday_price = 0
             # iterating through the trackday booking options
             for item in booking:
                 if item.full_or_half_day == 1:
