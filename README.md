@@ -311,6 +311,13 @@ Some of the logic for my increment/decrement buttons on the track day detail pag
 
 CSS for a checkerboard pattern that I used in my FAQ's Page: [Checkerboard Pattern](https://www.30secondsofcode.org/css/s/checkerboard-pattern)
 
+I used this Privacy Policy generator to make a section of the content on my Policies Page: [Django Raceway Privacy Policy](https://www.privacypolicygenerator.info/live.php?token=ZK35XedFzBkUqnjElVBI17mDCw2eViwQ)
+
+The site home page: [Privacy Policy Generator](https://www.privacypolicygenerator.info/#wizard)
+
+
+
+
 ## Personal Credits
 
 - Many Thanks to my C.I Mentor Daisy McGirr, who has been guiding me and advising me through this project as well as all projects since PP2 - Her input in our mentor sessions has been instrumental in getting me this far and so I have to say I massive thank you to her for that!
