@@ -51,12 +51,14 @@ I used Balsamiq Wireframes to make mockups for the website and design how I init
 ![About Page](/static/images/readme-images/about-desktop.png)
 
 #### Experiences
+Note: I moved the 'Explore' buttons on to the bottom right corner of the images to keep the site looking neater
 ![Experiences Page](/static/images/readme-images/experiences-desktop.png)
 
 #### Experiences Detail
 ![Experience-Detail Page](/static/images/readme-images/experience-detail-desktop.png)
 
 #### Tuition
+Note: The 'Explore' buttons were missing here and added in later in development as I decided I wanted to give the user the ability to explore more information about it. The icons and captions at the bottom of the page were dropped as I didn't feel they added anything of substance to the page since I was giving detail through the Explore buttons.
 ![Tuition Page](/static/images/readme-images/tuition-desktop.png)
 
 #### Tuition Detail
@@ -66,24 +68,29 @@ I used Balsamiq Wireframes to make mockups for the website and design how I init
 ![Trackday List](/static/images/readme-images/trackdays-list-desktop.png)
 
 #### Trackday Detail
+Note: I ended up adding the image of the specific trackday here as I felt it gave the user a chance to get a closer look at the layout of the trackday, matched with the specific trackday they had chosen. I removed the direct checkout button at the bottom of the page as well.
 ![Trackday Detail](/static/images/readme-images/trackday-detail-desktop.png)
 
 #### Request a Trackday
 ![Request Trackday Page](/static/images/readme-images/request-trackday-desktop.png)
 
 #### Basket
+Note: This is how I originally designed the basket to look. In production, I changed this quite a lot. I didn't got with a SKU/Unique order number in the end here and I also shifted the edit/delete buttons around to be incorporated into the table of each order. I also added a VAT calulated price into summary for users to get a better idea of the real cost to them.
 ![Basket](/static/images/readme-images/basket-desktop.png)
 
 #### Checkout
+Note: I ended up going with a Stripe Checkout page provided by them and so as a result the layout of the checkout page is vastly different. I didn't know about this from Stripe at the time of designing it, and so I actually intended for these forms to be somewhat hard coded in an html file as per below.
 ![Checkout Page](/static/images/readme-images/checkout-desktop.png)
 
 #### Checkout Success Page
 ![Checkout Success](/static/images/readme-images/checkout-success-desktop.png)
 
 #### Profile
+Note: I removed the ability to store card info from the scope of the project as this is not good practice. Furthermore, I had security concerns regarding how I would implement this and did not think it was a risk worth taking.
 ![Profile Page](/static/images/readme-images/profile-desktop.png)
 
 #### Edit Profile
+As per above, credit card section removed from the scope.
 ![Edit Profile Page](/static/images/readme-images/edit-profile-desktop.png)
 
 #### Management Page
@@ -183,6 +190,8 @@ Key differences here include a carousel (which I would end up keeping) and the m
 
 I started the project with the home page and nav bar, before installing django allauth and getting the base templates for that. From there, I began working one by one on each of the pages with purely static but fairly detailed to ensure I was happy with how things would look and could decide early-on if I wanted to make changes.
 
+Here is an early mockup of my basket page. It was around this time that I made the decision to stray from my original wireframe and make aesthetic changes to the design of the page.
+![Early Development Basket](/static/images/readme-images/testing-basket-mockup.png)
 
 ---
 
@@ -197,55 +206,91 @@ To plan tasks to implement for my website, I used Github Projects, which is a Ka
 
 I would also assign labels to different tasks, including sprints, milestones, and priority rankings (Must-have, Should-have, Won't-have, etc.). This would allow me to prioritise tasks and functionality accordingly.
 
-You can see my project board [here](https://github.com/users/Robrowno/projects/4)
+You can see my project board [here](https://github.com/users/Robrowno/projects/5)
 
 
 ### User Stories
 
 #### User Stories
 
-- [User Story:]([#10](https://github.com/Robrowno/django-raceway/issues/10))
-- [User Story:]([#11](https://github.com/Robrowno/django-raceway/issues/11))
-- [User Story:]([#12](https://github.com/Robrowno/django-raceway/issues/12))
-- [User Story:]([#13](https://github.com/Robrowno/django-raceway/issues/13))
-- [User Story:]([#14](https://github.com/Robrowno/django-raceway/issues/14))
-- [User Story:]([#15](https://github.com/Robrowno/django-raceway/issues/15))
-- [User Story:]([#16](https://github.com/Robrowno/django-raceway/issues/16))
-- [User Story:]([#17](https://github.com/Robrowno/django-raceway/issues/17))
-- [User Story:]([#18](https://github.com/Robrowno/django-raceway/issues/18))
-- [User Story:]([#19](https://github.com/Robrowno/django-raceway/issues/19))
-- [User Story:]([#20](https://github.com/Robrowno/django-raceway/issues/20))
-- [User Story:]([#21](https://github.com/Robrowno/django-raceway/issues/21))
-- [User Story:]([#22](https://github.com/Robrowno/django-raceway/issues/22))
-- [User Story:]([#23](https://github.com/Robrowno/django-raceway/issues/23))
-- [User Story:]([#24](https://github.com/Robrowno/django-raceway/issues/24))
-- [User Story:]([#25](https://github.com/Robrowno/django-raceway/issues/25))
-- [User Story:]([#26](https://github.com/Robrowno/django-raceway/issues/26))
-- [User Story:]([#27](https://github.com/Robrowno/django-raceway/issues/27))
-- [User Story:]([#28](https://github.com/Robrowno/django-raceway/issues/28))
-- [User Story:]([#29](https://github.com/Robrowno/django-raceway/issues/29))
-- [User Story:]([#30](https://github.com/Robrowno/django-raceway/issues/30))
-- [User Story:]()
-- [User Story:]()
-- [User Story:]()
-- [User Story:]()
-- [User Story:]()
-- [User Story:]()
+- [User Story: Configure Django Project]([#10](https://github.com/Robrowno/django-raceway/issues/10))
+    - As a Developer I can install Django so that I can initiate my workspace.
+- [User Story: Home Page]([#11](https://github.com/Robrowno/django-raceway/issues/11))
+    - As a Site User I can view a home page so that I can have a starting point from which I can navigate the site.
+- [User Story: Create an Account]([#12](https://github.com/Robrowno/django-raceway/issues/12))
+    - As a Site User I can create an account so that I can access user-verified-only benefits and store personal information for future orders.
+- [User Story: Header/NavBar]([#13](https://github.com/Robrowno/django-raceway/issues/13))
+    - As a Site User I can use a Nav Bar so that I can Navigate to the desired page.
+- [User Story: Gallery]([#14](https://github.com/Robrowno/django-raceway/issues/14))
+    - As a Site Visitor I can view a gallery of images so that I can get a visual understanding of what a track day looks like.
+- [User Story: About Page]([#15](https://github.com/Robrowno/django-raceway/issues/15))
+    - As a Relevant User I can perform action so that I can perceived benefit.
+- [User Story: Contact]([#16](https://github.com/Robrowno/django-raceway/issues/16))
+    - As a Relevant User I can perform action so that I can perceived benefit.
+- [User Story: Footer]([#17](https://github.com/Robrowno/django-raceway/issues/17))
+    - As a Site User I can view a footer bar so that I can view Policies, FAQs or subscribe to a motorsport newsletter.
+- [User Story: Trackday List Page]([#18](https://github.com/Robrowno/django-raceway/issues/18))
+    - As a Site User I can visit a booking page so that I can view available/upcoming track days and proceed with a booking.
+- [User Story: Trackday Request Form]([#19](https://github.com/Robrowno/django-raceway/issues/19))
+    - As a Site User I can use a request form so that I can request a bespoke track day booking outside of the current available options.
+- [User Story: Car Hire]([#20](https://github.com/Robrowno/django-raceway/issues/20))
+    - As a Site Visitor I can view a selection of cars so that I can choose a car I might want to hire at an upcoming trackday.
+- [User Story: Login/Logout]([#21](https://github.com/Robrowno/django-raceway/issues/21))
+    - As a Site User I can log in and log out so that I can keep my account and details secure.
+- [User Story: Book a Trackday]([#22](https://github.com/Robrowno/django-raceway/issues/22))
+    - As a Site User I can select the track day I want and visit a booking page so that I can book my track day with any extras I would like to add.
+- [User Story: Book an Experience]([#23](https://github.com/Robrowno/django-raceway/issues/23))
+    - As a Potential Customer I can view a separate experiences page so that I can order a slightly different product to a pure trackday (perhaps as a gift).
+- [User Story: Book a Tuition]([#24](https://github.com/Robrowno/django-raceway/issues/24))
+    - As a Potential Customer I can view a tuition page so that I can book a day to learn core driving skills.
+- [User Story: Basket]([#25](https://github.com/Robrowno/django-raceway/issues/25))
+    - As a Site User I can add to and view a basket/cart so that I can view and check my order and make any updates or removals as required before checking out.
+- [User Story: User Profile]([#26](https://github.com/Robrowno/django-raceway/issues/26))
+    - As a Registered Site User I can save payment details in my account profile so that I can checkout faster in future.
+- [User Story: FAQs]([#27](https://github.com/Robrowno/django-raceway/issues/27))
+    - As a Site User I can view an FAQs page so that I can see if there are any answers to questions I might have.
+- [User Story: Policies]([#28](https://github.com/Robrowno/django-raceway/issues/28))
+    - As a Site User I can find a policies so that I can understand the terms and conditions of the site.
+- [User Story: Checkout]([#29](https://github.com/Robrowno/django-raceway/issues/29))
+    - As a Site User I can checkout so that I can proceed with my order/booking.
+- [User Story: Booking Success page]([#30](https://github.com/Robrowno/django-raceway/issues/30))
+    - As a Site User I can view a booking success page after purchasing so that I can confirm I have successfully ordered and view a summary of my purchase.
+- [User Story: Booking Failure Page]([#31](https://github.com/Robrowno/django-raceway/issues/31))
+    - As a Site user I can view a Booking failure page so that I can so that I can be informed of the failure and that I will be shown that I have not been charged.
+- [User Story: Booking Cancel]([#32](https://github.com/Robrowno/django-raceway/issues/32))
+    - As a Site User I can cancel a checkout so that I can go back to my basket if I have changed my mind or am not ready to checkout yet.
+- [User Story: ]([#33](https://github.com/Robrowno/django-raceway/issues/33))
+    - As a Site Admin I can add trackdays from a management page so that I can easily update the trackday list from the front end.
+- [User Story: ]([#34](https://github.com/Robrowno/django-raceway/issues/34))
+    - As a Registered Site User I can check my order history in my user profile so that I can review my past orders.
+- [User Story:  ]([#35](https://github.com/Robrowno/django-raceway/issues/35))
+    - As a Site User I can sign up to a newsletter so that I can get informed about new products or business updates.
+- [User Story: ]([#36](https://github.com/Robrowno/django-raceway/issues/36))
+    - As a Software I can write automated and manual tests so that I can check my code works reliably and as expected.
+- [User Story: ]()
+    - 
 
 
 #### Epics
 
-- [Epic:]([#1](https://github.com/Robrowno/django-raceway/issues/1))
-- [Epic:]([#2](https://github.com/Robrowno/django-raceway/issues/2))
-- [Epic:]([#3](https://github.com/Robrowno/django-raceway/issues/3))
-- [Epic:]([#4](https://github.com/Robrowno/django-raceway/issues/4))
-- [Epic:]([#5](https://github.com/Robrowno/django-raceway/issues/5))
-- [Epic:]([#6](https://github.com/Robrowno/django-raceway/issues/6))
-- [Epic:]([#7](https://github.com/Robrowno/django-raceway/issues/7))
-- [Epic:]([#8](https://github.com/Robrowno/django-raceway/issues/8))
-- [Epic:]([#9](https://github.com/Robrowno/django-raceway/issues/9))
-- [Epic:]()
-- [Epic:]()
+- [Epic: Install Django]([#1](https://github.com/Robrowno/django-raceway/issues/1))
+    - As a Developer I would like to install Django so that I can begin working on my project.
+- [Epic: Initial Deploy to Heroku]([#2](https://github.com/Robrowno/django-raceway/issues/2))
+    - As a Developer I would like to deploy to heroku early so that I can confirm my configuration is wired up correctly.
+- [Epic: AWS]([#3](https://github.com/Robrowno/django-raceway/issues/3))
+    - As a Developer I would like to create an AWS S3 bucket so that I can store my static files and media.
+- [Epic: Site Owner Objectives]([#4](https://github.com/Robrowno/django-raceway/issues/4))
+    - As a Site Owner I would like to run an informative and engaging track day website so that I can encourage driving enthusiasts to book track days and hire cars as part of a successful B2C business model.
+- [Epic: Login/Logout]([#5](https://github.com/Robrowno/django-raceway/issues/5))
+    - As a Site User I would like to Login and Logout so that I can keep my account secure.
+- [Epic: Basket]([#6](https://github.com/Robrowno/django-raceway/issues/6))
+    - As a Site User I would like to View a Basket so that I can check my orders before checking out.
+- [Epic: Stripe Checkout]([#7](https://github.com/Robrowno/django-raceway/issues/7))
+    - As a Site User I would like to checkout so that I can purchase the items I came to buy.
+- [Epic: Mailchimp Newsletter]([#8](https://github.com/Robrowno/django-raceway/issues/8))
+    - As a Site User I would like to Sign up to a mailing list so that I can get new information from the business, including new products or promotions.
+- [Epic: Testing]([#9](https://github.com/Robrowno/django-raceway/issues/9))
+    - As a Software Developer I would like to Create Manual and Automated tests so that I can check the quality and functionality of my code.
 
 
 
@@ -260,7 +305,7 @@ You can see my project board [here](https://github.com/users/Robrowno/projects/4
 
 ## Future Implementations
 
-- 
+- Ability to add more than one trackday to the basket. Due to a bug I had to limit each user to adding just one trackday to the basket at a time. This will be addressed in a future update.
 - 
 - 
 
@@ -294,7 +339,30 @@ Full list of technology implemented below:
 
 #### Python Packages Installed
 
-- 
+- asgiref==3.5.2
+- boto3==1.26.22
+- botocore==1.29.22
+- crispy-bootstrap5==0.7
+- dj-database-url==0.5.0
+- Django==3.2
+- django-allauth==0.51.0
+- django-countries==7.2.1
+- django-crispy-forms==1.14.0
+- django-storages==1.13.1
+- django-summernote==0.8.20.0
+- gunicorn==20.1.0
+- jmespath==1.0.1
+- oauthlib==3.2.2
+- Pillow==9.3.0
+- psycopg2==2.9.5
+- PyJWT==2.6.0
+- python3-openid==3.2.0
+- pytz==2022.6
+- requests-oauthlib==1.3.1
+- s3transfer==0.6.0
+- sqlparse==0.4.3
+- stripe==5.1.1
+
 
 ---
 
@@ -314,6 +382,15 @@ Due to the size of the testing required, this can be found here: [Django Raceway
 
 - Bootstrap 5 toasts: I attempted to modify the bootstrap 4 toasts from the Boutique Ado walkthrough, whilst I was using Bootstrap 5.0.2 - This didn't work, and thanks to a snippet of code from Alan from Tutor support I was able to get it working again.
 
+- I had an error when selecting "None" as an option for cars where even when I set the form value to 0 it was throwing an error. I realised it was because I was using a Car model for the options, it was not able to just store 0 as a value for a 'car'. The solution to this was to create a "None" car in the database, and to hide it from the front end car hire section. It is only visible from the trackday detail page and it has an assigned value of 0.
+
+- I had some increment/decrement issues when two or more different items were added to the basket. I realised my ids were too similar to be used across potentially several different items and so I had to go about making it even more unique.
+
+- I encountered Migration History conflicts twice in development. The way to resolve this was to clear the affected migrations histories from the migrations of all the apps. Then, to fake an initial migration and to makemigrations and migrate after that. 
+
+- I had an issue where my urls where too similar for my delete urls in the checkout app. The 'pattern' of the url was too similar and django was only picking up on one of the delete urls. The way to resolve this was to break the pattern with a specific key word in front of the item's id (e.g /experiences/ or /tuition/).
+
+- 
 
 ### Current Unresolved Bugs
 
