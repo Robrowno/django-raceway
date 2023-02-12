@@ -54,7 +54,7 @@
                                     {%csrf_token %}
                                   
                                   </form>
-                                  <a href="#" class="btn btn-warning update-link">Edit Order</a>
+                                  <a  class="btn btn-warning update-order" id="update_trackday_{{ item.trackday.id }}">Edit Order</a>
                                 </td>
                                 <!-- Price including options -->
                                 <td>{{ trackday_price }}</td>
@@ -64,7 +64,6 @@
                             </tr>
 
                             {% endif %}
-
                             {% if item.experience %}
                           <tr> 
                             <td class="basket-img"> <img src="{{ item.experience.image.url }}" style="width: 60%;" alt=""/></td>
@@ -74,26 +73,26 @@
                                 <form class="form form-update" method="post" action="{% url 'edit_exp' item.experience.id %}">
                                   {%csrf_token %}
                                   <div class="input-group d-flex justify-content-between">
-                                    <button class="increment-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.item_id  }}"
-                                        id="increment-qty_{{ item.item_id  }}">
+                                    <button class="increment-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.experience.title  }}{{item.experience.id}}"
+                                        id="increment-qty_{{ item.experience.title  }}{{item.experience.id}}">
                                         <span>
                                             <i class="fas fa-plus fa-sm quantity-icon"></i>
                                         </span>
                                     </button>
     
                                     <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="10"
-                                        data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id  }}">
+                                        data-item_id="{{ item.experience.title  }}{{item.experience.id}}" id="id_qty_{{ item.experience.title  }}{{item.experience.id}}">
                                         
-                                    <button class="decrement-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.item_id  }}"
-                                        id="decrement-qty_{{ item.item_id  }}">
+                                    <button class="decrement-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.experience.title  }}{{item.experience.id}}"
+                                        id="decrement-qty_{{ item.experience.title  }}{{item.experience.id}}">
                                         <span>
                                             <i class="fas fa-minus fa-sm quantity-icon"></i>
                                         </span>
                                     </button>
     
-                                </div>
+                                  </div>
                             </div>
-                                </form>
+                                  </form>
                                 <a class="btn btn-warning update-link">Update</a>
                               </td>
                               <td>{{ item.experience.price }}</td>
@@ -104,6 +103,7 @@
                           {% endif %}
 
                           {% if item.tuition %}
+
                           <!-- Table data for tuition packages -->
                           <tr> 
                             <td class="basket-img"> <img src="{{ item.tuition.large_image.url }}" style="width: 60%;" alt=""/></td>
@@ -113,18 +113,18 @@
                                 <form class="form form-update" method="post" action="{% url 'edit_tuition' item.tuition.id %}">
                                   {%csrf_token %}
                                   <div class="input-group d-flex justify-content-between">
-                                    <button class="increment-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.item_id  }}"
-                                        id="increment-qty_{{ item.item_id  }}">
+                                    <button class="increment-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.tuition.title  }}{{item.tuition.id}}"
+                                        id="increment-qty_{{ item.tuition.title  }}{{item.tuition.id}}">
                                         <span>
                                             <i class="fas fa-plus fa-sm quantity-icon"></i>
                                         </span>
                                     </button>
     
                                     <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="10"
-                                        data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id  }}">
+                                        data-item_id="{{ item.tuition.title  }}{{item.tuition.id}}" id="id_qty_{{ item.tuition.title  }}{{item.tuition.id}}">
                                         
-                                    <button class="decrement-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.item_id  }}"
-                                        id="decrement-qty_{{ item.item_id  }}">
+                                    <button class="decrement-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.tuition.title  }}{{item.tuition.id}}"
+                                        id="decrement-qty_{{ item.tuition.title  }}{{item.tuition.id}}">
                                         <span>
                                             <i class="fas fa-minus fa-sm quantity-icon"></i>
                                         </span>
@@ -221,6 +221,52 @@
 {% include 'trackdays/includes/increment_decrement_script.html' %}
 
 <script type="text/javascript">
+
+  // Get all the increment buttons
+const incrementButtons = document.querySelectorAll('.increment-qty');
+
+// Loop through the buttons and add event listener to each
+incrementButtons.forEach(function (button) {
+    button.addEventListener('click', function (event) {
+        // Get the input field that corresponds to this button
+        const inputField = document.getElementById(`id_qty_${event.target.dataset.item_id}`);
+        // Increase the value of the input field
+        inputField.value = parseInt(inputField.value) + 1;
+        // Disable the increment button if the new value is equal to max
+        if (inputField.value ==10) {
+            button.setAttribute('disabled', true);
+        }
+        // Enable the decrement button if the new value is greater than min
+        if (inputField.value <= 10) {
+            const decrementButton = document.getElementById(`decrement-qty_${event.target.dataset.item_id}`);
+            decrementButton.removeAttribute('disabled');
+        }
+    });
+});
+
+// Get all the decrement buttons
+const decrementButtons = document.querySelectorAll('.decrement-qty');
+
+// Loop through the buttons and add event listener to each
+decrementButtons.forEach(function (button) {
+    button.addEventListener('click', function (event) {
+        // Get the input field that corresponds to this button
+        const inputField = document.getElementById(`id_qty_${event.target.dataset.item_id}`);
+        // Decrease the value of the input field
+        inputField.value = parseInt(inputField.value) - 1;
+        // Disable the decrement button if the new value is equal to min
+        if (inputField.value == 1) {
+            button.setAttribute('disabled', true);
+        }
+        // Enable the increment button if the new value is less than max
+        if (inputField.value <= 10) {
+            const incrementButton = document.getElementById(`increment-qty_${event.target.dataset.item_id}`);
+            incrementButton.removeAttribute('disabled');
+        }
+    });
+});
+
+
   // Update quantity on click
   $('.update-link').click(function(e) {
         var form = $(this).prev('.form-update');
@@ -240,9 +286,18 @@
          });
     })
 
-
-
-
+    // Remove item and go on that products page
+    $('.update-order').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemType = $(this).attr('id').split('_')[1];
+        var itemId = $(this).attr('id').split('_')[2];
+        var url = `/checkout/basket/remove/${itemType}/${itemId}/`;
+        var dataset = {'csrfmiddlewaretoken': csrfToken,};
+        $.post(url, dataset)
+         .done(function() {
+          window.location.href = "/trackdays";
+         });
+    })
 
 </script>
 

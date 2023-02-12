@@ -1,63 +1,257 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'trackdays/css/booking-detail.css' %}">
+{% endblock %}
 
 {% block content %}
 {% include 'includes/main-nav.html' %}
-<h2 class="text-center mt-4">Tuition Detail:</h2>
+<div class="heading">
+    <a class="backBtn mt-4" href="{% url 'trackdays' %}" >Back to Track Days</a>
+    <h2 class="text-center mt-4">Track Day Detail:</h2>
+
+  </div>
 
 
+<!-- Track day Information Card-->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 col-lg-8 offset-lg-2">
             <div class="card mb-3">
-                <img class="card-img-top" src="{{ tuition.large_image.url }}" alt="" accept="image/*">
+                <img src="{{ trackday.layout_image.url }}" class="card-img-top"
+                    alt="{{ trackday.get_layout_display}} Circuit Map">
                 <div class="card-body mx-auto">
-                    <p>{{ tuition.title}}</p>
-                    <p>{{ tuition.description | safe }}</p>
-                    <p>{{ tuition.itinerary | safe}}</p>
+                    <h5 class="card-title">{{ trackday.get_layout_display }} Circuit - {{ trackday.date }}</h5>
+                    <p class="card-text">{{ trackday.get_db_limit_display }} noise limit</p>
+                    <p class="card-text">Base Price: £{{ trackday.base_trackday_price }}</p>
+                    <p class="card-text">Currently there are {{ trackday.availability }} spaces left</p>
                 </div>
-                <div class="card-footer border-success d-flex bd-highlight">
-                    <div class="p-2 flex-grow-1 bd-highlight d-flex align-items-center">Price: £{{ tuition.price }}
-                    </div>
-                    <form method="POST" action="{% url 'add_tuition_to_basket' tuition.id %}">
-                        {% csrf_token %}
-                        <div class="p-2 bd-highlight d-flex align-items-center">
-                            <p class="form-label mt-1 pe-1"><span>Quantity:</span></p>
-                            <div class="input-group">
-                                <button class="increment-qty btn btn-outline-dark rounded-0"
-                                    data-item_id="{{ tuition.id }}" id="increment-qty_{{ tuition.id }}">
-                                    <span>
-                                        <i class="fas fa-plus quantity-icon"></i>
-                                    </span>
-                                </button>
-                                <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="10"
-                                    data-item_id="{{ tuition.id }}" id="id_qty_{{ tuition.id }}">
-                                <button class="decrement-qty btn btn-outline-dark rounded-0"
-                                    data-item_id="{{ tuition.id }}" id="decrement-qty_{{ tuition.id }}">
-                                    <span>
-                                        <i class="fas fa-minus quantity-icon"></i>
-                                    </span>
-                                </button>
-                            </div>
+            </div>
+        </div>
 
+        <div class="container-fluid mb-2">
+            <div class="row">
+                <div class="col-lg-8 mx-auto card">
+                    <h6 class="text-center"> Select any additional items you wish to add on to your track day below:
+                    </h6>
+
+                    <!-- Track Day Booking Form will go here-->
+
+                    <form class="requestForm" method="POST" action="{% url 'add_td_to_basket' trackday.id %}">
+                        {% csrf_token %}
+                        <div class="formRow">
+                            <label for="" class="label">Full or Half Day:</label>
+
+                            <div class="choice">
+                                <label for="halfDay" class="me-3 text-center">
+                                    <input value="0" type="radio" name="fullHalfDay" id="halfDay"/>
+                                    Half Day - £{% widthratio trackday.base_trackday_price 2 1 %}
+                                </label>
+
+                                <label for="fullDay" class="text-center">
+                                    <input value="1" type="radio" name="fullHalfDay" id="fullDay" checked/>
+                                    Full Day - £{{ trackday.base_trackday_price }}
+                                </label>
+                            </div>
                         </div>
-                        <div class="p-2 bd-highlight d-flex align-items-center">
-                            <input type="submit" class="btn btn-success rounded-0" value="Book the {{ tuition.title }}">
+
+                        <div class="formRow">
+                            <label for="paddockhire" class="label">Paddock Hire:</label>
+
+                            <div class="choice">
+                                <label for="pitlane" class="me-3 text-center">
+                                    <input value="50" type="radio" name="paddockhire" id="pitlane"/>
+                                    Pitlane Paddock - £50
+                                </label>
+
+                                <label for="standard" class="text-center">
+                                    <input value="0" type="radio" name="paddockhire" id="standard" checked/>
+                                    Standard Paddock - £0
+                                </label>
+                            </div>
                         </div>
-                        <div><input type="hidden" name="redirect_url" value="{{ request.path }}"></div>
+
+                        <div class="formRow">
+                            <label for="carhire" class="label">Car Hire:</label>
+
+                            <div class="choice">
+                                <select name="carhire" id="carhire" class="border-2 border-dark me-5">
+                                    {% for car in cars %}
+                                    <option value="{{ car.id }}">{{ car.make }} {{ car.model }}
+                                        {% if car.variant %}{{ car.variant }} {% endif %} - £{{ car.cost_to_hire }}
+                                    </option>
+                                    {% endfor %}
+                                </select>
+                                <label id="byoc" for="" class="text-center pt-3">- Or select "None" to bring your own car!</label>
+                            </div>
+                        </div>
+
+                        <div class="formRow">
+                            <label for="" class="label">Additional Drivers:</label>
+
+                            <div class="choice">
+                                <input class="px-2 add" type="button" onclick="incrementDriverValue()" value="+">
+                                <input class="border-2 border-dark" type="number" name="driver-number" value=0 id="driver-number" min="0" max="4"/>
+                                <input class="px-2 minus" type="button" onclick="decrementDriverValue()" value="-">
+                                <label for="driver-number" class="text-center ms-3">- £10 per person (Up to 4 max)</label>
+                            </div>
+                        </div>
+
+                        <div class="formRow">
+                            <label for="" class="label">Helmet Hire:</label>
+
+                            <div class="choice">
+                                <input class="px-2 add" type="button" onclick="incrementHelmetValue()" value="+">
+                                <input class="border-2 border-dark" type="number" name="helmet-number" value=0 id="helmet-number" min="0" max="4"/>
+                                <input class="px-2 minus"type="button" onclick="decrementHelmetValue()" value="-">
+                                <label for="helmet-number" class="text-center ms-3">- £10 per person (Up to 4 max)</label>
+                            </div>
+                        </div>
+
+                        <div class="formRow">
+                            <label for="" class="label">Tuition:</label>
+
+                            <div class="choice">
+                                <input class="px-2 add" type="button" onclick="incrementTuitionValue()" value="+">
+                                <input class="border-2 border-dark" type="number" name="tuition-number" value=0 id="tuition-number" min="0" max="4"/>
+                                <input class="px-2 minus" type="button" onclick="decrementTuitionValue()" value="-">
+                                <label class="ms-3" for="tuition-number">- £25 per person (Up to 4 max)</label>
+                            </div>
+                        </div>
+
+                        <div class="btns">
+                            <button type="submit" class="addToBasketBtn">Add to Basket</button>
+                            <!-- <button class="checkoutBtn">Checkout</button> -->
+                        </div>
                     </form>
+
+                    <div class="container-fluid mb-2">
+                        <div class="row d-flex justify-content-end">
+                            <div class="col-4 col-lg-3 card border-success">
+                                <div class="card-body">
+                                  <h6>Total: <span id="total-price" class="fs-4"></span></h6>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- On submit, the order is stored in the users basket until they are ready to checkout-->
                 </div>
 
             </div>
         </div>
-    </div>
-</div>
 
 
+    {% endblock %}
 
-{% endblock %}
 {% block postloadjs %}
-{{ block.super }}
-{% include 'trackdays/includes/increment_decrement_script.html' %}
+
+<script type="text/javascript">
+// Get the form inputs for additional drivers, helmet hire, and tuition
+const driverNumber = document.getElementById("driver-number");
+const helmetNumber = document.getElementById("helmet-number");
+const tuitionNumber = document.getElementById("tuition-number");
+
+// Functions to increment/decrement the values of the form inputs
+const incrementDriverValue = () => {
+if (driverNumber.value < 4) {
+driverNumber.value = Number(driverNumber.value) + 1;
+}
+updatePrice();
+};
+const decrementDriverValue = () => {
+if (driverNumber.value > 0) {
+driverNumber.value = Number(driverNumber.value) - 1;
+}
+updatePrice();
+};
+const incrementHelmetValue = () => {
+if (helmetNumber.value < 4) {
+helmetNumber.value = Number(helmetNumber.value) + 1;
+}
+updatePrice();
+};
+const decrementHelmetValue = () => {
+if (helmetNumber.value > 0) {
+helmetNumber.value = Number(helmetNumber.value) - 1;
+}
+updatePrice();
+};
+const incrementTuitionValue = () => {
+if (tuitionNumber.value < 4) {
+tuitionNumber.value = Number(tuitionNumber.value) + 1;
+}
+updatePrice();
+};
+const decrementTuitionValue = () => {
+if (tuitionNumber.value > 0) {
+tuitionNumber.value = Number(tuitionNumber.value) - 1;
+}
+updatePrice();
+};
+
+// Get the price element
+const price = document.getElementById("total-price");
+
+// Get the form inputs
+const fullHalfDay = document.getElementsByName("fullHalfDay");
+const paddockhire = document.getElementsByName("paddockhire");
+const carhire = document.getElementById("carhire");
+// Function to update the price when inputs change
+const updatePrice = () => {
+  let total = 0;
+
+  // Add the price of the selected full/half day
+  for (let i = 0; i < fullHalfDay.length; i++) {
+    if (fullHalfDay[i].checked) {
+if(Number(fullHalfDay[i].value)==0){
+    total+=600;
+}else if(Number(fullHalfDay[i].value)==1){
+    total+=1200
+}
+    }
+  }
+
+  // Add the price of the selected paddock hire
+  for (let i = 0; i < paddockhire.length; i++) {
+    if (paddockhire[i].checked) {
+      total += Number(paddockhire[i].value);
+    }
+  }
+
+  // Add the price of the selected car hire
+  if (carhire.value !== "") {
+    let selectedOption = carhire.options[carhire.selectedIndex];
+    let optionText = selectedOption.text;
+    let carPrice = optionText.match(/\d+/g).map(Number)[0];
+    total += carPrice;
+  }
+  // Add the price of the additional drivers
+total += Number(driverNumber.value) * 10;
+
+// Add the price of the helmet hire
+total += Number(helmetNumber.value) * 10;
+
+// Add the price of the tuition
+total += Number(tuitionNumber.value) * 25;
+
+  // Update the price display
+  price.innerHTML = "Total Price: £" + total.toFixed(2);
+};
+
+// Add event listeners to the inputs to update the price
+for (let i = 0; i < fullHalfDay.length; i++) {
+  fullHalfDay[i].addEventListener("change", updatePrice);
+}
+for (let i = 0; i < paddockhire.length; i++) {
+  paddockhire[i].addEventListener("change", updatePrice);
+}
+carhire.addEventListener("change", updatePrice);
+
+// Initialize the price display
+updatePrice();
+
+</script>
+
 {% endblock %}

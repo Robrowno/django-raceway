@@ -16,9 +16,14 @@ def track_day_list(request):
     trackday_list = Trackday.objects.all()
     basket_trackdays = [x for x in basket['trackday'].keys()]
     available_tracks = [x for x in trackday_list if str(x.id) not in basket_trackdays]
+    isExist=False
+    if len(basket_trackdays) >0:
+        isExist=True
 
+    print("Track day exists? => ",isExist)
     context = {
         "trackdays": available_tracks,
+        "flag":isExist
     }
 
     return render(request, 'trackdays/trackday-list.html', context)
