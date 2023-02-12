@@ -3,6 +3,7 @@ from profiles.models import UserProfile, CardStorage
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
 
 
 def check_user_profile(user):
@@ -19,6 +20,7 @@ def check_user_card(user):
     return CardStorage.objects.filter(user=user).exists()
 
 
+@login_required
 def profile(request):
     """
     A view for the user profile page
@@ -30,6 +32,7 @@ def profile(request):
     return render(request, 'profiles/profile.html', context=context)
 
 
+@login_required
 def update_profile(request):
     """
     For updating profile information

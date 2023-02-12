@@ -2,8 +2,6 @@ from django.shortcuts import render, HttpResponseRedirect
 from .models import Contact
 from django.contrib import messages
 
-# Create your views here.
-
 
 def home_page(request):
     """
@@ -70,7 +68,13 @@ def policies_page(request):
 
 def management_page(request):
     """
-    View to render the management page.
+    View to render the management page
     """
 
+    # if request.user.is_superuser:
+    #     if request.method == 'POST':
+
+
     return render(request, 'home/management.html')
+
+

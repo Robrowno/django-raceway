@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from .models import (
     Experiences, Trackday, TrackdayRequest, TrackdayBooking, Tuition
     )
@@ -10,28 +11,30 @@ def track_day_list(request):
     """
     View to render the Track day list menu.
     """
+    basket = request.session.get(
+        'basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
     trackday_list = Trackday.objects.all()
+    basket_trackdays = [x for x in basket['trackday'].keys()]
+    available_tracks = [x for x in trackday_list if str(x.id) not in basket_trackdays]
 
     context = {
-        "trackdays": trackday_list,
+        "trackdays": available_tracks,
     }
 
     return render(request, 'trackdays/trackday-list.html', context)
 
 
+@login_required
 def track_day_detail(request, trackday_id):
     """
     View to render the Track day detail booking page.
     """
     trackday = get_object_or_404(Trackday, pk=trackday_id)
     cars = Cars.objects.all()
-    # calculate a half day price
-    halfday = trackday.base_trackday_price // 2
 
     context = {
         "trackday": trackday,
         "cars": cars,
-        "halfday": halfday,
     }
 
     return render(request, 'trackdays/trackday-detail.html', context)

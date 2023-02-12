@@ -50,13 +50,18 @@
                 <td class="remain"><span>£{{ trackday.base_trackday_price }}</span></td>
                 <!-- Link to booking page -->
                 {% if user.is_authenticated %}
-                <td><a href="{% url 'booking' trackday.id %}"><button class="book-btn">Book</button></a></td>
+                    {% if 'trackday' in basket_contents %}
+                    <td><button class="book-btn">You can only book 1 at a time.</button></td>
+                    {% else %}
+                     <td><a href="{% url 'booking' trackday.id %}"><button class="book-btn">Book</button></a></td>
+                    {% endif %}
                 {% else %}
                 <td><a href="{% url 'account_login' %}"><button class="book-btn">Log in to Book</button></a></td>
                 {% endif %}
             </tr>
             {% endfor %}
         </tr>
+
         <!-- <tr>
             <td>23/01/23</td>
             <td>GP</td>
@@ -94,5 +99,8 @@
 
 </html>
 
+{% endblock %}
 
+{% block postloadjs %}
+<script type="text/javascript" src="{% static 'trackdays/js/trackdays.js' %}"></script>
 {% endblock %}

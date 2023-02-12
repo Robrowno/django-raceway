@@ -50,7 +50,7 @@
                                 </label>
 
                                 <label for="fullDay" class="text-center">
-                                    <input value="1" type="radio" name="fullHalfDay" id="fullDay"/>
+                                    <input value="1" type="radio" name="fullHalfDay" id="fullDay" checked/>
                                     Full Day - £{{ trackday.base_trackday_price }}
                                 </label>
                             </div>
@@ -66,7 +66,7 @@
                                 </label>
 
                                 <label for="standard" class="text-center">
-                                    <input value="0" type="radio" name="paddockhire" id="standard"/>
+                                    <input value="0" type="radio" name="paddockhire" id="standard" checked/>
                                     Standard Paddock - £0
                                 </label>
                             </div>
@@ -83,7 +83,7 @@
                                     </option>
                                     {% endfor %}
                                 </select>
-                                <label id="byoc" for="" class="text-center pt-3">- Or bring your own car!</label>
+                                <label id="byoc" for="" class="text-center pt-3">- Or select "None" to bring your own car!</label>
                             </div>
                         </div>
 

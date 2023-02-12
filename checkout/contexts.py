@@ -28,7 +28,6 @@ def basket_contents(request):
             # gets the relational booking by trackday
             booking = TrackdayBooking.objects.filter(
                 trackday=trackday, user=request.user)
-
             # iterating through the trackday booking options
             for item in booking:
                 if item.full_or_half_day == 1:
@@ -51,13 +50,10 @@ def basket_contents(request):
                     helmet_hire +
                     tuition_cost +
                     paddock)
-                print(trackday_price)
-                print(carhire)
-                print(item.user.username)
 
             # trackday quantity is always 1
             quantity = 1
-            # increase total by adding on price
+            # increase total by adding on trackday price
             total += trackday_price
             # increase product count by 1
             product_count += quantity
@@ -65,6 +61,7 @@ def basket_contents(request):
                 'trackday': trackday,
                 'quantity': quantity,
             })
+            
 
     if 'experience' in basket:
         for experience, quantity in basket['experience'].items():
@@ -85,6 +82,10 @@ def basket_contents(request):
                 'tuition': tuition,
                 'quantity': quantity,
             })
+    
+    print(basket)
+    print(basket_contents)
+    
 
     context = {
         'basket_contents': basket_contents,

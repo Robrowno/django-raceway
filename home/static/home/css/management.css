@@ -1,0 +1,27 @@
+.requestForm {
+    width: 80%;
+    padding: 10px 10px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formRow {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formRow input {
+    width: 100%;
+    margin: 10px 0;
+    border: 2px solid #000;
+}
+
+.formRow select {
+    width: 50%;
+    margin: 10px 0;
+    border: 2px solid #000;
+}
