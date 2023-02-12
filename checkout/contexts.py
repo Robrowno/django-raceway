@@ -6,21 +6,8 @@ from trackdays.models import Trackday, TrackdayBooking, Tuition, Experiences
 
 grand_total = 0
 
-# trackday_optional_extras = {
-#     'halfday': trackday.base_trackday_price // 2,
-#     'fullday': trackday.base_trackday_price,
-#     'pitlanepaddock': 50,
-#     'standardpaddock': 0,
-#     'carhire': trackdaybooking.car_hire.price,
-#     'additionaldrivers': 10,
-#     'helmethire': 10,
-#     'tuition': 25,
-#     'quantity': 1,
-
-# }
 
 def basket_contents(request):
-
     """
     Context Processor for use across whole site.
     Used for adding and counting products in the bag.
@@ -31,16 +18,37 @@ def basket_contents(request):
     product_count = 0
     basket = request.session.get(
         'basket', {'experience': {}, 'tuition': {}, 'trackday': {}}
-        )
+    )
 
     if 'trackday' in basket:
         for trackday, quantity in basket['trackday'].items():
+            # gets trackday by primary key
             trackday = get_object_or_404(Trackday, pk=trackday)
-            trackdaybooking = TrackdayBooking.objects.all()
-            for item in trackdaybooking:
-                print(item.tuition)
+            # gets the relational booking by trackday
+            booking = TrackdayBooking.objects.filter(trackday=trackday)
+            # optional extras as a dictionary
+
+            # for item in booking:
+            #     item = {
+            #     item.full_or_half_day[0]: trackday.base_trackday_price // 2,
+            #     item.full_or_half_day[1]: trackday.base_trackday_price,
+            #     item.paddock_hire[1]: 50,
+            #     item.paddock_hire[0]: 0,
+            #     item.car_hire: item.car_hire.cost_to_hire,
+            #     item.additional_drivers: 10,
+            #     item.helmet_hire: 10,
+            #     item.tuition: 25,
+            #     'quantity': 1,
+            # }
+
+            for item in booking:
+                print(item.full_or_half_day, item.paddock_hire, item.car_hire.cost_to_hire, item.additional_drivers)
+            
+            # trackday quantity is always 1
             quantity = 1
-            total += trackday.base_trackday_price 
+            # increase total by adding on price
+            total += trackday.base_trackday_price
+            # increase product count by 1
             product_count += quantity
             basket_contents.append({
                 'trackday': trackday,
@@ -78,7 +86,6 @@ def basket_contents(request):
 
 
 def calc_vat(request, total):
-
     """
     For calculating the total cost including VAT
     """

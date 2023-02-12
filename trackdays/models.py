@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from cars.models import Cars
 import datetime
 from django.core.validators import MinValueValidator, RegexValidator
@@ -62,6 +63,7 @@ class TrackdayBooking(models.Model):
     """
     For handling specific track day orders and their optional extras
     """
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     trackday = models.ForeignKey(Trackday, on_delete=models.CASCADE)
     car_hire = models.OneToOneField(Cars, on_delete=models.CASCADE, primary_key=True, null=False, blank=True)
     full_or_half_day = models.IntegerField(choices=HALF_OR_FULL_DAY, default=0)
@@ -72,6 +74,7 @@ class TrackdayBooking(models.Model):
 
     def __str__(self):
         return str(f'{self.trackday} booking has been made')
+
 
 
 class TrackdayRequest(models.Model):

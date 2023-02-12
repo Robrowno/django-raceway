@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse, HttpResponse
+from django.contrib.auth.models import User
 from trackdays.models import Tuition, Experiences, Trackday, TrackdayBooking
 from cars.models import Cars
 from django.contrib import messages
@@ -21,7 +22,7 @@ def add_trackday_to_basket(request, trackday_id):
 
     if request.method == 'POST':
         # instance of the trackday booking model
-        booking = TrackdayBooking(trackday=trackday)
+        booking = TrackdayBooking(trackday=trackday, user=request.user)
         booking.full_or_half_day = request.POST.get('fullHalfDay')
         booking.paddock_hire = request.POST.get('paddockhire')
         booking.additional_drivers = request.POST.get('driver-number')
@@ -31,6 +32,7 @@ def add_trackday_to_basket(request, trackday_id):
         booking.car_hire = get_object_or_404(Cars, id=request.POST.get('carhire'))
         # save the booking
         booking.save()
+        quantity = 1
 
         if trackday_id in list(basket.keys()):
             basket['trackday'][trackday_id] += quantity

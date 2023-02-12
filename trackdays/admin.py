@@ -4,8 +4,6 @@ from .models import (
     )
 from django_summernote.admin import SummernoteModelAdmin
 
-# Register your models here.
-
 
 @admin.register(Trackday)
 class TrackdayAdmin(admin.ModelAdmin):
@@ -23,6 +21,7 @@ class TrackdayBookingAdmin(admin.ModelAdmin):
     Admin Page for the Trackday Bookings model.
     """
     list_display = ('trackday', 'full_or_half_day',)
+    readonly_fields = ('trackday',)
 
 
 @admin.register(TrackdayRequest)
