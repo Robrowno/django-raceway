@@ -65,7 +65,7 @@ class TrackdayBooking(models.Model):
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     trackday = models.ForeignKey(Trackday, on_delete=models.CASCADE)
-    car_hire = models.OneToOneField(Cars, on_delete=models.CASCADE, primary_key=True, null=False, blank=True)
+    car_hire = models.OneToOneField(Cars, on_delete=models.CASCADE, primary_key=True, blank=True)
     full_or_half_day = models.IntegerField(choices=HALF_OR_FULL_DAY, default=0)
     additional_drivers = models.PositiveIntegerField(default=0)
     helmet_hire = models.PositiveIntegerField(default=0)

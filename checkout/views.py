@@ -12,13 +12,15 @@ def basket(request):
 
     return render(request, 'checkout/basket.html')
 
+
 def add_trackday_to_basket(request, trackday_id):
     """
     For adding a track day order to the basket
     """
     trackday = get_object_or_404(Trackday, pk=trackday_id)
     quantity = 0
-    basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
+    basket = request.session.get(
+        'basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
 
     if request.method == 'POST':
         # instance of the trackday booking model
@@ -29,7 +31,8 @@ def add_trackday_to_basket(request, trackday_id):
         booking.helmet_hire = request.POST.get('helmet-number')
         booking.tuition = request.POST.get('tuition-number')
         # get the car object if selected in the options
-        booking.car_hire = get_object_or_404(Cars, id=request.POST.get('carhire'))
+        booking.car_hire = get_object_or_404(
+            Cars, id=request.POST.get('carhire'))
         # save the booking
         booking.save()
         quantity = 1
@@ -38,9 +41,10 @@ def add_trackday_to_basket(request, trackday_id):
             basket['trackday'][trackday_id] += quantity
         else:
             basket['trackday'][trackday_id] = quantity
-        
+
     request.session['basket'] = basket
     return redirect('trackdays')
+
 
 def remove_trackday_from_basket(request, item_id):
     """
@@ -49,10 +53,11 @@ def remove_trackday_from_basket(request, item_id):
     # Access the specific trackday product
     trackday = get_object_or_404(Trackday, pk=item_id)
     # Access the specific booking
-    booking = TrackdayBooking.objects.get(trackday=trackday)
+    booking = TrackdayBooking.objects.get(trackday=trackday, user=request.user)
 
     try:
-        basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
+        basket = request.session.get(
+            'basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
         item = basket['trackday'][item_id]
         # remove the trackday from the basket
         basket['trackday'].pop(item_id)
@@ -63,11 +68,10 @@ def remove_trackday_from_basket(request, item_id):
         messages.warning(request, "Removed from the basket.")
 
         return HttpResponse(status=200)
-        
+
     except Exception as e:
         print(e)
         return HttpResponse(status=500)
-
 
 
 def add_exp_to_basket(request, experience_id):
@@ -77,7 +81,8 @@ def add_exp_to_basket(request, experience_id):
     experience = get_object_or_404(Experiences, pk=experience_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
+    basket = request.session.get(
+        'basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
 
     if experience_id in list(basket.keys()):
         basket['experience'][experience_id] += quantity
@@ -95,7 +100,8 @@ def add_tuition_to_basket(request, tuition_id):
     tuition = get_object_or_404(Tuition, pk=tuition_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
+    basket = request.session.get(
+        'basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
 
     if tuition_id in list(basket.keys()):
         basket['tuition'][tuition_id] += quantity
@@ -111,7 +117,8 @@ def edit_exp_quantity(request, item_id):
     For editing experience quantities in the basket.
     """
     quantity = int(request.POST.get('quantity'))
-    basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
+    basket = request.session.get(
+        'basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
 
     if quantity > 0:
         basket['experience'][item_id] = quantity
@@ -129,7 +136,8 @@ def remove_exp(request, item_id):
     """
 
     try:
-        basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
+        basket = request.session.get(
+            'basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
         item = basket['experience'][item_id]
         basket['experience'].pop(item_id)
 
@@ -148,7 +156,8 @@ def remove_tuition(request, item_id):
     """
 
     try:
-        basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
+        basket = request.session.get(
+            'basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
         item = basket['tuition'][item_id]
         basket['tuition'].pop(item_id)
 
@@ -166,7 +175,8 @@ def edit_tuition_quantity(request, item_id):
     For editing tuition quantities in the basket.
     """
     quantity = int(request.POST.get('quantity'))
-    basket = request.session.get('basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
+    basket = request.session.get(
+        'basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
 
     if quantity > 0:
         basket['tuition'][item_id] = quantity

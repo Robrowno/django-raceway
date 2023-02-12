@@ -18,13 +18,13 @@ class Cars(models.Model):
         (RR, 'RearEngine-RearWheelDrive'),
     ]
     make = models.CharField(max_length=40, null=True, blank=True)
-    model = models.CharField(max_length=40, null=True, blank=True)
+    model = models.CharField(max_length=40, null=False, blank=True)
     variant = models.CharField(max_length=40, null=False, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     power = models.PositiveIntegerField()
     torque = models.PositiveIntegerField()
-    transmission = models.CharField(max_length=80)
+    transmission = models.CharField(max_length=80, default=None)
     drivetrain = models.IntegerField(choices=DRIVETRAINS, default=None)
     cost_to_hire = models.DecimalField(max_digits=7, decimal_places=2)
 

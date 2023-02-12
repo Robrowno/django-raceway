@@ -77,7 +77,6 @@
 
                             <div class="choice">
                                 <select name="carhire" id="carhire" class="border-2 border-dark me-5">
-                                    <option value="0">None</option>
                                     {% for car in cars %}
                                     <option value="{{ car.id }}">{{ car.make }} {{ car.model }}
                                         {% if car.variant %}{{ car.variant }} {% endif %} - £{{ car.cost_to_hire }}
@@ -93,7 +92,7 @@
 
                             <div class="choice">
                                 <input class="px-2 add" type="button" onclick="incrementDriverValue()" value="+">
-                                <input class="border-2 border-dark" type="number" name="driver-number" id="driver-number" min="0" max="4"/>
+                                <input class="border-2 border-dark" type="number" name="driver-number" value=0 id="driver-number" min="0" max="4"/>
                                 <input class="px-2 minus" type="button" onclick="decrementDriverValue()" value="-">
                                 <label for="driver-number" class="text-center ms-3">- £10 per person (Up to 4 max)</label>
                             </div>
@@ -104,7 +103,7 @@
 
                             <div class="choice">
                                 <input class="px-2 add" type="button" onclick="incrementHelmetValue()" value="+">
-                                <input class="border-2 border-dark" type="number" name="helmet-number" id="helmet-number" min="0" max="4"/>
+                                <input class="border-2 border-dark" type="number" name="helmet-number" value=0 id="helmet-number" min="0" max="4"/>
                                 <input class="px-2 minus"type="button" onclick="decrementHelmetValue()" value="-">
                                 <label for="helmet-number" class="text-center ms-3">- £10 per person (Up to 4 max)</label>
                             </div>
@@ -115,7 +114,7 @@
 
                             <div class="choice">
                                 <input class="px-2 add" type="button" onclick="incrementTuitionValue()" value="+">
-                                <input class="border-2 border-dark" type="number" name="tuition-number" id="tuition-number" min="0" max="4"/>
+                                <input class="border-2 border-dark" type="number" name="tuition-number" value=0 id="tuition-number" min="0" max="4"/>
                                 <input class="px-2 minus" type="button" onclick="decrementTuitionValue()" value="-">
                                 <label class="ms-3" for="tuition-number">- £25 per person (Up to 4 max)</label>
                             </div>

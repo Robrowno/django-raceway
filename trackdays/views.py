@@ -25,10 +25,13 @@ def track_day_detail(request, trackday_id):
     """
     trackday = get_object_or_404(Trackday, pk=trackday_id)
     cars = Cars.objects.all()
+    # calculate a half day price
+    halfday = trackday.base_trackday_price // 2
 
     context = {
         "trackday": trackday,
         "cars": cars,
+        "halfday": halfday,
     }
 
     return render(request, 'trackdays/trackday-detail.html', context)

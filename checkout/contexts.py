@@ -25,29 +25,40 @@ def basket_contents(request):
             # gets trackday by primary key
             trackday = get_object_or_404(Trackday, pk=trackday)
             # gets the relational booking by trackday
-            booking = TrackdayBooking.objects.filter(trackday=trackday)
-            # optional extras as a dictionary
+            booking = TrackdayBooking.objects.filter(
+                trackday=trackday, user=request.user)
 
-            # for item in booking:
-            #     item = {
-            #     item.full_or_half_day[0]: trackday.base_trackday_price // 2,
-            #     item.full_or_half_day[1]: trackday.base_trackday_price,
-            #     item.paddock_hire[1]: 50,
-            #     item.paddock_hire[0]: 0,
-            #     item.car_hire: item.car_hire.cost_to_hire,
-            #     item.additional_drivers: 10,
-            #     item.helmet_hire: 10,
-            #     item.tuition: 25,
-            #     'quantity': 1,
-            # }
-
+            trackday_price = 0
+            # iterating through the trackday booking options
             for item in booking:
-                print(item.full_or_half_day, item.paddock_hire, item.car_hire.cost_to_hire, item.additional_drivers)
-            
+                if item.full_or_half_day == 1:
+                    # full day
+                    base_price = item.trackday.base_trackday_price
+                else:
+                    # half day
+                    base_price = item.trackday.base_trackday_price // 2
+                carhire = item.car_hire.cost_to_hire
+                # multiplying quantities by fixed prices
+                additional_drivers = item.additional_drivers * 10
+                helmet_hire = item.helmet_hire * 10
+                tuition_cost = item.tuition * 25
+                paddock = item.paddock_hire
+                # add up the cost of all the options
+                trackday_price = (
+                    base_price +
+                    carhire +
+                    additional_drivers +
+                    helmet_hire +
+                    tuition_cost +
+                    paddock)
+                print(trackday_price)
+                print(carhire)
+                print(item.user.username)
+
             # trackday quantity is always 1
             quantity = 1
             # increase total by adding on price
-            total += trackday.base_trackday_price
+            total += trackday_price
             # increase product count by 1
             product_count += quantity
             basket_contents.append({

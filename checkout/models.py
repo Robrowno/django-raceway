@@ -19,13 +19,13 @@ class OrderItem(models.Model):
                                      related_name='orders')
     trackday = models.ForeignKey(
         TrackdayBooking, on_delete=models.CASCADE, null=True, blank=True
-        )
+    )
     tuition = models.ForeignKey(
         Tuition, on_delete=models.CASCADE, null=True, blank=True
-        )
+    )
     experience = models.ForeignKey(
         Experiences, on_delete=models.CASCADE, null=True, blank=True
-        )
+    )
     date = models.DateTimeField(auto_now_add=True)
 
     grand_total = models.DecimalField(max_digits=10, decimal_places=2,
