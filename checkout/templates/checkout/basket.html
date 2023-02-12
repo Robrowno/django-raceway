@@ -56,7 +56,8 @@
                                   </form>
                                   <a class="btn btn-warning update-link">Edit Order</a>
                                 </td>
-                                <td>{{ item.trackday.base_trackday_price }}</td>
+                                <!-- Price including options -->
+                                <td>{{ trackday_price }}</td>
                                 <td>
                                   <a class="btn btn-danger remove-link" id="remove_trackday_{{ item.trackday.id }}">Delete</a>
                                 </td>

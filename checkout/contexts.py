@@ -91,6 +91,7 @@ def basket_contents(request):
         'total': total,
         'product_count': product_count,
         'grand_total': calc_vat(request, total),
+        'trackday_price': trackday_price,
     }
 
     return context
@@ -98,7 +99,7 @@ def basket_contents(request):
 
 def calc_vat(request, total):
     """
-    For calculating the total cost including VAT
+    Calculates the total cost including VAT at 20%
     """
     vat_rate = Decimal('0.20')
     vat_amount = total * vat_rate

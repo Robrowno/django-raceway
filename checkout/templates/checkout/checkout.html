@@ -176,50 +176,89 @@ This is also linked in the README.md docs as well -->
                         <li
                             class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                             <div class="card-body">
-
+                                {% if basket_contents %}
+                                {% for item in basket_contents %}
+                                {% if item.trackday %}
                                 <div class="row">
                                     <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                                         <!-- Image -->
                                         <div class="bg-image hover-overlay hover-zoom ripple rounded"
                                             data-mdb-ripple-color="light">
-                                            <img src="/media/circuit-indy-layout.png" class="w-100" alt=""/>
+                                            <img src="{{ item.trackday.layout_image.url }}" class="w-100" alt=""/>
 
                                         </div>
                                     </div>
 
                                     <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-
                                     </div>
-                                    <!-- <div style="overflow-x:auto;" class="trackDayTable">
-                                      <table class="table table-hover">
-                                          <tr>
-                                              <th>Order</th>
-                                              <th>Order Number</th>
-                                              <th>Date</th>
-                                              <th>Price</th>
-                                              <tr>
-                                                  <td>Trackday</td>
-                                                  <td>Order Number</td>
-                                                  <td>Date</td>
-                                                  <td>Price</td>
-                                                 
-                                              </tr>
-                                          </tr>
-                                      </table>
-                                  </div> -->
+
                                     <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 text-end">
+
                                         <div class="d-flex mb-1" style="max-width: 300px">
                                         </div>
-
                                         <p>
-                                            £X00
+                                            <!-- Price including options -->
+                                            £{{ trackday_price }}
                                         </p>
 
                                     </div>
                                 </div>
+                                {% endif %}
+                                {% if item.experience %}
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                        <!-- Image -->
+                                        <div class="bg-image hover-overlay hover-zoom ripple rounded"
+                                            data-mdb-ripple-color="light">
+                                            <img src="{{ item.experience.image.url }}" class="w-100" alt=""/>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 text-end">
+
+                                        <div class="d-flex mb-1" style="max-width: 300px">
+                                        </div>
+                                        <p>
+                                            £{{ item.experience.price }}
+                                        </p>
+
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {% if item.tuition %}
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                        <!-- Image -->
+                                        <div class="bg-image hover-overlay hover-zoom ripple rounded"
+                                            data-mdb-ripple-color="light">
+                                            <img src="{{ item.tuition.large_image.url }}" class="w-100" alt=""/>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 text-end">
+
+                                        <div class="d-flex mb-1" style="max-width: 300px">
+                                        </div>
+                                        <p>
+                                            £{{ item.tuition.price }}
+                                        </p>
+
+                                    </div>
+                                </div>
+                                {% endif %}
 
                                 <!-- Horizontal Rule-->
                                 <hr class="my-4" />
+                                {% endfor %}
+                                {% endif %}
                         </li>
 
                         <li
@@ -240,5 +279,5 @@ This is also linked in the README.md docs as well -->
 </section>
 <!-- Credit card form -->
 
-
+<!-- End of Checkout Page -->
 {% endblock %}

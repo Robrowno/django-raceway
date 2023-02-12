@@ -49,7 +49,11 @@
                 <td>{{ trackday.availability }}</td>
                 <td class="remain"><span>£{{ trackday.base_trackday_price }}</span></td>
                 <!-- Link to booking page -->
+                {% if user.is_authenticated %}
                 <td><a href="{% url 'booking' trackday.id %}"><button class="book-btn">Book</button></a></td>
+                {% else %}
+                <td><a href="{% url 'account_login' %}"><button class="book-btn">Log in to Book</button></a></td>
+                {% endif %}
             </tr>
             {% endfor %}
         </tr>

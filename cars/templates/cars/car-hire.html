@@ -15,6 +15,8 @@
 </p>
 
 {% for car in cars %}
+<!-- Stops the "None car" form appearing through iteration -->
+{% if car.make != 'None'%}
 <!-- Iterates through list of cars and their specifications -->
 <div class="card car">
     <img src="{{ car.image.url }}" alt="{{ car.make }} {{car.model }}">
@@ -23,6 +25,7 @@
     <p class="card-text bd-highlight text-end"> {{ car.power }}bhp - {{ car.torque }}nm - {{ car.transmission}} </p>
     </div>
   </div>
+  {% endif %}
 {% endfor %}
 
 

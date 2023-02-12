@@ -66,3 +66,11 @@ def policies_page(request):
     """
 
     return render(request, 'home/policies.html')
+
+
+def management_page(request):
+    """
+    View to render the management page.
+    """
+
+    return render(request, 'home/management.html')

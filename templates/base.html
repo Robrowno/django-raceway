@@ -79,7 +79,7 @@
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                <li><a href="#" class="dropdown-item">Management</a></li>
+                                <li><a href="{% url 'management' %}" class="dropdown-item">Management</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>

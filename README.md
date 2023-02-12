@@ -355,6 +355,7 @@ The site home page: [Privacy Policy Generator](https://www.privacypolicygenerato
     - [Radical Rapture](https://www.topgear.com/car-news/motorsport/new-radical-sr10-425bhp-turbocharged-track-toy)
     - [Lotus Image](https://www.evo.co.uk/lotus/exige/6226/lotus-exige-s2-buying-guide)
     - [Nissan GTR Image](https://www.carmagazine.co.uk/car-reviews/nissan/nissan-gt-r-track-edition-engineered-by-nismo-2016-review/)
+    - For the "None" option "car" I had a default-no-image from here: [no image icon](https://www.freeiconspng.com/downloadimg/23492)
 - Experiences page images:
     - [Junior Experience image](https://www.roadandtrack.com/news/a35090134/toyota-gr-yaris-vs-civic-type-r-gti-fiesta-st/)
     - [Single Seater picture](https://driftlimits.co.uk/experience/f1000-thrill-experience/)
