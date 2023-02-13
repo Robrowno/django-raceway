@@ -93,13 +93,13 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a id="basket-icon" class="nav-link dropdown-toggle btn btn-warning" href="#" id="navbarDropdownMenuLink" role="button"
+                            <a id="basket-icon" class="nav-link dropdown-toggle btn btn-warning" href="#" id="navbarDropdownMenuLink2" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <span class="badge badge-pill bg-danger">{{ product_count }}</span>
                                 <i class="fas fa-shopping-basket"></i>
                             </a>
                             
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink2">
                                 <li></li>
                                 <li><a class="dropdown-item" href="{% url 'my_basket' %}">Basket</a></li>
                                 {% if basket_contents %}

@@ -4,9 +4,16 @@
 {% block content %}
 {% include 'includes/main-nav.html' %}
 
+<div class="container min-vh-100 ">
 
-<h2 class="m-3 text-center">Error! Page Not Found!</h2>
+    <div class="container d-flex justify-content-center mx-auto">
+        <div class="row">
+            <h2 class="m-3 text-center">Error! Page Not Found!</h2>
+            <p>Click here to return Home:</p><a class="btn btn-primary" href="{% url 'home' %}">Home</a>
 
+        </div>
+    </div>
+</div>
 
 
 
