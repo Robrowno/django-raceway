@@ -4,17 +4,18 @@
 {% block content %}
 {% include 'includes/main-nav.html' %}
 
-<div class="container min-vh-100 ">
-
-    <div class="container d-flex justify-content-center mx-auto">
-        <div class="row">
-            <h2 class="m-3 text-center">Error! Page Not Found!</h2>
-            <p>Click here to return Home:</p><a class="btn btn-primary" href="{% url 'home' %}">Home</a>
-
+<!-- Custom Error 404 Page -->
+    <div class="container d-flex justify-content-center mx-auto min-vh-100">
+        <div class="row text-center">
+            <div class="col-8 mt-4">
+                <h2 class="m-3">Error! Page Not Found!</h2>
+            </div>
+            <div class="col-4">
+                <!-- Click here to return to home page -->
+                <p>Click here to return Home:</p><a class="btn btn-primary" href="{% url 'home' %}">Home</a>
+            </div>
         </div>
     </div>
-</div>
-
 
 
 {% endblock %}

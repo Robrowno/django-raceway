@@ -14,7 +14,7 @@ This is my fifth and final portfolio project for my Diploma in Software Developm
 
 Responsiveness Image Here: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-Link to live site: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Link to live site: https://django-raceway.herokuapp.com/
 
 ---
 
@@ -501,6 +501,8 @@ CSS for a checkerboard pattern that I used in my FAQ's Page: [Checkerboard Patte
 I used this Privacy Policy generator to make a section of the content on my Policies Page: [Django Raceway Privacy Policy](https://www.privacypolicygenerator.info/live.php?token=ZK35XedFzBkUqnjElVBI17mDCw2eViwQ)
 
 The site home page: [Privacy Policy Generator](https://www.privacypolicygenerator.info/#wizard)
+
+Very useful tips and instructions for reseting DB migrations and faking initial migrations to prevent issues: [Simpleisbetterthancomplex migrations reset](https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html)
 
 
 

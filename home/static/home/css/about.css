@@ -1,20 +1,23 @@
+/* Content Container Layout/Format */
 .contentContainer{
     max-width: 100%;
     width: 100%;
     padding: 20px 30px;
 }
 
+/* Main Content Layout */
 .content{
     text-align: justify;
     margin-bottom: 30px;
 }
 
+/*Formula Ford image sizing */
 #ff-image {
     max-width: calc(100vw - 20px);
     padding-bottom: 20px;
 }
 
-
+/* Trophy cabinet image sizing */
 #trophy-image {
     max-width: 80%;
 }

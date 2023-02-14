@@ -48,8 +48,8 @@ See User Story:
 | Policies Link | Click on link | opens the Policies page | PASS |
 | FAQs Link | Click on link | opens FAQs Page | Pass |
 | Up-Arrow button | Click on up-arrow button | Takes you to the top of the page | PASS |
-|  |  |  |  |
-|  |  |  |  |
+| Sign Up Button in Footer | Click on Sign up button | Redirect to the Newletter sign up form/page | Pass |
+| Subscribe/Mailchimp Newsletter | Enter a valid email and click on subscribe | Green confirmation text confirming subscription will appear | PASS |
 
 
 ### Booking Page/Booking Detail
@@ -106,8 +106,8 @@ See User Story:
 | - | - | - | - |
 | Profile Link | Check appearance when logged out | Profile page is not accessible to users not logged in | PASS |
 | Profile Link | Check appearance and click on link when logged in | User will be redirected to their profile page | PASS |
-| Edit Button |  |  |  |
-| Save Button |  |  |  |
+| Edit Button | Click Edit Button | Form fields will become editable and the button will change to 'Save' | PASS |
+| Save Button | Click Save Button | Form will save new details for user | Pass |
 | Input fields |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
@@ -120,7 +120,7 @@ See User Story:
 | Verification Email | Click on email link to verify account | Upon click, you will be redirected to the site where it will be confirmed that your account is verified | PASS |
 | Login | Login with a registered account | Redirected to homepage and informed you are logged in | PASS |
 | Remember me checkbox | Click on remember me checkbox button before loggin in | You will not need to login next time you visit the site | PASS |
-| Forgot Password |  |  |  |
+| Forgot Password | Click on Forget Password and submit email | Link to set new password sent to email address supplied by user | PASS |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
@@ -147,7 +147,9 @@ See User Story:
 ### Management
 | Test | Method | Expected Outcome | Result |
 | - | - | - | - |
-| Management Link |  |  |  |
+| Management Link | Login as Admin/Superuser and open profile dropdown | Management link visible and when clicked, redirect to the management add trackday page | PASS |
+| Submit Form |  |  |  |
+|  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
 |  |  |  |  |
@@ -175,7 +177,6 @@ See User Story:
 | includes/toast_info.html  | |
 | includes/toast_success.html  | |
 | includes/toast_warning.html | |
-| 404.html | |
 
 ### /trackdays
 
@@ -207,13 +208,17 @@ See User Story:
 | index.html  | |
 | policies.html  | |
 | management.html  | |
+| 404.html | |
+| newsletter.html | |
 
 ### /checkout
 
 | File | Result |
 | -------- | ------ |
 | basket.html  | |
-| checkout-success.html  | |
+| cancel.html | |
+| error.html | |
+| success.html | |
 | checkout.html  | |
 
 
@@ -265,6 +270,8 @@ See User Story:
 | about.css  | |
 | contact.css  | |
 | index.css  | |
+| management.css  | |
+| newsletter.css  | |
 
 ### /basket/css
 
@@ -301,7 +308,7 @@ See User Story:
 
 | File | Result |
 | -------- | ------ |
-|  |  |
+| trackdays.js |  |
 |  |  |
 
 ### profiles/js

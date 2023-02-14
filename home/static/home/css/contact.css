@@ -1,3 +1,4 @@
+/* Contact form styling */
 .requestForm {
     width: 80%;
     padding: 10px 10px;
@@ -20,7 +21,7 @@
     border: 2px solid #000;
 }
 
-
+/* Submit button. styling */
 .sendBtn{
     background-color: rgb(62, 137, 190);
     padding: 5px 30px;
@@ -28,6 +29,7 @@
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 1);
 }
 
+/* Div for select input */
 .Query{
     width: 100%;
     display: flex;
@@ -35,6 +37,7 @@
     align-items: center;
 }
 
+/* Styling for message after successful form submission*/
 .contact-message {
     display: flex;
     width: calc(100% - 15px);
@@ -49,7 +52,7 @@
     border: 1px solid lightgreen;
   }
 
-
+/* Go Back Button Styling */
 .go-back-btn {
   display: flex;
   justify-content: center;
@@ -65,6 +68,7 @@
   outline: none;
   }
 
+/* Remove text decoration */
   #text-deco-rmv {
     text-decoration: none;
     color: #000;
@@ -118,7 +122,7 @@
     }
 }
 
-
+/* Styling for screens larger than 800px / Tablets */
 @media (min-width: 800px) {
 
     .requestForm {

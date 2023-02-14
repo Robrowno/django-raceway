@@ -1,20 +1,29 @@
+/* Paragraph layout */
 .para{
     text-align: justify;
     padding: 0 25px;
 }
 
+/* Car card Div Styling */
 .car {
     width: 80%;
     margin: auto;
     margin-top: 50px;
+    border: #cedc00 2px solid;
 }
 
+/* Car card Image sizing */
 .car img{
     width: 100%;
     height: 100%;
-    margin-bottom: 5px;
 }
 
+/* Info background colour*/
+.info {
+    background-color: #cedc00;
+}
+
+/* Car info text layout */
 .car p{
     margin: auto;
     text-align: justify;

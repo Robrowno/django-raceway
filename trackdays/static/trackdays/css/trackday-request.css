@@ -1,3 +1,4 @@
+/* Trackday Request Form Styling Section */
 .requestForm {
     width: 80%;
     padding: 10px 10px;
@@ -54,7 +55,7 @@
     }
 }
 
-
+/* Screen Sizes over 800px (laptop/monitor) */
 @media (min-width: 800px) {
 
     .requestForm {
