@@ -18,8 +18,7 @@
         <div class="card mb-4">
           <div class="card-header py-3">
             <!-- Cart Counter -->
-            <h5 class="mb-0">Cart - {% if product_count == 1 %} {{ product_count }} item {% else %} {{ product_count }}
-              items {% endif %}</h5>
+            <h5 class="mb-0">Cart - {% if product_count == 1 %} {{ product_count }} item {% else %} {{ product_count }} items {% endif %}</h5>
           </div>
           <div class="card-body">
 
@@ -29,198 +28,190 @@
               <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
               </div>
               <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+
+
               </div>
               <div style="overflow-x:auto;" class="trackDayTable">
-                <table class="table table-hover">
-                  <!-- Order Table -->
-                  <tr>
-                    <th class="w-25"></th>
-                    <th>Order</th>
-                    <th>Quantity/Edit</th>
-                    <th>Price</th>
-                    <th></th>
-                    {% for item in basket_contents %}
-                    <!-- Table data for trackdays -->
-                    {% if item.trackday %}
-                  <tr>
-                    <td class="basket-img"> <img src="{{ item.trackday.layout_image.url }}" style="width: 60%;"
-                        alt="" /></td>
-                    <td>{{ item.trackday.get_layout_display }} Trackday
-                      <div><small>{{ item.trackday.date }}</small></div>
-                    </td>
-                    <td>
-                      <!-- Quantity Update form -->
-                      <form class="form form-update" method="" action="">
-                        {%csrf_token %}
+                  <table class="table table-hover">
+                    <!-- Order Table -->
+                      <tr>
+                          <th class="w-25"></th>
+                          <th>Order</th>
+                          <th>Quantity/Edit</th>
+                          <th>Price</th>
+                          <th></th>
+                          {% for item in basket_contents %}
+                          <!-- Table data for trackdays -->
+                            {% if item.trackday %}
+                            <tr> 
+                              <td class="basket-img"> <img src="{{ item.trackday.layout_image.url }}" style="width: 60%;" alt=""/></td>
+                                <td>{{ item.trackday.get_layout_display }} Trackday
+                                  <div><small>{{ item.trackday.date }}</small></div>
+                                </td>
+                                <td>
+                                  <!-- Quantity Update form -->
+                                  <form class="form form-update" method="" action="">
+                                    {%csrf_token %}
+                                  
+                                  </form>
+                                  <a  class="btn btn-warning update-order" id="update_trackday_{{ item.trackday.id }}">Edit Order</a>
+                                </td>
+                                <!-- Price including options -->
+                                <td>{{ trackday_price }}</td>
+                                <td>
+                                  <a class="btn btn-danger remove-link" id="remove_trackday_{{ item.trackday.id }}">Delete</a>
+                                </td>
+                            </tr>
 
-                      </form>
-                      <a class="btn btn-warning update-order" id="update_trackday_{{ item.trackday.id }}">Edit Order</a>
-                    </td>
-                    <!-- Price including options -->
-                    <td>{{ trackday_price }}</td>
-                    <td>
-                      <a class="btn btn-danger remove-link" id="remove_trackday_{{ item.trackday.id }}">Delete</a>
-                    </td>
-                  </tr>
+                            {% endif %}
+                            {% if item.experience %}
+                          <tr> 
+                            <td class="basket-img"> <img src="{{ item.experience.image.url }}" style="width: 60%;" alt=""/></td>
+                              <td>{{ item.experience.title }}</td>
+                              <td>
+                                <!-- Quantity Update form -->
+                                <form class="form form-update" method="post" action="{% url 'edit_exp' item.experience.id %}">
+                                  {%csrf_token %}
+                                  <div class="input-group d-flex justify-content-between">
+                                    <button class="increment-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.experience.title  }}{{item.experience.id}}"
+                                        id="increment-qty_{{ item.experience.title  }}{{item.experience.id}}">
+                                        <span>
+                                            <i class="fas fa-plus fa-sm quantity-icon"></i>
+                                        </span>
+                                    </button>
+    
+                                    <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="10"
+                                        data-item_id="{{ item.experience.title  }}{{item.experience.id}}" id="id_qty_{{ item.experience.title  }}{{item.experience.id}}">
+                                        
+                                    <button class="decrement-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.experience.title  }}{{item.experience.id}}"
+                                        id="decrement-qty_{{ item.experience.title  }}{{item.experience.id}}">
+                                        <span>
+                                            <i class="fas fa-minus fa-sm quantity-icon"></i>
+                                        </span>
+                                    </button>
+    
+                                  </div>
+                            </div>
+                                  </form>
+                                <a class="btn btn-warning update-link">Update</a>
+                              </td>
+                              <td>{{ item.experience.price }}</td>
+                              <td>
+                                <a class="btn btn-danger remove-link" id="remove_experience_{{ item.experience.id }}">Delete</a>
+                              </td>
+                          </tr>
+                          {% endif %}
 
-                  {% endif %}
-                  {% if item.experience %}
-                  <tr>
-                    <td class="basket-img"> <img src="{{ item.experience.image.url }}" style="width: 60%;" alt="" />
-                    </td>
-                    <td>{{ item.experience.title }}</td>
-                    <td>
-                      <!-- Quantity Update form -->
-                      <form class="form form-update" method="post" action="{% url 'edit_exp' item.experience.id %}">
-                        {%csrf_token %}
-                        <div class="input-group d-flex justify-content-between">
-                          <button class="increment-qty btn btn-outline-dark rounded-0"
-                            data-item_id="{{ item.experience.title  }}{{item.experience.id}}"
-                            id="increment-qty_{{ item.experience.title  }}{{item.experience.id}}">
-                            <span>
-                              <i class="fas fa-plus fa-sm quantity-icon"></i>
-                            </span>
-                          </button>
+                          {% if item.tuition %}
 
-                          <input class="form-control qty_input" type="number" name="quantity"
-                            value="{{ item.quantity }}" min="1" max="10"
-                            data-item_id="{{ item.experience.title  }}{{item.experience.id}}"
-                            id="id_qty_{{ item.experience.title  }}{{item.experience.id}}">
-
-                          <button class="decrement-qty btn btn-outline-dark rounded-0"
-                            data-item_id="{{ item.experience.title  }}{{item.experience.id}}"
-                            id="decrement-qty_{{ item.experience.title  }}{{item.experience.id}}">
-                            <span>
-                              <i class="fas fa-minus fa-sm quantity-icon"></i>
-                            </span>
-                          </button>
-
-                        </div>
+                          <!-- Table data for tuition packages -->
+                          <tr> 
+                            <td class="basket-img"> <img src="{{ item.tuition.large_image.url }}" style="width: 60%;" alt=""/></td>
+                              <td>{{ item.tuition.title }}</td>
+                              <td>
+                                <!-- Quantity Update form -->
+                                <form class="form form-update" method="post" action="{% url 'edit_tuition' item.tuition.id %}">
+                                  {%csrf_token %}
+                                  <div class="input-group d-flex justify-content-between">
+                                    <button class="increment-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.tuition.title  }}{{item.tuition.id}}"
+                                        id="increment-qty_{{ item.tuition.title  }}{{item.tuition.id}}">
+                                        <span>
+                                            <i class="fas fa-plus fa-sm quantity-icon"></i>
+                                        </span>
+                                    </button>
+    
+                                    <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="10"
+                                        data-item_id="{{ item.tuition.title  }}{{item.tuition.id}}" id="id_qty_{{ item.tuition.title  }}{{item.tuition.id}}">
+                                        
+                                    <button class="decrement-qty btn btn-outline-dark rounded-0" data-item_id="{{ item.tuition.title  }}{{item.tuition.id}}"
+                                        id="decrement-qty_{{ item.tuition.title  }}{{item.tuition.id}}">
+                                        <span>
+                                            <i class="fas fa-minus fa-sm quantity-icon"></i>
+                                        </span>
+                                    </button>
+    
+                                </div>
+                            </div>
+                                </form>
+                                <a class="btn btn-warning update-link">Update</a>
+                              </td>
+                              <td>{{ item.tuition.price }}</td>
+                              <td>
+                                <a class="btn btn-danger remove-link" id="remove_tuition_{{ item.tuition.id }}">Delete</a>
+                              </td>
+                          </tr>
+                          {% endif %}
+                          {% endfor %}
+                      </tr>
+                  </table>
               </div>
-              </form>
-              <a class="btn btn-warning update-link">Update</a>
-              </td>
-              <td>{{ item.experience.price }}</td>
-              <td>
-                <a class="btn btn-danger remove-link" id="remove_experience_{{ item.experience.id }}">Delete</a>
-              </td>
-              </tr>
-              {% endif %}
+              <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 text-end">
+                <div class="d-flex mb-1" style="max-width: 300px">
+                  
+                </div>
 
-              {% if item.tuition %}
 
-              <!-- Table data for tuition packages -->
-              <tr>
-                <td class="basket-img"> <img src="{{ item.tuition.large_image.url }}" style="width: 60%;" alt="" /></td>
-                <td>{{ item.tuition.title }}</td>
-                <td>
-                  <!-- Quantity Update form -->
-                  <form class="form form-update" method="post" action="{% url 'edit_tuition' item.tuition.id %}">
-                    {%csrf_token %}
-                    <div class="input-group d-flex justify-content-between">
-                      <button class="increment-qty btn btn-outline-dark rounded-0"
-                        data-item_id="{{ item.tuition.title  }}{{item.tuition.id}}"
-                        id="increment-qty_{{ item.tuition.title  }}{{item.tuition.id}}">
-                        <span>
-                          <i class="fas fa-plus fa-sm quantity-icon"></i>
-                        </span>
-                      </button>
-
-                      <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}"
-                        min="1" max="10" data-item_id="{{ item.tuition.title  }}{{item.tuition.id}}"
-                        id="id_qty_{{ item.tuition.title  }}{{item.tuition.id}}">
-
-                      <button class="decrement-qty btn btn-outline-dark rounded-0"
-                        data-item_id="{{ item.tuition.title  }}{{item.tuition.id}}"
-                        id="decrement-qty_{{ item.tuition.title  }}{{item.tuition.id}}">
-                        <span>
-                          <i class="fas fa-minus fa-sm quantity-icon"></i>
-                        </span>
-                      </button>
-
-                    </div>
+              </div>
             </div>
-            </form>
-            <a class="btn btn-warning update-link">Update</a>
-            </td>
-            <td>{{ item.tuition.price }}</td>
-            <td>
-              <a class="btn btn-danger remove-link" id="remove_tuition_{{ item.tuition.id }}">Delete</a>
-            </td>
-            </tr>
+
+            <!-- Horizontal Rule-->
+            <hr class="my-4"/>
+
+            {% else %}
+
+            <i class="fas fa-shopping-basket mt-4 ms-3"></i><span><p class="mt-4 ms-2 d-inline-block"> Your Basket is currently empty.</p></span>
             {% endif %}
-            {% endfor %}
-            </tr>
-            </table>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 text-end">
-            <div class="d-flex mb-1" style="max-width: 300px">
-
-            </div>
-
-
           </div>
         </div>
 
-        <!-- Horizontal Rule-->
-        <hr class="my-4" />
-
-        {% else %}
-
-        <span><i class="fas fa-shopping-basket mt-4 ms-3"></i></span>
-        <p class="mt-4 ms-2 d-inline-block"> Your Basket is currently empty.</p>
-        {% endif %}
-      </div>
-    </div>
-
-    <!-- Other pages card -->
-    <div class="card mb-4">
-      <div class="card-body">
-        Continue Browsing:
-        <button class="btn btn-primary ms-2"><a class="text-decoration-none text-reset"
-            href="{% url 'home' %}">Home</a></button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Summary side tab with total price information -->
-  <div class="col-md-4">
-    <div class="card mb-4">
-      <div class="card-header py-3">
-        <h5 class="mb-0">Summary</h5>
-      </div>
-      <div class="card-body">
-        {% if basket_contents %}
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-            Products
-            <span>£{{ total }}</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
-            <div>
-              <strong>Total amount</strong>
-              <strong>
-                <p class="mb-0">(including VAT)</p>
-              </strong>
-            </div>
-            <span><strong>£{{ grand_total|floatformat:2 }}</strong></span>
-          </li>
-        </ul>
-        <div class="card-footer border-success d-flex">
-          <div class="p-2 flex-grow-1 bd-highlight d-flex align-items-center">Price: £{{ grand_total|floatformat:2 }}
-          </div>
-          <div class="p-2 bd-highlight d-flex align-items-center">
-            <form action="{% url 'checkout' %}" method="POST">
-              {% csrf_token %}
-              <button type="submit" class="btn btn-success" id="checkout-button">Checkout</button>
-            </form>
+        <!-- Other pages card -->
+        <div class="card mb-4">
+          <div class="card-body">
+            Continue Browsing:
+            <a class="" href="{% url 'home' %}">
+              <button class="btn btn-primary ms-2">Home</button>
+            </a>
           </div>
         </div>
       </div>
-      {% endif %}
+
+      <!-- Summary side tab with total price information -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header py-3">
+            <h5 class="mb-0">Summary</h5>
+          </div>
+          <div class="card-body">
+            {% if basket_contents %}
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                Products
+                <span>£{{ total }}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                <div>
+                  <strong>Total amount</strong>
+                  <strong>
+                    <p class="mb-0">(including VAT)</p>
+                  </strong>
+                </div>
+                <span><strong>£{{ grand_total|floatformat:2 }}</strong></span>
+              </li>
+            </ul>
+            <div class="card-footer border-success d-flex">
+              <div class="p-2 flex-grow-1 bd-highlight d-flex align-items-center">Price: £{{ grand_total|floatformat:2 }}</div>
+              <div class="p-2 bd-highlight d-flex align-items-center">
+                <form action="{% url 'checkout' %}" method="POST">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-success" id="checkout-button">Checkout</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
   </div>
 </section>
 
@@ -231,86 +222,84 @@
 {% include 'trackdays/includes/increment_decrement_script.html' %}
 
 <script type="text/javascript">
+
   // Get all the increment buttons
-  const incrementButtons = document.querySelectorAll('.increment-qty');
+const incrementButtons = document.querySelectorAll('.increment-qty');
 
-  // Loop through the buttons and add event listener to each
-  incrementButtons.forEach(function (button) {
+// Loop through the buttons and add event listener to each
+incrementButtons.forEach(function (button) {
     button.addEventListener('click', function (event) {
-      // Get the input field that corresponds to this button
-      const inputField = document.getElementById(`id_qty_${event.target.dataset.item_id}`);
-      // Increase the value of the input field
-      inputField.value = parseInt(inputField.value) + 1;
-      // Disable the increment button if the new value is equal to max
-      if (inputField.value == 10) {
-        button.setAttribute('disabled', true);
-      }
-      // Enable the decrement button if the new value is greater than min
-      if (inputField.value <= 10) {
-        const decrementButton = document.getElementById(`decrement-qty_${event.target.dataset.item_id}`);
-        decrementButton.removeAttribute('disabled');
-      }
+        // Get the input field that corresponds to this button
+        const inputField = document.getElementById(`id_qty_${event.target.dataset.item_id}`);
+        // Increase the value of the input field
+        inputField.value = parseInt(inputField.value) + 1;
+        // Disable the increment button if the new value is equal to max
+        if (inputField.value ==10) {
+            button.setAttribute('disabled', true);
+        }
+        // Enable the decrement button if the new value is greater than min
+        if (inputField.value <= 10) {
+            const decrementButton = document.getElementById(`decrement-qty_${event.target.dataset.item_id}`);
+            decrementButton.removeAttribute('disabled');
+        }
     });
-  });
+});
 
-  // Get all the decrement buttons
-  const decrementButtons = document.querySelectorAll('.decrement-qty');
+// Get all the decrement buttons
+const decrementButtons = document.querySelectorAll('.decrement-qty');
 
-  // Loop through the buttons and add event listener to each
-  decrementButtons.forEach(function (button) {
+// Loop through the buttons and add event listener to each
+decrementButtons.forEach(function (button) {
     button.addEventListener('click', function (event) {
-      // Get the input field that corresponds to this button
-      const inputField = document.getElementById(`id_qty_${event.target.dataset.item_id}`);
-      // Decrease the value of the input field
-      inputField.value = parseInt(inputField.value) - 1;
-      // Disable the decrement button if the new value is equal to min
-      if (inputField.value == 1) {
-        button.setAttribute('disabled', true);
-      }
-      // Enable the increment button if the new value is less than max
-      if (inputField.value <= 10) {
-        const incrementButton = document.getElementById(`increment-qty_${event.target.dataset.item_id}`);
-        incrementButton.removeAttribute('disabled');
-      }
+        // Get the input field that corresponds to this button
+        const inputField = document.getElementById(`id_qty_${event.target.dataset.item_id}`);
+        // Decrease the value of the input field
+        inputField.value = parseInt(inputField.value) - 1;
+        // Disable the decrement button if the new value is equal to min
+        if (inputField.value == 1) {
+            button.setAttribute('disabled', true);
+        }
+        // Enable the increment button if the new value is less than max
+        if (inputField.value <= 10) {
+            const incrementButton = document.getElementById(`increment-qty_${event.target.dataset.item_id}`);
+            incrementButton.removeAttribute('disabled');
+        }
     });
-  });
+});
 
 
   // Update quantity on click
-  $('.update-link').click(function (e) {
-    var form = $(this).prev('.form-update');
-    form.submit();
-  })
+  $('.update-link').click(function(e) {
+        var form = $(this).prev('.form-update');
+        form.submit();
+    })
 
-  // Remove item and reload on click
-  $('.remove-link').click(function (e) {
-    var csrfToken = "{{ csrf_token }}";
-    var itemType = $(this).attr('id').split('_')[1];
-    var itemId = $(this).attr('id').split('_')[2];
-    var url = `/checkout/basket/remove/${itemType}/${itemId}/`;
-    var dataset = {
-      'csrfmiddlewaretoken': csrfToken,
-    };
-    $.post(url, dataset)
-      .done(function () {
-        location.reload();
-      });
-  })
+    // Remove item and reload on click
+    $('.remove-link').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemType = $(this).attr('id').split('_')[1];
+        var itemId = $(this).attr('id').split('_')[2];
+        var url = `/checkout/basket/remove/${itemType}/${itemId}/`;
+        var dataset = {'csrfmiddlewaretoken': csrfToken,};
+        $.post(url, dataset)
+         .done(function() {
+             location.reload();
+         });
+    })
 
-  // Remove item and go on that products page
-  $('.update-order').click(function (e) {
-    var csrfToken = "{{ csrf_token }}";
-    var itemType = $(this).attr('id').split('_')[1];
-    var itemId = $(this).attr('id').split('_')[2];
-    var url = `/checkout/basket/remove/${itemType}/${itemId}/`;
-    var dataset = {
-      'csrfmiddlewaretoken': csrfToken,
-    };
-    $.post(url, dataset)
-      .done(function () {
-        window.location.href = "/trackdays";
-      });
-  })
+    // Remove item and go on that products page
+    $('.update-order').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemType = $(this).attr('id').split('_')[1];
+        var itemId = $(this).attr('id').split('_')[2];
+        var url = `/checkout/basket/remove/${itemType}/${itemId}/`;
+        var dataset = {'csrfmiddlewaretoken': csrfToken,};
+        $.post(url, dataset)
+         .done(function() {
+          window.location.href = "/trackdays";
+         });
+    })
+
 </script>
 
 

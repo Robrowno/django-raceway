@@ -13,10 +13,6 @@ body {
     font-family: 'Secular One', sans-serif;
 }
 
-.btn-custom-color {
-    background-color: #cedc00;
-}
-
 
 /* Traffic Light circles and Book A Trackday button */
 .circles {
@@ -67,7 +63,6 @@ body {
 /* Middle Nav Styling */
 .middle-nav {
     margin-left: 0px !important;
-    background-color: #cedc00;
     border: 2px solid #000;
     border-right: none;
     border-left: none;
@@ -272,7 +267,7 @@ footer .footer-links{
 }
 
 .signUpBtn {
-    background-color: #cedc00;
+    background-color: orange;
     border: 2px solid #000;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 1);
 }

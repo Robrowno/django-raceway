@@ -13,7 +13,7 @@
 <h3 class="text-center"> Add a Trackday</h3>
 
 <form method="POST" action="#" class="requestForm mb-2" enctype="multipart/form-data">
-{% csrf_token %}
+
     <div class="formRow">
         <label for="td-layout">Layout</label>
         <select id="td-layout" name="td-layout">
@@ -51,32 +51,11 @@
         <input type="number" id="base-price" min="50" max="500" name="base-price" required>
       </div>
 
-    <button class="btn btn-lg btn-primary mt-3" type="submit">Add Trackday</button>
+    <button class="btn btn-primary" type="submit">Add Trackday</button>
 </form>
 
 
 
 
 {% endif %}
-{% endblock %}
-
-
-{% block postloadjs%}
-
-<script type="text/javascript">
-  // Script inspired by and modified from an example CHATGPT generated response to setting parameters for date validation on a form.
-  const today = new Date();
-  const input = document.getElementById("td-date");
-
-  input.addEventListener("change", function () {
-    const dateEntered = new Date(input.value);
-
-    if (dateEntered < today) {
-      alert("Sorry, the date requested can be no sooner than today");
-      input.value = "";
-    }
-  });
-</script>
-
-
 {% endblock %}

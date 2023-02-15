@@ -1,10 +1,9 @@
-/* Paragraph layout/format */
 .para {
     text-align: justify;
     width: 80%;
     margin: auto;
 }
-/* Experiences */
+
 .experiences{
     width: 85%;
     margin: 20px auto;
@@ -29,7 +28,6 @@
     align-items: flex-end;
 }
 
-/* Explore Buttons */
 .explore-btn {
     background-color: orange;
     color: black;
@@ -43,7 +41,7 @@
     cursor: pointer;
 }
 
-/* Screen widths up to 780px */
+
 @media all and (max-width:780px) {
 
     .explore-btn {

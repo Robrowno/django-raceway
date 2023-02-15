@@ -8,6 +8,7 @@
 
 {% block content %}
 {% include 'includes/main-nav.html' %}
+<script type="text/javascript" src="{% static 'trackdays/js/trackdays.js' %}"></script>
 
 <h2 class="m-3 text-center">Track Days</h2>
 <!-- Images of the 3 different Track Day Layouts -->
@@ -15,17 +16,17 @@
 
 <div class="configuration">
     <div class="content">
-        <img src="{% static 'images/main_images/circuit-gp-layout.png' %}" alt="GP International Circuit Layout map">
+        <img src="/media/circuit-gp-layout.png" alt="GP International Circuit Layout map">
         <span class="contentCaption">GP International</span>
     </div>
 
     <div class="content">
-        <img src="{% static 'images/main_images/circuit-national-layout.png' %}" alt="National Circuit Layout map">
+        <img src="/media/circuit-national-layout.png" alt="National Circuit Layout map">
         <span class="contentCaption">National</span>
     </div>
 
     <div class="content">
-        <img src="{% static 'images/main_images/circuit-indy-layout.png' %}" alt="Indy Circuit Layout map">
+        <img src="/media/circuit-indy-layout.png" alt="Indy Circuit Layout map">
         <span class="contentCaption">Indy</span>
     </div>
 </div>
@@ -57,7 +58,7 @@
                         {% for track in available %}
                             {% if track.trackday_id == trackday.id %}
                                 {% if track.availability == True %}
-                                    <td><button class="book-btn"><a class="text-decoration-none text-reset" href="{% url 'booking' trackday.id %}">Book</button></td> 
+                                    <td><a href="{% url 'booking' trackday.id %}"><button class="book-btn">Book</button></a></td> 
                                 {% else %}
                                     <td class="full"><span>Full</span></td>
                                 {% endif %}
@@ -65,11 +66,14 @@
                         {% endfor %}
                     {% endif %}
                 {% else %} 
-                    <td><button class="book-btn"><a class="text-decoration-none text-reset" href="{% url 'account_login' %}">Log in to Book</a></button></td>
+                    <td><a href="{% url 'account_login' %}"><button class="book-btn">Log in to Book</button></a></td>
                 {% endif %}
             </tr>
         {% endfor %}
         
+
+        </tr>
+
         <!-- <tr>
             <td>23/01/23</td>
             <td>GP</td>
@@ -107,8 +111,4 @@
 
 </html>
 
-{% endblock %}
-{% block postloadjs %}
-
-<script type="text/javascript" src="{% static 'trackdays/js/trackdays.js' %}"></script>
 {% endblock %}

@@ -5,17 +5,26 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'home/css/index.css' %}">
 {% endblock %}
+
+<script>
+    const btnClose = document.getElementsByClassName('btn-close')[0];
+const messageBox=document.getElementsByClassName('message-container')[0];
+btnClose.addEventListener('click', function() {
+  messageBox.style.display = 'none';
+});
+</script>
+
 <!-- Carousel -->
 <div id="carouselExampleControls" class="carousel slide h-100" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="{% static 'images/main_images/circuit-gp-layout.png' %}" class="d-block w-100 img-height-zar" alt="Full track layout">
+      <img src="/media/circuit-national-layout.png" class="d-block w-100 img-height-zar" alt="Full track layout" />
     </div>
     <div class="carousel-item">
-      <img src="{% static 'images/main_images/circuit-national-layout.png' %}" class="d-block w-100 img-height-zar" alt="Medium track layout">
+      <img src="/media/circuit-gp-layout.png" class="d-block w-100 img-height-zar" alt="Medium track layout" />
     </div>
     <div class="carousel-item">
-      <img src="{% static 'images/main_images/circuit-indy-layout.png' %}" class="d-block w-100 img-height-zar" alt="Small track layout">
+      <img src="/media/circuit-indy-layout.png" class="d-block w-100 img-height-zar" alt="Small track layout" />
     </div>
   </div>
 
@@ -51,31 +60,31 @@
 
   <div class="row gallery-images">
     <div class="image-div col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
-      <img src="{% static 'images/main_images/porsche-trackday-pic.jpeg' %}" class="gallery-img" alt="Porsche on Track">
+      <img src="/media/porsche-trackday-pic.jpeg" class="gallery-img" alt="">
     </div>
     <div class="image-div col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
-      <img src="{% static 'images/main_images/austin-mini.JPG' %}" class="gallery-img" alt="Mini on Track">
+      <img src="/media/austin-mini.JPG" class="gallery-img" alt="">
     </div>
     <div class="image-div col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
-      <img src="{% static 'images/main_images/trackcar-pic.jpeg' %}" class="gallery-img" alt="Track car">
+      <img src="/media/trackcar-pic.jpeg" class="gallery-img" alt="">
     </div>
     <div class="image-div col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
-      <img src="{% static 'images/main_images/mclaren-620r.jpeg' %}" class="gallery-img" alt="McLaren driving on Track">
+      <img src="/media/mclaren-620r.jpeg" class="gallery-img" alt="">
     </div>
   </div>
 
   <div class="row gallery-images">
     <div class="image-div col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
-      <img src="{% static 'images/main_images/ariel-atom.jpeg' %}" class="gallery-img" alt="Ariel Atom driving on Track">
+      <img src="/media/ariel-atom.jpeg" class="gallery-img" alt="">
     </div>
     <div class="image-div col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
-      <img src="{% static 'images/main_images/caterhams-racing.jpeg' %}" class="gallery-img" alt="A pack of Caterhams racing together">
+      <img src="/media/caterhams-racing.jpeg" class="gallery-img" alt="">
     </div>
     <div class="image-div col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
-      <img src="{% static 'images/main_images/rover-mini.JPG' %}" class="gallery-img" alt="Rover Mini leaning through a corner on track">
+      <img src="/media/rover-mini.JPG" class="gallery-img" alt="">
     </div>
     <div class="image-div col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-3 mb-3">
-      <img src="{% static 'images/main_images/ferrari-488.jpeg' %}" class="gallery-img" alt="Ferrari driving on track">
+      <img src="/media/ferrari-488.jpeg" class="gallery-img" alt="">
     </div>
   </div>
 </div>
@@ -84,7 +93,7 @@
   <span class="buttons close" id="close"> &times; </span>
   <div class="modal-container">
     <span class="buttons prev" id="prev">&#8249;</span>
-    <img class="modalImg" id="modalImg" src="" alt="Modal image">
+    <img class="modalImg" id="modalImg" src="" alt="" />
     <span class="buttons next" id="next">&#8250;</span>
   </div>
 

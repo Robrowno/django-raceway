@@ -138,9 +138,11 @@
         margin: 0 20px;
     }
 
+
     .sub-heading p {
         font-size: 18px;
     }
+
 
     .formRow {
         display: flex;
@@ -158,6 +160,8 @@
         font-size: 20px;
     }
 
+
+    
     .heading .backBtn {
         display: block;}
 }

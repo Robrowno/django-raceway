@@ -28,6 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = False
 
 ALLOWED_HOSTS = ['django-raceway.herokuapp.com', 'localhost', '*']
 
@@ -218,6 +219,7 @@ if 'USE_AWS' in os.environ:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'django-raceway@example.com'
@@ -230,6 +232,8 @@ else:
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
+
+
 if 'STRIPE_SECRET_KEY' in os.environ:
     STRIPE_SECRET_KEY=os.environ.get('STRIPE_SECRET_KEY')
     STRIPE_PUBLISHABLE_KEY=os.environ.get('STRIPE_PUBLISHABLE_KEY')
@@ -238,4 +242,6 @@ else:
     STRIPE_SECRET_KEY=''
     STRIPE_PUBLISHABLE_KEY=''
     API_KEY=""
-
+AWS_STORAGE_BUCKET_NAME = 'test-dbot'
+AWS_S3_REGION_NAME = 'eu-west-2'
+AWS_DEFAULT_ACL = None

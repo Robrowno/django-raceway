@@ -30,8 +30,6 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Mailchimp CSS -->
-    <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
     <!-- Base CSS -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
@@ -63,7 +61,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}">Django Raceway
-                    <span><img src="{% static 'images/main_images/checkered-flag-angled.png' %}" alt="checkered flag" width="30" height="24"
+                    <span><img src="/media/checkered-flag-angled.png" alt="checkered flag" width="30" height="24"
                             class="d-inline-block align-text-top"></span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -74,7 +72,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul id="nav-icon-box" class="navbar-nav ms-auto mx-5 gap-3">
                         <li class="nav-item dropdown">
-                            <a id="profile-icon" class="nav-link dropdown-toggle btn btn-custom-color" href="#" id="navbarDropdownMenuLink" role="button"
+                            <a id="profile-icon" class="nav-link dropdown-toggle btn btn-info" href="#" id="navbarDropdownMenuLink" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-user"></i>
                             </a>
@@ -95,13 +93,13 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a id="basket-icon" class="nav-link dropdown-toggle btn btn-custom-color" href="#" id="navbarDropdownMenuLink2" role="button"
+                            <a id="basket-icon" class="nav-link dropdown-toggle btn btn-warning" href="#" id="navbarDropdownMenuLink" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <span class="badge badge-pill bg-danger">{{ product_count }}</span>
                                 <i class="fas fa-shopping-basket"></i>
                             </a>
                             
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink2">
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                                 <li></li>
                                 <li><a class="dropdown-item" href="{% url 'my_basket' %}">Basket</a></li>
                                 {% if basket_contents %}
@@ -136,6 +134,9 @@
       <!-- End of Messages -->
     </div>
   {% endif %}
+
+
+
 
 
     {% block page_header %}
@@ -173,7 +174,7 @@
         <!-- MailChimp newsletter subscription will go here -->
         <div class="signUpDiv">
             <span>Sign up to our newsletter
-                <a href="{% url 'newsletter' %}" class="signUpBtn ms-1"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign Up</a></span>
+                <a href="#" class="signUpBtn ms-1"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign Up</a></span>
             <!-- Button to return to page top -->
             <a href="#" class="toTopBtn" id="toTopBtn">
                 <i class="fas fa-arrow-up"></i>
