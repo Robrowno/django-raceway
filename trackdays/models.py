@@ -50,12 +50,14 @@ class Trackday(models.Model):
     def __str__(self):
         return str(f'{self.id}')
 
-    """ Only one combo of Trackday and date permitted """
-    constraints = [
+    class Meta:
+        """ Only one combo of Trackday and date permitted """
+        constraints = [
         models.UniqueConstraint(
             fields=['layout', 'date'],
             name='unique_trackday'),
     ]
+    
 
 
 class TrackdayBooking(models.Model):

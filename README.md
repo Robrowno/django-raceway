@@ -39,6 +39,8 @@ Link to live site: https://django-raceway.herokuapp.com/
 ### Balsamiq wireframes/mockups
 I used Balsamiq Wireframes to make mockups for the website and design how I initially imagined the site would look. 
 
+<details><summary>Desktop Wireframes</summary>
+
 ### Desktop
 
 #### Home Page
@@ -103,6 +105,9 @@ As per above, credit card section removed from the scope.
 #### Policies Page
 ![Policies](/static/images/readme-images/policies-desktop.png)
 
+</details>
+<br/><br/> 
+<details><summary>Mobile and Tablet Wireframes</summary>
 
 ### Mobile and Tablet
 
@@ -178,6 +183,9 @@ As per above, credit card section removed from the scope.
 #### Policies Page
 ![Policies Mobile](/static/images/readme-images/policies-mobile.png)
 ![Policies Tablet](/static/images/readme-images/policies-tablet.png)
+
+</details>
+
 ---
 
 ### Early Development
@@ -198,6 +206,9 @@ Here is an early mockup of my basket page. It was around this time that I made t
 ## User Experience (UX)
 
 ### B2C Strategy
+
+
+- 
 
 
 ### Agile Methodologies
@@ -267,8 +278,7 @@ You can see my project board [here](https://github.com/users/Robrowno/projects/5
     - As a Site User I can sign up to a newsletter so that I can get informed about new products or business updates.
 - [User Story: ]([#36](https://github.com/Robrowno/django-raceway/issues/36))
     - As a Software I can write automated and manual tests so that I can check my code works reliably and as expected.
-- [User Story: ]()
-    - 
+
 
 
 #### Epics
@@ -299,6 +309,272 @@ You can see my project board [here](https://github.com/users/Robrowno/projects/5
 
 ## Features
 
+Below is a comprehensive list of the site features and their relations to the user stories from the Kanban board:
+
+1. A Nav Bar/Header that:
+    - is split in two with a top nav where the user can find profile info, login/logout functionality and the basket
+    - has a middle nav which serves as the main navigation of the site
+    - contains a company logo that redirects to the home page when clicked on
+
+    `` User Story: As a Site User I can use a Nav Bar so that I can Navigate to the desired page.``
+
+    - Acceptance Criteria:
+        - A Responsive fixed-top header that contains a title, user icon and basket icon on desktop and a title and triple line menu icon on mobile/tablet
+        - A Secondary Nav bar is displayed under the hero image on desktop, this is moved in to the collapsable triple line icon on mobile/tablet
+        - Nav bar is clean and consistent with the theme and overall design scheme
+
+2. A Home Page that:
+    - Contains a carousel of track layout images
+    - Contains a gallery of cars on track designed to showcase the action packed nature of track driving
+    - hosts the middle nav beneath the carousel to encourage the user to scroll down the home page and see more content
+    - serves as the entry page and point of reference for everything on the site
+
+    `` User Story: As a Site User I can view a home page so that I can have a starting point from which I can navigate the site.``
+
+    - Acceptance Criteria:
+        - Home Page features a Nav Bar, Main body with Hero image and Footer
+        - Has a consistent theme and colour scheme
+        - Most Pages can be navigated to directly from this one point
+        - Theme of site and target audience easily identifiable from the home page alone
+
+3. A page Footer that:
+    - Contains Policies and FAQs links
+    - Contains a prompt to sign up to the Django Raceway Newsletter
+    - An up-arrow button to return to the top of the page
+
+    `` User Story: As a Site User I can view a footer bar so that I can view Policies, FAQs or subscribe to a motorsport newsletter.``
+
+    - Acceptance Criteria:
+        - Footer contains links to the Policies and FAQs
+        - Contains a place to sign up for a newsletter
+        - Button to return to top of the page
+        - Responsive and consistent theme with the Nav Bar
+
+4. A Gallery that:
+    - Contains 8 High Quality images of cars driving on track
+    - Can be clicked on to open, moved to previous or next images, or closed with an 'x' 
+
+    `` User Story: As a Site Visitor I can view a gallery of images so that I can get a visual understanding of what a track day looks like.``
+
+    - Acceptance Criteria:
+        - Gallery contains images of cars on track, to give user an idea of a track day visually
+        - Either a carousel or collection of neat images on the home page
+        - High quality images should be chosen
+        - Can be clicked on to expand and view, can be closed with an 'x' button
+
+5. Allauth Authentication features that:
+    - Can allow users to sign up for an account
+    - Can allow users to login to their account after creating one
+    - allows users to logout of their account for account safety
+    - allows users to reset their password if they have forgotten through a supplied email address
+    - can keep users signed in with a checkbox option
+
+    ``User Story: As a Site User I can create an account so that I can access user-verified-only benefits and store personal information for future orders.``
+    - Acceptance Criteria:
+        - When a site visitor is not signed in, a sign up/create account link in the nav can be found where they are redirected to a page to create an account
+        - Upon account creation, they will be asked to verify through their email address that they will have had to provide.
+        - No more info than is required will be asked for on sign up.
+
+    ``User Story: As a Site User I can log in and log out so that I can keep my account and details secure. ``
+    - Acceptance Criteria:
+        - When Users are logged out, there will be an option in the primary nav for them to log in, where they will be redirected to the login page
+        - When a user is active and already logged in, they will have an option to log out from the same place in the nav where they logged in
+        - By logging in, users will have some more exclusive access and abilities, such as storing/saving billing details, account info and viewing order history.
+
+6. An About Page that:
+    - Describes the history of the circuit to curious site visitors
+    - Inspires site visitor confidence in an experienced and responsible trackday/motorsports business
+
+    `` User Story: As a Site User I can open an about page so that I can learn more about the company and its history.``
+
+    - Acceptance Criteria:
+        - About page can be viewed and visited from the Nav
+        - Contains information and stats about the track itself
+
+7. A Contact page that:
+    - Provides users with a simple form to fill out
+    - Asks for a full name, email, query type and a message
+    - informs the user when their message has been sent successfully
+
+    `` User Story: As a Site User I can submit a contact form so that I can get in touch with the business regarding questions I have.``
+
+    - Acceptance Criteria:
+        - Contact page can be located from the Navigation menu
+        - Contact form is intuitive to navigate and use
+        - User is notified with a success message that their message has been successfully sent when they submit there form
+        - User is notified if they don't fill in all required forms or fill them in incorrectly
+
+8. A Track day list page that:
+    - Displays the different track configurations available
+    - Shows current trackdays up for booking in a table below, with information such as variant and base price displayed
+    - Contains the links to the booking and request pages respectively
+
+    `` As a Site User I can visit a booking page so that I can view available/upcoming track days and proceed with a booking.``
+
+    - Acceptance Criteria:
+        - Different track configurations clearly visible above list of upcoming track days
+        - List displays key info such as date, layout, db limit, availability and price
+        - Each list item will have a button which links to the specific booking page where customers can view and add packages and extras to their track day
+
+
+9. A Track day booking page that: 
+    - re-affirms the specific trackday details to the user
+    - allows the option of selecting extras such as car hire and paddock hire
+    - users can add their trackday of choice to their basket through the add to basket button at the bottom of the page
+
+    `` User Story: As a Site User I can select the track day I want and visit a booking page so that I can book my track day with any extras I would like to add.``
+
+    - Acceptance Criteria:
+        - Booking page follows directly after selecting from the track day list page
+        - Optional extras are presented on the booking page with clear and up front pricing
+        - When the user is satisfied with their selections, the user can add to cart and proceed to checkout
+        - User can only book 1 trackday at a time
+
+
+10. A Track day request page that:
+    - contains a form for users to fill in to request a trackday
+    - informs users when the form has been successfully submitted
+
+    `` User Story: As a Site User I can use a request form so that I can request a bespoke track day booking outside of the current available options.``
+
+    - Acceptance Criteria:
+        - Page with form that allows users to send a request to the site owner with information regarding a bespoke track day
+        - The request is stored on the database for the site owner to see
+        - User can select different options based on their requirements for their track day request
+        - The user is notified of a the form success, or failure, after they click the submit button.
+
+
+11. A tuition list and details page that:
+    - displays a list of courses on offer, around a Bronze, Silver, Gold standard of course difficulty
+    - each course package can be explored through the 'Explore' buttons
+    - the details page contains a description and itinerary of the day
+    - price and booking button at the bottom of the page
+
+    `` User Story: As a Potential Customer I can view a tuition page so that I can book a day to learn core driving skills.``
+
+    - Acceptance Criteria:
+        - 3 key tuition packages - Bronze, Silver and Gold Tuition. Must be very clear which package is which and why silver costs more than bronze and why gold costs more than silver.
+        - Operate in the same way as the experiences page, with "Explore more" buttons that take you to a new page with more details and specifics
+        - Can be booked as standalone items just like the experiences packages
+        - Can choose quantity from a quantity selector at the bottom of the page
+        - Can add to basket through a single click button
+
+
+12. An experiences list and details page that:
+    - displays a list of different experience packages 
+    - each can be explored through the 'Explore' buttons
+    - the experience details and itinerary are displayed in the details page
+    - price and booking button at the bottom of the page
+
+    `` User Story: As a Potential Customer I can view a separate experiences page so that I can order a slightly different product to a pure trackday (perhaps as a gift).``
+
+    - Acceptance Criteria:
+        - Experiences Page has high quality landscape images that match the title of the experience package
+        - There are "explore buttons" that can take the user to a page to see more info
+        - Can be navigated to from the Nav bar
+        - Can choose quantity from a quantity selector at the bottom of the page
+        - Can add to basket through a single click button
+
+
+13. A car hire page that:
+    - shows a visually appealing list of cars for hire on the trackdays 
+    - includes car images and statistics in cards
+    
+    `` User Story: As a Site Visitor I can view a selection of cars so that I can choose a car I might want to hire at an upcoming trackday.``
+
+    - Acceptance Criteria:
+        - Selection of cars with key stats on the database, such as power and torque
+        - A dedicated page where site users can view the cars on offer including a presentable way to display info and stats to them
+        - Car hire: specific car can be selected via form option on trackday booking page
+
+
+14. A user profile page that:
+    - provides an editable form for users to insert billing information 
+    - this section is based on the idea of setting billing information for a future feature of a gift store, where deliveries can be sent to a specified address
+
+    `` User Story: As a Registered Site User I can save details in my account profile so that I can speed up buying/delivery processes in future.``
+
+    - Acceptance Criteria:
+        - Registered User can access a profile page
+        - The user can store billing information manually through updating/submitting a form.
+
+
+15. FAQs page that:
+    - Contains a list of commonly asked questions that new trackday drivers may want answers to
+
+    `` User Story: As a Site User I can view an FAQs page so that I can see if there are any answers to questions I might have.``
+
+    - Acceptance Criteria:
+        - Link to page accessed from the Footer.
+        - Page will contain question and answer statements based on questions first time track day users may have.
+
+
+16. Policies page that:
+    - describes the company policies to users concerned about privacy and data protection
+
+    `` User Story: As a Site User I can find a policies so that I can understand the terms and conditions of the site.``
+
+    - Acceptance Criteria:
+        - Link to page accessed from the Footer.
+        - Page contains relevant information about buying and cancellation policies.
+
+
+17. A basket that:
+    - Shows users their orders in a neat table format
+    - allows users to edit quantities, delete items from the basket and also proceed to checkout
+    - Has a total cost summary is available including a VAT amount for transparent total costs
+    - contains a return to home button to allow users to continue browsing before checking out
+
+    `` User Story: As a Site User I can add to and view a basket/cart so that I can view and check my order and make any updates or removals as required before checking out.``
+
+    - Acceptance Criteria:
+        - Booking Orders can viewed in a cart page, where they can be reviewed, modified, deleted entirely or purchased following a click on a checkout button
+        - Items can be stored for later if they are not ready to purchase yet and want to browse further or come back later
+        - A checkout button is very clearly visible to the site user
+        - Site users can view the total cost of the order they are making before proceeding with a purchase
+
+18. A checkout page that:
+    - Allows users a quick and easy checkout process through stripe
+    - contains a small form to fill out, where card info and an email address need to be supplied
+
+    `` User Story: As a Site User I can checkout so that I can proceed with my order/booking.``
+
+    - Acceptance Criteria:
+        - Payments are handled by Stripe
+        - You can checkout as a guest
+        - A confirmation email is sent as well as clear indication on the site that your order went through successfully or not via on-screen messages
+
+19. A newsletter sign up that:
+    - directs users to a signup page from the footer link
+    - allows users to sign up by simply supplying their email address in the form
+
+    `` User Story: As a Site User I can sign up to a newsletter so that I can get informed about new products or business updates.``
+
+    - Acceptance Criteria: 
+        - MailChimp will be the provider used for the site
+        - Sign up at the bottom of the page in the footer takes user to newsletter page
+        - Only requires an email address to sign up
+
+20. An Admin-only management page that:
+    - is accessed through a superuser exclusive link
+    - opens a page for admins to add new trackdays
+
+    `` User Story: As a Site Admin I can add trackdays from a management page so that I can easily update the trackday list from the front end.``
+
+    - Acceptance Criteria:
+        - Superuser/Admin only access
+        - Trackdays can be added to the database from a form on the page
+
+21. A custom error 404 page that:
+    - will appear if the user looks for a page that doesn't exist
+    - will encourage the user to return to the home page through a home page button clearly displayed
+
+
+### Facebook Page
+
+Django Raceway has a Facebook page, where users can follow and like the page, interact with posts to keep up to date with the latest news at Django Raceway.
+
+
 
 
 ---
@@ -306,8 +582,21 @@ You can see my project board [here](https://github.com/users/Robrowno/projects/5
 ## Future Implementations
 
 - Ability to add more than one trackday to the basket. Due to a bug I had to limit each user to adding just one trackday to the basket at a time. This will be addressed in a future update.
-- 
-- 
+- I would like to implement a gift/merchendise store section where users can buy motorsport/django-raceway inspired clothing, lifestyle items, track day gear (gloves, shoes, racesuits) and would use the profile section's user default address information to be able to send items to users should they wish to have them delivered instead of collected in-store. Due to time constraints I was not able to get around to this idea, but I intend to build this section and feature in to the site in future versions.
+- I will eventually develop the management page to be able to add, edit and delete trackdays, tuition courses and experiences. Due to time constraints, I was not able to do this in this version. I will implement this functionality in a future update.
+
+
+---
+
+
+## Database Schema:
+
+
+
+
+
+
+
 
 
 ---
@@ -462,6 +751,11 @@ I have also found out this can happen to the login link if you sign out. Again, 
 
 ## Peer Reviews
 
+- The site has been shared with friends and family to get feedback and constructive criticism. 
+- I have also had my project reviewed by my course mentor in 3 stages of the development cycle. 
+- I had the London C.I group review my site and give their thoughts on the project.
+
+
 ---
 
 ## Credits
@@ -561,9 +855,12 @@ Very useful tips and instructions for reseting DB migrations and faking initial 
 ---
 ## Final Thoughts
 
+This is my fifth and final project with Code Institute. A Full-Stack E-commerce trackday business, selling trackdays and experience/tuition packages online and developed using the Django Framework, AWS, Heroku and Stripe. Written with HTML5, CSS3, Python 3.8 and Javascript (Vanilla, JQuery, AJAX).
 
+This marks the end of a year long journey with C.I, from someone with zero background in software development to someone who has created a Github portfolio of 5 graded projects to proudly display the development in my own learning and new-found abilities. 
 
-
+I thoroughly look forward to continuing to practice, grow and develop existing coding skills as well as learn new languages in due course.
+I'd like to thank everyone who has helped me along the way, because it certainly would not have been possible without your support, teaching and encouragement.
 
 ---
 

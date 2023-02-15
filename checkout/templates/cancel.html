@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Checkout canceled</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <section>
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+{% include 'includes/main-nav.html' %}
+<h2 class="text-center mt-4">Order Cancelled:</h2>
+<div class="container min-vh-100">
+  <div class="row d-flex justify-content-center">
+    <div class="col">
     <p>Forgot to add something to your cart? Shop around then come back to pay!</p>
-  </section>
-</body>
-</html>
+    </div>
+  </div>
+</div>
