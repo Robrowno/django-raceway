@@ -61,12 +61,13 @@ def success(request):
             return render(request, "success.html")
         else:
             return render(request,"error.html")
+
 def cancel(request):
     """
     A view for the basket.
     """
-
     return render(request, 'cancel.html')
+
 def add_trackday_to_basket(request, trackday_id):
     """
     For adding a track day order to the basket

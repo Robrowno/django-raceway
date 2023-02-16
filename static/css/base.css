@@ -348,8 +348,18 @@ footer .footer-links{
     .dropdown-menu {
         max-width: 90%;
     }
-
+    .signUpDiv {
+        justify-content: space-between;
+    }
+    .toTopBtn {
+        margin-right: 0;
+        margin-top: 0;
+    }
+    #newsletter-signup {
+        font-size: smaller;
+    }
 }
+
 
 
 /* Styling for Tablet Screens */
@@ -465,3 +475,4 @@ footer .footer-links{
     }
 
 }
+

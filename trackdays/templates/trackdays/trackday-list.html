@@ -57,7 +57,7 @@
                         {% for track in available %}
                             {% if track.trackday_id == trackday.id %}
                                 {% if track.availability == True %}
-                                    <td><button class="book-btn"><a class="text-decoration-none text-reset" href="{% url 'booking' trackday.id %}">Book</button></td> 
+                                    <td><div class="book-btn"><a class="text-decoration-none text-reset" href="{% url 'booking' trackday.id %}">Book</div></td> 
                                 {% else %}
                                     <td class="full"><span>Full</span></td>
                                 {% endif %}
@@ -65,7 +65,7 @@
                         {% endfor %}
                     {% endif %}
                 {% else %} 
-                    <td><button class="book-btn"><a class="text-decoration-none text-reset" href="{% url 'account_login' %}">Log in to Book</a></button></td>
+                    <td><div class="book-btn"><a class="text-decoration-none text-reset" href="{% url 'account_login' %}">Log in to Book</a></div></td>
                 {% endif %}
             </tr>
         {% endfor %}

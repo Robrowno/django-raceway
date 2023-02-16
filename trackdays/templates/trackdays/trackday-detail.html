@@ -45,12 +45,12 @@
 
                             <div class="choice">
                                 <label for="halfDay" class="me-3 text-center">
-                                    <input value="0" type="radio" name="fullHalfDay" id="halfDay"/>
+                                    <input value="0" type="radio" name="fullHalfDay" id="halfDay">
                                     Half Day - £{% widthratio trackday.base_trackday_price 2 1 %}
                                 </label>
 
                                 <label for="fullDay" class="text-center">
-                                    <input value="1" type="radio" name="fullHalfDay" id="fullDay" checked/>
+                                    <input value="1" type="radio" name="fullHalfDay" id="fullDay" checked>
                                     Full Day - £{{ trackday.base_trackday_price }}
                                 </label>
                             </div>
@@ -61,12 +61,12 @@
 
                             <div class="choice">
                                 <label for="pitlane" class="me-3 text-center">
-                                    <input value="50" type="radio" name="paddockhire" id="pitlane"/>
+                                    <input value="50" type="radio" name="paddockhire" id="pitlane">
                                     Pitlane Paddock - £50
                                 </label>
 
                                 <label for="standard" class="text-center">
-                                    <input value="0" type="radio" name="paddockhire" id="standard" checked/>
+                                    <input value="0" type="radio" name="paddockhire" id="standard" checked>
                                     Standard Paddock - £0
                                 </label>
                             </div>
@@ -92,7 +92,7 @@
 
                             <div class="choice">
                                 <input class="px-2 add" type="button" onclick="incrementDriver()" value="+">
-                                <input class="border-2 border-dark" type="number" name="driver-number" value=0 id="driver-number" min="0" max="4"/>
+                                <input class="border-2 border-dark" type="number" name="driver-number" value=0 id="driver-number" min="0" max="4">
                                 <input class="px-2 minus" type="button" onclick="decrementDriver()" value="-">
                                 <label for="driver-number" class="text-center ms-3">- £10 per person (Up to 4 max)</label>
                             </div>
@@ -103,7 +103,7 @@
 
                             <div class="choice">
                                 <input class="px-2 add" type="button" onclick="incrementHelValue()" value="+">
-                                <input class="border-2 border-dark" type="number" name="helmet-number" value=0 id="helmet-number" min="0" max="4"/>
+                                <input class="border-2 border-dark" type="number" name="helmet-number" value=0 id="helmet-number" min="0" max="4">
                                 <input class="px-2 minus"type="button" onclick="decrementHelValue()" value="-">
                                 <label for="helmet-number" class="text-center ms-3">- £10 per person (Up to 4 max)</label>
                             </div>
@@ -114,7 +114,7 @@
 
                             <div class="choice">
                                 <input class="px-2 add" type="button" onclick="incrementTuitionValue()" value="+">
-                                <input class="border-2 border-dark" type="number" name="tuition-number" value=0 id="tuition-number" min="0" max="4"/>
+                                <input class="border-2 border-dark" type="number" name="tuition-number" value=0 id="tuition-number" min="0" max="4">
                                 <input class="px-2 minus" type="button" onclick="decrementTuitionValue()" value="-">
                                 <label class="ms-3" for="tuition-number">- £25 per person (Up to 4 max)</label>
                             </div>

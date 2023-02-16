@@ -68,6 +68,7 @@
     padding: 0px 10px;
     background-color: rgb(27, 175, 225);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 1);
+    max-width: 180px;
 }
 
 /*Styling for the Mobile to Tablet Screens */
@@ -112,7 +113,7 @@
     }
 
     .book-btn{
-        padding: 0px 50px;
+        padding: 0px 20px;
     }
 
     .trackDayTable table tr th {

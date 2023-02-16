@@ -11,11 +11,11 @@
     <div class="row">
         <div class="col-12 col-lg-8 offset-lg-2">
             <div class="card mb-3">
-                <img class="card-img-top" src="{{ tuition.large_image.url }}" alt="" accept="image/*">
+                <img class="card-img-top" src="{{ tuition.large_image.url }}" alt="picture of racing driver">
                 <div class="card-body mx-auto">
-                    <p>{{ tuition.title}}</p>
+                    <p>{{ tuition.title }}</p>
                     <p>{{ tuition.description | safe }}</p>
-                    <p>{{ tuition.itinerary | safe}}</p>
+                    <p>{{ tuition.itinerary | safe }}</p>
                 </div>
                 <div class="card-footer border-success d-flex bd-highlight">
                     <div class="p-2 flex-grow-1 bd-highlight d-flex align-items-center">Price: £{{ tuition.price }}
