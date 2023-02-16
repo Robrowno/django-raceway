@@ -4,12 +4,14 @@
 {% block content %}
 {% include 'includes/main-nav.html' %}
 <h2 class="text-center mt-4">Error:</h2>
-<div class="container min-vh-100">
-  <div class="row d-flex justify-content-center">
+<div class="containerd-flex justify-content-centermin-vh-100">
+  <div class="row text-center">
     <div class="col">
       <p>
         Something went wrong!
         You have not been charged, we apologise for the inconvenience.
+      </p>
+      <p>Click <a href="{% url 'home' %}">here</a> to return home
       </p>
     </div>
   </div>

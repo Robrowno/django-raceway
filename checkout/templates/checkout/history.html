@@ -1,33 +1,38 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/history.css' %}">
+{% endblock %}
+
 {% block content %}
 {% include 'includes/main-nav.html' %}
+{% if user.is_authenticated %}
 <h2 class="text-center mt-4">Order History</h2>
-    <div class="container min-vh-100">
+<div class="container min-vh-100">
+    <div class="row text-center mt-5 card">
         {% if order %}
         <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Receipt</th>
-          </tr>
-        </thead>
-        <tbody>
-            {% for item in order %}
-          <tr style="padding: 5px;">
-            <td style="padding: 5px;">{{ item.id }}</td>
-            <td style="padding: 5px;"><a href={{ item }}>OrderItem# {{item.id}} </a></td>
-            <td style="padding: 5px;"> {{ item.date }}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-      
-    
-    
-    
-    {% endif %}
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Receipt</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in order %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td><a href={{ item }}>OrderItem# {{item.id}} </a></td>
+                    <td> {{ item.date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
     </div>
+</div>
 
+{% endif %}
 {% endblock %}
