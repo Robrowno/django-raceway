@@ -44,7 +44,7 @@
                     {% if item.trackday %}
                   <tr>
                     <td class="basket-img"> <img src="{{ item.trackday.layout_image.url }}" style="width: 60%;"
-                        alt="" /></td>
+                        alt="trackday layout image" /></td>
                     <td>{{ item.trackday.get_layout_display }} Trackday
                       <div><small>{{ item.trackday.date }}</small></div>
                     </td>
@@ -66,7 +66,7 @@
                   {% endif %}
                   {% if item.experience %}
                   <tr>
-                    <td class="basket-img"> <img src="{{ item.experience.image.url }}" style="width: 60%;" alt="" />
+                    <td class="basket-img"> <img src="{{ item.experience.image.url }}" style="width: 60%;" alt="image of cars from experience package" />
                     </td>
                     <td>{{ item.experience.title }}</td>
                     <td>
@@ -111,7 +111,7 @@
 
               <!-- Table data for tuition packages -->
               <tr>
-                <td class="basket-img"> <img src="{{ item.tuition.large_image.url }}" style="width: 60%;" alt="" /></td>
+                <td class="basket-img"> <img src="{{ item.tuition.large_image.url }}" style="width: 60%;" alt="image of a racing driver" /></td>
                 <td>{{ item.tuition.title }}</td>
                 <td>
                   <!-- Quantity Update form -->
@@ -163,7 +163,7 @@
         </div>
 
         <!-- Horizontal Rule-->
-        <hr class="my-4" />
+        <hr class="my-4">
 
         {% else %}
 
@@ -216,8 +216,8 @@
             </form>
           </div>
         </div>
+        {% endif %}
       </div>
-      {% endif %}
     </div>
   </div>
   </div>
