@@ -8,12 +8,18 @@ from django.contrib import messages
 from checkout.contexts import basket_contents
 
 trackDayID=0
+
 def is_availability(trackday_id):
+    """
+    For checking trackdat availability
+    """
     trackday = Trackday.objects.get(id=trackday_id)
     if trackday.availability >=0:
         return True
     else:
         return False
+
+
 def track_day_list(request):
     """
     View to render the Track day list menu.
@@ -32,7 +38,6 @@ def track_day_list(request):
             "availability": is_availability(trackday.id)
         }
         isAvailable.append(trackday_data)
-    print(isAvailable)
     if len(basket_trackdays) >0:
         isExist=True
     context = {

@@ -31,11 +31,12 @@ def error(request):
 
 
 def decrement_availability(trackday_id):
+    """
+    View for handling trackday availability decrementation
+    """
     trackday = Trackday.objects.get(id=trackday_id)
-    print(trackday.availability)
     if trackday.availability > 0:
         trackday.availability -= 1
-        print("trackday.availabilit===> ",trackday.availability)
         trackday.save()
         return True
     else:
@@ -43,7 +44,9 @@ def decrement_availability(trackday_id):
 
 
 def success(request):
-    # print(request.session)
+    """
+    Successful Checkout View
+    """
     if 'session_id' in request.session:
         session_id = request.session.pop('session_id')
         session = stripe.checkout.Session.retrieve(session_id)
@@ -312,6 +315,9 @@ def checkout(request):
         return redirect('/')
 
 def history(request):
+    """
+    View for user order history
+    """
     profile=UserProfile.objects.get(id=request.user.id)
     order=OrderItem.objects.filter(user_profile=profile)
     context={'order':order}

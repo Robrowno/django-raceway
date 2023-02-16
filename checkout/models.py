@@ -3,15 +3,10 @@ from trackdays.models import TrackdayBooking, Tuition, Experiences
 from profiles.models import UserProfile
 
 
-# Create your models here.
-
-
 class OrderItem(models.Model):
-
     """
     Order Information Model. .
     """
-
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True,
                                      related_name='orders')

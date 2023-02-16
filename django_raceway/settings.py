@@ -239,8 +239,3 @@ else:
     STRIPE_SECRET_KEY=''
     STRIPE_PUBLISHABLE_KEY=''
     API_KEY=""
-
-
-# AWS_STORAGE_BUCKET_NAME = 'test-dbot'
-# AWS_S3_REGION_NAME = 'eu-west-2'
-# AWS_DEFAULT_ACL = None

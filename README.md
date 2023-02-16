@@ -604,7 +604,7 @@ It serves the site/business goals of growing the business and shining a positive
 The Facebook page will increase the reach of the business to new potential customers and engage with existing clients.
 
 
-Facebook Image Here: xxxxxxxxxxxxxxxxxxxxx
+![Django-Raceway Facebook page](/static/images/readme-images/django-raceway-facebook.png)
 
 
 
