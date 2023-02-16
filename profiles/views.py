@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from profiles.models import UserProfile, CardStorage
+from profiles.models import UserProfile
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
@@ -11,13 +11,6 @@ def check_user_profile(user):
     Checks to see if user profile already exists
     """
     return UserProfile.objects.filter(user=user).exists()
-
-
-def check_user_card(user):
-    """
-    Checks to see if user card already exists
-    """
-    return CardStorage.objects.filter(user=user).exists()
 
 
 @login_required

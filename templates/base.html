@@ -86,6 +86,7 @@
                                     <hr class="dropdown-divider">
                                 </li>
                                 {% endif %}
+                                <li><a class="dropdown-item" href="{% url 'history' %}">Order History</a></li>
                                 <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
                                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
                                 {% else %}
@@ -172,7 +173,7 @@
         </div>
         <!-- MailChimp newsletter subscription will go here -->
         <div class="signUpDiv">
-            <span id="newsletter-signup">Sign up to our newsletter
+            <span>Sign up to our newsletter
                 <a href="{% url 'newsletter' %}" class="signUpBtn ms-1"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign Up</a></span>
             <!-- Button to return to page top -->
             <a href="#" class="toTopBtn" id="toTopBtn">

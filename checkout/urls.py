@@ -16,5 +16,5 @@ urlpatterns = [
     path('success/', views.success, name='success'),
     path('cancel/', views.cancel, name='cancel'),
     path('error/', views.error, name='error'),
-
+    path('history/', views.history, name='history'),
 ]

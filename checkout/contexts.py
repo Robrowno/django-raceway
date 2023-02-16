@@ -91,7 +91,6 @@ def basket_contents(request):
         'trackday_price': trackday_price,
         'pid':request.user.id
     }
-    print("context=>",context)
 
     return context
 

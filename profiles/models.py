@@ -39,18 +39,3 @@ class UserProfile(models.Model):
         if created:
             UserProfile.objects.create(user=instance)
         instance.userprofile.save()
-
-
-class CardStorage(models.Model):
-    """
-    Storing Default Credit Card for User
-    """
-
-    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
-    name_on_card = models.CharField(max_length=50)
-    cc_number = models.CharField(max_length=19, default=None)
-    cc_expiry = models.DateField(default=None)
-    cc_code = models.CharField(max_length=3, default=None)
-
-    def __str__(self):
-        return str(f"{self.user}'s card has been stored")

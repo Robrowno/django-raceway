@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+{% include 'includes/main-nav.html' %}
+<h2 class="text-center mt-4">Order History</h2>
+    <div class="container min-vh-100">
+        {% if order %}
+        <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Receipt</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for item in order %}
+          <tr style="padding: 5px;">
+            <td style="padding: 5px;">{{ item.id }}</td>
+            <td style="padding: 5px;"><a href={{ item }}>OrderItem# {{item.id}} </a></td>
+            <td style="padding: 5px;"> {{ item.date }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      
+    
+    
+    
+    {% endif %}
+    </div>
+
+{% endblock %}

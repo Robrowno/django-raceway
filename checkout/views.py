@@ -10,6 +10,8 @@ from checkout.contexts import basket_contents
 from django.conf import settings
 from checkout.models import OrderItem
 from profiles.models import UserProfile
+from checkout.helpers import send_transaction_mail
+from profiles.models import UserProfile
 stripe.api_key=settings.API_KEY
 
 trackDayID=0
@@ -18,20 +20,22 @@ def basket(request):
     """
     A view for the basket.
     """
-
     return render(request, 'checkout/basket.html')
+
 
 def error(request):
     """
-    A view for the error.
+    A view for rendering the error page for checkout failure.
     """
-
     return render(request, 'error.html')
+
 
 def decrement_availability(trackday_id):
     trackday = Trackday.objects.get(id=trackday_id)
+    print(trackday.availability)
     if trackday.availability > 0:
         trackday.availability -= 1
+        print("trackday.availabilit===> ",trackday.availability)
         trackday.save()
         return True
     else:
@@ -45,28 +49,37 @@ def success(request):
         session = stripe.checkout.Session.retrieve(session_id)
         sessions = stripe.checkout.Session.retrieve(session_id,expand=['line_items'],)
         payment_intent = stripe.PaymentIntent.retrieve(session["payment_intent"])
-        # print("sessions.status=>",session.status)
         if session.status == 'complete':
             recipient_url = payment_intent['charges']['data'][0]['receipt_url']
             pid=basket_contents(request)['pid']
             profile=UserProfile.objects.get(id=pid)
             order=OrderItem(user_profile=profile,stripe_reciept=recipient_url)
             order.save()
-            if 'trackday' in request.session:
-                decrement_availability(trackDayID)
+            current_url=request.build_absolute_uri()
+            base_url=current_url.split("/")[0] + "//" + current_url.split("/")[2]
+            base_url+="/checkout/history"
+            data=basket_contents(request)
+            basket_content=data['basket_contents']
+            for item in basket_content:
+                if 'trackday' in item:
+                    decrement_availability(trackDayID)
+                    break
             if 'basket' in request.session:
                 del request.session['basket']
             else:
                 return redirect('/')
+            send_transaction_mail(request.user.email,base_url)
             return render(request, "success.html")
         else:
             return render(request,"error.html")
 
+
 def cancel(request):
     """
-    A view for the basket.
+    A view for cancelling the basket checkout.
     """
     return render(request, 'cancel.html')
+
 
 def add_trackday_to_basket(request, trackday_id):
     """
@@ -247,10 +260,8 @@ def checkout(request):
     """
     A view for the checkout page
     """
-    # print(request.user.id)
     current_url=request.build_absolute_uri()
     base_url=current_url.split("/")[0] + "//" + current_url.split("/")[2]
-    # print(base_url)
     products = {
         'image':[],
     }
@@ -267,7 +278,6 @@ def checkout(request):
                 image=trackday_obj.layout_image
                 products['image'].append(image.url)
             if "tuition" in item:
-                # print("tuition" in basket_content)
                 tuition_obj = item['tuition']
                 image=tuition_obj.small_image
                 products['image'].append(image.url)
@@ -295,12 +305,14 @@ def checkout(request):
         mode="payment",
         )
         request.session['session_id'] = session['id']
-        # print(session.url)
-        # print(session['id']=='cs_test_a1a5Wf5glehWfK0M2sCBy0ONbIhG3ZokJ9WKWYNSnf5GpUaJU8lVh1MSP5')
         sessions = stripe.checkout.Session.retrieve('cs_test_a1a5Wf5glehWfK0M2sCBy0ONbIhG3ZokJ9WKWYNSnf5GpUaJU8lVh1MSP5',expand=['line_items'],)
-        # print(sessions)
-        # print("AFTER")
         return HttpResponseRedirect(session.url)
     else:
         messages.error(request, "Your basket is empty. Please add products to your basket.")
         return redirect('/')
+
+def history(request):
+    profile=UserProfile.objects.get(id=request.user.id)
+    order=OrderItem.objects.filter(user_profile=profile)
+    context={'order':order}
+    return render(request,"checkout/history.html",context)

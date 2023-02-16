@@ -1,5 +1,4 @@
 from django.contrib import admin
-from profiles.models import CardStorage, UserProfile
+from profiles.models import UserProfile
 
-admin.site.register(CardStorage)
 admin.site.register(UserProfile)
