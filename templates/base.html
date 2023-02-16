@@ -74,11 +74,11 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul id="nav-icon-box" class="navbar-nav ms-auto mx-5 gap-3">
                         <li class="nav-item dropdown">
-                            <a id="profile-icon" class="nav-link dropdown-toggle btn btn-custom-color" href="#" id="navbarDropdownMenuLink" role="button"
+                            <a class="nav-link dropdown-toggle btn btn-custom-color profile-icon" href="#" id="navbarDropdownMenuLink" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-user"></i>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <ul class="dropdown-menu dropdown-menu-end" aria-label="navbarDropdownMenuLink">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                 <li><a href="{% url 'management' %}" class="dropdown-item">Management</a></li>
@@ -95,13 +95,13 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a id="basket-icon" class="nav-link dropdown-toggle btn btn-custom-color" href="#" id="navbarDropdownMenuLink2" role="button"
+                            <a class="nav-link dropdown-toggle btn btn-custom-color basket-icon" href="#" id="navbarDropdownMenuLink2" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <span class="badge badge-pill bg-danger">{{ product_count }}</span>
                                 <i class="fas fa-shopping-basket"></i>
                             </a>
                             
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink2">
+                            <ul class="dropdown-menu dropdown-menu-end" aria-label="navbarDropdownMenuLink2">
                                 <li></li>
                                 <li><a class="dropdown-item" href="{% url 'my_basket' %}">Basket</a></li>
                                 {% if basket_contents %}

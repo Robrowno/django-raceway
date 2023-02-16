@@ -328,14 +328,14 @@ footer .footer-links{
 /* Styling just for nav icons on smaller screens */
 @media (min-width: 250px) and (max-width: 991px){
 
-    #profile-icon {
+    .profile-icon {
         max-width: 90%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
     
-    #basket-icon {
+    .basket-icon {
         max-width: 90%;
         display: flex;
         justify-content: center;
@@ -383,10 +383,6 @@ footer .footer-links{
         visibility: visible;
         height: auto;
     }
-
-    /* .image-div {
-        padding-left: 100px;
-    } */
 
     footer .footer-links {
         flex-direction: row;
@@ -467,7 +463,5 @@ footer .footer-links{
         margin: auto;
         margin-top: 5px ;
     }
-    
 
 }
-

@@ -52,15 +52,15 @@ See User Story:
 | Subscribe/Mailchimp Newsletter | Enter a valid email and click on subscribe | Green confirmation text confirming subscription will appear | PASS |
 
 
-### Booking Page/Booking Detail
+### Trackday Booking Page/Booking Detail
 | Test | Method | Expected Outcome | Result |
 | - | - | - | - |
 | Trackday Display | check Trackdays are rendering on the page by clicking on the 'booking' tab in the middle nav | Expect to see a list of upcoming trackdays, with details including base price displayed | PASS |
-| Hide Trackday in Basket |  |  |  |
-| Button change when Trackday in basket |  |  |  |
-| Request Trackday Button |  |  |  |
-| Availability counter update |  |  |  |
-| Booking Button change when full |  |  |  |
+| Hide Trackday in Basket | add trackday to basket and return to trackday list page | trackday currently in the basket is hidden from user | PASS |
+| Button change when Trackday in basket | add trackday to basket and return to trackday list page | buttons should change to reflect the face that you can only book one trackday at a time | PASS |
+| Request Trackday Button | click on button | directs you to the track day request page and form | PASS |
+| Availability counter update | checkout out with a trackday order succesfully and return to the trackday list | Availability of specific trackday will decrease | PASS |
+| Booking Button change when full | Test what happens when a trackday's availability goes to 0 |  |  |
 |  |  |  |  |
 
 
@@ -69,10 +69,10 @@ See User Story:
 | - | - | - | - |
 | Tuition Page | Click on tuition tab | Opens tuition page where you will see list of tuition packages displayed | PASS |
 | Experience Page | Click on experiences tab and | Opens experiences page where you will see list of experiences displayed | PASS |
-| Tuition Detail |  |  |  |
-| Experience Detail |  |  |  |
-| Quantity adjustments |  |  |  |
-| Booking button |  |  |  |
+| Tuition Detail | Open detail page through clicking explore button | Specific tuition package is opened with details and an itinerary on display | PASS |
+| Experience Detail | Open detail page through clicking explore button | Specific experience package is opened with details and an itinerary on display | PASS |
+| Quantity adjustments | Click on plus and minus buttons | quantity will increment/decrement and be reflected to the user. Will also cap at a max and min value | PASS |
+| Booking button | Click on the book button | Item will be added to the basket with the correct quantity selected by the user | PASS |
 |  |  |  |  |
 
 
@@ -219,7 +219,6 @@ See User Story:
 | cancel.html | |
 | error.html | |
 | success.html | |
-| checkout.html  | |
 
 
 ### /cars
@@ -278,8 +277,6 @@ See User Story:
 | File | Result |
 | -------- | ------ |
 | basket.css  | |
-| checkout.css  | |
-| success.css  | |
 
 ### cars/css
 
@@ -423,8 +420,7 @@ See User Story:
 - Lighthouse Testing was performed in an incognito tab to ensure no external chrome add-ons were affecting the test.
 - Results of the Lighthouse Performance testing below:
 
-
-
+Lighthouse Screeshot here: xxxxxxxxxxxxxx
 
 ---
 

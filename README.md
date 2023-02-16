@@ -43,6 +43,12 @@ I used Balsamiq Wireframes to make mockups for the website and design how I init
 
 ### Desktop
 
+**Note!** It should be mentioned at this point that during development, I decided to include the 'Middle Nav' seen in the home page here, at the top of every other page, as the user experience of having to click on the Django-Raceway Logo to navigate to other pages was proving quite frustrating and slowed the ability to navigate the site efficiently. It was a poor early design choice on my part, but a fairly straightforward solution to resolve it. I have not changed the original wireframes as I wanted to maintain my early/original design thinking, and explain instead why I made a certain change from a development standpoint.
+
+Also missing here is the Newsletter Page. I originally intended this to be solely included in the footer right up until the end of development. However, after rendering the mailchimp form in the footer, I really didn't like the design and opted to keep the sign up link in the footer instead, which takes the user to the newsletter sign up page. This is shown in the features section further down.
+
+The Checkout Page was also very different in practice, where I went a completely different route with Stripe in the end vs how I had originally planned to design the checkout, with hard coded forms. The practicality of my idea was not suitable for my project, and I opted instead to go with a Stripe solution for a more seamless checkout experience.
+
 #### Home Page
 ![Home Page](/static/images/readme-images/home-desktop.png)
 
@@ -53,14 +59,14 @@ I used Balsamiq Wireframes to make mockups for the website and design how I init
 ![About Page](/static/images/readme-images/about-desktop.png)
 
 #### Experiences
-Note: I moved the 'Explore' buttons on to the bottom right corner of the images to keep the site looking neater
+**Note!** I moved the 'Explore' buttons on to the bottom right corner of the images to keep the site looking neater
 ![Experiences Page](/static/images/readme-images/experiences-desktop.png)
 
 #### Experiences Detail
 ![Experience-Detail Page](/static/images/readme-images/experience-detail-desktop.png)
 
 #### Tuition
-Note: The 'Explore' buttons were missing here and added in later in development as I decided I wanted to give the user the ability to explore more information about it. The icons and captions at the bottom of the page were dropped as I didn't feel they added anything of substance to the page since I was giving detail through the Explore buttons.
+**Note!** The 'Explore' buttons were missing here and added in later in development as I decided I wanted to give the user the ability to explore more information about it. The icons and captions at the bottom of the page were dropped as I didn't feel they added anything of substance to the page since I was giving detail through the Explore buttons.
 ![Tuition Page](/static/images/readme-images/tuition-desktop.png)
 
 #### Tuition Detail
@@ -70,25 +76,25 @@ Note: The 'Explore' buttons were missing here and added in later in development 
 ![Trackday List](/static/images/readme-images/trackdays-list-desktop.png)
 
 #### Trackday Detail
-Note: I ended up adding the image of the specific trackday here as I felt it gave the user a chance to get a closer look at the layout of the trackday, matched with the specific trackday they had chosen. I removed the direct checkout button at the bottom of the page as well.
+**Note!** I ended up adding the image of the specific trackday here as I felt it gave the user a chance to get a closer look at the layout of the trackday, matched with the specific trackday they had chosen. I removed the direct checkout button at the bottom of the page as well.
 ![Trackday Detail](/static/images/readme-images/trackday-detail-desktop.png)
 
 #### Request a Trackday
 ![Request Trackday Page](/static/images/readme-images/request-trackday-desktop.png)
 
 #### Basket
-Note: This is how I originally designed the basket to look. In production, I changed this quite a lot. I didn't got with a SKU/Unique order number in the end here and I also shifted the edit/delete buttons around to be incorporated into the table of each order. I also added a VAT calulated price into summary for users to get a better idea of the real cost to them.
+**Note!** This is how I originally designed the basket to look. In production, I changed this quite a lot. I didn't got with a SKU/Unique order number in the end here and I also shifted the edit/delete buttons around to be incorporated into the table of each order. I also added a VAT calulated price into summary for users to get a better idea of the real cost to them.
 ![Basket](/static/images/readme-images/basket-desktop.png)
 
 #### Checkout
-Note: I ended up going with a Stripe Checkout page provided by them and so as a result the layout of the checkout page is vastly different. I didn't know about this from Stripe at the time of designing it, and so I actually intended for these forms to be somewhat hard coded in an html file as per below.
+**Note!** I ended up going with a Stripe Checkout page provided by them and so as a result the layout of the checkout page is vastly different. I didn't know about this from Stripe at the time of designing it, and so I actually intended for these forms to be somewhat hard coded in an html file as per below.
 ![Checkout Page](/static/images/readme-images/checkout-desktop.png)
 
 #### Checkout Success Page
 ![Checkout Success](/static/images/readme-images/checkout-success-desktop.png)
 
 #### Profile
-Note: I removed the ability to store card info from the scope of the project as this is not good practice. Furthermore, I had security concerns regarding how I would implement this and did not think it was a risk worth taking.
+**Note!** I removed the ability to store card info from the scope of the project as this is not good practice. Furthermore, I had security concerns regarding how I would implement this and did not think it was a risk worth taking.
 ![Profile Page](/static/images/readme-images/profile-desktop.png)
 
 #### Edit Profile
@@ -110,6 +116,8 @@ As per above, credit card section removed from the scope.
 <details><summary>Mobile and Tablet Wireframes</summary>
 
 ### Mobile and Tablet
+
+**Note!** All the above **notes** apply here, I have not commented them again to avoid unnecessary repitition.
 
 #### Home Page
 ![Home Page Mobile](/static/images/readme-images/home-mobile.png)
@@ -207,8 +215,23 @@ Here is an early mockup of my basket page. It was around this time that I made t
 
 ### B2C Strategy
 
+Django Raceway is a Business-to-Consumer (B2C) E-commerce Trackday compan, specialising in providing multi-layout trackdays and offering high-standards of driving tuition and driving experience packages. This website is where users can browse the different driving products on offer via dedicated pages, add them to their basket and proceed to checkout in very simple and intuitive steps. Users are also able to very quickly and easily get in touch with the business with an easy to access contact form page and a trackday request form to book more bespoke trackdays for more bespoke clients.
 
-- 
+- Site/Business Goals:
+    - Create a functioning e-commerce solution for a trackday/motorsports company selling trackdays/experiences/tuition to consumers (B2C)
+    - Provide site visitors with an easy to navigate site to view trackday products and a simple means to book them
+    - To promote motorsports in the UK with a state-of-the-art motor circuit and tuition/experience packages
+    - To grow the company through increased exposure to users who prefer to book trackdays online
+
+- Target Audience:
+    - Experienced driving enthusiasts looking for a controlled track environment to explore the capabilities of their cars
+    - Novice/Intermediate drivers looking to improve their driving skills through tuition courses
+    - Driving enthusiasts who would like to hire a car for a trackday 
+    - Customers who want to gift an experience package to some one
+    - Customers who want to buy an experience package to test different cars before buying one themselves
+    - Track day enthusiasts looking for a new motorsports venue to try out
+    - A club/group/company organising a trackday event, looking to request a bespoke trackday package tailored to their needs
+
 
 
 ### Agile Methodologies
@@ -574,6 +597,14 @@ Below is a comprehensive list of the site features and their relations to the us
 
 Django Raceway has a Facebook page, where users can follow and like the page, interact with posts to keep up to date with the latest news at Django Raceway.
 
+As a part of the business marketing strategy and a key foundation of any website's online marketing, a Facebook page provides the means to update users on a popular social media platform with the latest news relating to the business. 
+
+In time, engagement will increase with followers gained and interactions through comments, reviews, likes and shares. 
+It serves the site/business goals of growing the business and shining a positive light on motorsports and promoting motorsports in the UK.
+The Facebook page will increase the reach of the business to new potential customers and engage with existing clients.
+
+
+Facebook Image Here: xxxxxxxxxxxxxxxxxxxxx
 
 
 
@@ -686,12 +717,20 @@ Due to the size of the testing required, this can be found here: [Django Raceway
 - For some reason, the profile link in the nav bar (which appears to you once you log in) can appear to be unclickable. I have not yet found out why this is happening, but if you refresh the page, it resolves the issue every single time. 
 I have also found out this can happen to the login link if you sign out. Again, refresh the page or click the Django Raceway logo and this will work as normal.
 
-- 
+- My Unique Constraint in my trackday model seems to work randomly at times and not at all at others. I'm still working on why this is, but seeing as only the admin/superuser can add trackdays and will know when trackdays are happening before adding them, I don't forsee this as a critical issue at the time of writing.
 
 
 ---
 
 ## Deployment
+
+### Pre-flight checks before starting:
+- Please make sure you have **all** of the following before beginning with the below steps:
+    - A **Github** account and configure either Gitpod or VSCode (Or both)
+    - A **Heroku** account
+    - An **AWS** account
+    - A **Stripe** account
+    - An **ElephantSQL** account
 
 ### Version Control:
 
@@ -727,7 +766,7 @@ I have also found out this can happen to the login link if you sign out. Again, 
 ### Deployment through Heroku:
 
 - Make sure you have a Heroku account before beginning with these steps.
-- You should also make sure you have an AWS account with S3, and a Stripe Account for payments.
+- You should also make sure you have an AWS account with S3, and a Stripe Account for payments. These should then be configured for your project.
 
 - Once logged in to Heroku, navigate to the personal dashboard and look for the 'New' dropdown button at top right hand corner of the page.
 - In the drop down, select "Create new app - you will be taken to a page where you will be able to name the app and select a region. Once you have filled this information in, click the "Create app" button. Your app is now created.
