@@ -131,36 +131,39 @@ See User Story:
 | Basket Link | Click on Basket link in top nav | Redirects to basket page | PASS |
 | Checkout Link | Have nothing in the basket and check basket icon for visibility  | If nothing is in the basket, the checkout page will be hidden | Pass |
 | Basket Page with no items | Click on basket page with nothing in the basket | Item counter reads as 0 and user is informed that there are no items in the basket, summary is blank | PASS |
-| Item in Basket |  |  |  |
-| Multiple items in Basket |  |  |  |
-| Delete Item in basket |  |  |  |
-| Summary total Calculator |  |  |  |
-| Summary VAT calculator |  |  |  |
+| Item in Basket | Add item to basket and check that it appears in the items table | Chosen product will appear in the basket | PASS |
+| Multiple items in Basket | Add more than one item to the basket (both quantity and different products) | Quantities are implemented and counted and you are able to add all 3 different products to basket in any order | PASS |
+| Delete Item in basket | Click 'Delete button | Item is deleted from the basket | PASS |
+| Summary total Calculator | Add items to basket, change quantities, delete items from basket | total will adjust accordingly | PASS |
+| Summary VAT calculator | Add items to basket and check VAT calculation | 20% VAT applied automatically | PASS |
 | Checkout Button (Basket Page) |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+| Checkout Button (Nav Link) |  |  |  |
+| Checkout  |  |  |  |
+| Checkout Success |  |  |  |
+| Checkout Cancel |  |  |  |
+| Checkout Fail |  |  |  |
+| Confirmation Email |  |  |  |
+| Order History Added/Updated |  |  |  |
 
 ### Management
 | Test | Method | Expected Outcome | Result |
 | - | - | - | - |
 | Management Link | Login as Admin/Superuser and open profile dropdown | Management link visible and when clicked, redirect to the management add trackday page | PASS |
 | Submit Form |  |  |  |
+| Image upload to AWS |  |  |  |
+| Superuser Access only |  |  |  |
+| Trackday list |  |  |  |
+| Form validation |  |  |  |
 |  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+
 
 ### Other
 | Test | Method | Expected Outcome | Result |
 | - | - | - | - |
-| Order History Link |  |  |  |
-| Order History Table |  |  |  |
-| Stripe Receipt Link |  |  |  |
-|  |  |  |  |
+| Order History Link | click on link in Nav | Opens user order history page | PASS |
+| Order History Table | Make orders and view order history page | Orders will render in a table automatically and in chronological order | PASS |
+| Stripe Receipt Link | Click receipt link in the table | Redirects to Stripe receipt | PASS |
+
 
 ---
 
@@ -195,7 +198,6 @@ See User Story:
 
 | File | Result |
 | -------- | ------ |
-| edit-profile.html  | |
 | profile.html  | |
 
 ### /home
@@ -219,6 +221,7 @@ See User Story:
 | cancel.html | |
 | error.html | |
 | success.html | |
+| history.html | |
 
 
 ### /cars
@@ -253,7 +256,6 @@ See User Story:
 | experiences.css  | |
 | trackday-request.css  | |
 | trackdays.css  | |
-| tuition-detail.css  | |
 | tuition.css  | |
 
 ### /profiles/css
@@ -306,7 +308,6 @@ See User Story:
 | File | Result |
 | -------- | ------ |
 | trackdays.js |  |
-|  |  |
 
 ### profiles/js
 
@@ -320,12 +321,7 @@ See User Story:
 | -------- | ------ |
 | base.js  |  |
 
-### checkout/js
 
-| File | Result |
-| -------- | ------ |
-|  |  |
-|  |  |
 
 
 ### Current JS Errors/Issues/Explanations:
@@ -392,6 +388,7 @@ See User Story:
 | tests.py |  |
 | urls.py |  |
 | views.py |  |
+| helpers.py |  |
 
 
 

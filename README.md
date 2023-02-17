@@ -91,6 +91,8 @@ The Checkout Page was also very different in practice, where I went a completely
 ![Checkout Page](/static/images/readme-images/checkout-desktop.png)
 
 #### Checkout Success Page
+**Note!** The order table was moved entirely into its own page, and as a result, I dropped the order review from the page in the final project.
+I also felt that having a return home and a view basket button were a bit redundant as the user's basket. will be empty at this point and the user can just click the site logo in the nav to return home. Alternatively, they can navigate to another page from the middle nav bar.
 ![Checkout Success](/static/images/readme-images/checkout-success-desktop.png)
 
 #### Profile
@@ -101,6 +103,7 @@ I did this to make the pages nicer to look at and less cluttered. The Order hist
 
 #### Edit Profile
 As per above, credit card section removed from the scope.
+Also, the delete profile button was removed from the scope of this project. It is something I may add back in for a future update/feature.
 ![Edit Profile Page](/static/images/readme-images/edit-profile-desktop.png)
 
 #### Management Page
@@ -603,6 +606,24 @@ Below is a comprehensive list of the site features and their relations to the us
     - Acceptance Criteria:
         - Table available in the Order History page where authenticated users can see past orders
         - Stripe Receipts are included in the table
+
+
+### Design
+
+Django Raceway's Site features vibrant and colourful designs, inspired by racing car liveries both past and present.
+I use a lot of greens, blues and red/oranges that bare a resemblance to an automotive/racing colour.
+
+
+
+The structure of the site is based around 2 naviation menus. A top nav, where users access account or authentication related content and basket/checkout functionalities (+ the site logo, which also returns users to the home page), and a middle nav which serves as the main point of reference for the rest of the site. Both nav bars can be found on all pages, and the home page is the exception only in nav placement, with the middle nav actually being placed in the middle of the home page. I really wanted to have a carousel of track layouts as the 'hero' image for the home page, with a nav menu beneath it. I'm very glad I stuck with this design feature. 
+
+There is a footer which houses two text links (to the FAQs and Policy pages), a Newsletter sign up button and an arrow button to take users to the top of the page. I wanted to include the arrow button in the footer to prevent users needing to scroll up to the top of the page on 'taller' pages.
+
+A lot of the other content contains some form of bootstrap card type design, such as the car hire page, experience and tuition detail pages and the trackday booking page. It puts key info in a defined container, which focuses users towards the places where you want them to. I made use of 3 separate card-like containers in the basket page to house and separate different info, where I would ideally like users to focus on different info separate from each other. 
+
+
+
+
 
 
 ### Facebook Page
