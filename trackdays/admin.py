@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import (
     Trackday, TrackdayBooking, Experiences, Tuition, TrackdayRequest
-    )
+)
 from django_summernote.admin import SummernoteModelAdmin
 
 

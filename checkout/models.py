@@ -11,7 +11,7 @@ class OrderItem(models.Model):
                                      null=True, blank=True,
                                      related_name='orders')
     date = models.DateTimeField(auto_now_add=True)
-    stripe_reciept=models.TextField(default=None)
+    stripe_reciept = models.TextField(default=None)
 
     def __str__(self):
         return self.stripe_reciept

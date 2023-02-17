@@ -12,9 +12,10 @@ from checkout.models import OrderItem
 from profiles.models import UserProfile
 from checkout.helpers import send_transaction_mail
 from profiles.models import UserProfile
-stripe.api_key=settings.API_KEY
+stripe.api_key = settings.API_KEY
 
-trackDayID=0
+trackDayID = 0
+
 
 def basket(request):
     """
@@ -50,19 +51,24 @@ def success(request):
     if 'session_id' in request.session:
         session_id = request.session.pop('session_id')
         session = stripe.checkout.Session.retrieve(session_id)
-        sessions = stripe.checkout.Session.retrieve(session_id,expand=['line_items'],)
-        payment_intent = stripe.PaymentIntent.retrieve(session["payment_intent"])
+        sessions = stripe.checkout.Session.retrieve(
+            session_id, expand=['line_items'],)
+        payment_intent = stripe.PaymentIntent.retrieve(
+            session["payment_intent"])
         if session.status == 'complete':
             recipient_url = payment_intent['charges']['data'][0]['receipt_url']
-            pid=basket_contents(request)['pid']
-            profile=UserProfile.objects.get(id=pid)
-            order=OrderItem(user_profile=profile,stripe_reciept=recipient_url)
+            pid = basket_contents(request)['pid']
+            profile = UserProfile.objects.get(id=pid)
+            order = OrderItem(
+                user_profile=profile,
+                stripe_reciept=recipient_url)
             order.save()
-            current_url=request.build_absolute_uri()
-            base_url=current_url.split("/")[0] + "//" + current_url.split("/")[2]
-            base_url+="/checkout/history"
-            data=basket_contents(request)
-            basket_content=data['basket_contents']
+            current_url = request.build_absolute_uri()
+            base_url = current_url.split(
+                "/")[0] + "//" + current_url.split("/")[2]
+            base_url += "/checkout/history"
+            data = basket_contents(request)
+            basket_content = data['basket_contents']
             for item in basket_content:
                 if 'trackday' in item:
                     decrement_availability(trackDayID)
@@ -71,10 +77,10 @@ def success(request):
                 del request.session['basket']
             else:
                 return redirect('/')
-            send_transaction_mail(request.user.email,base_url)
+            send_transaction_mail(request.user.email, base_url)
             return render(request, "success.html")
         else:
-            return render(request,"error.html")
+            return render(request, "error.html")
 
 
 def cancel(request):
@@ -263,62 +269,68 @@ def checkout(request):
     """
     A view for the checkout page
     """
-    current_url=request.build_absolute_uri()
-    base_url=current_url.split("/")[0] + "//" + current_url.split("/")[2]
+    current_url = request.build_absolute_uri()
+    base_url = current_url.split("/")[0] + "//" + current_url.split("/")[2]
     products = {
-        'image':[],
+        'image': [],
     }
     data = basket_contents(request)
-    basket_content=data['basket_contents']
-    grand_total=data['grand_total']
-    grand_total=int(grand_total)
-    if len(basket_content)>0:
+    basket_content = data['basket_contents']
+    grand_total = data['grand_total']
+    grand_total = int(grand_total)
+    if len(basket_content) > 0:
         for item in basket_content:
             if "trackday" in item:
                 global trackDayID
-                trackDayID=item['trackday'].id
+                trackDayID = item['trackday'].id
                 trackday_obj = item['trackday']
-                image=trackday_obj.layout_image
+                image = trackday_obj.layout_image
                 products['image'].append(image.url)
             if "tuition" in item:
                 tuition_obj = item['tuition']
-                image=tuition_obj.small_image
+                image = tuition_obj.small_image
                 products['image'].append(image.url)
             if "experience" in item:
                 experience_obj = item['experience']
-                image=experience_obj.image
-                products['image'].append(image.url)  
+                image = experience_obj.image
+                products['image'].append(image.url)
         full_urls = [base_url + image for image in products['image']]
-        session=stripe.checkout.Session.create(
-        success_url=base_url+"/checkout/success",
-        cancel_url=base_url+"/checkout/cancel",
-        line_items=[
-            {
-            "price_data": {
-                "currency":"GBP",
-                "product_data":{
-                    "name":"All cart products",
-                    'images':full_urls,
+        session = stripe.checkout.Session.create(
+            success_url=base_url + "/checkout/success",
+            cancel_url=base_url + "/checkout/cancel",
+            line_items=[
+                {
+                    "price_data": {
+                        "currency": "GBP",
+                        "product_data": {
+                            "name": "All cart products",
+                            'images': full_urls,
+                        },
+                        "unit_amount": grand_total * 100
+                    },
+                    "quantity": 1,
                 },
-                "unit_amount":grand_total*100
-            },
-            "quantity": 1,
-            },
-        ],
-        mode="payment",
+            ],
+            mode="payment",
         )
         request.session['session_id'] = session['id']
-        sessions = stripe.checkout.Session.retrieve('cs_test_a1a5Wf5glehWfK0M2sCBy0ONbIhG3ZokJ9WKWYNSnf5GpUaJU8lVh1MSP5',expand=['line_items'],)
+        sessions = stripe.checkout.Session.retrieve(
+            'cs_test_a1a5Wf5glehWfK0M2sCBy0ONbIhG3ZokJ9WKWYNSnf5GpUaJU8lVh1MSP5',
+            expand=['line_items'],
+        )
         return HttpResponseRedirect(session.url)
     else:
-        messages.error(request, "Your basket is empty. Please add products to your basket.")
+        messages.error(
+            request,
+            "Your basket is empty. Please add products to your basket.")
         return redirect('/')
+
 
 def history(request):
     """
     View for user order history
     """
-    profile=UserProfile.objects.get(id=request.user.id)
-    order=OrderItem.objects.filter(user_profile=profile)
-    context={'order':order}
-    return render(request,"checkout/history.html",context)
+    profile = UserProfile.objects.get(id=request.user.id)
+    order = OrderItem.objects.filter(user_profile=profile)
+    context = {'order': order}
+    return render(request, "checkout/history.html", context)

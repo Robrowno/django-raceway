@@ -9,7 +9,7 @@ def car_hire(request):
     cars = Cars.objects.all()
 
     context = {
-         "cars": cars,
+        "cars": cars,
     }
 
     return render(request, 'cars/car-hire.html', context)

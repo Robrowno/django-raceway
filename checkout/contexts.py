@@ -61,7 +61,6 @@ def basket_contents(request):
                 'trackday': trackday,
                 'quantity': quantity,
             })
-            
 
     if 'experience' in basket:
         for experience, quantity in basket['experience'].items():
@@ -82,14 +81,14 @@ def basket_contents(request):
                 'tuition': tuition,
                 'quantity': quantity,
             })
-    
+
     context = {
         'basket_contents': basket_contents,
         'total': total,
         'product_count': product_count,
         'grand_total': calc_vat(request, total),
         'trackday_price': trackday_price,
-        'pid':request.user.id
+        'pid': request.user.id
     }
 
     return context

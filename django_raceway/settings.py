@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'cars',
     'profiles',
     'checkout',
-   
+
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -216,7 +216,6 @@ if 'USE_AWS' in os.environ:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'django-raceway@example.com'
@@ -230,12 +229,11 @@ else:
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
 
-
 if 'STRIPE_SECRET_KEY' in os.environ:
-    STRIPE_SECRET_KEY=os.environ.get('STRIPE_SECRET_KEY')
-    STRIPE_PUBLISHABLE_KEY=os.environ.get('STRIPE_PUBLISHABLE_KEY')
-    API_KEY=os.environ.get('API_KEY')
+    STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
+    STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
+    API_KEY = os.environ.get('API_KEY')
 else:
-    STRIPE_SECRET_KEY=''
-    STRIPE_PUBLISHABLE_KEY=''
-    API_KEY=""
+    STRIPE_SECRET_KEY = ''
+    STRIPE_PUBLISHABLE_KEY = ''
+    API_KEY = ""

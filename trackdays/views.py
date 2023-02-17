@@ -2,19 +2,20 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import (
     Experiences, Trackday, TrackdayRequest, TrackdayBooking, Tuition
-    )
+)
 from cars.models import Cars
 from django.contrib import messages
 from checkout.contexts import basket_contents
 
-trackDayID=0
+trackDayID = 0
+
 
 def is_availability(trackday_id):
     """
     For checking trackdat availability
     """
     trackday = Trackday.objects.get(id=trackday_id)
-    if trackday.availability >=0:
+    if trackday.availability >= 0:
         return True
     else:
         return False
@@ -28,9 +29,11 @@ def track_day_list(request):
         'basket', {'experience': {}, 'tuition': {}, 'trackday': {}})
     trackday_list = Trackday.objects.all()
     basket_trackdays = [x for x in basket['trackday'].keys()]
-    available_tracks = [x for x in trackday_list if str(x.id) not in basket_trackdays]
-    isExist=False
-    isAvailable=[]
+    available_tracks = [
+        x for x in trackday_list if str(
+            x.id) not in basket_trackdays]
+    isExist = False
+    isAvailable = []
     trackdays = Trackday.objects.all()
     for trackday in trackdays:
         trackday_data = {
@@ -38,12 +41,12 @@ def track_day_list(request):
             "availability": is_availability(trackday.id)
         }
         isAvailable.append(trackday_data)
-    if len(basket_trackdays) >0:
-        isExist=True
+    if len(basket_trackdays) > 0:
+        isExist = True
     context = {
         "trackdays": available_tracks,
-        "flag":isExist,
-        "available":isAvailable
+        "flag": isExist,
+        "available": isAvailable
     }
 
     return render(request, 'trackdays/trackday-list.html', context)
@@ -85,7 +88,9 @@ def track_day_request(request):
         trackday_req.car_hire_required = request.POST.get('carhire')
         # save the information to the database
         trackday_req.save()
-        messages.success(request, 'Your Track Day request was succesfully sent!')
+        messages.success(
+            request,
+            'Your Track Day request was succesfully sent!')
         return redirect('home')
 
     else:

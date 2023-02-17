@@ -67,6 +67,7 @@ def policies_page(request):
 
     return render(request, 'home/policies.html')
 
+
 @login_required
 def management_page(request):
     """
@@ -89,19 +90,18 @@ def management_page(request):
         else:
             new_trackday = Trackday(layout_image=request.FILES)
 
-
     return render(request, 'home/management.html')
 
 
 def newsletter_signup(request):
     """
-    View for the Newsletter signup page. 
+    View for the Newsletter signup page.
     """
     return render(request, 'home/newsletter.html')
 
 
-def page_not_found(request,exception=None):
+def page_not_found(request, exception=None):
     """
     Custom 404 view.
     """
-    return render(request,'home/error404.html',status=404)
+    return render(request, 'home/error404.html', status=404)

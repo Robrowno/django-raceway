@@ -8,7 +8,7 @@ QUERY_TYPE = (
     (1, "Trackdays/Experiences"),
     (2, "Bookings"),
     (3, "Other")
-    )
+)
 
 
 class Contact(models.Model):
