@@ -325,7 +325,7 @@ footer .footer-links{
 
 /* Footer Styling End */
 
-/* Styling just for nav icons on smaller screens */
+/* Styling just for nav icons and footer content on smaller screens */
 @media (min-width: 250px) and (max-width: 991px){
 
     .profile-icon {
@@ -356,7 +356,7 @@ footer .footer-links{
         margin-top: 0;
     }
     #newsletter-signup {
-        font-size: smaller;
+        font-size: x-small;
     }
 }
 
@@ -368,7 +368,6 @@ footer .footer-links{
     .nav-item {
         padding-left: 15%;
     }
-    
 
     #banner {
         font-size: 24px;
@@ -392,6 +391,10 @@ footer .footer-links{
     .circles {
         visibility: visible;
         height: auto;
+    }
+
+    footer {
+        margin-top: 10px;
     }
 
     footer .footer-links {

@@ -12,7 +12,7 @@ This is the right place for you if you are:
 This is my fifth and final portfolio project for my Diploma in Software Development through Code Institute, where I am specialising in E-Commerce applications. 
 
 
-Responsiveness Image Here: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+![Responsiveness Hero Image](/static/images/readme-images/responsiveness.png)
 
 Link to live site: https://django-raceway.herokuapp.com/
 
@@ -95,6 +95,8 @@ The Checkout Page was also very different in practice, where I went a completely
 
 #### Profile
 **Note!** I removed the ability to store card info from the scope of the project as this is not good practice. Furthermore, I had security concerns regarding how I would implement this and did not think it was a risk worth taking.
+Another change I made was to put the Order History into its own nav tab separate from the profile page.
+I did this to make the pages nicer to look at and less cluttered. The Order history table is then free to expand in size as more and more orders get made by each user.
 ![Profile Page](/static/images/readme-images/profile-desktop.png)
 
 #### Edit Profile
@@ -592,6 +594,16 @@ Below is a comprehensive list of the site features and their relations to the us
     - will appear if the user looks for a page that doesn't exist
     - will encourage the user to return to the home page through a home page button clearly displayed
 
+22. An Order History Page that:
+    - Is available in the nav bar for users to see their order history and view their receipts
+    - Is displayed neatly in a table in chronological order 
+
+    `` User Story: As a Registered Site User I can check my order history so that I can review my past orders.``
+
+    - Acceptance Criteria:
+        - Table available in the Order History page where authenticated users can see past orders
+        - Stripe Receipts are included in the table
+
 
 ### Facebook Page
 
@@ -615,6 +627,7 @@ The Facebook page will increase the reach of the business to new potential custo
 - Ability to add more than one trackday to the basket. Due to a bug I had to limit each user to adding just one trackday to the basket at a time. This will be addressed in a future update.
 - I would like to implement a gift/merchendise store section where users can buy motorsport/django-raceway inspired clothing, lifestyle items, track day gear (gloves, shoes, racesuits) and would use the profile section's user default address information to be able to send items to users should they wish to have them delivered instead of collected in-store. Due to time constraints I was not able to get around to this idea, but I intend to build this section and feature in to the site in future versions.
 - I will eventually develop the management page to be able to add, edit and delete trackdays, tuition courses and experiences. Due to time constraints, I was not able to do this in this version. I will implement this functionality in a future update.
+- I will further develop the edit button for the trackday items in the basket in future. Due to complexity and time constraints, the edit button removes the item from your basket and redirects you back to the trackday list page to redo your trackday booking. This is not the most pleasant user experience, I accept, and I will work to included a proper functioning edit button for trackdays in the basket in a future update.
 
 
 ---
@@ -710,7 +723,8 @@ Due to the size of the testing required, this can be found here: [Django Raceway
 
 - I had an issue where my urls where too similar for my delete urls in the checkout app. The 'pattern' of the url was too similar and django was only picking up on one of the delete urls. The way to resolve this was to break the pattern with a specific key word in front of the item's id (e.g /experiences/ or /tuition/).
 
-- 
+- I was unable to view my checkout success page for quite some time on my live server and couldn't work out why. I kept getting a 'localhost access denied' error message and it wasn't clear to me what the root cause was. After searching for this message online, I found a couple of common causes to troubleshoot - I checked my firewall was not blocking anything, and then I tried to run the server on an incognito tab to see if it was my browser cache that was causing the issue.
+The incognito tab worked perfectly and so it was my caches that were causing the problem.
 
 ### Current Unresolved Bugs
 
@@ -837,6 +851,7 @@ The site home page: [Privacy Policy Generator](https://www.privacypolicygenerato
 
 Very useful tips and instructions for reseting DB migrations and faking initial migrations to prevent issues: [Simpleisbetterthancomplex migrations reset](https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html)
 
+Used [this mockup software](https://techsini.com/multi-mockup/) to generate a responsiveness hero image at the top of the readme file.
 
 
 

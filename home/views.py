@@ -3,6 +3,8 @@ from .models import Contact
 from trackdays.models import Trackday
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
+import boto3
 
 
 def home_page(request):
@@ -79,13 +81,18 @@ def management_page(request):
         if request.method == 'POST':
             new_trackday = Trackday(layout_image=request.FILES)
             new_trackday.layout = request.POST.get('td-layout')
-            new_trackday.layout_image = request.POST.get('td-image')
+            new_trackday.layout_image = request.FILES.get('td-image')
             new_trackday.date = request.POST.get('td-date')
             new_trackday.db_limit = request.POST.get('db-limit')
             new_trackday.availability = request.POST.get('numbers')
             new_trackday.base_trackday_price = request.POST.get('base-price')
             new_trackday.save()
             messages.success(request, 'New Trackday Added')
+            s3 = boto3.client('s3',
+                aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
+                aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
+            )
+            s3.upload_fileobj(new_trackday.layout_image, settings.AWS_STORAGE_BUCKET_NAME, new_trackday.layout_image.name)
             return redirect('trackdays')
         else:
             new_trackday = Trackday(layout_image=request.FILES)

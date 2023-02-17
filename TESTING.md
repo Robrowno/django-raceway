@@ -108,9 +108,9 @@ See User Story:
 | Profile Link | Check appearance and click on link when logged in | User will be redirected to their profile page | PASS |
 | Edit Button | Click Edit Button | Form fields will become editable and the button will change to 'Save' | PASS |
 | Save Button | Click Save Button | Form will save new details for user | Pass |
-| Input fields |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+| Input fields | Enter invalid inputs for fields | User will get an error message | Pass |
+| Input fields | Enter Valid input for fields | User will be informed that it saved successfully | PASS |
+
 
 
 ### Authentication
@@ -157,9 +157,9 @@ See User Story:
 ### Other
 | Test | Method | Expected Outcome | Result |
 | - | - | - | - |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+| Order History Link |  |  |  |
+| Order History Table |  |  |  |
+| Stripe Receipt Link |  |  |  |
 |  |  |  |  |
 
 ---
@@ -441,7 +441,7 @@ Lighthouse Screeshot here: xxxxxxxxxxxxxx
 
 ### Responsiveness
 
-- The site has been tested down to screen widths of 300px and up to screen widths of 2560px
+- The site has been tested down to screen widths of 320px and up to screen widths of 2560px
 - The site is fully responsive between these viewport widths
 
 ---

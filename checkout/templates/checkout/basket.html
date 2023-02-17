@@ -12,7 +12,7 @@
 <h2 class="text-center mt-4">Your Basket:</h2>
 
 <section class="h-100 gradient-custom">
-  <div class="container py-5">
+  <div class="container py-5 min-vh-100">
     <div class="row d-flex justify-content-center my-4">
       <div class="col-md-8">
         <div class="card mb-4">
@@ -44,13 +44,13 @@
                     {% if item.trackday %}
                   <tr>
                     <td class="basket-img"> <img src="{{ item.trackday.layout_image.url }}" style="width: 60%;"
-                        alt="trackday layout image" /></td>
+                        alt="trackday layout image"></td>
                     <td>{{ item.trackday.get_layout_display }} Trackday
                       <div><small>{{ item.trackday.date }}</small></div>
                     </td>
                     <td>
                       <!-- Quantity Update form -->
-                      <form class="form form-update" method="" action="">
+                      <form class="form form-update">
                         {%csrf_token %}
 
                       </form>
@@ -66,7 +66,8 @@
                   {% endif %}
                   {% if item.experience %}
                   <tr>
-                    <td class="basket-img"> <img src="{{ item.experience.image.url }}" style="width: 60%;" alt="image of cars from experience package" />
+                    <td class="basket-img"> <img src="{{ item.experience.image.url }}" style="width: 60%;"
+                        alt="image of cars from experience package">
                     </td>
                     <td>{{ item.experience.title }}</td>
                     <td>
@@ -111,7 +112,8 @@
 
               <!-- Table data for tuition packages -->
               <tr>
-                <td class="basket-img"> <img src="{{ item.tuition.large_image.url }}" style="width: 60%;" alt="image of a racing driver" /></td>
+                <td class="basket-img"> <img src="{{ item.tuition.large_image.url }}" style="width: 60%;"
+                    alt="image of a racing driver"></td>
                 <td>{{ item.tuition.title }}</td>
                 <td>
                   <!-- Quantity Update form -->
@@ -174,8 +176,8 @@
     </div>
 
     <!-- Other pages card -->
-    <div class="card mb-4">
-      <div class="card-body">
+    <div class="card mb-5">
+      <div class="card-body mb-1">
         Continue Browsing:
         <div class="btn btn-primary ms-2"><a class="text-decoration-none text-reset" href="{% url 'home' %}">Home</a>
         </div>
@@ -199,8 +201,8 @@
           <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
             <div>
               <strong>Total amount</strong>
-              <strong>
-                <p class="mb-0">(including VAT)</p>
+              <strong class="mb-0">
+                (including VAT)
               </strong>
             </div>
             <span><strong>£{{ grand_total|floatformat:2 }}</strong></span>
@@ -214,13 +216,12 @@
               {% csrf_token %}
               <button type="submit" class="btn btn-success" id="checkout-button">Checkout</button>
             </form>
+            
           </div>
         </div>
         {% endif %}
       </div>
     </div>
-  </div>
-  </div>
   </div>
 </section>
 
