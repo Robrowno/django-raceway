@@ -88,7 +88,7 @@ def basket_contents(request):
         'product_count': product_count,
         'grand_total': calc_vat(request, total),
         'trackday_price': trackday_price,
-        'pid': request.user.id
+        'pid': request.user.id,
     }
 
     return context

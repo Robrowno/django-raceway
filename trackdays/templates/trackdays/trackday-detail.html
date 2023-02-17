@@ -204,7 +204,7 @@ if(Number(fullHalfDay[i].value)==0){
 }else if(Number(fullHalfDay[i].value)==1){
     let lbl=document.querySelector('label[for="fullDay"]');
     let value = parseInt(lbl.textContent.split(" - £")[1]);
-    total+=200
+    total+=value
 }
     }
   }
@@ -225,7 +225,7 @@ if(Number(fullHalfDay[i].value)==0){
 total += Number(driverTotalNumber.value) * 10;
 total += Number(helmetTotalNumber.value) * 10;
 total += Number(tuitionTotalNumber.value) * 25;
-total=total-1;
+
 price.innerHTML = "Total Price: £" + total.toFixed(2);
 };
 
