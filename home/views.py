@@ -77,7 +77,6 @@ def management_page(request):
     """
 
     if request.user.is_superuser:
-
         if request.method == 'POST':
             new_trackday = Trackday(layout_image=request.FILES)
             new_trackday.layout = request.POST.get('td-layout')
@@ -96,7 +95,9 @@ def management_page(request):
             return redirect('trackdays')
         else:
             new_trackday = Trackday(layout_image=request.FILES)
-
+    else:
+        messages.info(request, "Restricted access, you cannot access this page")
+        return redirect('/')
     return render(request, 'home/management.html')
 
 

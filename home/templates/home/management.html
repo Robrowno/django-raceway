@@ -11,47 +11,47 @@
 {% if user.is_superuser %}
 <h2 class="m-3 text-center">Management:</h2>
 <h3 class="text-center"> Add a Trackday</h3>
-
+<!-- Form for adding a trackday to the trackdays model database from the front end -->
 <form method="POST" action="#" class="requestForm mb-2" enctype="multipart/form-data">
-{% csrf_token %}
-    <div class="formRow">
-        <label for="td-layout">Layout</label>
-        <select id="td-layout" name="td-layout">
-            <option value="0">GP</option>
-            <option value="1">National</option>
-            <option value="2">Indy</option>
-          </select>
-      </div>
+  {% csrf_token %}
+  <div class="formRow">
+    <label for="td-layout">Layout</label>
+    <select id="td-layout" name="td-layout">
+      <option value="0">GP</option>
+      <option value="1">National</option>
+      <option value="2">Indy</option>
+    </select>
+  </div>
 
-      <div class="formRow">
-        <label for="td-image">Layout Image</label>
-        <input type="file" id="td-image" name="td-image" required>
-      </div>
+  <div class="formRow">
+    <label for="td-image">Layout Image</label>
+    <input type="file" id="td-image" name="td-image" required>
+  </div>
 
-      <div class="formRow">
-        <label for="td-date">Date</label>
-        <input type="date" id="td-date" name="td-date" required>
-      </div>
+  <div class="formRow">
+    <label for="td-date">Date</label>
+    <input type="date" id="td-date" name="td-date" required>
+  </div>
 
-      <div class="formRow">
-        <label for="db-limit">Db limit</label>
-        <select id="db-limit" name="db-limit">
-          <option value="0">98db</option>
-          <option value="1">105bd</option>
-        </select>
-      </div>
+  <div class="formRow">
+    <label for="db-limit">Db limit</label>
+    <select id="db-limit" name="db-limit">
+      <option value="0">98db</option>
+      <option value="1">105bd</option>
+    </select>
+  </div>
 
-      <div class="formRow">
-        <label for="numbers">Availability</label>
-        <input type="number" min="5" max="50" id="numbers" name="numbers" required>
-      </div>
+  <div class="formRow">
+    <label for="numbers">Availability</label>
+    <input type="number" min="5" max="50" id="numbers" name="numbers" required>
+  </div>
 
-      <div class="formRow">
-        <label for="base-price">Base Trackday Price</label>
-        <input type="number" id="base-price" min="50" max="500" name="base-price" required>
-      </div>
-
-    <button class="btn btn-lg btn-primary mt-3" type="submit">Add Trackday</button>
+  <div class="formRow">
+    <label for="base-price">Base Trackday Price</label>
+    <input type="number" id="base-price" min="50" max="500" name="base-price" required>
+  </div>
+  <!-- Submit Button -->
+  <button class="btn btn-lg btn-primary mt-3" type="submit">Add Trackday</button>
 </form>
 
 
