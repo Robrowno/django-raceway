@@ -17,7 +17,6 @@ def send_transaction_mail(email, receipt):
             </h3>
             <br>
         """
-    print(content)
     message = Mail(
         from_email='robrowno@icloud.com',
         to_emails=email,
