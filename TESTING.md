@@ -169,66 +169,69 @@ See User Story:
 
 ## HTML Validation
 
+All HTML validation was done using https://validator.w3.org/nu/
+
+
 ### /templates 
 
 | File | Result |
 | -------- | ------ |
-| base.html  | |
-| main-nav.html  | |
-| includes/base.html | |
-| includes/toast_error.html  | |
-| includes/toast_info.html  | |
-| includes/toast_success.html  | |
-| includes/toast_warning.html | |
+| base.html  | PASS |
+| main-nav.html  | PASS |
+| includes/base.html |PASS |
+| includes/toast_error.html  | PASS|
+| includes/toast_info.html  | PASS|
+| includes/toast_success.html  |PASS |
+| includes/toast_warning.html |PASS|
 
 ### /trackdays
 
 | File | Result |
 | -------- | ------ |
-|  experience-detail.html | |
-|  experiences.html | |
-|  trackday-detail.html | |
+|  experience-detail.html | PASS |
+|  experiences.html | PASS |
+|  trackday-detail.html | PASS |
 |  trackday-list.html | |
-|  trackday-request.html | |
-|  tuition-detail.html | |
-|  tuition.html | |
-|  includes/increment_decrement.html | |
+|  trackday-request.html | PASS |
+|  tuition-detail.html | PASS |
+|  tuition.html | PASS |
+|  includes/increment_decrement.html | PASS |
 
 ### /profiles
 
 | File | Result |
 | -------- | ------ |
-| profile.html  | |
+| profile.html  | PASS |
 
 ### /home
 
 | File | Result |
 | -------- | ------ |
-| about.html  | |
-| contact.html  | |
-| faqs.html  | |
-| index.html  | |
-| policies.html  | |
+| about.html  | PASS |
+| contact.html  | PASS |
+| faqs.html  | PASS |
+| index.html  | PASS |
+| policies.html  | PASS |
 | management.html  | |
 | 404.html | |
-| newsletter.html | |
+| newsletter.html | PASS |
 
 ### /checkout
 
 | File | Result |
 | -------- | ------ |
-| basket.html  | |
+| basket.html  | PASS |
 | cancel.html | |
 | error.html | |
 | success.html | |
-| history.html | |
+| history.html | PASS |
 
 
 ### /cars
 
 | File | Result |
 | -------- | ------ |
-| car-hire.html  | |
+| car-hire.html  | PASS |
 
 
 ### Current HTML Errors/Issues/Explanations:
@@ -239,52 +242,54 @@ See User Story:
 
 ## CSS Validation
 
+All CSS validation was done using https://jigsaw.w3.org/css-validator/
 
 ### /static/css
 
 | File | Result |
 | -------- | ------ |
-| base.css  | |
+| base.css  | PASS |
 
 
 ### /trackdays/css
 
 | File | Result |
 | -------- | ------ |
-| booking-detail.css  | |
-| exp_detail.css  | |
-| experiences.css  | |
-| trackday-request.css  | |
-| trackdays.css  | |
-| tuition.css  | |
+| booking-detail.css  | PASS  |
+| exp_detail.css  | PASS  |
+| experiences.css  | PASS  |
+| trackday-request.css  | PASS  |
+| trackdays.css  | PASS  |
+| tuition.css  | PASS  |
 
 ### /profiles/css
 
 | File | Result |
 | -------- | ------ |
-| profiles.css  | |
+| profiles.css  | PASS |
 
 ### /home/css
 
 | File | Result |
 | -------- | ------ |
-| about.css  | |
-| contact.css  | |
-| index.css  | |
-| management.css  | |
-| newsletter.css  | |
+| about.css  | PASS |
+| contact.css  | PASS |
+| index.css  | PASS |
+| management.css  | PASS |
+| newsletter.css  | PASS |
 
 ### /basket/css
 
 | File | Result |
 | -------- | ------ |
-| basket.css  | |
+| basket.css  | PASS |
+| history.css  | PASS |
 
 ### cars/css
 
 | File | Result |
 | -------- | ------ |
-| cars.css  | |
+| cars.css  | PASS |
 
 
 

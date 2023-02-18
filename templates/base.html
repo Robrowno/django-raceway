@@ -59,7 +59,7 @@
 <body class="d-flex flex-column min-vh-100">
     <!-- Top Nav Bar -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom border-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}">Django Raceway
                     <span><img src="{% static 'images/main_images/checkered-flag-angled.png' %}" alt="checkered flag" width="30" height="24"
@@ -160,6 +160,7 @@
             bsToast.show();
             })
         });
+
     </script>
 
     {% endblock %}
@@ -175,9 +176,9 @@
             <span>
                 <a href="{% url 'newsletter' %}" class="signUpBtn ms-5"><i class="fa fa-sign-in" aria-hidden="true"></i> Newsletter Sign Up</a></span>
             <!-- Button to return to page top -->
-            <a href="#" class="toTopBtn" id="toTopBtn">
+            <div class="toTopBtn" id="toTopBtn">
                 <i class="fas fa-arrow-up"></i>
-              </a>
+            </div>
         </div>
     </footer>
     <!-- End of Footer -->
