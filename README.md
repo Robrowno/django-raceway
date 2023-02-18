@@ -877,7 +877,7 @@ Very useful tips and instructions for reseting DB migrations and faking initial 
 
 Used [this mockup software](https://techsini.com/multi-mockup/) to generate a responsiveness hero image at the top of the readme file.
 
-
+I used this very helpful guide for importing the data from my ElephantSQL database into DBeaver to map out my database Schema: [Amis Technology Blog](https://technology.amis.nl/database/quick-start-with-free-managed-postgresql-database-on-elephantsql/)
 
 ## Personal Credits
 
