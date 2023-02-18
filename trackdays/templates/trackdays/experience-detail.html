@@ -9,7 +9,6 @@
 {% include 'includes/main-nav.html' %}
 <h2 class="text-center mt-4">Experience Detail:</h2>
 
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 col-lg-8 offset-lg-2">
@@ -17,8 +16,8 @@
                 <img class="card-img-top" src="{{ experience.image.url }}" alt="picture of cars">
                 <div class="card-body mx-auto">
                     <p>{{ experience.title }}</p>
-                    <p>{{ experience.description }}</p>
-                    <p>{{ experience.itinerary | safe }}</p>
+                    {{ experience.description }}
+                    {{ experience.itinerary | safe }}
                 </div>
                 <div class="card-footer border-success d-flex bd-highlight">
                     <div class="p-2 flex-grow-1 bd-highlight d-flex align-items-center">Price: £{{ experience.price }}
@@ -59,7 +58,6 @@
         </div>
     </div>
 </div>
-
 
 
 {% endblock %}

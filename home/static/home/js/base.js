@@ -41,6 +41,7 @@ function showImage(idx) {
   modalImg.src = myImg[idx].src;
   caption.innerHTML = myImg[idx].alt;
 }
+
 close.addEventListener("click", () => {
   modal.style.display = "none";
 });

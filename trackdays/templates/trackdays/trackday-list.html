@@ -57,7 +57,7 @@
                         {% for track in available %}
                             {% if track.trackday_id == trackday.id %}
                                 {% if track.availability == True %}
-                                    <td><div class="book-btn"><a class="text-decoration-none text-reset" href="{% url 'booking' trackday.id %}">Book</div></td> 
+                                    <td><div class="book-btn"><a class="text-decoration-none text-reset" href="{% url 'booking' trackday.id %}">Book</a></div></td> 
                                 {% else %}
                                     <td class="full"><span>Full</span></td>
                                 {% endif %}
@@ -69,24 +69,6 @@
                 {% endif %}
             </tr>
         {% endfor %}
-        
-        <!-- <tr>
-            <td>23/01/23</td>
-            <td>GP</td>
-            <td>105db</td>
-            <td>0/30</td>
-            <td class="full"><span>Full</span></td>
-            <td><button class="book-btn">Book</button></td>
-        </tr>
-        <tr>
-            <td>27/01/23</td>
-            <td>Indy</td>
-            <td>98db</td>
-            <td>10/15</td>
-            <td class="remain"><span>$300</span></td>
-            <td><button class="book-btn">Book</button></td>
-        </tr> -->
-
     </table>
 </div>
 <div class="container">
@@ -96,19 +78,17 @@
         </div>
     </div>
 </div>
+
 <!-- Button links to Track Day Request Form Page -->
 <div class="requestTrack mt-4">
     <span>Want to organise your own Trackday? Click Here</span>
     <a href="{% url 'request' %}">Request a Track day</a>
 </div>
 
-
 </body>
-
 </html>
 
 {% endblock %}
 {% block postloadjs %}
-
 <script type="text/javascript" src="{% static 'trackdays/js/trackdays.js' %}"></script>
 {% endblock %}

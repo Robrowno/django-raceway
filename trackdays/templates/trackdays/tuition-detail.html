@@ -14,8 +14,8 @@
                 <img class="card-img-top" src="{{ tuition.large_image.url }}" alt="picture of racing driver">
                 <div class="card-body mx-auto">
                     <p>{{ tuition.title }}</p>
-                    <p>{{ tuition.description | safe }}</p>
-                    <p>{{ tuition.itinerary | safe }}</p>
+                    {{ tuition.description | safe }}
+                    {{ tuition.itinerary | safe }}
                 </div>
                 <div class="card-footer border-success d-flex bd-highlight">
                     <div class="p-2 flex-grow-1 bd-highlight d-flex align-items-center">Price: £{{ tuition.price }}
