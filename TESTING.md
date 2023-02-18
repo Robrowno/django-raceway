@@ -176,13 +176,13 @@ All HTML validation was done using https://validator.w3.org/nu/
 
 | File | Result |
 | -------- | ------ |
-| base.html  | PASS |
+| base.html | PASS |
 | main-nav.html  | PASS |
-| includes/base.html |PASS |
-| includes/toast_error.html  | PASS|
-| includes/toast_info.html  | PASS|
-| includes/toast_success.html  |PASS |
-| includes/toast_warning.html |PASS|
+| includes/base.html | PASS |
+| includes/toast_error.html  | PASS |
+| includes/toast_info.html  | PASS |
+| includes/toast_success.html  | PASS |
+| includes/toast_warning.html | PASS |
 
 ### /trackdays
 
@@ -212,8 +212,8 @@ All HTML validation was done using https://validator.w3.org/nu/
 | faqs.html  | PASS |
 | index.html  | PASS |
 | policies.html  | PASS |
-| management.html  | |
-| 404.html | |
+| management.html  | PASS |
+| error404.html | PASS |
 | newsletter.html | PASS |
 
 ### /checkout
@@ -221,9 +221,9 @@ All HTML validation was done using https://validator.w3.org/nu/
 | File | Result |
 | -------- | ------ |
 | basket.html  | PASS |
-| cancel.html | |
-| error.html | |
-| success.html | |
+| cancel.html | PASS |
+| error.html | PASS |
+| success.html | PASS |
 | history.html | PASS |
 
 
@@ -233,10 +233,83 @@ All HTML validation was done using https://validator.w3.org/nu/
 | -------- | ------ |
 | car-hire.html  | PASS |
 
+<br/><br/> 
+
+<details><summary> Main HTML Validation Screenshots</summary>
+
+Base.html, Main-nav.html and  Index.html
+![Base Template Validation](/static/images/readme-images/validation-images/base-index.html-val.png)
+
+experience-detail.html
+![Experience Detail Validation]()
+
+experiences.html
+![Experiences Validation](/static/images/readme-images/validation-images/experiences.html-val.png)
+
+trackday-detail.html
+![Trackday Detail Validation](/static/images/readme-images/validation-images/trackday-detail.html-val.png)
+
+trackday-list.html
+![Trackday List Validation]()
+
+trackday-request.html
+![Trackday Request Validation](/static/images//readme-images/validation-images/trackday-request.html-val.png)
+
+tuition-detail.html
+![Tuition Detail Validation](/static/images//readme-images/validation-images/tuition-detail.html-val.png)
+
+tuition.html
+![Tuition Validation](/static/images//readme-images/validation-images/tuition.html-val.png)
+
+profile.html
+![Profile Validation](/static/images//readme-images/validation-images/profile.html-val.png)
+
+about.html
+![About Validation](/static/images//readme-images/validation-images/about.html-val.png)
+
+contact.html
+![Contact Validation](/static/images//readme-images/validation-images/contact.html-val.png)
+
+faqs.html 
+![FAQS Validation](/static/images//readme-images/validation-images/faqs.html-val.png)
+
+
+policies.html
+![Policies Validation](/static/images//readme-images/validation-images/policies.html-val.png)
+
+management.html
+![Management Validation](/static/images//readme-images/validation-images/management.html-val.png)
+
+error404.html
+![Error 404 Validation](/static/images//readme-images/validation-images/error404-page-val.png)
+
+newsletter.html
+![Newsletter Validation](/static/images//readme-images/validation-images/newsletter.html-val.png)
+
+basket.html
+![Empty Basket Validation](/static/images//readme-images/validation-images/basket.html-empty-val.png)
+![Full Basket Validation](/static/images//readme-images/validation-images/basket.html-with-items-val.png)
+
+history.html
+![Order History Validation](/static/images//readme-images/validation-images/history.html-val.png)
+
+success.html
+![Checkout Success Validation](/static/images//readme-images/validation-images/success.html-val.png)
+
+cancel.html
+![Cancel Checkout Validation](/static/images//readme-images/validation-images/cancel.html-val.png)
+
+car-hire.html
+![Car Hire Page Validation](/static/images//readme-images/validation-images/car-hire.html-val.png)
+
+
+</details>
+
+<br/><br/> 
 
 ### Current HTML Errors/Issues/Explanations:
 
-- 
+- Mostly just warnings for script tags having the ` type="text/javascript" ` attribute in them. This can be ignored.
 
 ---
 
@@ -292,21 +365,76 @@ All CSS validation was done using https://jigsaw.w3.org/css-validator/
 | cars.css  | PASS |
 
 
+<br/><br/> 
+
+<details><summary>CSS Validation Screenshots</summary>
+
+base.css
+![Base CSS Validation](/static/images//readme-images/validation-images/base.css-val.png)
+
+booking-detail.css
+![Booking Detail CSS Validation](/static/images//readme-images/validation-images/booking-detail.css-val.png)
+
+exp_detail.css
+![Experience Detail CSS Validation](/static/images//readme-images/validation-images/exp_detail.css-val.png)
+
+experiences.css
+![Experiences CSS Validation](/static/images//readme-images/validation-images/experiences.css-val.png)
+
+trackday-request.css
+![Trackday Request CSS Validation](/static/images//readme-images/validation-images/trackday-request.css-val.png)
+
+trackdays.css
+![Trackdays CSS Validation](/static/images//readme-images/validation-images/trackdays.css-val.png)
+
+tuition.css
+![Tuition CSS Validation](/static/images//readme-images/validation-images/tuition.css-val.png)
+
+profiles.css
+![Profiles CSS Validation](/static/images//readme-images/validation-images/profiles.css-val.png)
+
+about.css 
+![About CSS Validation](/static/images//readme-images/validation-images/about.css-val.png)
+
+contact.css
+![Contact CSS Validation](/static/images//readme-images/validation-images/contact.css-val.png)
+
+index.css 
+![Index CSS Validation](/static/images//readme-images/validation-images/index.css-val.png)
+
+management.css
+![Management CSS Validation](/static/images//readme-images/validation-images/management.css-val.png)
+
+newsletter.css
+![Newsletter CSS Validation](/static/images//readme-images/validation-images/newsletter.css-val.png)
+
+basket.css 
+![Basket CSS Validation](/static/images//readme-images/validation-images/basket.css-val.png)
+
+history.css
+![History CSS Validation](/static/images//readme-images/validation-images/history.css-val.png)
+
+cars.css
+![Cars CSS Validation](/static/images//readme-images/validation-images/cars.css-val.png)
+
+</details>
+
+<br/><br/> 
 
 ### Current CSS Errors/Issues/Explanations:
 
-- 
-
+- No issues at all to report.
 
 ---
 
 ## JS Validation
 
-### static/js
+I cross-referenced JS Validation using two different Validation services:
+- https://jshint.com/
+- https://jsvalidator.com/
 
-| File | Result |
-| -------- | ------ |
-| base.js  |  |
+I did find this particularly useful as some files generated warnings on one validator (perhaps due to over-sensitivity) and passed with zero errors on another.
+I have included different screenshots to demonstrate this and show that the JS is valid and working.
 
 ### trackdays/js
 
@@ -318,16 +446,23 @@ All CSS validation was done using https://jigsaw.w3.org/css-validator/
 
 | File | Result |
 | -------- | ------ |
-| profile.js |  |
+| profile.js | PASS |
 
 ### home/js
 
 | File | Result |
 | -------- | ------ |
-| base.js  |  |
+| base.js  | PASS |
+
+<br/><br/> 
+
+<details><summary>JS Validation Screenshots</summary>
 
 
 
+</details>
+
+<br/><br/> 
 
 ### Current JS Errors/Issues/Explanations:
 
@@ -407,7 +542,15 @@ All CSS validation was done using https://jigsaw.w3.org/css-validator/
 | urls.py |  |
 | views.py |  |
 
+<br/><br/> 
 
+<details><summary>Python Validation Screenshots</summary>
+
+
+
+</details>
+
+<br/><br/> 
 
 ### Current Python Errors/Issues/Explanations:
 
@@ -451,9 +594,8 @@ Lighthouse Screeshot here: xxxxxxxxxxxxxx
 
 ## Current known and unresolved issues
 
-- 
-- 
-- 
+- As documented in the outstanding bugs section in the readme, there is an (as of writing) unresolved bug where when you sign in or log out, the sign in and log out buttons appear to not be clickable. This is always able to be fixed by either refreshing the page or clicking on to another link/page. Alternatively, click on the site logo (which redirects to the home page anyway) to clear this bug. 
+- My Trackday Constraint in my Trackday model appears to not work realiably. I have tried various combinations of the code, tried to reformat it countless times and tried to use it in conjunction with adding ` unique=True` in the fields that are supposed to work with it. I have yet to resolve this issue and will aim to do so in a future update.
 - 
 
 

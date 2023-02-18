@@ -225,7 +225,7 @@
   $('.update-link').click(function (e) {
     var form = $(this).prev('.form-update');
     form.submit();
-  })
+  });
 
   $('.remove-link').click(function (e) {
     var csrfToken = "{{ csrf_token }}";
@@ -239,7 +239,7 @@
       .done(function () {
         location.reload();
       });
-  })
+  });
 
   $('.update-order').click(function (e) {
     var csrfToken = "{{ csrf_token }}";
@@ -253,7 +253,7 @@
       .done(function () {
         window.location.href = "/trackdays";
       });
-  })
+  });
   const qtyInputs = document.querySelectorAll('.qty_input');
 
 qtyInputs.forEach((input) => {

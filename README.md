@@ -710,11 +710,14 @@ Full list of technology implemented below:
 - Pillow==9.3.0
 - psycopg2==2.9.5
 - PyJWT==2.6.0
+- python-http-client==3.3.7
 - python3-openid==3.2.0
 - pytz==2022.6
 - requests-oauthlib==1.3.1
 - s3transfer==0.6.0
+- sendgrid==6.9.7
 - sqlparse==0.4.3
+- starkbank-ecdsa==2.2.0
 - stripe==5.1.1
 
 
