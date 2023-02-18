@@ -128,12 +128,14 @@ class Experiences(models.Model):
     image = models.ImageField(null=True, blank=True)
     price = models.DecimalField(max_digits=7, decimal_places=2)
     unique_id = models.UUIDField(default=uuid.uuid4, editable=False)
+
     def save(self, *args, **kwargs):
         if not self.unique_id:
             key = Fernet.generate_key()
             f = Fernet(key)
             self.unique_id = uuid.UUID(bytes=f.encrypt(self.id.bytes))
         super().save(*args, **kwargs)
+
     class Meta:
         verbose_name_plural = "Experiences"
 
@@ -156,12 +158,14 @@ class Tuition(models.Model):
     large_image = models.ImageField(null=True, blank=True)
     price = models.DecimalField(max_digits=7, decimal_places=2)
     unique_id = models.UUIDField(default=uuid.uuid4, editable=False)
+
     def save(self, *args, **kwargs):
         if not self.unique_id:
             key = Fernet.generate_key()
             f = Fernet(key)
             self.unique_id = uuid.UUID(bytes=f.encrypt(self.id.bytes))
         super().save(*args, **kwargs)
+
     class Meta:
         verbose_name_plural = "Tuition"
 

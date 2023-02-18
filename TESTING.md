@@ -21,6 +21,13 @@ See User Story:
 
 ## Automated Testing
 
+Due to time constraints, I was under pressure to conclude the project and as a result I did not manage to get around to doing a thorough unittest of all the python urls, views, etc. 
+
+I have managed to do some url resolutions, including some in the cars app, the checkout app and the profiles app.
+Of the tests I have run, all pass. 
+
+I will attempt to conduct a more thorough unittest of the project in future.
+
 
 ---
 
@@ -191,7 +198,7 @@ All HTML validation was done using https://validator.w3.org/nu/
 |  experience-detail.html | PASS |
 |  experiences.html | PASS |
 |  trackday-detail.html | PASS |
-|  trackday-list.html | |
+|  trackday-list.html | PASS |
 |  trackday-request.html | PASS |
 |  tuition-detail.html | PASS |
 |  tuition.html | PASS |
@@ -237,69 +244,69 @@ All HTML validation was done using https://validator.w3.org/nu/
 
 <details><summary> Main HTML Validation Screenshots</summary>
 
-Base.html, Main-nav.html and  Index.html
+#### Base.html, Main-nav.html and  Index.html
 ![Base Template Validation](/static/images/readme-images/validation-images/base-index.html-val.png)
 
-experience-detail.html
-![Experience Detail Validation]()
+#### experience-detail.html
+![Experience Detail Validation](/static/images/readme-images/validation-images/experience-detail.html-val.png)
 
-experiences.html
+#### experiences.html
 ![Experiences Validation](/static/images/readme-images/validation-images/experiences.html-val.png)
 
-trackday-detail.html
+#### trackday-detail.html
 ![Trackday Detail Validation](/static/images/readme-images/validation-images/trackday-detail.html-val.png)
 
-trackday-list.html
-![Trackday List Validation]()
+#### trackday-list.html
+![Trackday List Validation](/static/images/readme-images/validation-images/trackday-list.html-val.png)
 
-trackday-request.html
+#### trackday-request.html
 ![Trackday Request Validation](/static/images//readme-images/validation-images/trackday-request.html-val.png)
 
-tuition-detail.html
+#### tuition-detail.html
 ![Tuition Detail Validation](/static/images//readme-images/validation-images/tuition-detail.html-val.png)
 
-tuition.html
+#### tuition.html
 ![Tuition Validation](/static/images//readme-images/validation-images/tuition.html-val.png)
 
-profile.html
+#### profile.html
 ![Profile Validation](/static/images//readme-images/validation-images/profile.html-val.png)
 
-about.html
+#### about.html
 ![About Validation](/static/images//readme-images/validation-images/about.html-val.png)
 
-contact.html
+#### contact.html
 ![Contact Validation](/static/images//readme-images/validation-images/contact.html-val.png)
 
-faqs.html 
+#### faqs.html 
 ![FAQS Validation](/static/images//readme-images/validation-images/faqs.html-val.png)
 
 
-policies.html
+#### policies.html
 ![Policies Validation](/static/images//readme-images/validation-images/policies.html-val.png)
 
-management.html
+#### management.html
 ![Management Validation](/static/images//readme-images/validation-images/management.html-val.png)
 
-error404.html
+#### error404.html
 ![Error 404 Validation](/static/images//readme-images/validation-images/error404-page-val.png)
 
-newsletter.html
+#### newsletter.html
 ![Newsletter Validation](/static/images//readme-images/validation-images/newsletter.html-val.png)
 
-basket.html
+#### basket.html
 ![Empty Basket Validation](/static/images//readme-images/validation-images/basket.html-empty-val.png)
 ![Full Basket Validation](/static/images//readme-images/validation-images/basket.html-with-items-val.png)
 
-history.html
+#### history.html
 ![Order History Validation](/static/images//readme-images/validation-images/history.html-val.png)
 
-success.html
+#### success.html
 ![Checkout Success Validation](/static/images//readme-images/validation-images/success.html-val.png)
 
-cancel.html
+#### cancel.html
 ![Cancel Checkout Validation](/static/images//readme-images/validation-images/cancel.html-val.png)
 
-car-hire.html
+#### car-hire.html
 ![Car Hire Page Validation](/static/images//readme-images/validation-images/car-hire.html-val.png)
 
 
@@ -369,52 +376,52 @@ All CSS validation was done using https://jigsaw.w3.org/css-validator/
 
 <details><summary>CSS Validation Screenshots</summary>
 
-base.css
+#### base.css
 ![Base CSS Validation](/static/images//readme-images/validation-images/base.css-val.png)
 
-booking-detail.css
+#### booking-detail.css
 ![Booking Detail CSS Validation](/static/images//readme-images/validation-images/booking-detail.css-val.png)
 
-exp_detail.css
+#### exp_detail.css
 ![Experience Detail CSS Validation](/static/images//readme-images/validation-images/exp_detail.css-val.png)
 
-experiences.css
+#### experiences.css
 ![Experiences CSS Validation](/static/images//readme-images/validation-images/experiences.css-val.png)
 
-trackday-request.css
+#### trackday-request.css
 ![Trackday Request CSS Validation](/static/images//readme-images/validation-images/trackday-request.css-val.png)
 
-trackdays.css
+#### trackdays.css
 ![Trackdays CSS Validation](/static/images//readme-images/validation-images/trackdays.css-val.png)
 
-tuition.css
+#### tuition.css
 ![Tuition CSS Validation](/static/images//readme-images/validation-images/tuition.css-val.png)
 
-profiles.css
+#### profiles.css
 ![Profiles CSS Validation](/static/images//readme-images/validation-images/profiles.css-val.png)
 
-about.css 
+#### about.css 
 ![About CSS Validation](/static/images//readme-images/validation-images/about.css-val.png)
 
-contact.css
+#### contact.css
 ![Contact CSS Validation](/static/images//readme-images/validation-images/contact.css-val.png)
 
-index.css 
+#### index.css 
 ![Index CSS Validation](/static/images//readme-images/validation-images/index.css-val.png)
 
-management.css
+#### management.css
 ![Management CSS Validation](/static/images//readme-images/validation-images/management.css-val.png)
 
-newsletter.css
+#### newsletter.css
 ![Newsletter CSS Validation](/static/images//readme-images/validation-images/newsletter.css-val.png)
 
-basket.css 
+#### basket.css 
 ![Basket CSS Validation](/static/images//readme-images/validation-images/basket.css-val.png)
 
-history.css
+#### history.css
 ![History CSS Validation](/static/images//readme-images/validation-images/history.css-val.png)
 
-cars.css
+#### cars.css
 ![Cars CSS Validation](/static/images//readme-images/validation-images/cars.css-val.png)
 
 </details>
@@ -436,11 +443,6 @@ I cross-referenced JS Validation using two different Validation services:
 I did find this particularly useful as some files generated warnings on one validator (perhaps due to over-sensitivity) and passed with zero errors on another.
 I have included different screenshots to demonstrate this and show that the JS is valid and working.
 
-### trackdays/js
-
-| File | Result |
-| -------- | ------ |
-| trackdays.js |  |
 
 ### profiles/js
 
@@ -458,6 +460,28 @@ I have included different screenshots to demonstrate this and show that the JS i
 
 <details><summary>JS Validation Screenshots</summary>
 
+#### profile.js
+![Profile Page JS](/static/images/readme-images/validation-images/profiles.js-val.png)
+
+#### base.js
+![Base JS](/static/images//readme-images/validation-images/base.js-val.png)
+![Base JS](/static/images//readme-images/validation-images/base.js-js-val.png)
+
+#### increment-decrement js
+![Increment and Decrement JS](/static/images/readme-images/validation-images/increment-decrement-script-js-val.png)
+
+#### basket js
+![Basket JS](/static/images/readme-images/validation-images/basket-js-script-val.png)
+
+#### Management js
+![Management JS](/static/images/readme-images/validation-images/management-js-script-val.png)
+
+#### Trackday Detail js
+![Trackday Detail JS](/static/images/readme-images/validation-images/trackday-detail-js-script-val.png)
+
+#### Bootstrap Toast js
+![Bootstrap Toast JS](/static/images/readme-images/validation-images/bootstrap-toasts-js-val.png)
+![Bootstrao Toast JS](/static/images/readme-images/validation-images/bootstrap-toasts-js-js-val.png)
 
 
 </details>
@@ -466,7 +490,7 @@ I have included different screenshots to demonstrate this and show that the JS i
 
 ### Current JS Errors/Issues/Explanations:
 
-- 
+- As you can see from the screen shots, the same code on one js linter can be more sensitive towards things than others. I have included cases like this above for transparency and to prove I have tested across more than one JS linter.
 
 
 ---
@@ -478,19 +502,19 @@ I have included different screenshots to demonstrate this and show that the JS i
 
 | File | Result |
 | -------- | ------ |
-| settings.py |  |
-| urls.py |  |
+| settings.py | PASS |
+| urls.py | PASS |
 
 
 ### /trackdays
 
 | File | Result |
 | -------- | ------ |
-| admin.py |  |
-| models.py |  |
+| admin.py | PASS |
+| models.py | PASS |
+| urls.py | PASS |
+| views.py | PASS |
 | tests.py |  |
-| urls.py |  |
-| views.py |  |
 
 
 
@@ -498,11 +522,11 @@ I have included different screenshots to demonstrate this and show that the JS i
 
 | File | Result |
 | -------- | ------ |
-| admin.py |  |
-| models.py |  |
+| admin.py | PASS |
+| models.py | PASS |
+| urls.py | PASS |
+| views.py | PASS |
 | tests.py |  |
-| urls.py |  |
-| views.py |  |
 
 
 
@@ -510,11 +534,11 @@ I have included different screenshots to demonstrate this and show that the JS i
 
 | File | Result |
 | -------- | ------ |
-| admin.py |  |
-| models.py |  |
+| admin.py | PASS |
+| models.py | PASS |
+| urls.py | PASS |
+| views.py | PASS |
 | tests.py |  |
-| urls.py |  |
-| views.py |  |
 
 
 
@@ -522,30 +546,80 @@ I have included different screenshots to demonstrate this and show that the JS i
 
 | File | Result |
 | -------- | ------ |
-| admin.py |  |
-| contexts.py |  |
-| models.py |  |
+| admin.py | PASS |
+| contexts.py | PASS |
+| models.py | PASS |
+| urls.py | PASS |
+| views.py | PASS* |
+| helpers.py | PASS |
 | tests.py |  |
-| urls.py |  |
-| views.py |  |
-| helpers.py |  |
 
+* Line 320 in views.py reads as too long, however, for reliability I have opted to leave this
+in as it can cause issues in deployment when concatenated as it is a url. I believe this is
+a sensible and reasonable precaution to take for site reliability.
 
 
 ### /cars
 
 | File | Result |
 | -------- | ------ |
-| admin.py |  |
-| models.py |  |
-| tests.py |  |
-| urls.py |  |
-| views.py |  |
+| admin.py | PASS |
+| models.py | PASS |
+| urls.py | PASS |
+| views.py | PASS |
+| tests.py | PASS |
 
 <br/><br/> 
 
 <details><summary>Python Validation Screenshots</summary>
 
+#### /django_raceway
+
+![settings.py](/static/images/readme-images/validation-images/django_raceway-settings.py-val.png)
+![urls.py](/static/images/readme-images/validation-images/django_raceway-urls.py-val.png)
+
+
+#### /trackdays
+
+![admin.py](/static/images/readme-images/validation-images/trackdays-admin.py-val.png)
+![models.py](/static/images/readme-images/validation-images/trackdays-models.py-val.png)
+![urls.py](/static/images/readme-images/validation-images/trackdays-urls.py-val.png)
+![views.py](/static/images/readme-images/validation-images/trackdays-views.py-val.png)
+
+
+#### /home
+
+![admin.py](/static/images/readme-images/validation-images/home-admin.py-val.png)
+![models.py](/static/images/readme-images/validation-images/home-models.py-val.png)
+![urls.py](/static/images/readme-images/validation-images/home-urls.py-val.png)
+![views.py](/static/images/readme-images/validation-images/home-views.py-val.png)
+
+
+#### /profiles
+
+![admin.py](/static/images/readme-images/validation-images/profiles-admin.py-val.png)
+![models.py](/static/images/readme-images/validation-images/profiles-models.py-val.png)
+![urls.py](/static/images/readme-images/validation-images/profiles-urls.py-val.png)
+![views.py](/static/images/readme-images/validation-images/profiles-views.py-val.png)
+
+#### /checkout
+
+![admin.py](/static/images/readme-images/validation-images/checkout-admin.py-val.png)
+![models.py](/static/images/readme-images/validation-images/checkout-models.py-val.png)
+![urls.py](/static/images/readme-images/validation-images/checkout-urls.py-val.png)
+![views.py](/static/images/readme-images/validation-images/checkout-views.py-val.png)
+![views.py 2](/static/images/readme-images/validation-images/checkout-views.py-line-length.png)
+![contexts.py](/static/images/readme-images/validation-images/checkout-contexts.py-val.png)
+![helpers.py](/static/images/readme-images/validation-images/checkout-helpers.py-val.png)
+
+
+#### /cars
+
+![admin.py](/static/images/readme-images/validation-images)
+![models.py](/static/images/readme-images/validation-images)
+![urls.py](/static/images/readme-images/validation-images)
+![views.py](/static/images/readme-images/validation-images)
+![tests.py](/static/images/readme-images/validation-images)
 
 
 </details>
@@ -554,9 +628,10 @@ I have included different screenshots to demonstrate this and show that the JS i
 
 ### Current Python Errors/Issues/Explanations:
 
-- 
-- 
-- 
+- Only 1 known python linting issue across the entire workspace, being that of line 320 in /checkout/views.py where a line is too long by 2 characters.
+Due to this being a url, and a pretty specific one from Stripe as well, I opted to follow best practice and to leave it as is for this one exception in order 
+to ensure reliability of the checkout on the site. I believe reliability takes priority over anything else.
+
 
 ---
 

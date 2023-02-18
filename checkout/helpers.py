@@ -7,10 +7,10 @@ def send_transaction_mail(email, receipt):
     """
     Confirmation email with a link to the user's receipt.
     """
-    subject = 'Raceway transaction'
+    subject = 'Django-Raceway transaction'
     print(receipt)
     content = f"""
-            <h2>Hi there</h2>,
+            <h2>Hi there</h2>
             <h3> We can confirm your order has been successfully completed!
             You can check your receipts through this url.
             <a href="{receipt}">Profile</a>

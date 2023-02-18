@@ -58,7 +58,9 @@ def update_profile(request):
         if email != user.email:
             if User.objects.filter(email=email).exists():
                 userEmailFlag = False
-                message = 'Please enter a different email. This is already in use.\n'
+                message = (
+                    'Please enter a different email. This is already in use.\n'
+                    )
         if userEmailFlag and email != user.email:
             User.objects.filter(id=user.id).update(
                 email=email,
@@ -66,7 +68,9 @@ def update_profile(request):
         if name != user.username:
             if User.objects.filter(username=name).exists():
                 userNameFlag = False
-                message = 'Please enter a different username. This is already in use.\n'
+                message = (
+                    'Please try another username. This is already in use.\n'
+                    )
         if userNameFlag and name != user.username:
             User.objects.filter(id=user.id).update(
                 username=name,

@@ -87,16 +87,22 @@ def management_page(request):
             new_trackday.base_trackday_price = request.POST.get('base-price')
             new_trackday.save()
             messages.success(request, 'New Trackday Added')
-            s3 = boto3.client('s3',
+            s3 = boto3.client(
+                's3',
                 aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
                 aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
             )
-            s3.upload_fileobj(new_trackday.layout_image, settings.AWS_STORAGE_BUCKET_NAME, new_trackday.layout_image.name)
+            s3.upload_fileobj(
+                new_trackday.layout_image,
+                settings.AWS_STORAGE_BUCKET_NAME,
+                new_trackday.layout_image.name)
             return redirect('trackdays')
         else:
             new_trackday = Trackday(layout_image=request.FILES)
     else:
-        messages.info(request, "Restricted access, you cannot access this page")
+        messages.info(
+            request,
+            "Restricted access, you cannot access this page")
         return redirect('/')
     return render(request, 'home/management.html')
 
