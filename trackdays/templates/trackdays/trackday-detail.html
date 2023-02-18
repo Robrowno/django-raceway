@@ -205,6 +205,7 @@ if(Number(fullHalfDay[i].value)==0){
     let lbl=document.querySelector('label[for="fullDay"]');
     let value = parseInt(lbl.textContent.split(" - £")[1]);
     total+=value
+
 }
     }
   }
@@ -219,7 +220,7 @@ if(Number(fullHalfDay[i].value)==0){
   if (carhire.value !== "") {
     let selectedOption = carhire.options[carhire.selectedIndex];
     let optionText = selectedOption.text;
-    let carPrice = optionText.match(/\d+/g).map(Number)[0];
+    let carPrice = parseFloat(optionText.match(/£(\d+\.\d+)/)[1]);
     total += carPrice;
   }
 total += Number(driverTotalNumber.value) * 10;

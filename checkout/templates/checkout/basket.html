@@ -8,7 +8,6 @@
 
 {% block content %}
 {% include 'includes/main-nav.html' %}
-
 <h2 class="text-center mt-4">Your Basket:</h2>
 
 <section class="h-100 gradient-custom">
@@ -76,8 +75,8 @@
                         {%csrf_token %}
                         <div class="input-group d-flex justify-content-between">
                           <button class="increment-qty btn btn-outline-dark rounded-0"
-                            data-item_id="{{ item.experience.title  }}{{item.experience.id}}"
-                            id="increment-qty_{{ item.experience.title  }}{{item.experience.id}}">
+                            data-item_id="{{ item.experience.unique_id  }}"
+                            id="increment-qty_{{ item.experience.unique_id }}">
                             <span>
                               <i class="fas fa-plus fa-sm quantity-icon"></i>
                             </span>
@@ -85,12 +84,11 @@
 
                           <input class="form-control qty_input" type="number" name="quantity"
                             value="{{ item.quantity }}" min="1" max="10"
-                            data-item_id="{{ item.experience.title  }}{{item.experience.id}}"
-                            id="id_qty_{{ item.experience.title  }}{{item.experience.id}}">
-
+                            data-item_id="{{ item.experience.unique_id  }}"
+                            id="id_qty_{{ item.experience.unique_id  }}">
                           <button class="decrement-qty btn btn-outline-dark rounded-0"
-                            data-item_id="{{ item.experience.title  }}{{item.experience.id}}"
-                            id="decrement-qty_{{ item.experience.title  }}{{item.experience.id}}">
+                            data-item_id="{{ item.experience.unique_id  }}"
+                            id="decrement-qty_{{ item.experience.unique_id  }}">
                             <span>
                               <i class="fas fa-minus fa-sm quantity-icon"></i>
                             </span>
@@ -120,20 +118,20 @@
                     {%csrf_token %}
                     <div class="input-group d-flex justify-content-between">
                       <button class="increment-qty btn btn-outline-dark rounded-0"
-                        data-item_id="{{ item.tuition.title  }}{{item.tuition.id}}"
-                        id="increment-qty_{{ item.tuition.title  }}{{item.tuition.id}}">
+                        data-item_id="{{ item.tuition.unique_id  }}"
+                        id="increment-qty_{{ item.tuition.unique_id  }}">
                         <span>
                           <i class="fas fa-plus fa-sm quantity-icon"></i>
                         </span>
                       </button>
 
                       <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}"
-                        min="1" max="10" data-item_id="{{ item.tuition.title  }}{{item.tuition.id}}"
-                        id="id_qty_{{ item.tuition.title  }}{{item.tuition.id}}">
+                        min="1" max="10" data-item_id="{{ item.tuition.unique_id  }}"
+                        id="id_qty_{{ item.tuition.unique_id  }}">
 
                       <button class="decrement-qty btn btn-outline-dark rounded-0"
-                        data-item_id="{{ item.tuition.title  }}{{item.tuition.id}}"
-                        id="decrement-qty_{{ item.tuition.title  }}{{item.tuition.id}}">
+                        data-item_id="{{ item.tuition.unique_id  }}"
+                        id="decrement-qty_{{ item.tuition.unique_id  }}">
                         <span>
                           <i class="fas fa-minus fa-sm quantity-icon"></i>
                         </span>
@@ -223,46 +221,7 @@
 </div>
 </div>
 </section>
-
-
-{% endblock %}
-{% block postloadjs %}
-{{ block.super }}
-{% include 'trackdays/includes/increment_decrement_script.html' %}
-
-<script type="text/javascript">
-  const incrementButtons = document.querySelectorAll('.increment-qty');
-  incrementButtons.forEach(function (button) {
-    button.addEventListener('click', function (event) {
-      const inputField = document.getElementById(`id_qty_${event.target.dataset.item_id}`);
-      inputField.value = parseInt(inputField.value) + 1;
-      if (inputField.value == 10) {
-        button.setAttribute('disabled', true);
-      }
-      if (inputField.value <= 10) {
-        const decrementButton = document.getElementById(`decrement-qty_${event.target.dataset.item_id}`);
-        decrementButton.removeAttribute('disabled');
-      }
-    });
-  });
-
-  const decrementButtons = document.querySelectorAll('.decrement-qty');
-
-  decrementButtons.forEach(function (button) {
-    button.addEventListener('click', function (event) {
-      const inputField = document.getElementById(`id_qty_${event.target.dataset.item_id}`);
-      inputField.value = parseInt(inputField.value) - 1;
-      if (inputField.value == 1) {
-        button.setAttribute('disabled', true);
-      }
-      if (inputField.value <= 10) {
-        const incrementButton = document.getElementById(`increment-qty_${event.target.dataset.item_id}`);
-        incrementButton.removeAttribute('disabled');
-      }
-    });
-  });
-
-
+<script>
   $('.update-link').click(function (e) {
     var form = $(this).prev('.form-update');
     form.submit();
@@ -295,7 +254,76 @@
         window.location.href = "/trackdays";
       });
   })
+  const qtyInputs = document.querySelectorAll('.qty_input');
+
+qtyInputs.forEach((input) => {
+  const itemId = input.dataset.itemId;
+  const incrementButton = document.querySelector(`#increment-qty_${itemId}`);
+  const decrementButton = document.querySelector(`#decrement-qty_${itemId}`);
+
+  input.addEventListener('input', () => {
+    if (input.value == 10) {
+      incrementButton.disabled = true;
+    } else {
+      incrementButton.disabled = false;
+    }
+    if (input.value < 1) {
+      input.value = 1;
+    } else if (input.value > 10) {
+      input.value = 10;
+    }
+  });
+
+  input.addEventListener('input', () => {
+    if (input.value == 1) {
+      decrementButton.disabled = true;
+    } else {
+      decrementButton.disabled = false;
+    }
+
+    if (input.value < 1) {
+      input.value = 1;
+    } else if (input.value > 10) {
+      input.value = 10;
+    }
+  });
+
+  incrementButton.addEventListener('click', () => {
+    if (input.value < 10) {
+      input.value++;
+    }
+
+    if (input.value == 10) {
+      incrementButton.disabled = true;
+    }
+
+    decrementButton.disabled = false;
+  });
+
+  decrementButton.addEventListener('click', () => {
+    if (input.value > 1) {
+      input.value--;
+    }
+
+    if (input.value == 1) {
+      decrementButton.disabled = true;
+    }
+
+    incrementButton.disabled = false;
+  });
+});
+
+
+  
+
 </script>
+
+
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+{% include 'trackdays/includes/increment_decrement_script.html' %}
+
 
 
 {% endblock %}
