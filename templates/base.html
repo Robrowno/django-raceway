@@ -49,6 +49,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
+
+     <!-- This JS was included thanks to Alan from CI Tutor support (Needed extra code above bootstrap 4 Toasts)-->
+     <script type="text/javascript">
+        $( document ).ready(function() {
+            let toastElList = [].slice.call(document.querySelectorAll('.toast'));
+            let toastList = toastElList.map(function (toastEl) {
+            let option = {
+            animation: true,
+            autohide: true,
+            delay: 5000,
+            };
+            let bsToast = new bootstrap.Toast(toastEl, option)
+            bsToast.show();
+            });
+        });
+
+    </script>
+
+
     {% endblock %}
 
     {% block extra_js %}
@@ -145,29 +164,8 @@
     {% block content %}
     {% endblock %}
 
-    {% block postloadjs %}
-    
-    <!-- This JS was included thanks to Alan from CI Tutor support (Needed extra code above bootstrap 4 Toasts)-->
-    <script type="text/javascript">
-        $( document ).ready(function() {
-            let toastElList = [].slice.call(document.querySelectorAll('.toast'));
-            let toastList = toastElList.map(function (toastEl) {
-            let option = {
-            animation: true,
-            autohide: true,
-            delay: 5000,
-            };
-            let bsToast = new bootstrap.Toast(toastEl, option)
-            bsToast.show();
-            });
-        });
-
-    </script>
-
-    {% endblock %}
-
-    <!-- Footer -->
-    <footer class="border-top border-2 border-dark">
+     <!-- Footer -->
+     <footer class="border-top border-2 border-dark">
         <div class="footer-links">
             <a href="{% url 'faqs' %}">FAQs</a>
             <a href="{% url 'policies' %}">Policies</a>
@@ -183,6 +181,10 @@
         </div>
     </footer>
     <!-- End of Footer -->
+
+    {% block postloadjs %}
+    {% endblock %}
+
 
 </body>
 
