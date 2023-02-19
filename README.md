@@ -344,8 +344,8 @@ Below is a comprehensive list of the site features and their relations to the us
     - has a middle nav which serves as the main navigation of the site
     - contains a company logo that redirects to the home page when clicked on
 
-    ![Top Nav]()
-    ![Middle Nav]()
+    ![Top Nav](/static/images/features/top-nav.png)
+    ![Middle Nav](/static/images/features/middle-nav.png)
 
     `` User Story: As a Site User I can use a Nav Bar so that I can Navigate to the desired page.``
 
@@ -360,7 +360,8 @@ Below is a comprehensive list of the site features and their relations to the us
     - hosts the middle nav beneath the carousel to encourage the user to scroll down the home page and see more content
     - serves as the entry page and point of reference for everything on the site
 
-    ![Home Page]()
+    ![Home Page](/static/images/features/home-top.png)
+    ![Home Page](/static/images/features/home-middle.png)
 
     `` User Story: As a Site User I can view a home page so that I can have a starting point from which I can navigate the site.``
 
@@ -375,7 +376,7 @@ Below is a comprehensive list of the site features and their relations to the us
     - Contains a prompt to sign up to the Django Raceway Newsletter
     - An up-arrow button to return to the top of the page
 
-    ![Footer]()
+    ![Footer](/static/images/features/footer.png)
 
     `` User Story: As a Site User I can view a footer bar so that I can view Policies, FAQs or subscribe to a motorsport newsletter.``
 
@@ -389,8 +390,8 @@ Below is a comprehensive list of the site features and their relations to the us
     - Contains 8 High Quality images of cars driving on track
     - Can be clicked on to open, moved to previous or next images, or closed with an 'x' 
 
-    ![Gallery]()
-    ![]()
+    ![Gallery](/static/images/features/gallery.png)
+    ![Gallery Image Open](/static/images/features/gallery-image-open.png)
 
     `` User Story: As a Site Visitor I can view a gallery of images so that I can get a visual understanding of what a track day looks like.``
 
@@ -407,11 +408,17 @@ Below is a comprehensive list of the site features and their relations to the us
     - allows users to reset their password if they have forgotten through a supplied email address
     - can keep users signed in with a checkbox option
 
+    ![Sign Up](/static/images/features/sign-up.png)
+    ![Password Reset](/static/images/features/password-reset.png)
+
     ``User Story: As a Site User I can create an account so that I can access user-verified-only benefits and store personal information for future orders.``
     - Acceptance Criteria:
         - When a site visitor is not signed in, a sign up/create account link in the nav can be found where they are redirected to a page to create an account
         - Upon account creation, they will be asked to verify through their email address that they will have had to provide.
         - No more info than is required will be asked for on sign up.
+
+    ![Login](/static/images/features/login.png)
+    ![Logout](/static/images/features/sign-out.png)
 
     ``User Story: As a Site User I can log in and log out so that I can keep my account and details secure. ``
     - Acceptance Criteria:
@@ -423,7 +430,7 @@ Below is a comprehensive list of the site features and their relations to the us
     - Describes the history of the circuit to curious site visitors
     - Inspires site visitor confidence in an experienced and responsible trackday/motorsports business
 
-    ![About Page]()
+    ![About Page](/static/images/features/about.png)
 
     `` User Story: As a Site User I can open an about page so that I can learn more about the company and its history.``
 
@@ -436,7 +443,7 @@ Below is a comprehensive list of the site features and their relations to the us
     - Asks for a full name, email, query type and a message
     - informs the user when their message has been sent successfully
 
-    ![Contact Page]()
+    ![Contact Page](/static/images/features/contact-page.png)
 
     `` User Story: As a Site User I can submit a contact form so that I can get in touch with the business regarding questions I have.``
 
@@ -451,7 +458,7 @@ Below is a comprehensive list of the site features and their relations to the us
     - Shows current trackdays up for booking in a table below, with information such as variant and base price displayed
     - Contains the links to the booking and request pages respectively
 
-    ![Trackdays]()
+    ![Trackdays](/static/images/features/trackdays.png)
 
     `` As a Site User I can visit a booking page so that I can view available/upcoming track days and proceed with a booking.``
 
@@ -466,7 +473,7 @@ Below is a comprehensive list of the site features and their relations to the us
     - allows the option of selecting extras such as car hire and paddock hire
     - users can add their trackday of choice to their basket through the add to basket button at the bottom of the page
 
-    ![Trackday booking/detail page]()
+    ![Trackday booking/detail page](/static/images/features/trackday-booking-page.png)
 
     `` User Story: As a Site User I can select the track day I want and visit a booking page so that I can book my track day with any extras I would like to add.``
 
@@ -481,7 +488,7 @@ Below is a comprehensive list of the site features and their relations to the us
     - contains a form for users to fill in to request a trackday
     - informs users when the form has been successfully submitted
 
-    ![Trackday Request Page]()
+    ![Trackday Request Page](/static/images/features/request-a-trackday.png)
 
     `` User Story: As a Site User I can use a request form so that I can request a bespoke track day booking outside of the current available options.``
 
@@ -498,7 +505,8 @@ Below is a comprehensive list of the site features and their relations to the us
     - the details page contains a description and itinerary of the day
     - price and booking button at the bottom of the page
 
-    ![Tuition]()
+    ![Tuition](/static/images/features/tuition.png)
+    ![Tuition Detail](/static/images/features/tuition-detail-example.png)
 
     `` User Story: As a Potential Customer I can view a tuition page so that I can book a day to learn core driving skills.``
 
@@ -516,7 +524,8 @@ Below is a comprehensive list of the site features and their relations to the us
     - the experience details and itinerary are displayed in the details page
     - price and booking button at the bottom of the page
 
-    ![Experiences]()
+    ![Experiences](/static/images/features/experiences.png)
+    ![Experience Detail](/static/images/features/experience-detail-example.png)
 
     `` User Story: As a Potential Customer I can view a separate experiences page so that I can order a slightly different product to a pure trackday (perhaps as a gift).``
 
@@ -532,7 +541,7 @@ Below is a comprehensive list of the site features and their relations to the us
     - shows a visually appealing list of cars for hire on the trackdays 
     - includes car images and statistics in cards
 
-    ![Car Hire List Page]()
+    ![Car Hire List Page](/static/images/features/carhire.png)
     
     `` User Story: As a Site Visitor I can view a selection of cars so that I can choose a car I might want to hire at an upcoming trackday.``
 
@@ -546,8 +555,8 @@ Below is a comprehensive list of the site features and their relations to the us
     - provides an editable form for users to insert billing information 
     - this section is based on the idea of setting billing information for a future feature of a gift store, where deliveries can be sent to a specified address
 
-    ![User Profile]()
-    ![User Profile]()
+    ![User Profile](/static/images/features/profile.png)
+    ![User Profile](/static/images/features/profile-edit.png)
 
     `` User Story: As a Registered Site User I can save details in my account profile so that I can speed up buying/delivery processes in future.``
 
@@ -559,7 +568,7 @@ Below is a comprehensive list of the site features and their relations to the us
 15. FAQs page that:
     - Contains a list of commonly asked questions that new trackday drivers may want answers to
 
-    ![FAQs Page]()
+    ![FAQs Page](/static/images/features/faqs.png)
 
     `` User Story: As a Site User I can view an FAQs page so that I can see if there are any answers to questions I might have.``
 
@@ -571,7 +580,7 @@ Below is a comprehensive list of the site features and their relations to the us
 16. Policies page that:
     - describes the company policies to users concerned about privacy and data protection
 
-    ![Policies Page]()
+    ![Policies Page](/static/images/features/policies.png)
 
     `` User Story: As a Site User I can find a policies so that I can understand the terms and conditions of the site.``
 
@@ -586,6 +595,9 @@ Below is a comprehensive list of the site features and their relations to the us
     - Has a total cost summary is available including a VAT amount for transparent total costs
     - contains a return to home button to allow users to continue browsing before checking out
 
+    ![Basket (Empty)](/static/images/features/empty-basket.png)
+    ![Basket (With item)](/static/images/features/basket-with-item.png)
+
     `` User Story: As a Site User I can add to and view a basket/cart so that I can view and check my order and make any updates or removals as required before checking out.``
 
     - Acceptance Criteria:
@@ -598,6 +610,8 @@ Below is a comprehensive list of the site features and their relations to the us
     - Allows users a quick and easy checkout process through stripe
     - contains a small form to fill out, where card info and an email address need to be supplied
 
+    ![Checkout](![Basket](/static/images/features/checkout.png)
+
     `` User Story: As a Site User I can checkout so that I can proceed with my order/booking.``
 
     - Acceptance Criteria:
@@ -608,6 +622,8 @@ Below is a comprehensive list of the site features and their relations to the us
 19. A newsletter sign up that:
     - directs users to a signup page from the footer link
     - allows users to sign up by simply supplying their email address in the form
+
+    ![Newsletter](/static/images/features/newsletter.png)
 
     `` User Story: As a Site User I can sign up to a newsletter so that I can get informed about new products or business updates.``
 
@@ -620,6 +636,8 @@ Below is a comprehensive list of the site features and their relations to the us
     - is accessed through a superuser exclusive link
     - opens a page for admins to add new trackdays
 
+    ![Add Trackday (Management Page)](/static/images/features/add-trackday.png)
+
     `` User Story: As a Site Admin I can add trackdays from a management page so that I can easily update the trackday list from the front end.``
 
     - Acceptance Criteria:
@@ -630,9 +648,13 @@ Below is a comprehensive list of the site features and their relations to the us
     - will appear if the user looks for a page that doesn't exist
     - will encourage the user to return to the home page through a home page button clearly displayed
 
+    ![Custom Error 404 Page](/static/images/features/error404-page.png)
+
 22. An Order History Page that:
     - Is available in the nav bar for users to see their order history and view their receipts
     - Is displayed neatly in a table in chronological order 
+
+    ![Order History Page](/static/images/features/order-history.png)
 
     `` User Story: As a Registered Site User I can check my order history so that I can review my past orders.``
 
@@ -646,7 +668,15 @@ Below is a comprehensive list of the site features and their relations to the us
 Django Raceway's Site features vibrant and colourful designs, inspired by racing car liveries both past and present.
 I use a lot of greens, blues and red/oranges that bare a resemblance to an automotive/racing colour.
 
+`#b8f2e2` is the main background colour you see on the site, followed by `#cedc00` for the main nav bar and some of the key buttons on the main site pages.
+The light blue colour for the background is inspired by the classic Gulf Blue historic racing livery. I have always liked this colour and I was keen to use it in the site design as it's quite a light colour. The Green for the main nav and some buttons is inspired by Aston Martin Racing Greens. Again the nice thing about the colour is that it is quite a light colour and so complements other colours on the site.
 
+See the main colour palette below:
+![Colour Palette](/static/images/features/colour-palette.png)
+
+I made use of a lot of standard Bootstrap 5 colour as well for many buttons and toasts on the site. 
+The usual Success Green, Warning Yellow, Primary Blue, Info Blue and Danger Red colours are implemented all across the site.
+They give great visual feedback to users and so I think they are a fantastic out-of-the-box solution to add relevant colour quickly.
 
 The structure of the site is based around 2 naviation menus. A top nav, where users access account or authentication related content and basket/checkout functionalities (+ the site logo, which also returns users to the home page), and a middle nav which serves as the main point of reference for the rest of the site. Both nav bars can be found on all pages, and the home page is the exception only in nav placement, with the middle nav actually being placed in the middle of the home page. I really wanted to have a carousel of track layouts as the 'hero' image for the home page, with a nav menu beneath it. I'm very glad I stuck with this design feature. 
 
@@ -654,7 +684,10 @@ There is a footer which houses two text links (to the FAQs and Policy pages), a 
 
 A lot of the other content contains some form of bootstrap card type design, such as the car hire page, experience and tuition detail pages and the trackday booking page. It puts key info in a defined container, which focuses users towards the places where you want them to. I made use of 3 separate card-like containers in the basket page to house and separate different info, where I would ideally like users to focus on different info separate from each other. 
 
+The main fonts across the website are ` 'Secular One', sans-serif; `
 
+I used this checkered flag icon as my main site logo and my favicon for the site:
+![Favicon](/static/images/favicon.ico)
 
 
 
@@ -671,7 +704,6 @@ The Facebook page will increase the reach of the business to new potential custo
 
 
 ![Django-Raceway Facebook page](/static/images/readme-images/django-raceway-facebook.png)
-
 
 
 ---
@@ -816,12 +848,13 @@ The incognito tab worked perfectly and so it was my caches that were causing the
 
 ### Current Unresolved Bugs
 
-- For some reason, the profile link in the nav bar (which appears to you once you log in) can appear to be unclickable. I have not yet found out why this is happening, but if you refresh the page, it resolves the issue every single time. 
+- For some reason, the profile link in the nav bar (which appears to you once you log in) can appear to be unclickable sometimes. I have not yet found out why this is happening, but if you refresh the page, it resolves the issue every single time. You may not even experience this issue at all, or may experience it randomly and then it won't happen again for a long time.
 I have also found out this can happen to the login link if you sign out. Again, refresh the page or click the Django Raceway logo and this will work as normal.
 
 - My Unique Constraint in my trackday model seems to work randomly at times and not at all at others. I'm still working on why this is, but seeing as only the admin/superuser can add trackdays and will know when trackdays are happening before adding them, I don't forsee this as a critical issue at the time of writing.
 
-
+- Sometimes you may need to clear your cache to access frequently visited pages, especially the checkout page, I have found.
+This can be mitigated entirely by using an incognito tab in your browser.
 ---
 
 ## Deployment
@@ -967,6 +1000,10 @@ I used this very helpful guide for importing the data from my ElephantSQL databa
 
 ### Media/Images:
 - Checkered Flags from Clipartmax: [Flag1](https://www.clipartmax.com/middle/m2H7d3N4d3i8d3i8_checkered-flag-icon-clipart-auto-racing-racing-flags-finish-flag-icon-png/), [Flag2](https://www.clipartmax.com/middle/m2i8G6Z5H7d3A0G6_finish-flag-race-racing-win-winner-finish-checkered-flag-icon-png/)
+
+- Main Track image on which I drew the 3 layouts: [Track Design Original](https://imgur.com/a/m44IV)
+
+- I visited [Coolors](https://coolors.co/d2dac3-c9dfec-343f5c-ffffff-000000) to generate a visualised colour palette.
 
 - Photographs in the Gallery:
     - [Porsche Trackday pic](https://www.porscheclubgb.com/news-and-events/news/2021/december/2022-porsche-club-gb-trackday-calendar-announced)

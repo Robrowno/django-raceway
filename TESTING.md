@@ -42,7 +42,16 @@ To test the checkout payments with card details in test mode, I used the followi
 - 4000000000009995: for card with insufficient funds
 - 4000000000000002: for testing card declined
 
-I used the above to successfully test Stripe and I am happy to say it is working as expected
+I used the above to successfully test Stripe and I am happy to say it is working as expected.
+
+<details><summary> Card Number Demos</summary>
+
+![Visa](/static/images/readme-images/validation-images/card-visa-number.png) ![Visa Debit](/static/images/readme-images/validation-images/card-visa-debit-number.png)
+![Insufficient funds](/static/images/readme-images/validation-images/card-insufficient-funds-number.png) ![Card declined](/static/images/readme-images/validation-images/card-declined-number.png)
+
+</details>
+
+<br></br>
 
 ### Home/Index/Middle-Navigation
 | Test | Method | Expected Outcome | Result |
@@ -569,7 +578,7 @@ All Python validation was checked through Code Institute's PEP8 Python Linter. Y
 | helpers.py | PASS |
 | tests.py |  |
 
-* Line 310 in views.py reads as too long, however, for reliability I have opted to leave this
+* Line 313 in views.py reads as too long, however, for reliability I have opted to leave this
 in as it can cause issues in deployment when concatenated as it is an image url. I believe this is
 a sensible and reasonable precaution to take for site reliability in conjunction with stripe.
 See further explanation below.
@@ -644,7 +653,7 @@ See further explanation below.
 
 ### Current Python Errors/Issues/Explanations:
 
-- Only 1 known python linting issue across the entire workspace, being that of line 310 in /checkout/views.py where a line is too long.
+- Only 1 known python linting issue across the entire workspace, being that of line 313 in /checkout/views.py where a line is too long.
 Due to this being a url, and a pretty specific one from Stripe as well, I opted to follow best practice and to leave it as is for this one exception in order 
 to ensure reliability of the checkout on the site. I believe reliability takes priority over anything else.
 I am very much following [this Principal](https://peps.python.org/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds)
@@ -686,9 +695,9 @@ Lighthouse Screeshot here: xxxxxxxxxxxxxx
 
 ## Current known and unresolved issues
 
-- As documented in the outstanding bugs section in the readme, there is an (as of writing) unresolved bug where when you sign in or log out, the sign in and log out buttons appear to not be clickable. This is always able to be fixed by either refreshing the page or clicking on to another link/page. Alternatively, click on the site logo (which redirects to the home page anyway) to clear this bug. 
+- As documented in the outstanding bugs section in the readme, there is an (as of writing) unresolved bug where when you sign in or log out, the sign in and log out buttons can appear to not be clickable. This is always able to be fixed by either refreshing the page or clicking on to another link/page. Alternatively, click on the site logo (which redirects to the home page anyway) to clear this bug. This may not happen to you at all or it may happen to you randomly.
 - My Trackday Constraint in my Trackday model appears to not work realiably. I have tried various combinations of the code, tried to reformat it countless times and tried to use it in conjunction with adding ` unique=True` in the fields that are supposed to work with it. I have yet to resolve this issue and will aim to do so in a future update.
-- 
+- If you visit the site too often, you may find you need to hard refresh or clear the cache on some pages, especially the checkout page I find. This can be avoided entirely by using an incognito tab in your browser.
 
 
 --- 

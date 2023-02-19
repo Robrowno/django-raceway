@@ -115,6 +115,7 @@ def add_trackday_to_basket(request, trackday_id):
         # save the booking
         booking.save()
         quantity = 1
+        messages.success(request, "A trackday has been added to the basket.")
 
         if trackday_id in list(basket.keys()):
             basket['trackday'][trackday_id] += quantity
@@ -169,6 +170,7 @@ def add_exp_to_basket(request, experience_id):
         basket['experience'][experience_id] = quantity
 
     request.session['basket'] = basket
+    messages.success(request, "An experience has been added to the basket.")
     return redirect(redirect_url)
 
 
@@ -188,6 +190,7 @@ def add_tuition_to_basket(request, tuition_id):
         basket['tuition'][tuition_id] = quantity
 
     request.session['basket'] = basket
+    messages.success(request, "A tuition course has been added to the basket.")
     return redirect(redirect_url)
 
 
