@@ -33,6 +33,17 @@ I will attempt to conduct a more thorough unittest of the project in future.
 
 ## Manual Testing
 
+### Stripe
+
+To test the checkout payments with card details in test mode, I used the following long card numbers:
+
+- 4242424242424242: for successful card payments (Visa)
+- 4000056655665556L for successful card payments (Visa Debit)
+- 4000000000009995: for card with insufficient funds
+- 4000000000000002: for testing card declined
+
+I used the above to successfully test Stripe and I am happy to say it is working as expected
+
 ### Home/Index/Middle-Navigation
 | Test | Method | Expected Outcome | Result |
 | - | - | - | - |
@@ -67,7 +78,7 @@ I will attempt to conduct a more thorough unittest of the project in future.
 | Button change when Trackday in basket | add trackday to basket and return to trackday list page | buttons should change to reflect the face that you can only book one trackday at a time | PASS |
 | Request Trackday Button | click on button | directs you to the track day request page and form | PASS |
 | Availability counter update | checkout out with a trackday order succesfully and return to the trackday list | Availability of specific trackday will decrease | PASS |
-| Booking Button change when full | Test what happens when a trackday's availability goes to 0 |  |  |
+| Booking change when full | Test what happens when a trackday's availability goes to 0 | Booking will disappear from the trackday list | PASS |
 |  |  |  |  |
 
 
@@ -125,12 +136,11 @@ I will attempt to conduct a more thorough unittest of the project in future.
 | - | - | - | - |
 | Sign Up | Create an account | You will be asked to verify your account and sent an email to verify it | PASS |
 | Verification Email | Click on email link to verify account | Upon click, you will be redirected to the site where it will be confirmed that your account is verified | PASS |
+| Click to verify | Click on the click to verify when taken to page from verification email | click and redirect to the sign in page  | PASS |
 | Login | Login with a registered account | Redirected to homepage and informed you are logged in | PASS |
 | Remember me checkbox | Click on remember me checkbox button before loggin in | You will not need to login next time you visit the site | PASS |
 | Forgot Password | Click on Forget Password and submit email | Link to set new password sent to email address supplied by user | PASS |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+
 
 ### Basket and Checkout
 | Test | Method | Expected Outcome | Result |
@@ -143,14 +153,14 @@ I will attempt to conduct a more thorough unittest of the project in future.
 | Delete Item in basket | Click 'Delete button | Item is deleted from the basket | PASS |
 | Summary total Calculator | Add items to basket, change quantities, delete items from basket | total will adjust accordingly | PASS |
 | Summary VAT calculator | Add items to basket and check VAT calculation | 20% VAT applied automatically | PASS |
-| Checkout Button (Basket Page) |  |  |  |
-| Checkout Button (Nav Link) |  |  |  |
-| Checkout  |  |  |  |
-| Checkout Success |  |  |  |
-| Checkout Cancel |  |  |  |
-| Checkout Fail |  |  |  |
-| Confirmation Email |  |  |  |
-| Order History Added/Updated |  |  |  |
+| Checkout Button (Basket Page) | Add item to basket and click on the checkout button in the basket page | redirect to the stripe checkout | PASS |
+| Checkout Button (Nav Link) | Add item to basket and click on the checkout link in the nav | redirect to the stripe checkout | PASS |
+| Checkout validation | Attempt to submit checkout with inclomplete input fields | Checkout will not proceed until you have filled in all required fields | PASS |
+| Checkout Success | Visit checkout, fill in required fields and click 'Pay' | On successfull payment, you are redirected to the success page | PASS |
+| Checkout Cancel | Visit checkout and click the back arrow button | Redirected to the cancel page and basket is still saved | PASS |
+| Checkout Fail | Attempt a failed checkout | Redirected to the checkout fail error page, user is not charged | PASS |
+| Confirmation Email | Checkout by clicking 'Pay' and check inbox of email supplied | Email will send with a link to your oreder history page | PASS |
+| Order History Added/Updated | Checkout and visit order history page through the link provided in the email | Order is added to order history table in chronological order | PASS |
 
 ### Management
 | Test | Method | Expected Outcome | Result |
@@ -483,6 +493,9 @@ I have included different screenshots to demonstrate this and show that the JS i
 ![Bootstrap Toast JS](/static/images/readme-images/validation-images/bootstrap-toasts-js-val.png)
 ![Bootstrao Toast JS](/static/images/readme-images/validation-images/bootstrap-toasts-js-js-val.png)
 
+Extra JS in includes/toasts html files:
+![Extra JS](/static/images/readme-images/validation-images/extra-toast-js.png)
+
 
 </details>
 
@@ -556,9 +569,10 @@ All Python validation was checked through Code Institute's PEP8 Python Linter. Y
 | helpers.py | PASS |
 | tests.py |  |
 
-* Line 320 in views.py reads as too long, however, for reliability I have opted to leave this
-in as it can cause issues in deployment when concatenated as it is a url. I believe this is
-a sensible and reasonable precaution to take for site reliability.
+* Line 310 in views.py reads as too long, however, for reliability I have opted to leave this
+in as it can cause issues in deployment when concatenated as it is an image url. I believe this is
+a sensible and reasonable precaution to take for site reliability in conjunction with stripe.
+See further explanation below.
 
 
 ### /cars
@@ -610,7 +624,7 @@ a sensible and reasonable precaution to take for site reliability.
 ![models.py](/static/images/readme-images/validation-images/checkout-models.py-val.png)
 ![urls.py](/static/images/readme-images/validation-images/checkout-urls.py-val.png)
 ![views.py](/static/images/readme-images/validation-images/checkout-views.py-val.png)
-![views.py 2](/static/images/readme-images/validation-images/checkout-views.py-line-length.png)
+![views.py 2](/static/images/readme-images/validation-images/checkout-views.py-line-too-long.png)
 ![contexts.py](/static/images/readme-images/validation-images/checkout-contexts.py-val.png)
 ![helpers.py](/static/images/readme-images/validation-images/checkout-helpers.py-val.png)
 
@@ -630,9 +644,10 @@ a sensible and reasonable precaution to take for site reliability.
 
 ### Current Python Errors/Issues/Explanations:
 
-- Only 1 known python linting issue across the entire workspace, being that of line 320 in /checkout/views.py where a line is too long by 2 characters.
+- Only 1 known python linting issue across the entire workspace, being that of line 310 in /checkout/views.py where a line is too long.
 Due to this being a url, and a pretty specific one from Stripe as well, I opted to follow best practice and to leave it as is for this one exception in order 
 to ensure reliability of the checkout on the site. I believe reliability takes priority over anything else.
+I am very much following [this Principal](https://peps.python.org/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds)
 
 
 ---

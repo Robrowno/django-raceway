@@ -296,30 +296,27 @@ def checkout(request):
                 experience_obj = item['experience']
                 image = experience_obj.image
                 products['image'].append(image.url)
-        full_urls = [base_url + image for image in products['image']]
         session = stripe.checkout.Session.create(
-            success_url=base_url + "/checkout/success",
-            cancel_url=base_url + "/checkout/cancel",
+            success_url=base_url +
+            "/checkout/success",
+            cancel_url=base_url +
+            "/checkout/cancel",
             line_items=[
                 {
                     "price_data": {
                         "currency": "GBP",
                         "product_data": {
                             "name": "All cart products",
-                            'images': full_urls,
+                            'images': ['https://i.ibb.co/8XDNbc0/Untitled-design-removebg-preview.png'],
                         },
-                        "unit_amount": grand_total * 100
-                    },
+                        "unit_amount": grand_total *
+                        100},
                     "quantity": 1,
                 },
             ],
             mode="payment",
         )
         request.session['session_id'] = session['id']
-        sessions = stripe.checkout.Session.retrieve(
-            'cs_test_a1a5Wf5glehWfK0M2sCBy0ONbIhG3ZokJ9WKWYNSnf5GpUaJU8lVh1MSP5',
-            expand=['line_items'],
-        )
         return HttpResponseRedirect(session.url)
     else:
         messages.error(

@@ -11,3 +11,21 @@
    {{ message }}
   </div>
 </div>
+
+<script>
+  // show the toast for 3 seconds
+  const toast=document.querySelectorAll('.toast');
+  setTimeout(function () {
+        toast.classList.add("show");
+      }, 1);
+      setTimeout(function () {
+        toast.classList.add("show");
+      }, 1);
+      setTimeout(function () {
+        toast.classList.remove("show");
+      }, 3000);
+      setTimeout(function () {
+        toast.classList.remove("show");
+        toast.classList.add("d-none");
+      }, 3000);
+</script>
