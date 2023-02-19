@@ -237,6 +237,28 @@ Django Raceway is a Business-to-Consumer (B2C) E-commerce Trackday compan, speci
     - Track day enthusiasts looking for a new motorsports venue to try out
     - A club/group/company organising a trackday event, looking to request a bespoke trackday package tailored to their needs
 
+### SEO and Web Marketing
+
+**Who:** I am marketing predominantly towards a motor-enthuasiast and motorsport-orientated, with an extra scope of marketing towards those who are looking for driving experiences and to improve their driving skills through tuition.
+**What:** I am selling trackdays, tuition courses and experience packages, designed to cater towards this audience. I therefore make it very accessible and clear on my site, so that the audience can go. directly towards what they are looking for. I include images of cars, both driving and off the track, designed to excite the site viewer into wondering what it's like to drive. It was equally important to make clear titles and key pieces of information available for the site viewers to see on which ever respective page/product they are viewing.
+**How:** Based on my B2C model above, I decided single payments were the best payment option for the products I'm offering. I can update users on new products and general news through an opt-in mailchimp newsletter subscription and I have created a Facebook page which users/clients can view and follow to keep up to date through a social network.
+
+
+Software developers play a role in making sure their website can be easily found through search engines, including the likes of Google Search.
+Therefore, when implementing SEO (Search Engine Optimisation) tools, the best means available to you are through descriptive and relevant keywords, sitemaps.xml and robots.txt files.
+
+**Keywords and sitemap/robots**
+
+- I included keywords and more through the use of `<meta>`tags in my base.html document. This allowed me to define keywords, an author, a site description and a viewport. For the keywords themselves I thought about short and longer words and phrases respectively that might be looked for, in the framework of the target audience defined. above. 
+
+- I started with fairly obvious short words including: trackdays, motorsport, motorcircuit, trackday, racing, racetrack,
+
+- I then expanded in to short phrases, including: trackdays in England, trackdays in the uk, trackday experiences, driving tuition
+
+- I have included a sitemap.xml file in the root directory, which allows search engines to crawl through my site and make content more discoverable.
+
+- I have a robots.txt file which provides the location of the sitemap and also defines any folders/files which are prohibited from search engine crawlers.
+
 
 
 ### Agile Methodologies
@@ -329,8 +351,6 @@ You can see my project board [here](https://github.com/users/Robrowno/projects/5
     - As a Site User I would like to Sign up to a mailing list so that I can get new information from the business, including new products or promotions.
 - [Epic: Testing]([#9](https://github.com/Robrowno/django-raceway/issues/9))
     - As a Software Developer I would like to Create Manual and Automated tests so that I can check the quality and functionality of my code.
-
-
 
 
 ---
