@@ -982,6 +982,10 @@ Used [this mockup software](https://techsini.com/multi-mockup/) to generate a re
 
 I used this very helpful guide for importing the data from my ElephantSQL database into DBeaver to map out my database Schema: [Amis Technology Blog](https://technology.amis.nl/database/quick-start-with-free-managed-postgresql-database-on-elephantsql/)
 
+I generated my sitemap.xml using [this site](http://www.check-domains.com/sitemap/index.php)
+
+I generated my robots.txt file using [this site](https://www.seoptimer.com/robots-txt-generator)
+
 ## Personal Credits
 
 - Many Thanks to my C.I Mentor Daisy McGirr, who has been guiding me and advising me through this project as well as all projects since PP2 - Her input in our mentor sessions has been instrumental in getting me this far and so I have to say I massive thank you to her for that!

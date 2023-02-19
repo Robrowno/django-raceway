@@ -8,133 +8,133 @@
 
 <url>
    <loc>https://django-raceway.herokuapp.com/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>1.0000</priority>
 </url>
 <url>
    <loc>https://django-raceway.herokuapp.com/accounts/signup/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://django-raceway.herokuapp.com/accounts/login/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://django-raceway.herokuapp.com/checkout/basket/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://django-raceway.herokuapp.com/trackdays/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://django-raceway.herokuapp.com/cars/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://django-raceway.herokuapp.com/trackdays/tuition/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://django-raceway.herokuapp.com/trackdays/experiences/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://django-raceway.herokuapp.com/contact/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://django-raceway.herokuapp.com/about/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://django-raceway.herokuapp.com/faqs/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://django-raceway.herokuapp.com/policies/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://django-raceway.herokuapp.com/newsletter/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.8000</priority>
 </url>
 <url>
    <loc>https://django-raceway.herokuapp.com/accounts/password/reset/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.6400</priority>
 </url>
 <url>
    <loc>https://django-raceway.herokuapp.com/trackdays/trackday-request/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.6400</priority>
 </url>
 <url>
-   <loc>https://django-raceway.herokuapp.com/trackdays/tuition/2/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <loc>https://django-raceway.herokuapp.com/trackdays/tuition/5/</loc>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.6400</priority>
 </url>
 <url>
-   <loc>https://django-raceway.herokuapp.com/trackdays/tuition/1/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <loc>https://django-raceway.herokuapp.com/trackdays/tuition/6/</loc>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.6400</priority>
 </url>
 <url>
-   <loc>https://django-raceway.herokuapp.com/trackdays/tuition/3/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <loc>https://django-raceway.herokuapp.com/trackdays/tuition/7/</loc>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.6400</priority>
 </url>
 <url>
-   <loc>https://django-raceway.herokuapp.com/trackdays/experiences/4/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <loc>https://django-raceway.herokuapp.com/trackdays/experiences/7/</loc>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.6400</priority>
 </url>
 <url>
-   <loc>https://django-raceway.herokuapp.com/trackdays/experiences/3/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <loc>https://django-raceway.herokuapp.com/trackdays/experiences/8/</loc>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.6400</priority>
 </url>
 <url>
-   <loc>https://django-raceway.herokuapp.com/trackdays/experiences/2/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <loc>https://django-raceway.herokuapp.com/trackdays/experiences/9/</loc>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.6400</priority>
 </url>
 <url>
-   <loc>https://django-raceway.herokuapp.com/trackdays/experiences/1/</loc>
-   <lastmod>2023-02-15T08:33:31+00:00</lastmod>
+   <loc>https://django-raceway.herokuapp.com/trackdays/experiences/10/</loc>
+   <lastmod>2023-02-19T19:52:57+00:00</lastmod>
    <changefreq>daily</changefreq>
    <priority>0.6400</priority>
 </url>

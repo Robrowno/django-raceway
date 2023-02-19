@@ -664,9 +664,17 @@ I am very much following [this Principal](https://peps.python.org/pep-0008/#a-fo
 ## Lighthouse Performance Testing
 
 - Lighthouse Testing was performed in an incognito tab to ensure no external chrome add-ons were affecting the test.
+- I did the test 3 times to see how consistent the tests were.
 - Results of the Lighthouse Performance testing below:
 
-Lighthouse Screeshot here: xxxxxxxxxxxxxx
+**Test 1**
+![Test 1](/static/images/readme-images/validation-images/lighthouse-testing.png)
+**Test 2**
+![Test 2](/static/images/readme-images/validation-images/lighthouse-testing-2.png)
+**Test 3**
+![Test 3](/static/images/readme-images/validation-images/lighthouse-testing-3.png)
+
+- As you can see, there is quite a bit of variation in the test results. However, taking an average of the scores from the 3 tests, I am fairly happy with the performance of the site overall.
 
 ---
 
