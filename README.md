@@ -344,6 +344,9 @@ Below is a comprehensive list of the site features and their relations to the us
     - has a middle nav which serves as the main navigation of the site
     - contains a company logo that redirects to the home page when clicked on
 
+    ![Top Nav]()
+    ![Middle Nav]()
+
     `` User Story: As a Site User I can use a Nav Bar so that I can Navigate to the desired page.``
 
     - Acceptance Criteria:
@@ -356,6 +359,8 @@ Below is a comprehensive list of the site features and their relations to the us
     - Contains a gallery of cars on track designed to showcase the action packed nature of track driving
     - hosts the middle nav beneath the carousel to encourage the user to scroll down the home page and see more content
     - serves as the entry page and point of reference for everything on the site
+
+    ![Home Page]()
 
     `` User Story: As a Site User I can view a home page so that I can have a starting point from which I can navigate the site.``
 
@@ -370,6 +375,8 @@ Below is a comprehensive list of the site features and their relations to the us
     - Contains a prompt to sign up to the Django Raceway Newsletter
     - An up-arrow button to return to the top of the page
 
+    ![Footer]()
+
     `` User Story: As a Site User I can view a footer bar so that I can view Policies, FAQs or subscribe to a motorsport newsletter.``
 
     - Acceptance Criteria:
@@ -381,6 +388,9 @@ Below is a comprehensive list of the site features and their relations to the us
 4. A Gallery that:
     - Contains 8 High Quality images of cars driving on track
     - Can be clicked on to open, moved to previous or next images, or closed with an 'x' 
+
+    ![Gallery]()
+    ![]()
 
     `` User Story: As a Site Visitor I can view a gallery of images so that I can get a visual understanding of what a track day looks like.``
 
@@ -413,6 +423,8 @@ Below is a comprehensive list of the site features and their relations to the us
     - Describes the history of the circuit to curious site visitors
     - Inspires site visitor confidence in an experienced and responsible trackday/motorsports business
 
+    ![About Page]()
+
     `` User Story: As a Site User I can open an about page so that I can learn more about the company and its history.``
 
     - Acceptance Criteria:
@@ -423,6 +435,8 @@ Below is a comprehensive list of the site features and their relations to the us
     - Provides users with a simple form to fill out
     - Asks for a full name, email, query type and a message
     - informs the user when their message has been sent successfully
+
+    ![Contact Page]()
 
     `` User Story: As a Site User I can submit a contact form so that I can get in touch with the business regarding questions I have.``
 
@@ -437,6 +451,8 @@ Below is a comprehensive list of the site features and their relations to the us
     - Shows current trackdays up for booking in a table below, with information such as variant and base price displayed
     - Contains the links to the booking and request pages respectively
 
+    ![Trackdays]()
+
     `` As a Site User I can visit a booking page so that I can view available/upcoming track days and proceed with a booking.``
 
     - Acceptance Criteria:
@@ -450,6 +466,8 @@ Below is a comprehensive list of the site features and their relations to the us
     - allows the option of selecting extras such as car hire and paddock hire
     - users can add their trackday of choice to their basket through the add to basket button at the bottom of the page
 
+    ![Trackday booking/detail page]()
+
     `` User Story: As a Site User I can select the track day I want and visit a booking page so that I can book my track day with any extras I would like to add.``
 
     - Acceptance Criteria:
@@ -462,6 +480,8 @@ Below is a comprehensive list of the site features and their relations to the us
 10. A Track day request page that:
     - contains a form for users to fill in to request a trackday
     - informs users when the form has been successfully submitted
+
+    ![Trackday Request Page]()
 
     `` User Story: As a Site User I can use a request form so that I can request a bespoke track day booking outside of the current available options.``
 
@@ -477,6 +497,8 @@ Below is a comprehensive list of the site features and their relations to the us
     - each course package can be explored through the 'Explore' buttons
     - the details page contains a description and itinerary of the day
     - price and booking button at the bottom of the page
+
+    ![Tuition]()
 
     `` User Story: As a Potential Customer I can view a tuition page so that I can book a day to learn core driving skills.``
 
@@ -494,6 +516,8 @@ Below is a comprehensive list of the site features and their relations to the us
     - the experience details and itinerary are displayed in the details page
     - price and booking button at the bottom of the page
 
+    ![Experiences]()
+
     `` User Story: As a Potential Customer I can view a separate experiences page so that I can order a slightly different product to a pure trackday (perhaps as a gift).``
 
     - Acceptance Criteria:
@@ -507,6 +531,8 @@ Below is a comprehensive list of the site features and their relations to the us
 13. A car hire page that:
     - shows a visually appealing list of cars for hire on the trackdays 
     - includes car images and statistics in cards
+
+    ![Car Hire List Page]()
     
     `` User Story: As a Site Visitor I can view a selection of cars so that I can choose a car I might want to hire at an upcoming trackday.``
 
@@ -520,6 +546,9 @@ Below is a comprehensive list of the site features and their relations to the us
     - provides an editable form for users to insert billing information 
     - this section is based on the idea of setting billing information for a future feature of a gift store, where deliveries can be sent to a specified address
 
+    ![User Profile]()
+    ![User Profile]()
+
     `` User Story: As a Registered Site User I can save details in my account profile so that I can speed up buying/delivery processes in future.``
 
     - Acceptance Criteria:
@@ -530,6 +559,8 @@ Below is a comprehensive list of the site features and their relations to the us
 15. FAQs page that:
     - Contains a list of commonly asked questions that new trackday drivers may want answers to
 
+    ![FAQs Page]()
+
     `` User Story: As a Site User I can view an FAQs page so that I can see if there are any answers to questions I might have.``
 
     - Acceptance Criteria:
@@ -539,6 +570,8 @@ Below is a comprehensive list of the site features and their relations to the us
 
 16. Policies page that:
     - describes the company policies to users concerned about privacy and data protection
+
+    ![Policies Page]()
 
     `` User Story: As a Site User I can find a policies so that I can understand the terms and conditions of the site.``
 
