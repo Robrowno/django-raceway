@@ -497,6 +497,8 @@ I have included different screenshots to demonstrate this and show that the JS i
 
 ## Python Validation
 
+All Python validation was checked through Code Institute's PEP8 Python Linter. You can find it via this link: https://pep8ci.herokuapp.com/
+
 ### /django_raceway
 
 

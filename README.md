@@ -657,7 +657,21 @@ The Facebook page will increase the reach of the business to new potential custo
 ## Database Schema:
 
 
+I used **DBeaver** to map out an ER Diagram for my Database Schema:
 
+![DB Schema](/static/images/readme-images/database-schema.png)
+
+In total, I have included **9 models**, which are:
+
+- Trackday
+- TrackdayBooking
+- TrackdayRequest
+- Experiences
+- Tuition
+- UserProfile
+- Contact
+- OrderItem
+- Cars
 
 
 
@@ -690,6 +704,8 @@ Full list of technology implemented below:
 - Django Crispy Forms - for neatly styling form layouts
 - Pillow - A PIL (Python Imaging Library)
 - GMail - for sending real email from gmail to users in production
+- SendGrid - also for sending real emails to users in production
+- DBeaver - for importing data and mapping out ER diagrams from connected databases
 
 #### Python Packages Installed
 

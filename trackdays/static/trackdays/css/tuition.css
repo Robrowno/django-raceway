@@ -39,9 +39,7 @@ footer {
     display: flex;
     position: fixed;
     bottom: -12px;
-    background-color: #fff;
 }
-
 
 .imgbutton {
     display: flex;
