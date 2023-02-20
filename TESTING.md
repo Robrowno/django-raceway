@@ -3,7 +3,8 @@
 This section of the documentation comprises of various manual and automated tests and online validators to check the quality of my code and also to check the functionality of the project.
 
 See User Story:
-[USER STORY: Testing]([#34](https://github.com/Robrowno/django-raceway/issues/34))
+
+- [USER STORY: Testing]([#36](https://github.com/Robrowno/django-raceway/issues/36)))
 
 ## Table of Contents
 
