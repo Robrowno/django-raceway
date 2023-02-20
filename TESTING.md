@@ -23,10 +23,14 @@ See User Story:
 
 Due to time constraints, I was under pressure to conclude the project and as a result I did not manage to get around to doing a thorough unittest of all the python urls, views, etc. 
 
-I have managed to do some url resolutions, including some in the cars app, the checkout app and the profiles app.
+I have managed to do some url resolutions, including some in the cars app, the checkout app, trackdays app and the profiles app.
 Of the tests I have run, all pass. 
 
-I will attempt to conduct a more thorough unittest of the project in future.
+I will attempt to conduct a more thorough unittest of the entire project in future.
+
+If you wish to run the tests for yourself, simply type the following command into your terminal:
+
+` python3 manage.py test `
 
 
 ---
@@ -73,9 +77,9 @@ I used the above to successfully test Stripe and I am happy to say it is working
 | Test | Method | Expected Outcome | Result |
 | - | - | - | - |
 | Policies Link | Click on link | opens the Policies page | PASS |
-| FAQs Link | Click on link | opens FAQs Page | Pass |
+| FAQs Link | Click on link | opens FAQs Page | PASS |
 | Up-Arrow button | Click on up-arrow button | Takes you to the top of the page | PASS |
-| Sign Up Button in Footer | Click on Sign up button | Redirect to the Newletter sign up form/page | Pass |
+| Sign Up Button in Footer | Click on Sign up button | Redirect to the Newletter sign up form/page | PASS |
 | Subscribe/Mailchimp Newsletter | Enter a valid email and click on subscribe | Green confirmation text confirming subscription will appear | PASS |
 
 
@@ -88,7 +92,6 @@ I used the above to successfully test Stripe and I am happy to say it is working
 | Request Trackday Button | click on button | directs you to the track day request page and form | PASS |
 | Availability counter update | checkout out with a trackday order succesfully and return to the trackday list | Availability of specific trackday will decrease | PASS |
 | Booking change when full | Test what happens when a trackday's availability goes to 0 | Booking will disappear from the trackday list | PASS |
-|  |  |  |  |
 
 
 ### Tuition/Experiences and Detail Pages
@@ -100,7 +103,6 @@ I used the above to successfully test Stripe and I am happy to say it is working
 | Experience Detail | Open detail page through clicking explore button | Specific experience package is opened with details and an itinerary on display | PASS |
 | Quantity adjustments | Click on plus and minus buttons | quantity will increment/decrement and be reflected to the user. Will also cap at a max and min value | PASS |
 | Booking button | Click on the book button | Item will be added to the basket with the correct quantity selected by the user | PASS |
-|  |  |  |  |
 
 
 ### Trackday Request
@@ -134,8 +136,8 @@ I used the above to successfully test Stripe and I am happy to say it is working
 | Profile Link | Check appearance when logged out | Profile page is not accessible to users not logged in | PASS |
 | Profile Link | Check appearance and click on link when logged in | User will be redirected to their profile page | PASS |
 | Edit Button | Click Edit Button | Form fields will become editable and the button will change to 'Save' | PASS |
-| Save Button | Click Save Button | Form will save new details for user | Pass |
-| Input fields | Enter invalid inputs for fields | User will get an error message | Pass |
+| Save Button | Click Save Button | Form will save new details for user | PASS |
+| Input fields | Enter invalid inputs for fields | User will get an error message | PASS |
 | Input fields | Enter Valid input for fields | User will be informed that it saved successfully | PASS |
 
 
@@ -175,12 +177,12 @@ I used the above to successfully test Stripe and I am happy to say it is working
 | Test | Method | Expected Outcome | Result |
 | - | - | - | - |
 | Management Link | Login as Admin/Superuser and open profile dropdown | Management link visible and when clicked, redirect to the management add trackday page | PASS |
-| Submit Form |  |  |  |
-| Image upload to AWS |  |  |  |
-| Superuser Access only |  |  |  |
-| Trackday list |  |  |  |
-| Form validation |  |  |  |
-|  |  |  |  |
+| Submit Form | Complete valid form and click "Add Trackday" | Trackday is added to list of trackdays on the booking page | PASS |
+| Image upload to AWS | On form submit, check new trackday detail | image on trackday detail is available due to automated image storage to AWS | PASS |
+| Superuser Access only | Try to access url as a non-admin | redirect to home poage with a message saying you are not allowed to view this page | PASS |
+| Trackday list | Check trackday list has new trackday added post submission | new trackday is visible with all data inputs added visible | PASS |
+| Form validation | Attempt to add invalid entries or incomplete form and submit | Form validation prevents submission until correctly filled out | PASS |
+
 
 
 ### Other
@@ -538,7 +540,7 @@ All Python validation was checked through Code Institute's PEP8 Python Linter. Y
 | models.py | PASS |
 | urls.py | PASS |
 | views.py | PASS |
-| tests.py |  |
+| tests.py | PASS |
 
 
 
@@ -550,7 +552,7 @@ All Python validation was checked through Code Institute's PEP8 Python Linter. Y
 | models.py | PASS |
 | urls.py | PASS |
 | views.py | PASS |
-| tests.py |  |
+| tests.py | PASS |
 
 
 
@@ -562,7 +564,6 @@ All Python validation was checked through Code Institute's PEP8 Python Linter. Y
 | models.py | PASS |
 | urls.py | PASS |
 | views.py | PASS |
-| tests.py |  |
 
 
 
@@ -576,7 +577,7 @@ All Python validation was checked through Code Institute's PEP8 Python Linter. Y
 | urls.py | PASS |
 | views.py | PASS* |
 | helpers.py | PASS |
-| tests.py |  |
+| tests.py | PASS |
 
 * Line 313 in views.py reads as too long, however, for reliability I have opted to leave this
 in as it can cause issues in deployment when concatenated as it is an image url. I believe this is

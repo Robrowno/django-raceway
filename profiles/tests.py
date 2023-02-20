@@ -9,7 +9,6 @@ class TestCarsAppUrls(SimpleTestCase):
     """
 
     def test_profile_page_url_is_resolved(self):
-
         """
         For testing the resolution of the profile page url
         """
@@ -18,7 +17,6 @@ class TestCarsAppUrls(SimpleTestCase):
         self.assertEquals(resolve(url).func, profile)
 
     def test_edit_profile_url_is_resolved(self):
-
         """
         For testing the resolution of the edit profile url
         """

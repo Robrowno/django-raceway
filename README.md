@@ -1020,6 +1020,8 @@ I generated my robots.txt file using [this site](https://www.seoptimer.com/robot
 
 - Scott from Tutor Support - Helped me with a bug with my add to basket functionality and explained why it was going wrong when he found it out himself. He is incredibly patient and kind and taught me a lot about dictionaries! Thanks Scott!
 
+- I would like to thank my good friend Abubakar for motivating me when I was stuck in parts of the project, and giving me tips and advice regarding Stripe, which has lots of experience with. I look forward to working with Abubakar on our own projects in future. If nothing else, I enjoy talking all things coding and coding problems with him, and we've had great chats about Software Development, future careers and AI.
+
 
 
 ### Media/Images:
